@@ -1,5 +1,0 @@
-2026-10-03 22:04:54,067   [ossl_lucas_campaign] fold campaign2009: n_tr=21782 n_te=18393 A=25 K=30 setup=18.6s
-/usr/local/lib/python3.11/dist-packages/sklearn/gaussian_process/kernels.py:455: ConvergenceWarning: The optimal value found for dimension 12 of parameter k1__k2__length_scale is close to the specified upper bound 100000.0. Increasing the bound and calling fit again may find a better value.
-  warnings.warn(
-/usr/local/lib/python3.11/dist-packages/sklearn/gaussian_process/kernels.py:455: ConvergenceWarning: The optimal value found for dimension 24 of parameter k1__k2__length_scale is close to the specified upper bound 100000.0. Increasing the bound and calling fit again may find a better value.
-  warnings.warn(

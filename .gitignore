@@ -11,3 +11,9 @@ Target_Journal_Submission/code/figures_quick/
 Target_Journal_Submission/code/tables_quick/
 *.parquet
 Target_Journal_Submission/manuscript/_render/
+# TEMP-RUNNING (removed when experiments finish)
+Target_Journal_Submission/code/results/main/
+Target_Journal_Submission/code/results/experiment_logs/
+Target_Journal_Submission/code/results/iteration1/
+Target_Journal_Submission/code/results/robustness/
+Target_Journal_Submission/code/results/cnn/

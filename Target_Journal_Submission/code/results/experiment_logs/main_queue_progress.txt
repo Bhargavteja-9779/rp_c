@@ -1,3 +1,0 @@
-finished mango_season_loso 0 rc=0
-finished mango_population 0 rc=0
-finished ossl_kssl_to_lucas 0 rc=0
