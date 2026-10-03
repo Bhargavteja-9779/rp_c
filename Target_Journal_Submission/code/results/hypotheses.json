@@ -2,30 +2,85 @@
  "H1": {
   "statement": "SCP group-averaged coverage < 0.85 on at least one shift task",
   "values": {
-   "mango_season_loso": 0.8231
+   "corn_moisture": 0.63,
+   "corn_oil": 0.825,
+   "corn_protein": 0.6667,
+   "corn_starch": 0.585,
+   "mango_instrument": 0.794,
+   "mango_population": 0.8876,
+   "mango_season_forward": 0.7779,
+   "mango_season_loso": 0.8259
   },
   "supported": true
  },
  "H2": {
   "statement": "GC-D group-averaged coverage in [0.87, 0.95] on every task with >= 10 training groups",
-  "tasks_with_ge10_groups": [],
+  "tasks_with_ge10_groups": [
+   "mango_instrument",
+   "mango_population"
+  ],
   "values": {
+   "corn_moisture": 0.5217,
+   "corn_oil": 0.77,
+   "corn_protein": 0.71,
+   "corn_starch": 0.6917,
+   "mango_instrument": 0.8788,
+   "mango_population": 0.9015,
+   "mango_season_forward": 0.8772,
    "mango_season_loso": 0.8954
   },
   "supported": true,
-  "per_task": {}
+  "per_task": {
+   "mango_instrument": true,
+   "mango_population": true
+  }
  },
  "H3": {
   "statement": "Diagnostic normalisation lowers interval score vs. absolute scores (GC-D vs G-W-A)",
   "per_task": {
+   "corn_moisture": {
+    "median_diff": 0.0863,
+    "r_rb": 0.303,
+    "p_holm": 0.5881583145738108
+   },
+   "corn_oil": {
+    "median_diff": 0.0228,
+    "r_rb": 0.144,
+    "p_holm": 1.0
+   },
+   "corn_protein": {
+    "median_diff": 0.0868,
+    "r_rb": 0.067,
+    "p_holm": 1.0
+   },
+   "corn_starch": {
+    "median_diff": 0.4225,
+    "r_rb": 0.277,
+    "p_holm": 1.0
+   },
+   "mango_instrument": {
+    "median_diff": -0.0537,
+    "r_rb": -0.273,
+    "p_holm": 1.0
+   },
+   "mango_population": {
+    "median_diff": -0.0558,
+    "r_rb": -0.313,
+    "p_holm": 1.3368501434064745e-06
+   },
+   "mango_season_forward": {
+    "median_diff": -0.1775,
+    "r_rb": -0.467,
+    "p_holm": 1.0
+   },
    "mango_season_loso": {
     "median_diff": -0.1016,
     "r_rb": -0.357,
     "p_holm": 1.0
    }
   },
-  "n_tasks_lower": 1,
-  "n_tasks_significant_lower": 0,
-  "n_tasks": 1
+  "n_tasks_lower": 4,
+  "n_tasks_significant_lower": 1,
+  "n_tasks": 8
  }
 }
