@@ -1,0 +1,13 @@
+**Factorial ablation: coverage / interval score (alpha = 0.1)**
+
+| Scenario | R-U-A | R-U-D | G-U-A | G-W-A | G-U-D | GC-D |
+|---|---|---|---|---|---|---|
+| M-season | 0.826 / 6.44 | 0.839 / 6.13 | 0.875 / 6.19 | 0.899 / 6.16 | 0.867 / 5.94 | 0.895 / 5.90 |
+| M-forward | – | – | – | – | – | – |
+| M-instrument | – | – | – | – | – | – |
+| M-population | – | – | – | – | – | – |
+| S-region | – | – | – | – | – | – |
+| C-moist | – | – | – | – | – | – |
+| C-oil | – | – | – | – | – | – |
+| C-prot | – | – | – | – | – | – |
+| C-starch | – | – | – | – | – | – |

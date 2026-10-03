@@ -18,6 +18,8 @@ p.add_argument("--quick", action="store_true")
 p.add_argument("--out", default=os.path.join(RESULTS, "main"))
 a = p.parse_args()
 set_seed(a.seed)
+if not a.quick and os.path.exists(os.path.join(a.out, f"groups_{a.task}_seed{a.seed}.csv")):
+    print(f"{a.task} seed {a.seed} already complete; skipping"); sys.exit(0)
 log = get_logger(f"main_{a.task}_seed{a.seed}")
 task = get_task(a.task, quick=a.quick, seed=a.seed)
 if a.quick:

@@ -92,6 +92,20 @@ def get_task(name, quick=False, seed=0):
                 folds.append(dict(name=f"campaign{c}", train=np.where(_ud(tr, units, te))[0], test=np.where(te)[0],
                                   calib_group=m.block.to_numpy(), test_group=(m.campaign + "_b" + m.block).to_numpy()))
             cfg = dict(A_max=25, group_mode="group", log_target=True)
+        elif name == "ossl_kssl_to_lucas":
+            # cross-library / cross-instrument / cross-continent stress test: train KSSL, test LUCAS
+            k = L.load_ossl("KSSL.SSL"); lu = L.load_ossl("LUCAS.SSL")
+            import pandas as pd
+            mk = k.meta.assign(lib="KSSL"); ml = lu.meta.assign(lib="LUCAS")
+            ds = L.SpectralDataset("ossl_kssl_lucas", np.vstack([k.X, lu.X]), np.r_[k.y, lu.y], k.wl,
+                                   pd.concat([mk, ml], ignore_index=True), "organic carbon", "% w/w")
+            m = ds.meta
+            tr = (m.lib == "KSSL").to_numpy()   # KSSL calibration groups = survey projects (84)
+            te = ((m.lib == "LUCAS") & (m.block != "-1")).to_numpy()
+            cg = np.where(m.lib == "KSSL", "K_" + m.project, "L_" + m.block)
+            folds = [dict(name="KSSL_to_LUCAS", train=np.where(tr)[0], test=np.where(te)[0],
+                          calib_group=cg, test_group=("L" + m.block).to_numpy())]
+            cfg = dict(A_max=25, group_mode="group", log_target=True)
         else:
             raise ValueError(name)
         X = preprocess(ds.X, RECIPES["ossl"]).astype(np.float32)

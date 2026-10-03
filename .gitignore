@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.ckpt
+Target_Journal_Submission/code/results/main/partial/
+Target_Journal_Submission/code/results/robustness/tmp/
+Target_Journal_Submission/code/results_quick/
+Target_Journal_Submission/code/figures_quick/
+Target_Journal_Submission/code/tables_quick/
+*.parquet

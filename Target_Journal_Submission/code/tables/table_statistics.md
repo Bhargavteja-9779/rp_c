@@ -1,0 +1,16 @@
+**GC-D vs comparators: rank-biserial effect on interval score (Holm p)**
+
+| Scenario | SCP | ASTM-R | CV+ | CQR | WCP | G-W-A |
+|---|---|---|---|---|---|---|
+| M-season | -0.43 (1.000) | -0.36 (1.000) | -0.50 (1.000) | -0.71 (1.000) | -0.07 (1.000) | -0.36 (1.000) |
+| M-forward | – | – | – | – | – | – |
+| M-instrument | – | – | – | – | – | – |
+| M-population | – | – | – | – | – | – |
+| S-region | – | – | – | – | – | – |
+| C-moist | – | – | – | – | – | – |
+| C-oil | – | – | – | – | – | – |
+| C-prot | – | – | – | – | – | – |
+| C-starch | – | – | – | – | – | – |
+| S-campaign | – | – | – | – | – | – |
+| S-KSSL→LUCAS | – | – | – | – | – | – |
+| Tablets | – | – | – | – | – | – |

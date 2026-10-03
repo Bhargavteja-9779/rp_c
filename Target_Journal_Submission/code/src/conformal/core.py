@@ -32,9 +32,16 @@ def split_conformal_quantile(scores, alpha):
 # ---------------------------------------------------------------------------------------------
 # Difficulty (scale) models σ(x)
 # ---------------------------------------------------------------------------------------------
-def diag_features(T2, Q, q_ref):
-    """z = [log(1 + T²), log(Q / Q_ref)] — Q_ref is the median training Q of the same model."""
-    return np.c_[np.log1p(np.maximum(T2, 0)), np.log(np.maximum(Q, 1e-300) / q_ref)]
+def diag_features(T2, Q, q_ref, mode="both"):
+    """z = [log(1 + T²), log(Q / Q_ref)] — Q_ref is the median training Q of the same model.
+    ``mode`` ∈ {"both", "T2", "Q"} (sensitivity analysis)."""
+    z1 = np.log1p(np.maximum(T2, 0))
+    z2 = np.log(np.maximum(Q, 1e-300) / q_ref)
+    if mode == "T2":
+        return z1[:, None]
+    if mode == "Q":
+        return z2[:, None]
+    return np.c_[z1, z2]
 
 
 class DiagnosticScale:

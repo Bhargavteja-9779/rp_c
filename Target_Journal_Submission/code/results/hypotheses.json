@@ -1,0 +1,31 @@
+{
+ "H1": {
+  "statement": "SCP group-averaged coverage < 0.85 on at least one shift task",
+  "values": {
+   "mango_season_loso": 0.8231
+  },
+  "supported": true
+ },
+ "H2": {
+  "statement": "GC-D group-averaged coverage in [0.87, 0.95] on every task with >= 10 training groups",
+  "tasks_with_ge10_groups": [],
+  "values": {
+   "mango_season_loso": 0.8954
+  },
+  "supported": true,
+  "per_task": {}
+ },
+ "H3": {
+  "statement": "Diagnostic normalisation lowers interval score vs. absolute scores (GC-D vs G-W-A)",
+  "per_task": {
+   "mango_season_loso": {
+    "median_diff": -0.1016,
+    "r_rb": -0.357,
+    "p_holm": 1.0
+   }
+  },
+  "n_tasks_lower": 1,
+  "n_tasks_significant_lower": 0,
+  "n_tasks": 1
+ }
+}

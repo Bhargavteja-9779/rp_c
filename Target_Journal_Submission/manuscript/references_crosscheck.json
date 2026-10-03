@@ -1,0 +1,576 @@
+{
+ "walsh2020": {
+  "doi": "10.1016/j.postharvbio.2020.111246",
+  "authors": [
+   "K. Walsh",
+   "J. Blasco",
+   "M. Zude-Sasse",
+   "X. Sun"
+  ],
+  "volume": "168",
+  "pages": "111246",
+  "year": 2020,
+  "title": "Visible-NIR ‘point’ spectroscopy in postharvest fruit and vegetable assessment: The science behind three decades of commercial use",
+  "journal": "Postharvest Biology and Technology"
+ },
+ "wold2001": {
+  "doi": "10.1016/S0169-7439(01)00155-1",
+  "authors": [
+   "S. Wold",
+   "M. Sjöström",
+   "L. Eriksson"
+  ],
+  "volume": "58",
+  "pages": "109-130",
+  "year": 2001,
+  "title": "PLS-regression: a basic tool of chemometrics",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "astm1655": {
+  "doi": "10.1520/E1655-17",
+  "authors": [
+   ". "
+  ],
+  "volume": null,
+  "pages": null,
+  "year": null,
+  "title": "Practices for Infrared Multivariate Quantitative Analysis",
+  "journal": ""
+ },
+ "faber1997": {
+  "doi": "10.1002/(SICI)1099-128X(199705)11:3<181::AID-CEM459>3.0.CO;2-7",
+  "authors": [
+   "K. Faber",
+   "B. Kowalski"
+  ],
+  "volume": "11",
+  "pages": "181-238",
+  "year": 1997,
+  "title": "Propagation of measurement errors for the validation of predictions obtained by principal component regression and partial least squares",
+  "journal": "Journal of Chemometrics"
+ },
+ "denham1997": {
+  "doi": "10.1002/(SICI)1099-128X(199701)11:1<39::AID-CEM433>3.0.CO;2-S",
+  "authors": [
+   "M. Denham"
+  ],
+  "volume": "11",
+  "pages": "39-52",
+  "year": 1997,
+  "title": "Prediction intervals in partial least squares",
+  "journal": "Journal of Chemometrics"
+ },
+ "fernandez2003": {
+  "doi": "10.1016/S0169-7439(02)00139-9",
+  "authors": [
+   "J. Fernández Pierna",
+   "L. Jin",
+   "F. Wahl",
+   "N. Faber",
+   "D. Massart"
+  ],
+  "volume": "65",
+  "pages": "281-291",
+  "year": 2003,
+  "title": "Estimation of partial least squares regression prediction uncertainty when the reference values carry a sizeable measurement error",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "zhang2009": {
+  "doi": "10.1016/j.chemolab.2009.03.007",
+  "authors": [
+   "L. Zhang",
+   "S. Garcia-Munoz"
+  ],
+  "volume": "97",
+  "pages": "152-158",
+  "year": 2009,
+  "title": "A comparison of different methods to estimate prediction uncertainty using Partial Least Squares (PLS): A practitioner's perspective",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "romera2010": {
+  "doi": "10.1016/j.chemolab.2010.06.007",
+  "authors": [
+   "R. Romera"
+  ],
+  "volume": "103",
+  "pages": "122-128",
+  "year": 2010,
+  "title": "Prediction intervals in Partial Least Squares regression via a new local linearization approach",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "vovk2005": {
+  "doi": "10.1007/b106715",
+  "authors": [],
+  "volume": null,
+  "pages": null,
+  "year": 2005,
+  "title": "Algorithmic Learning in a Random World",
+  "journal": ""
+ },
+ "lei2018": {
+  "doi": "10.1080/01621459.2017.1307116",
+  "authors": [
+   "J. Lei",
+   "M. G’Sell",
+   "A. Rinaldo",
+   "R. Tibshirani",
+   "L. Wasserman"
+  ],
+  "volume": "113",
+  "pages": "1094-1111",
+  "year": 2018,
+  "title": "Distribution-Free Predictive Inference for Regression",
+  "journal": "Journal of the American Statistical Association"
+ },
+ "angelopoulos2023": {
+  "doi": "10.1561/2200000101",
+  "authors": [
+   "A. Angelopoulos",
+   "S. Bates"
+  ],
+  "volume": "16",
+  "pages": "494-591",
+  "year": 2023,
+  "title": "Conformal Prediction: A Gentle Introduction",
+  "journal": "Foundations and Trends® in Machine Learning"
+ },
+ "norinder2014": {
+  "doi": "10.1021/ci5001168",
+  "authors": [
+   "U. Norinder",
+   "L. Carlsson",
+   "S. Boyer",
+   "M. Eklund"
+  ],
+  "volume": "54",
+  "pages": "1596-1603",
+  "year": 2014,
+  "title": "Introducing Conformal Prediction in Predictive Modeling. A Transparent and Flexible Alternative to Applicability Domain Determination",
+  "journal": "Journal of Chemical Information and Modeling"
+ },
+ "lin2022": {
+  "doi": "10.1002/cem.3457",
+  "authors": [
+   "Y. Lin",
+   "C. Xu",
+   "Z. Zhou",
+   "L. Shen",
+   "S. Huang"
+  ],
+  "volume": "36",
+  "pages": "e3457",
+  "year": 2022,
+  "title": "Distribution‐free predictive inference for partial least squares regression with applications to molecular descriptors datasets",
+  "journal": "Journal of Chemometrics"
+ },
+ "jovic2025": {
+  "doi": "10.1016/j.foodchem.2025.145387",
+  "authors": [
+   "O. Jovic"
+  ],
+  "volume": "492",
+  "pages": "145387",
+  "year": 2025,
+  "title": "Conformal predictors in chemometric study of mid-infrared food adulteration: quantification of prediction uncertainty",
+  "journal": "Food Chemistry"
+ },
+ "wiens2026": {
+  "doi": "10.1021/acs.analchem.5c04616",
+  "authors": [
+   "J. Wiens",
+   "N. Solomatova",
+   "S. Shokatian"
+  ],
+  "volume": "98",
+  "pages": "309-316",
+  "year": 2026,
+  "title": "Calibrated Uncertainty Estimation for Soil Organic Carbon from Raman Spectra",
+  "journal": "Analytical Chemistry"
+ },
+ "cui2026ssrn": {
+  "doi": "10.2139/ssrn.7528488",
+  "authors": [
+   "H. Cui",
+   "Y. Qiao",
+   "C. Sun"
+  ],
+  "volume": null,
+  "pages": null,
+  "year": 2026,
+  "title": "Aggregated Inductive Conformal Prediction for Distribution-Free Uncertainty Quantification in Near-Infrared Spectroscopy: Application to Botanical Adulteration",
+  "journal": ""
+ },
+ "parham2026": {
+  "doi": "10.1021/acsmeasuresciau.6c00002",
+  "authors": [
+   "R. Parham",
+   "E. Ochoa Rivera",
+   "A. Ayala",
+   "M. Clough",
+   "Y. Patel",
+   "A. McNeil",
+   "A. Tewari",
+   "A. Ault"
+  ],
+  "volume": "6",
+  "pages": "690-702",
+  "year": 2026,
+  "title": "Improved Microplastic Identification from Simultaneously\nCollected Photothermal Infrared and Raman Spectra Using Multiview\nConformal Prediction",
+  "journal": "ACS Measurement Science Au"
+ },
+ "feudale2002": {
+  "doi": "10.1016/S0169-7439(02)00085-0",
+  "authors": [
+   "R. Feudale",
+   "N. Woody",
+   "H. Tan",
+   "A. Myles",
+   "S. Brown",
+   "J. Ferré"
+  ],
+  "volume": "64",
+  "pages": "181-192",
+  "year": 2002,
+  "title": "Transfer of multivariate calibration models: a review",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "workman2018": {
+  "doi": "10.1177/0003702817736064",
+  "authors": [
+   "J. Workman"
+  ],
+  "volume": "72",
+  "pages": "340-365",
+  "year": 2018,
+  "title": "A Review of Calibration Transfer Practices and Instrument Differences in Spectroscopy",
+  "journal": "Applied Spectroscopy"
+ },
+ "nikzad2018": {
+  "doi": "10.1021/acs.analchem.8b00498",
+  "authors": [
+   "R. Nikzad-Langerodi",
+   "W. Zellinger",
+   "E. Lughofer",
+   "S. Saminger-Platz"
+  ],
+  "volume": "90",
+  "pages": "6693-6701",
+  "year": 2018,
+  "title": "Domain-Invariant Partial-Least-Squares Regression",
+  "journal": "Analytical Chemistry"
+ },
+ "mikulasek2023": {
+  "doi": "10.1002/cem.3477",
+  "authors": [
+   "B. Mikulasek",
+   "V. Fonseca Diaz",
+   "D. Gabauer",
+   "C. Herwig",
+   "R. Nikzad‐Langerodi"
+  ],
+  "volume": "37",
+  "pages": "e3477",
+  "year": 2023,
+  "title": "Partial least squares regression with multiple domains",
+  "journal": "Journal of Chemometrics"
+ },
+ "anderson2020": {
+  "doi": "10.1016/j.postharvbio.2020.111202",
+  "authors": [
+   "N. Anderson",
+   "K. Walsh",
+   "P. Subedi",
+   "C. Hayes"
+  ],
+  "volume": "168",
+  "pages": "111202",
+  "year": 2020,
+  "title": "Achieving robustness across season, location and cultivar for a NIRS model for intact mango fruit dry matter content",
+  "journal": "Postharvest Biology and Technology"
+ },
+ "anderson2021": {
+  "doi": "10.1016/j.postharvbio.2020.111358",
+  "authors": [
+   "N. Anderson",
+   "K. Walsh",
+   "J. Flynn",
+   "J. Walsh"
+  ],
+  "volume": "171",
+  "pages": "111358",
+  "year": 2021,
+  "title": "Achieving robustness across season, location and cultivar for a NIRS model for intact mango fruit dry matter content. II. Local PLS and nonlinear models",
+  "journal": "Postharvest Biology and Technology"
+ },
+ "sun2020": {
+  "doi": "10.1016/j.postharvbio.2019.111117",
+  "authors": [
+   "X. Sun",
+   "P. Subedi",
+   "K. Walsh"
+  ],
+  "volume": "162",
+  "pages": "111117",
+  "year": 2020,
+  "title": "Achieving robustness to temperature change of a NIRS-PLSR model for intact mango fruit dry matter content",
+  "journal": "Postharvest Biology and Technology"
+ },
+ "mishra2021": {
+  "doi": "10.1016/j.chemolab.2021.104287",
+  "authors": [
+   "P. Mishra",
+   "D. Passos"
+  ],
+  "volume": "212",
+  "pages": "104287",
+  "year": 2021,
+  "title": "A synergistic use of chemometrics and deep learning improved the predictive performance of near-infrared spectroscopy models for dry matter prediction in mango fruit",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "cui2018": {
+  "doi": "10.1016/j.chemolab.2018.07.008",
+  "authors": [
+   "C. Cui",
+   "T. Fearn"
+  ],
+  "volume": "182",
+  "pages": "9-20",
+  "year": 2018,
+  "title": "Modern practical convolutional neural networks for multivariate regression: Applications to NIR calibration",
+  "journal": "Chemometrics and Intelligent Laboratory Systems"
+ },
+ "barber2023": {
+  "doi": "10.1214/23-AOS2276",
+  "authors": [
+   "R. Barber",
+   "E. Candès",
+   "A. Ramdas",
+   "R. Tibshirani"
+  ],
+  "volume": "51",
+  "pages": null,
+  "year": 2023,
+  "title": "Conformal prediction beyond exchangeability",
+  "journal": "The Annals of Statistics"
+ },
+ "fannjiang2022": {
+  "doi": "10.1073/pnas.2204569119",
+  "authors": [
+   "C. Fannjiang",
+   "S. Bates",
+   "A. Angelopoulos",
+   "J. Listgarten",
+   "M. Jordan"
+  ],
+  "volume": "119",
+  "pages": "e2204569119",
+  "year": 2022,
+  "title": "Conformal prediction under feedback covariate shift for biomolecular design",
+  "journal": "Proceedings of the National Academy of Sciences"
+ },
+ "dunn2023": {
+  "doi": "10.1080/01621459.2022.2060112",
+  "authors": [
+   "R. Dunn",
+   "L. Wasserman",
+   "A. Ramdas"
+  ],
+  "volume": "118",
+  "pages": "2491-2502",
+  "year": 2023,
+  "title": "Distribution-Free Prediction Sets for Two-Layer Hierarchical Models",
+  "journal": "Journal of the American Statistical Association"
+ },
+ "lee2026": {
+  "doi": "10.1145/3786352",
+  "authors": [
+   "Y. Lee",
+   "R. Barber",
+   "R. Willett"
+  ],
+  "volume": null,
+  "pages": "3786352",
+  "year": 2026,
+  "title": "Distribution-free inference with hierarchical data",
+  "journal": "ACM Journal of Data Science"
+ },
+ "barber2021": {
+  "doi": "10.1214/20-AOS1965",
+  "authors": [
+   "R. Barber",
+   "E. Candès",
+   "A. Ramdas",
+   "R. Tibshirani"
+  ],
+  "volume": "49",
+  "pages": null,
+  "year": 2021,
+  "title": "Predictive inference with the jackknife+",
+  "journal": "The Annals of Statistics"
+ },
+ "papadopoulos2011": {
+  "doi": "10.1613/jair.3198",
+  "authors": [
+   "H. Papadopoulos",
+   "V. Vovk",
+   "A. Gammerman"
+  ],
+  "volume": "40",
+  "pages": "815-840",
+  "year": 2011,
+  "title": "Regression Conformal Prediction with Nearest Neighbours",
+  "journal": "Journal of Artificial Intelligence Research"
+ },
+ "jackson1979": {
+  "doi": "10.1080/00401706.1979.10489779",
+  "authors": [
+   "J. Jackson",
+   "G. Mudholkar"
+  ],
+  "volume": "21",
+  "pages": "341-349",
+  "year": 1979,
+  "title": "Control Procedures for Residuals Associated With Principal Component Analysis",
+  "journal": "Technometrics"
+ },
+ "savitzky1964": {
+  "doi": "10.1021/ac60214a047",
+  "authors": [
+   "A. Savitzky",
+   "M. Golay"
+  ],
+  "volume": "36",
+  "pages": "1627-1639",
+  "year": 1964,
+  "title": "Smoothing and Differentiation of Data by Simplified Least Squares Procedures.",
+  "journal": "Analytical Chemistry"
+ },
+ "barnes1989": {
+  "doi": "10.1366/0003702894202201",
+  "authors": [
+   "R. Barnes",
+   "M. Dhanoa",
+   "S. Lister"
+  ],
+  "volume": "43",
+  "pages": "772-777",
+  "year": 1989,
+  "title": "Standard Normal Variate Transformation and De-Trending of Near-Infrared Diffuse Reflectance Spectra",
+  "journal": "Applied Spectroscopy"
+ },
+ "gneiting2007": {
+  "doi": "10.1198/016214506000001437",
+  "authors": [
+   "T. Gneiting",
+   "A. Raftery"
+  ],
+  "volume": "102",
+  "pages": "359-378",
+  "year": 2007,
+  "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+  "journal": "Journal of the American Statistical Association"
+ },
+ "safanelli2025": {
+  "doi": "10.1371/journal.pone.0296545",
+  "authors": [
+   "J. Safanelli",
+   "T. Hengl",
+   "L. Parente",
+   "R. Minarik",
+   "D. Bloom",
+   "K. Todd-Brown",
+   "A. Gholizadeh",
+   "W. Mendes",
+   "J. Sanderman"
+  ],
+  "volume": "20",
+  "pages": "e0296545",
+  "year": 2025,
+  "title": "Open Soil Spectral Library (OSSL): Building reproducible soil calibration models through open development and community engagement",
+  "journal": "PLOS ONE"
+ },
+ "orgiazzi2018": {
+  "doi": "10.1111/ejss.12499",
+  "authors": [
+   "A. Orgiazzi",
+   "C. Ballabio",
+   "P. Panagos",
+   "A. Jones",
+   "O. Fernández‐Ugalde"
+  ],
+  "volume": "69",
+  "pages": "140-153",
+  "year": 2018,
+  "title": "LUCAS Soil, the largest expandable soil dataset for Europe: a review",
+  "journal": "European Journal of Soil Science"
+ },
+ "roberts2017": {
+  "doi": "10.1111/ecog.02881",
+  "authors": [
+   "D. Roberts",
+   "V. Bahn",
+   "S. Ciuti",
+   "M. Boyce",
+   "J. Elith",
+   "G. Guillera‐Arroita",
+   "S. Hauenstein",
+   "J. Lahoz‐Monfort",
+   "B. Schröder",
+   "W. Thuiller",
+   "D. Warton",
+   "B. Wintle",
+   "F. Hartig",
+   "C. Dormann"
+  ],
+  "volume": "40",
+  "pages": "913-929",
+  "year": 2017,
+  "title": "Cross‐validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure",
+  "journal": "Ecography"
+ },
+ "wilcoxon1945": {
+  "doi": "10.2307/3001968",
+  "authors": [
+   "F. Wilcoxon"
+  ],
+  "volume": "1",
+  "pages": "80",
+  "year": 1945,
+  "title": "Individual Comparisons by Ranking Methods",
+  "journal": "Biometrics Bulletin"
+ },
+ "kerby2014": {
+  "doi": "10.2466/11.IT.3.1",
+  "authors": [
+   "D. Kerby"
+  ],
+  "volume": "3",
+  "pages": "11.IT.3.1",
+  "year": 2014,
+  "title": "The Simple Difference Formula: An Approach to Teaching Nonparametric Correlation",
+  "journal": "Comprehensive Psychology"
+ },
+ "breiman1996": {
+  "doi": "10.1007/BF00058655",
+  "authors": [
+   "L. Breiman"
+  ],
+  "volume": "24",
+  "pages": "123-140",
+  "year": 1996,
+  "title": "Bagging predictors",
+  "journal": "Machine Learning"
+ },
+ "rasmussen2006": {
+  "doi": "10.7551/mitpress/3206.001.0001",
+  "authors": [
+   "C. Rasmussen",
+   "C. Williams"
+  ],
+  "volume": null,
+  "pages": null,
+  "year": 2005,
+  "title": "Gaussian Processes for Machine Learning",
+  "journal": ""
+ }
+}

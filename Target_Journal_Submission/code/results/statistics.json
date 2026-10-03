@@ -1,0 +1,296 @@
+{
+ "comparisons": [
+  {
+   "task": "mango_season_loso",
+   "comparator": "ASTM-G",
+   "n_groups": 7,
+   "IS_median_diff": -0.18241333569463247,
+   "IS_r_rb": -0.35714285714285715,
+   "IS_p": 0.46875,
+   "covgap_median_diff": -0.00017844396859389988,
+   "covgap_r_rb": 0.14285714285714285,
+   "covgap_p": 0.8125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "ASTM-R",
+   "n_groups": 7,
+   "IS_median_diff": -0.049734670860122066,
+   "IS_r_rb": -0.35714285714285715,
+   "IS_p": 0.46875,
+   "covgap_median_diff": -0.06459671663097788,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "BAG",
+   "n_groups": 7,
+   "IS_median_diff": -0.06246579332476543,
+   "IS_r_rb": -0.2857142857142857,
+   "IS_p": 0.578125,
+   "covgap_median_diff": -0.06638115631691643,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "CQR",
+   "n_groups": 7,
+   "IS_median_diff": -0.5050464208286423,
+   "IS_r_rb": -0.7142857142857143,
+   "IS_p": 0.109375,
+   "covgap_median_diff": -0.10367594575303352,
+   "covgap_r_rb": -0.6428571428571429,
+   "covgap_p": 0.15625,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "CV+",
+   "n_groups": 7,
+   "IS_median_diff": -0.08055433303864667,
+   "IS_r_rb": -0.5,
+   "IS_p": 0.296875,
+   "covgap_median_diff": -0.0728051391862955,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "G-U-A",
+   "n_groups": 7,
+   "IS_median_diff": 0.054402940502300545,
+   "IS_r_rb": 0.0,
+   "IS_p": 1.0,
+   "covgap_median_diff": -0.015498652291105142,
+   "covgap_r_rb": -0.7142857142857143,
+   "covgap_p": 0.15625,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "G-U-D",
+   "n_groups": 7,
+   "IS_median_diff": -0.046470638985981694,
+   "IS_r_rb": -0.21428571428571427,
+   "IS_p": 0.6875,
+   "covgap_median_diff": -0.018418688230009028,
+   "covgap_r_rb": -0.5714285714285714,
+   "covgap_p": 0.21875,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "G-W-A",
+   "n_groups": 7,
+   "IS_median_diff": -0.10158434689302798,
+   "IS_r_rb": -0.35714285714285715,
+   "IS_p": 0.46875,
+   "covgap_median_diff": 0.0015377855887521719,
+   "covgap_r_rb": 0.35714285714285715,
+   "covgap_p": 0.46875,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "GC-D+",
+   "n_groups": 7,
+   "IS_median_diff": -999999993.9315916,
+   "IS_r_rb": -1.0,
+   "IS_p": 0.015625,
+   "covgap_median_diff": -0.03309352517985609,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.3125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "GPR",
+   "n_groups": 7,
+   "IS_median_diff": -0.2878345272292231,
+   "IS_r_rb": -0.5,
+   "IS_p": 0.296875,
+   "covgap_median_diff": -0.07232704402515722,
+   "covgap_r_rb": -0.6428571428571429,
+   "covgap_p": 0.15625,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "HCP-A",
+   "n_groups": 7,
+   "IS_median_diff": -999999993.9315916,
+   "IS_r_rb": -1.0,
+   "IS_p": 0.015625,
+   "covgap_median_diff": -0.03309352517985609,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.3125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "HCP-D",
+   "n_groups": 7,
+   "IS_median_diff": -999999993.9315916,
+   "IS_r_rb": -1.0,
+   "IS_p": 0.015625,
+   "covgap_median_diff": -0.03309352517985609,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.3125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "HJ+",
+   "n_groups": 7,
+   "IS_median_diff": -999999993.9315916,
+   "IS_r_rb": -1.0,
+   "IS_p": 0.015625,
+   "covgap_median_diff": -0.03309352517985609,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.3125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "HJ+-D",
+   "n_groups": 7,
+   "IS_median_diff": -999999993.9315916,
+   "IS_r_rb": -1.0,
+   "IS_p": 0.015625,
+   "covgap_median_diff": -0.03309352517985609,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.3125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "NCP-kNN",
+   "n_groups": 7,
+   "IS_median_diff": -0.35206313964470937,
+   "IS_r_rb": -0.5,
+   "IS_p": 0.296875,
+   "covgap_median_diff": -0.08198562443845459,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "QGB",
+   "n_groups": 7,
+   "IS_median_diff": -0.8003918834558181,
+   "IS_r_rb": -0.8571428571428571,
+   "IS_p": 0.046875,
+   "covgap_median_diff": -0.15827980014275522,
+   "covgap_r_rb": -0.9285714285714286,
+   "covgap_p": 0.03125,
+   "IS_p_holm": 0.703125,
+   "covgap_p_holm": 0.625
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "R-U-A",
+   "n_groups": 7,
+   "IS_median_diff": -0.08124306051904906,
+   "IS_r_rb": -0.5,
+   "IS_p": 0.296875,
+   "covgap_median_diff": -0.07512491077801564,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "R-U-D",
+   "n_groups": 7,
+   "IS_median_diff": -0.04893835708556349,
+   "IS_r_rb": -0.2857142857142857,
+   "IS_p": 0.578125,
+   "covgap_median_diff": -0.0478436657681941,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "SCP",
+   "n_groups": 7,
+   "IS_median_diff": -0.18061276461291698,
+   "IS_r_rb": -0.42857142857142855,
+   "IS_p": 0.375,
+   "covgap_median_diff": -0.0679871520342612,
+   "covgap_r_rb": -0.7857142857142857,
+   "covgap_p": 0.078125,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  },
+  {
+   "task": "mango_season_loso",
+   "comparator": "WCP",
+   "n_groups": 7,
+   "IS_median_diff": 0.0484063101706429,
+   "IS_r_rb": -0.07142857142857142,
+   "IS_p": 0.9375,
+   "covgap_median_diff": -0.0003967024112068174,
+   "covgap_r_rb": -0.21428571428571427,
+   "covgap_p": 0.6875,
+   "IS_p_holm": 1.0,
+   "covgap_p_holm": 1.0
+  }
+ ],
+ "hypotheses": {
+  "H1": {
+   "statement": "SCP group-averaged coverage < 0.85 on at least one shift task",
+   "values": {
+    "mango_season_loso": 0.8231
+   },
+   "supported": true
+  },
+  "H2": {
+   "statement": "GC-D group-averaged coverage in [0.87, 0.95] on every task with >= 10 training groups",
+   "tasks_with_ge10_groups": [],
+   "values": {
+    "mango_season_loso": 0.8954
+   },
+   "supported": true,
+   "per_task": {}
+  },
+  "H3": {
+   "statement": "Diagnostic normalisation lowers interval score vs. absolute scores (GC-D vs G-W-A)",
+   "per_task": {
+    "mango_season_loso": {
+     "median_diff": -0.1016,
+     "r_rb": -0.357,
+     "p_holm": 1.0
+    }
+   },
+   "n_tasks_lower": 1,
+   "n_tasks_significant_lower": 0,
+   "n_tasks": 1
+  }
+ },
+ "test": "two-sided Wilcoxon signed-rank (exact if <=25 non-zero pairs), unit = held-out group, per-group values averaged over seeds; Holm correction across comparators within task; effect size = matched-pairs rank-biserial correlation (negative = GC-D lower)"
+}

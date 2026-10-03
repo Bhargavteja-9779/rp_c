@@ -42,6 +42,8 @@ class FoldContext:
         self.gw = group_balanced_weights(self.gtr)
         A, self.rmsecv_curve_g = self.gcf.choose_A(weights=self.gw)
         self.A = A if A_fixed is None else A_fixed
+        if cfg.get('A_offset'):
+            self.A = int(np.clip(self.A + cfg['A_offset'], 1, self.A_max))
         self.timing["group_cv"] = time.time() - t0
         # ---- final model on all training data
         t0 = time.time()
@@ -90,9 +92,16 @@ class FoldContext:
     def _scale_model(self, cf):
         r, T2, Q = self._oof(cf)
         ok = cf.covered
-        Z = diag_features(T2[ok], Q[ok], self.Qref)
-        sm = DiagnosticScale().fit(Z, np.abs(r[ok]))
+        Z = diag_features(T2[ok], Q[ok], self.Qref, self.cfg.get('diag_mode', 'both'))
+        sm = DiagnosticScale(self.cfg.get('floor_frac', 0.1)).fit(Z, np.abs(r[ok]))
         return sm, r, T2, Q
+
+
+def _memo(ctx, key, fn):
+    """Cache alpha-independent computations on the context (same result for every alpha)."""
+    if key not in ctx.__dict__:
+        ctx.__dict__[key] = fn()
+    return ctx.__dict__[key]
 
 
 # ======================================================================================
@@ -121,14 +130,16 @@ def m_scp(ctx, alpha):
 def m_ncp_knn(ctx, alpha):
     """Normalised split CP with kNN difficulty in PLS-score space (Papadopoulos et al.)."""
     sp = ctx.split
-    m = sp["model"]
-    pr = ~sp["cal"]
-    # out-of-fold residuals of the proper training set (internal 5-fold, unit-grouped)
-    folds = make_folds(ctx.gtr[pr], ctx.utr[pr], "random", n_folds=5, seed=ctx.seed)
-    cf = CrossFit(ctx.Xtr[pr], ctx.ytr[pr], folds, ctx.A)
-    rpr = np.abs(ctx.ytr[pr] - cf.oof_at(ctx.A))
-    ks = KNNScale().fit(sp["dpr"]["scores"], rpr)
-    sig_cal = ks.predict(sp["dcal"]["scores"]); sig_te = ks.predict(sp["dte"]["scores"])
+
+    def _fit():
+        pr = ~sp["cal"]
+        # out-of-fold residuals of the proper training set (internal 5-fold, unit-grouped)
+        folds = make_folds(ctx.gtr[pr], ctx.utr[pr], "random", n_folds=5, seed=ctx.seed)
+        cf = CrossFit(ctx.Xtr[pr], ctx.ytr[pr], folds, ctx.A)
+        rpr = np.abs(ctx.ytr[pr] - cf.oof_at(ctx.A))
+        ks = KNNScale().fit(sp["dpr"]["scores"], rpr)
+        return ks.predict(sp["dcal"]["scores"]), ks.predict(sp["dte"]["scores"])
+    sig_cal, sig_te = _memo(ctx, "ncp_knn", _fit)
     s = np.abs(ctx.ytr[sp["cal"]] - sp["cal_pred"]) / sig_cal
     q = split_conformal_quantile(s, alpha)
     return sp["te_pred"] - q * sig_te, sp["te_pred"] + q * sig_te
@@ -138,7 +149,7 @@ def m_cvplus(ctx, alpha):
     """CV+ (Barber et al. 2021) with random unit-grouped folds (jackknife+ family; cf. Lin et al. 2022)."""
     cf = ctx.rcf
     r = np.abs(ctx.ytr - cf.oof_at(ctx.A))
-    mu, _, _ = cf.fold_predict(ctx.Xte, ctx.A)
+    mu, _, _ = _memo(ctx, "rcf_fold_predict", lambda: cf.fold_predict(ctx.Xte, ctx.A))
     w = np.ones(len(r))
     return jackknife_plus_interval(mu, np.ones_like(mu), r, cf.fold_id, w, alpha, inf_mass=1.0)
 
@@ -156,16 +167,19 @@ def m_wcp(ctx, alpha, max_n=20000):
     Ft = np.c_[sp["dte"]["scores"], np.log(sp["dte"]["Q"] / sp["Qref"])]
     mu, sd = Fc.mean(0), Fc.std(0) + 1e-12
     Fc, Ft = (Fc - mu) / sd, (Ft - mu) / sd
-    rng = np.random.default_rng(ctx.seed)
-    for g in np.unique(ctx.gte):
-        te = np.where(ctx.gte == g)[0]
-        ic = rng.choice(len(Fc), size=min(len(Fc), max_n), replace=False)
-        it = rng.choice(te, size=min(len(te), max_n), replace=False)
-        Xc = np.r_[Fc[ic], Ft[it]]; yc = np.r_[np.zeros(len(ic)), np.ones(len(it))]
-        clf = LogisticRegression(C=1.0, max_iter=1000).fit(Xc, yc)
-        prior = len(ic) / len(it)
-        w_cal = np.exp(clf.decision_function(Fc)) * prior
-        w_te = np.exp(clf.decision_function(Ft[te])) * prior
+    def _weights():
+        rng = np.random.default_rng(ctx.seed)
+        out = {}
+        for g in np.unique(ctx.gte):
+            te = np.where(ctx.gte == g)[0]
+            ic = rng.choice(len(Fc), size=min(len(Fc), max_n), replace=False)
+            it = rng.choice(te, size=min(len(te), max_n), replace=False)
+            Xc = np.r_[Fc[ic], Ft[it]]; yc = np.r_[np.zeros(len(ic)), np.ones(len(it))]
+            clf = LogisticRegression(C=1.0, max_iter=1000).fit(Xc, yc)
+            prior = len(ic) / len(it)
+            out[g] = (te, np.exp(clf.decision_function(Fc)) * prior, np.exp(clf.decision_function(Ft[te])) * prior)
+        return out
+    for g, (te, w_cal, w_te) in _memo(ctx, "wcp_weights", _weights).items():
         o = np.argsort(s_cal); s_sorted = s_cal[o]; cw = np.cumsum(w_cal[o])
         tot = cw[-1] + w_te
         k = np.searchsorted(cw, (1 - alpha) * tot - 1e-12, side="left")
@@ -178,20 +192,29 @@ def m_gpr(ctx, alpha, n_sub=1000):
     """Gaussian-process regression on standardised PLS scores (RBF + white noise kernel)."""
     from sklearn.gaussian_process import GaussianProcessRegressor
     from sklearn.gaussian_process.kernels import RBF, ConstantKernel, WhiteKernel
-    S = ctx.model.diagnostics(ctx.Xtr)["scores"]
-    mu, sd = S.mean(0), S.std(0) + 1e-12
-    rng = np.random.default_rng(ctx.seed)
-    idx = rng.choice(len(S), size=min(n_sub, len(S)), replace=False)
-    k = ConstantKernel(1.0) * RBF(length_scale=np.ones(S.shape[1]) * 3.0) + WhiteKernel(0.1)
-    gp = GaussianProcessRegressor(kernel=k, normalize_y=True, random_state=ctx.seed, n_restarts_optimizer=0)
-    gp.fit((S[idx] - mu) / sd, ctx.ytr[idx])
-    m, s = gp.predict((ctx.Ste - mu) / sd, return_std=True)
+
+    def _fit():
+        S = ctx.model.diagnostics(ctx.Xtr)["scores"]
+        mu, sd = S.mean(0), S.std(0) + 1e-12
+        rng = np.random.default_rng(ctx.seed)
+        idx = rng.choice(len(S), size=min(n_sub, len(S)), replace=False)
+        k = ConstantKernel(1.0) * RBF(length_scale=np.ones(S.shape[1]) * 3.0) + WhiteKernel(0.1)
+        gp = GaussianProcessRegressor(kernel=k, normalize_y=True, random_state=ctx.seed, n_restarts_optimizer=0)
+        gp.fit((S[idx] - mu) / sd, ctx.ytr[idx])
+        return gp.predict((ctx.Ste - mu) / sd, return_std=True)
+    m, s = _memo(ctx, "gpr", _fit)
     z = stats.norm.ppf(1 - alpha / 2)
     return m - z * s, m + z * s
 
 
 def m_bagging(ctx, alpha, B=25):
     """Bagged PLS (unit-level bootstrap). σ²(x) = var_bag(x) + mean OOB squared residual."""
+    c, sd = _memo(ctx, "bagging", lambda: _bag_fit(ctx, B))
+    z = stats.norm.ppf(1 - alpha / 2)
+    return c - z * sd, c + z * sd
+
+
+def _bag_fit(ctx, B):
     rng = np.random.default_rng(ctx.seed)
     uu, inv = np.unique(ctx.utr, return_inverse=True)
     preds = np.empty((B, len(ctx.yte)))
@@ -206,10 +229,7 @@ def m_bagging(ctx, alpha, B=25):
         oob_sum[oob] += m.predict(ctx.Xtr[oob], ctx.A); oob_cnt[oob] += 1
     ok = oob_cnt > 0
     s2 = np.mean((ctx.ytr[ok] - oob_sum[ok] / oob_cnt[ok]) ** 2)
-    c = preds.mean(0)
-    sd = np.sqrt(preds.var(0, ddof=1) + s2)
-    z = stats.norm.ppf(1 - alpha / 2)
-    return c - z * sd, c + z * sd
+    return preds.mean(0), np.sqrt(preds.var(0, ddof=1) + s2)
 
 
 def _qgb_models(ctx, alpha):
@@ -284,8 +304,8 @@ def m_crossfit_family(ctx, alpha, folds="G", weights="W", score="D", finite_corr
         if key not in ctx.__dict__:
             ctx.__dict__[key] = ctx._scale_model(cf)
         sm, _, T2, Q = ctx.__dict__[key]
-        sig_cal = sm.predict(diag_features(T2[ok], Q[ok], ctx.Qref))
-        sig_te = sm.predict(diag_features(ctx.T2te, ctx.Qte, ctx.Qref))
+        sig_cal = sm.predict(diag_features(T2[ok], Q[ok], ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
+        sig_te = sm.predict(diag_features(ctx.T2te, ctx.Qte, ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
     else:
         sig_cal = np.ones(ok.sum()); sig_te = np.ones(len(ctx.yte))
     s = np.abs(r[ok]) / sig_cal
@@ -304,14 +324,14 @@ def m_gc_jplus(ctx, alpha, score="A"):
     _, counts = np.unique(ctx.gtr, return_counts=True)
     gi = {g: c for g, c in zip(*np.unique(ctx.gtr, return_counts=True))}
     w = np.array([1.0 / ((K + 1) * gi[g]) for g in ctx.gtr])
-    mu, T2f, Qf = cf.fold_predict(ctx.Xte, ctx.A)
+    mu, T2f, Qf = _memo(ctx, "gcf_fold_predict", lambda: cf.fold_predict(ctx.Xte, ctx.A))
     if score == "D":
         key = ("scale", "G")
         if key not in ctx.__dict__:
             ctx.__dict__[key] = ctx._scale_model(cf)
         sm, _, T2, Q = ctx.__dict__[key]
-        sig_cal = sm.predict(diag_features(T2, Q, ctx.Qref))
-        sig = np.stack([sm.predict(diag_features(T2f[k], Qf[k], ctx.Qref)) for k in range(len(cf.models))])
+        sig_cal = sm.predict(diag_features(T2, Q, ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
+        sig = np.stack([sm.predict(diag_features(T2f[k], Qf[k], ctx.Qref, ctx.cfg.get('diag_mode', 'both'))) for k in range(len(cf.models))])
     else:
         sig_cal = np.ones(len(r)); sig = np.ones_like(mu)
     sc = np.where(ok, r / sig_cal, np.nan)
@@ -330,6 +350,9 @@ def m_hcp_split(ctx, alpha, score="D"):
     cal = np.isin(ctx.gtr, calg)
     cal_units = np.unique(ctx.utr[cal])
     prop = ~cal & ~np.isin(ctx.utr, cal_units)
+    if prop.sum() < 2 * ctx.A_max or len(calg) < 1:
+        # not applicable (e.g. every unit measured in every group): report an uninformative interval
+        return np.full(len(ctx.yte), -np.inf), np.full(len(ctx.yte), np.inf)
     sub_groups = ctx.gtr[prop]
     folds = make_folds(sub_groups, ctx.utr[prop], ctx.cfg.get("group_mode", "group"),
                        n_folds=ctx.cfg.get("group_folds"), n_unit_folds=ctx.cfg.get("n_unit_folds", 5), seed=ctx.seed)
@@ -341,9 +364,9 @@ def m_hcp_split(ctx, alpha, score="D"):
         r = ctx.ytr[prop] - cf.oof_at(ctx.A)
         T2, Q = cf.oof_diagnostics(ctx.A)
         okk = cf.covered
-        sm = DiagnosticScale().fit(diag_features(T2[okk], Q[okk], Qref), np.abs(r[okk]))
-        sig_cal = sm.predict(diag_features(dcal["T2"], dcal["Q"], Qref))
-        sig_te = sm.predict(diag_features(dte["T2"], dte["Q"], Qref))
+        sm = DiagnosticScale(ctx.cfg.get('floor_frac', 0.1)).fit(diag_features(T2[okk], Q[okk], Qref, ctx.cfg.get('diag_mode', 'both')), np.abs(r[okk]))
+        sig_cal = sm.predict(diag_features(dcal["T2"], dcal["Q"], Qref, ctx.cfg.get('diag_mode', 'both')))
+        sig_te = sm.predict(diag_features(dte["T2"], dte["Q"], Qref, ctx.cfg.get('diag_mode', 'both')))
     else:
         sig_cal = np.ones(cal.sum()); sig_te = np.ones(len(ctx.yte))
     s = np.abs(ctx.ytr[cal] - m.predict(ctx.Xtr[cal])) / sig_cal
@@ -384,3 +407,64 @@ METHODS = {
     # reference
     "ORACLE": m_oracle,
 }
+
+
+# ======================================================================================
+# Post-hoc iteration 1 (see supplementary/research_process/04_iteration_log.md)
+# ======================================================================================
+def m_gc_d2(ctx, alpha):
+    """GC-D with the predicted value added to the scale model: σ(log(1+T²), log(Q/Q_ref), ŷ)."""
+    def _fit():
+        cf = ctx.gcf
+        r, T2, Q = ctx._oof(cf)
+        ok = cf.covered
+        yo = cf.oof_at(ctx.A)
+        Zc = np.c_[diag_features(T2[ok], Q[ok], ctx.Qref), yo[ok]]
+        sm = DiagnosticScale(ctx.cfg.get("floor_frac", 0.1)).fit(Zc, np.abs(r[ok]))
+        sig_cal = sm.predict(Zc)
+        sig_te = sm.predict(np.c_[diag_features(ctx.T2te, ctx.Qte, ctx.Qref), ctx.yhat])
+        w = group_balanced_weights(ctx.gtr[ok])
+        return np.abs(r[ok]) / sig_cal, w, sig_te
+    s, w, sig_te = _memo(ctx, "gc_d2", _fit)
+    q = weighted_quantile(s, w, 1 - alpha)
+    return ctx.yhat - q * sig_te, ctx.yhat + q * sig_te
+
+
+def _qfeat(m, X, Qref):
+    d = m.diagnostics(X)
+    return np.c_[d["scores"], np.log1p(d["T2"]), np.log(d["Q"] / Qref)]
+
+
+def _lgb_q(a, seed):
+    import lightgbm as lgb
+    return lgb.LGBMRegressor(objective="quantile", alpha=a, n_estimators=300, learning_rate=0.05, num_leaves=31,
+                             min_child_samples=20, subsample=0.8, subsample_freq=1, colsample_bytree=0.9,
+                             random_state=seed, n_jobs=int(os.environ.get("NJOBS", "1")), verbose=-1)
+
+
+def m_gc_cqr(ctx, alpha):
+    """Group-calibrated CQR: quantile GBMs (on PLS scores + diagnostics) are cross-fitted over the
+    out-of-group folds; CQR conformity scores E_i = max(q̂_lo − y, y − q̂_hi) are computed out-of-group
+    and their group-balanced (1−α) quantile widens the full-data quantile band."""
+    key = ("gc_cqr", alpha)
+    if key not in ctx.__dict__:
+        cf = ctx.gcf
+        E = np.full(len(ctx.ytr), np.nan)
+        for k, (tr, te) in enumerate(ctx.gfolds):
+            m = cf.models[k]
+            Qr = np.median(m.diagnostics(ctx.Xtr[tr], ctx.A)["Q"])
+            m.set_n_lv(ctx.A)
+            Ftr, Fte = _qfeat(m, ctx.Xtr[tr], Qr), _qfeat(m, ctx.Xtr[te], Qr)
+            lo = _lgb_q(alpha / 2, ctx.seed).fit(Ftr, ctx.ytr[tr]).predict(Fte)
+            hi = _lgb_q(1 - alpha / 2, ctx.seed).fit(Ftr, ctx.ytr[tr]).predict(Fte)
+            E[te] = np.maximum(lo - ctx.ytr[te], ctx.ytr[te] - hi)
+        ok = np.isfinite(E)
+        Ftr = _qfeat(ctx.model, ctx.Xtr, ctx.Qref); Fte = _qfeat(ctx.model, ctx.Xte, ctx.Qref)
+        lo = _lgb_q(alpha / 2, ctx.seed).fit(Ftr, ctx.ytr).predict(Fte)
+        hi = _lgb_q(1 - alpha / 2, ctx.seed).fit(Ftr, ctx.ytr).predict(Fte)
+        q = weighted_quantile(E[ok], group_balanced_weights(ctx.gtr[ok]), 1 - alpha)
+        ctx.__dict__[key] = (lo - q, hi + q)
+    return ctx.__dict__[key]
+
+
+METHODS.update({"GC-D2": m_gc_d2, "GC-CQR": m_gc_cqr})

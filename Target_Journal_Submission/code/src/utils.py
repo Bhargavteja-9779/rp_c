@@ -2,7 +2,7 @@ import logging, os, random
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RESULTS = os.path.join(ROOT, "results")
+RESULTS = os.environ.get("RESULTS_DIR", os.path.join(ROOT, "results"))
 LOGS = os.path.join(RESULTS, "experiment_logs")
 
 

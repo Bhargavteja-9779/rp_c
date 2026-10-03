@@ -1,0 +1,10 @@
+2026-10-03 21:43:47,633   [mango_instrument] fold inst14002: n_tr=63981 n_te=3364 A=14 K=29 setup=19.8s
+2026-10-03 21:44:56,330   [mango_instrument] fold inst15006: n_tr=26279 n_te=15040 A=16 K=29 setup=6.7s
+2026-10-03 21:46:16,927   [mango_instrument] fold inst15013: n_tr=79273 n_te=768 A=12 K=30 setup=27.2s
+2026-10-03 21:47:30,583   [mango_instrument] fold inst15014: n_tr=42937 n_te=8219 A=15 K=27 setup=12.6s
+2026-10-03 21:48:47,961   [mango_instrument] fold inst15015: n_tr=66405 n_te=2987 A=14 K=30 setup=20.6s
+2026-10-03 21:50:03,740   [mango_instrument] fold inst15016: n_tr=48179 n_te=7584 A=12 K=29 setup=13.8s
+2026-10-03 21:51:12,874   [mango_instrument] fold inst15023: n_tr=52400 n_te=5835 A=13 K=29 setup=17.9s
+2026-10-03 21:52:40,386   [mango_instrument] fold inst15025: n_tr=79321 n_te=800 A=12 K=30 setup=27.7s
+2026-10-03 21:54:00,469   [mango_instrument] fold inst15027: n_tr=72246 n_te=2100 A=13 K=30 setup=24.8s
+2026-10-03 21:55:22,089   [mango_instrument] fold inst15029: n_tr=63834 n_te=4480 A=12 K=30 setup=18.4s
