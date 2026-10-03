@@ -80,6 +80,28 @@ def main():
         if task == "mango_season_loso":
             decisions(p)
     pd.DataFrame(rows_ci).to_csv(os.path.join(EA, "cluster_bootstrap_coverage.csv"), index=False)
+    corn_check()
+
+
+def corn_check():
+    """Is the PLS model still informative on a new instrument? Compare RMSEP with the SD of the reference
+    values, and CQR width with the central 90 % range of the reference values (marginal interval)."""
+    from src.data.loaders import load_corn
+    rows = []
+    for prop in ["moisture", "oil", "protein", "starch"]:
+        f = os.path.join(RESULTS, "main", f"points_corn_{prop}_seed0.parquet")
+        if not os.path.exists(f):
+            continue
+        p = pd.read_parquet(f); p = p[p.alpha == 0.1]
+        y80 = load_corn(prop).y[:80]
+        marg = np.quantile(y80, 0.95) - np.quantile(y80, 0.05)
+        for inst in ["m5", "mp5", "mp6"]:
+            d = p[p.fold.str.startswith(inst + "_")]
+            gc = d[d.method == "GC-D"]; cq = d[d.method == "CQR"]
+            rows.append(dict(property=prop, test_instrument=inst, rmsep=float(np.sqrt(np.mean((gc.yhat - gc.y) ** 2))),
+                             bias=float(np.mean(gc.yhat - gc.y)), sd_reference=float(np.std(y80, ddof=1)),
+                             cqr_width=float(np.mean(cq.hi - cq.lo)), marginal_90_range=float(marg)))
+    pd.DataFrame(rows).to_csv(os.path.join(EA, "corn_model_informativeness.csv"), index=False)
 
 
 def decisions(p):
