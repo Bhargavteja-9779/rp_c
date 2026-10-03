@@ -1,0 +1,229 @@
+{
+  "Briefings in Bioinformatics (OUP)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 299,
+    "median": 124,
+    "q1": 92.0,
+    "q3": 170.0,
+    "mean": 135.3,
+    "pct_le_30": 3.3,
+    "pct_le_60": 6.0,
+    "pct_le_72": 11.4
+  },
+  "Bioinformatics (OUP)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 262,
+    "median": 142.0,
+    "q1": 103.75,
+    "q3": 193.0,
+    "mean": 156.9,
+    "pct_le_30": 6.1,
+    "pct_le_60": 7.3,
+    "pct_le_72": 8.0
+  },
+  "GigaScience (OUP)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 99,
+    "median": 198,
+    "q1": 140.0,
+    "q3": 252.0,
+    "mean": 196.8,
+    "pct_le_30": 4.0,
+    "pct_le_60": 9.1,
+    "pct_le_72": 12.1
+  },
+  "JAMIA (OUP)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 292,
+    "median": 121.0,
+    "q1": 87.0,
+    "q3": 163.75,
+    "mean": 128.6,
+    "pct_le_30": 8.2,
+    "pct_le_60": 12.7,
+    "pct_le_72": 16.4
+  },
+  "NAR Genomics and Bioinformatics (OUP)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 283,
+    "median": 153,
+    "q1": 115.0,
+    "q3": 200.0,
+    "mean": 166.6,
+    "pct_le_30": 1.1,
+    "pct_le_60": 3.2,
+    "pct_le_72": 5.7
+  },
+  "Computers in Biology and Medicine (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 299,
+    "median": 123,
+    "q1": 79.0,
+    "q3": 193.0,
+    "mean": 163.2,
+    "pct_le_30": 1.3,
+    "pct_le_60": 12.7,
+    "pct_le_72": 20.7
+  },
+  "Artificial Intelligence in Medicine (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 215,
+    "median": 295,
+    "q1": 176.0,
+    "q3": 386.0,
+    "mean": 293.5,
+    "pct_le_30": 0.0,
+    "pct_le_60": 0.5,
+    "pct_le_72": 0.5
+  },
+  "Journal of Biomedical Informatics (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 233,
+    "median": 148,
+    "q1": 113.5,
+    "q3": 186.5,
+    "mean": 154.5,
+    "pct_le_30": 0.0,
+    "pct_le_60": 1.3,
+    "pct_le_72": 3.0
+  },
+  "Comput Methods Programs Biomed (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 300,
+    "median": 181.5,
+    "q1": 130.25,
+    "q3": 237.75,
+    "mean": 192.4,
+    "pct_le_30": 0.3,
+    "pct_le_60": 1.0,
+    "pct_le_72": 3.7
+  },
+  "Comput Struct Biotechnol J (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 300,
+    "median": 91.0,
+    "q1": 63.25,
+    "q3": 118.5,
+    "mean": 95.1,
+    "pct_le_30": 0.7,
+    "pct_le_60": 22.0,
+    "pct_le_72": 34.3
+  },
+  "Journal of Cheminformatics (Springer Nature)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 214,
+    "median": 133.0,
+    "q1": 107.0,
+    "q3": 173.0,
+    "mean": 149.3,
+    "pct_le_30": 0.0,
+    "pct_le_60": 0.9,
+    "pct_le_72": 3.3
+  },
+  "IEEE J Biomed Health Inform (IEEE)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 0
+  },
+  "Neural Networks (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 300,
+    "median": 216.0,
+    "q1": 158.25,
+    "q3": 296.0,
+    "mean": 235.6,
+    "pct_le_30": 0.0,
+    "pct_le_60": 0.3,
+    "pct_le_72": 1.0
+  },
+  "Medical Image Analysis (Elsevier)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 299,
+    "median": 227,
+    "q1": 166.0,
+    "q3": 313.0,
+    "mean": 253.8,
+    "pct_le_30": 0.0,
+    "pct_le_60": 0.0,
+    "pct_le_72": 0.3
+  },
+  "npj Digital Medicine (Springer Nature)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 300,
+    "median": 190.5,
+    "q1": 132.0,
+    "q3": 258.0,
+    "mean": 202.1,
+    "pct_le_30": 0.3,
+    "pct_le_60": 2.3,
+    "pct_le_72": 4.3
+  },
+  "Patterns (Cell Press)": {
+    "source": "PubMed history (received->accepted)",
+    "n": 108,
+    "median": 167.0,
+    "q1": 125.5,
+    "q3": 209.0,
+    "mean": 172.5,
+    "pct_le_30": 1.9,
+    "pct_le_60": 1.9,
+    "pct_le_72": 2.8
+  },
+  "Expert Systems with Applications (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Knowledge-Based Systems (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Pattern Recognition (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Engineering Applications of AI (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Information Sciences (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Applied Soft Computing (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Neurocomputing (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Information Fusion (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  },
+  "Journal of Big Data (Springer Nature)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 353,
+    "median": 229,
+    "q1": 165.0,
+    "q3": 348.5,
+    "mean": 269.3,
+    "pct_le_30": 0.3,
+    "pct_le_60": 1.1,
+    "pct_le_72": 2.0
+  },
+  "Complex & Intelligent Systems (Springer Nature)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 559,
+    "median": 148,
+    "q1": 105.0,
+    "q3": 229.0,
+    "mean": 187.3,
+    "pct_le_30": 0.4,
+    "pct_le_60": 2.9,
+    "pct_le_72": 6.3
+  },
+  "Energy and AI (Elsevier)": {
+    "source": "Crossref assertion (received->accepted)",
+    "n": 0
+  }
+}

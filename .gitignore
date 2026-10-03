@@ -1,0 +1,6 @@
+Target_Journal_Submission/code/data/raw/
+Target_Journal_Submission/code/data/processed/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.ckpt
