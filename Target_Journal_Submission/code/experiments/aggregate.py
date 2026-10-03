@@ -34,6 +34,7 @@ GEN_TASKS = ["ossl_lucas_campaign", "ossl_kssl_to_lucas", "tablets"]
 def load_raw(sub="main"):
     files = sorted(glob.glob(os.path.join(RESULTS, sub, "groups_*.csv")))
     df = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+    df = df[~df.method.isin(["GC-D2", "GC-CQR"])]  # post-hoc methods: analysed in aggregate_extra.py only
     if "error" in df:
         err = df[df["error"].notna()]
         if len(err):
@@ -78,7 +79,7 @@ def compare(pg, alpha=0.1):
         piv_cov = d.pivot_table(index=["fold", "group"], columns="method", values="coverage")
         if PROPOSED not in piv_is:
             continue
-        others = [m for m in piv_is.columns if m not in (PROPOSED, "ORACLE")]
+        others = [m for m in piv_is.columns if m not in (PROPOSED, "ORACLE", "GC-D2", "GC-CQR")]
         res = []
         for m in others:
             r1 = wilcoxon_paired(piv_is[PROPOSED].values, piv_is[m].values)

@@ -24,3 +24,4 @@
 2026-10-03 22:05:21,628   [mango_instrument] fold inst17040: n_tr=77415 n_te=872 A=12 K=30 setup=26.8s
 2026-10-03 22:06:49,684   [mango_instrument] fold inst17052: n_tr=69821 n_te=2244 A=12 K=30 setup=23.9s
 2026-10-03 22:08:07,819   [mango_instrument] fold inst17057: n_tr=75361 n_te=2570 A=19 K=30 setup=22.9s
+2026-10-03 22:09:51,787   [mango_instrument] fold inst18007: n_tr=75603 n_te=1946 A=12 K=30 setup=24.1s
