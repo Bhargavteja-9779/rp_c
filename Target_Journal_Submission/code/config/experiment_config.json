@@ -1,0 +1,22 @@
+{
+  "seeds": [0, 1, 2, 3, 4],
+  "alphas": [0.05, 0.1, 0.2],
+  "primary_alpha": 0.1,
+  "preprocessing": {
+    "mango": "Savitzky-Golay 2nd derivative, window 13, poly 2, wavelengths 684-990 nm",
+    "ossl": "log10(1/R) at 10 nm steps 400-2500 nm, Savitzky-Golay 1st derivative, window 11; target log(1+OC)",
+    "corn": "SNV then Savitzky-Golay 1st derivative, window 15",
+    "tablets": "SNV then Savitzky-Golay 1st derivative, window 15"
+  },
+  "pls": {"A_max": {"mango": 20, "ossl": 25, "corn": 15, "tablets": 15},
+          "selection": "min group-balanced RMSE of out-of-group cross-validation"},
+  "split_conformal": {"calibration_fraction": 0.25, "split_unit": "physical unit"},
+  "random_cv_folds": 5,
+  "scale_model": {"features": ["log(1+T2)", "log(Q/Q_ref)"], "link": "log", "loss": "Poisson quasi-likelihood", "floor_frac": 0.1},
+  "gpr": {"subset": 1000, "kernel": "Constant*RBF(ARD)+White"},
+  "bagging": {"B": 25, "bootstrap_unit": "physical unit"},
+  "quantile_gbm": {"n_estimators": 300, "learning_rate": 0.05, "num_leaves": 31},
+  "wcp": {"density_ratio": "logistic regression on standardised PLS scores and log Q", "max_n_per_class": 20000},
+  "lucas_spatial_blocks": {"k": 30, "method": "k-means on (lat, lon*cos(lat))", "seed": 0},
+  "note": "Values here document the settings hard-coded in src/ (tasks.py, methods.py); they are the single source used by the paper."
+}

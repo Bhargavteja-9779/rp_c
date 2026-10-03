@@ -10,3 +10,4 @@ Target_Journal_Submission/code/results_quick/
 Target_Journal_Submission/code/figures_quick/
 Target_Journal_Submission/code/tables_quick/
 *.parquet
+Target_Journal_Submission/manuscript/_render/

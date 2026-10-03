@@ -1,0 +1,11 @@
+# Versions used to produce the reported results (Python 3.11, CPU only)
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.9.1
+pandas==3.0.6
+pyarrow==25.0.1
+matplotlib==3.11.2
+lightgbm==4.7.0
+torch==2.14.1      # CPU build is sufficient; CUDA / Apple-MPS are detected automatically for the optional CNN
+pytest==9.1.1
+python-docx>=1.1   # manuscript tooling only
