@@ -1332,6 +1332,42 @@
   ],
   "sensitivity": [
    {
+    "task": "mango_population",
+    "variant": "group_folds=5",
+    "method": "G-W-A",
+    "coverage": 0.9008596939218286,
+    "width": 3.7049237758572064,
+    "interval_score": 4.955038938992803,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=5",
+    "method": "GC-D",
+    "coverage": 0.9002131683191699,
+    "width": 3.6923580762223485,
+    "interval_score": 4.920058032495065,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=5",
+    "method": "R-U-D",
+    "coverage": 0.8912789519666249,
+    "width": 3.5691038504274393,
+    "interval_score": 4.905649487396957,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=5",
+    "method": "SCP",
+    "coverage": 0.8845740478118816,
+    "width": 3.5319125285833337,
+    "interval_score": 4.969290093012678,
+    "A": 19.201005025125628
+   },
+   {
     "task": "mango_season_loso",
     "variant": "A_offset=-4",
     "method": "G-W-A",
@@ -1618,6 +1654,84 @@
     "width": 6.163057096372913,
     "interval_score": 13.088351143227364,
     "A": 20.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=4",
+    "method": "G-W-A",
+    "coverage": 0.899343321495534,
+    "width": 6.466538446012792,
+    "interval_score": 12.482845562112365,
+    "A": 25.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=4",
+    "method": "GC-D",
+    "coverage": 0.8987427460996961,
+    "width": 7.140019182966146,
+    "interval_score": 11.892504210023782,
+    "A": 25.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=4",
+    "method": "R-U-D",
+    "coverage": 0.8894142417354163,
+    "width": 6.848983240195286,
+    "interval_score": 11.988196850938765,
+    "A": 25.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=4",
+    "method": "SCP",
+    "coverage": 0.8825623139471741,
+    "width": 6.083481070661082,
+    "interval_score": 12.850135841438034,
+    "A": 25.0
+   }
+  ],
+  "cnn": [
+   {
+    "method": "CNN-G-W-A",
+    "coverage": 0.8813727475779539,
+    "coverage_min": 0.6637889688249401,
+    "width": 4.605926698660023,
+    "interval_score": 6.293390690379801,
+    "rmse": 1.4028424759758111,
+    "n_seasons": 7,
+    "n_seeds": 3
+   },
+   {
+    "method": "CNN-GC-D",
+    "coverage": 0.8855836796870593,
+    "coverage_min": 0.7064748201438849,
+    "width": 4.562539196356009,
+    "interval_score": 6.106041997378953,
+    "rmse": 1.4028424759758111,
+    "n_seasons": 7,
+    "n_seeds": 3
+   },
+   {
+    "method": "CNN-R-U-A",
+    "coverage": 0.6459520151081835,
+    "coverage_min": 0.4007194244604316,
+    "width": 2.52345748015971,
+    "interval_score": 8.48273429470432,
+    "rmse": 1.4028424759758111,
+    "n_seasons": 7,
+    "n_seeds": 3
+   },
+   {
+    "method": "CNN-SCP",
+    "coverage": 0.6508729550916584,
+    "coverage_min": 0.44172661870503593,
+    "width": 2.533250443656083,
+    "interval_score": 8.296766196996568,
+    "rmse": 1.3927450423888836,
+    "n_seasons": 7,
+    "n_seeds": 3
    }
   ]
  },
