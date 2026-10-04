@@ -292,7 +292,13 @@ def results_part2(C, N, s, c, h, ex, g):
         B += [("p", f"Sensitivity analyses (Supplementary Table S5) varied the number of latent variables by ±4, used T² or Q "
                     f"alone in the scale model, changed the floor of σ and replaced the preprocessing by SNV plus first derivative. "
                     f"For new seasons, GC-D coverage stayed between {gc.coverage.min():.3f} and {gc.coverage.max():.3f} and SCP "
-                    f"between {sc.coverage.min():.3f} and {sc.coverage.max():.3f}; the floor of σ never became active.")]
+                    f"between {sc.coverage.min():.3f} and {sc.coverage.max():.3f}; the floor of σ never became active. "
+                    + (lambda e, p_: (f"For new soil regions the corresponding ranges were {e[e.method=='GC-D'].coverage.min():.3f}–"
+                                      f"{e[e.method=='GC-D'].coverage.max():.3f} (GC-D) and {e[e.method=='SCP'].coverage.min():.3f}–"
+                                      f"{e[e.method=='SCP'].coverage.max():.3f} (SCP), and using 5 or 20 instead of 10 population folds "
+                                      f"changed GC-D coverage for new populations to {p_[p_.method=='GC-D'].coverage.min():.3f}–"
+                                      f"{p_[p_.method=='GC-D'].coverage.max():.3f}.") if len(e) and len(p_) else "")(
+                        sv[sv.task == "ossl_lucas_block"], sv[sv.task == "mango_population"]))]
     if cn is not None and len(cn):
         cv = cn.set_index("method")
         B += [("p", f"Replacing PLS by a one-dimensional convolutional network {C('cui2018', 'mishra2021')} as point predictor "
