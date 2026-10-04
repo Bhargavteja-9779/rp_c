@@ -1863,5 +1863,168 @@
    "n_seeds": 5
   }
  ],
- "cultivar": null
+ "cultivar": {
+  "summary": [
+   {
+    "method": "ASTM-G",
+    "coverage": 0.9074521831069788,
+    "coverage_min": 0.8047218252077709,
+    "width": 3.592960080416885,
+    "interval_score": 4.698673995806417,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "ASTM-R",
+    "coverage": 0.9069038058155708,
+    "coverage_min": 0.7878531222980961,
+    "width": 3.5888106535852997,
+    "interval_score": 4.703420260521628,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "CQR",
+    "coverage": 0.8546174367208451,
+    "coverage_min": 0.7379704621248213,
+    "width": 3.603574287355343,
+    "interval_score": 5.366669250065684,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "CV+",
+    "coverage": 0.9024207500825465,
+    "coverage_min": 0.7755368517636264,
+    "width": 3.5237775306012784,
+    "interval_score": 4.703843636379773,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "G-W-A",
+    "coverage": 0.9005988809705668,
+    "coverage_min": 0.7856121962839447,
+    "width": 3.509441651820434,
+    "interval_score": 4.7097865557215695,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "GC-D",
+    "coverage": 0.9015953608430267,
+    "coverage_min": 0.7780953893388386,
+    "width": 3.5410561822664937,
+    "interval_score": 4.6793985787699,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "HJ+",
+    "coverage": 0.999992808342323,
+    "coverage_min": 0.999928083423229,
+    "width": 20.60398689309558,
+    "interval_score": 20.60440738872386,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "ORACLE",
+    "coverage": 0.898150924603607,
+    "coverage_min": 0.891523935002196,
+    "width": 3.4190194026310956,
+    "interval_score": 4.4775225548264554,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   },
+   {
+    "method": "SCP",
+    "coverage": 0.9000330935237674,
+    "coverage_min": 0.7723960263264694,
+    "width": 3.5039673248363705,
+    "interval_score": 4.711635526718458,
+    "n_cultivars": 10,
+    "n_seeds": 3
+   }
+  ],
+  "comparisons": [
+   {
+    "comparator": "ASTM-G",
+    "n": 10,
+    "IS_median_diff": -0.08066052530950563,
+    "IS_r_rb": -0.16363636363636364,
+    "IS_p": 0.6953125,
+    "covgap_median_diff": 0.007330346192139403,
+    "covgap_p": 0.193359375,
+    "IS_p_holm": 1.0,
+    "covgap_p_holm": 0.966796875
+   },
+   {
+    "comparator": "ASTM-R",
+    "n": 10,
+    "IS_median_diff": -0.07223995938884631,
+    "IS_r_rb": -0.12727272727272726,
+    "IS_p": 0.76953125,
+    "covgap_median_diff": 0.010262902624207038,
+    "covgap_p": 0.10546875,
+    "IS_p_holm": 1.0,
+    "covgap_p_holm": 0.6328125
+   },
+   {
+    "comparator": "CQR",
+    "n": 10,
+    "IS_median_diff": -0.6484280008602341,
+    "IS_r_rb": -0.8181818181818182,
+    "IS_p": 0.01953125,
+    "covgap_median_diff": -0.006444529090780193,
+    "covgap_p": 0.625,
+    "IS_p_holm": 0.1171875,
+    "covgap_p_holm": 1.0
+   },
+   {
+    "comparator": "CV+",
+    "n": 10,
+    "IS_median_diff": -0.07955665725073313,
+    "IS_r_rb": -0.3090909090909091,
+    "IS_p": 0.431640625,
+    "covgap_median_diff": 0.007090531906254416,
+    "covgap_p": 0.232421875,
+    "IS_p_holm": 1.0,
+    "covgap_p_holm": 0.966796875
+   },
+   {
+    "comparator": "G-W-A",
+    "n": 10,
+    "IS_median_diff": -0.09968607076484792,
+    "IS_r_rb": -0.16363636363636364,
+    "IS_p": 0.6953125,
+    "covgap_median_diff": 0.0008304252609142582,
+    "covgap_p": 0.4921875,
+    "IS_p_holm": 1.0,
+    "covgap_p_holm": 1.0
+   },
+   {
+    "comparator": "HJ+",
+    "n": 10,
+    "IS_median_diff": -16.55818387365609,
+    "IS_r_rb": -1.0,
+    "IS_p": 0.001953125,
+    "covgap_median_diff": -0.04300317653419844,
+    "covgap_p": 0.009765625,
+    "IS_p_holm": 0.013671875,
+    "covgap_p_holm": 0.068359375
+   },
+   {
+    "comparator": "SCP",
+    "n": 10,
+    "IS_median_diff": -0.06988649232734856,
+    "IS_r_rb": -0.34545454545454546,
+    "IS_p": 0.375,
+    "covgap_median_diff": 0.002707236713845651,
+    "covgap_p": 0.431640625,
+    "IS_p_holm": 1.0,
+    "covgap_p_holm": 1.0
+   }
+  ]
+ }
 }

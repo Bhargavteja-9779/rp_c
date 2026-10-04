@@ -108,11 +108,17 @@ def build(out):
                           "covgap_median_diff", "covgap_p_holm"], fmt=4),
         "Table S14. All paired comparisons of GC-D with each comparator (two-sided Wilcoxon; Holm within scenario and, more "
         "conservatively, across all main-scenario tests).")
+    H("S15. Leave-one-cultivar-out test")
+    p = os.path.join(R, "cultivar_summary.csv")
+    if os.path.exists(p):
+        TAB(rows_from_csv(p), "Table S15a. Leave-one-cultivar-out (mango; ten cultivars; seeds 0–2; nominal 0.90).")
+        TAB(rows_from_csv(os.path.join(R, "cultivar_comparisons.csv"), fmt=4), "Table S15b. Paired comparisons of GC-D with each "
+            "comparator over cultivars (two-sided Wilcoxon, Holm correction).")
     FIGB(os.path.join(F, "fig10_effect_sizes.png"), "Fig. S1. Rank-biserial effect sizes of the interval-score differences between GC-D "
          "and selected comparators (negative: GC-D lower); larger symbols: Holm-adjusted p < 0.05.")
     content = dict(meta=dict(title="Supplementary Material — Group-conformal calibration of near-infrared prediction intervals for new "
                                    "seasons, instruments and regions using PLS diagnostics",
-                             authors="[Authors]", affiliations=[], corresponding="", abstract=["Supplementary tables S1–S14 and figures S1–S2. "
+                             authors="[Authors]", affiliations=[], corresponding="", abstract=["Supplementary tables S1–S15 and figures S1–S2. "
                              "All values are generated from the result files of the accompanying code (run_all.py)."], keywords=["Supplementary material"]),
                    blocks=blocks, references=[])
     js = out.replace(".docx", "_content.json")

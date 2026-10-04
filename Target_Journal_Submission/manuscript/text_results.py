@@ -302,7 +302,7 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"CNN {cv.loc['CNN-GC-D','rmse']:.2f} % DM; Supplementary Table S6). The calibration principle is not tied to PLS.")]
     # ------------------------------------------------------------------ 4.6 stress tests
     ci = _csv("corn_model_informativeness.csv", os.path.join(R, "error_analysis"))
-    B += [("h2", "4.6. Where group calibration cannot help")]
+    B += [("h2", "4.6. When group calibration cannot help — or is not needed")]
     t = "Three settings mark the limits of the approach. First, corn: with only two training instruments, no "
     if ci is not None:
         ratio = (ci.rmsep / ci.sd_reference)
@@ -324,6 +324,22 @@ def results_part2(C, N, s, c, h, ex, g):
           f"shifted instrument (Supplementary Table S2). Group-conformal calibration can only account for variation that is "
           f"represented by several groups in the calibration set.")
     B += [("p", t)]
+    cs = _csv("cultivar_summary.csv")
+    if cs is not None:
+        cv = cs.set_index("method")
+        pc = _csv("cultivar_per_group.csv")
+        lo_c = pc[pc.method == "GC-D"].coverage.min(); hi_c = pc[pc.method == "GC-D"].coverage.max()
+        B += [("p", f"Conversely, group calibration is unnecessary when the held-out factor adds little group-level error. In an "
+                    f"additional leave-one-cultivar-out test requested during internal review (ten cultivars, {int(cv.n_seeds.iloc[0])} "
+                    f"seeds; Supplementary Table S15), SCP covered {cv.loc['SCP','coverage']:.3f}, the classical interval "
+                    f"{cv.loc['ASTM-R','coverage']:.3f} and GC-D {cv.loc['GC-D','coverage']:.3f}, with nearly identical interval "
+                    f"scores ({cv.loc['SCP','interval_score']:.2f} and {cv.loc['GC-D','interval_score']:.2f}). Every cultivar was "
+                    "measured in several seasons and on several instruments that remained in the training data, so a new cultivar "
+                    "brought little error that random calibration had not already seen — the same situation as for new populations. "
+                    f"Per-cultivar coverage nevertheless ranged from {lo_c:.3f} to {hi_c:.3f} for GC-D (and similarly for all methods), "
+                    "and HJ+ was impractical with nine training groups (mean width "
+                    f"{cv.loc['HJ+','width']:.1f} % DM). GC-D therefore did not cost sharpness when the shift was small and helped "
+                    "when the held-out factor carried an unrepresented group effect (season, instrument).")]
     # ------------------------------------------------------------------ 4.7 computation
     tm = _csv("timing_summary.csv")
     if tm is not None:

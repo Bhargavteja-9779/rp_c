@@ -56,7 +56,7 @@ tabnums = [int(re.match(r"Table (\d+)", t["caption"]).group(1)) for t in tabs]
 check("table numbers consecutive", tabnums == list(range(1, len(tabnums) + 1)), tabnums)
 check("every cited table exists", all(int(c) in tabnums for c in re.findall(r"Table (\d+)", text)))
 sup = sorted(set(re.findall(r"Supplementary Table (S\d+)", text)))
-check("supplementary tables cited within S1-S14", all(1 <= int(x[1:]) <= 14 for x in sup), sup)
+check("supplementary tables cited within S1-S15", all(1 <= int(x[1:]) <= 15 for x in sup), sup)
 check("no nan in text", not re.search(r"\bnan\b", text))
 refs = content["references"]
 cites = sorted(set(int(n) for grp in re.findall(r"\[([\d,–]+)\]", text) for part in grp.split(",")
