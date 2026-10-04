@@ -956,7 +956,7 @@
   },
   {
    "type": "p",
-   "text": "The out-of-group residuals of GC-D are a by-product of the group-wise cross-validation used to choose the number of latent variables (5.0 s per held-out season for ~70 000 training spectra on one CPU core). On top of it, GC-D required 0.12 s and 83 MiB per season, i.e. 14.3 µs per test spectrum (Supplementary Fig. S2). Random split CP required 0.7 s (it fits an additional model), bagging 15 s, GPR 16 s, CQR 5 s and the hierarchical jackknife+ 0.6 s. Predicting a new spectrum with GC-D needs one PLS prediction, T², Q and three exponentiated coefficients, which is straightforward to implement in instrument software."
+   "text": "The out-of-group residuals of GC-D are a by-product of the group-wise cross-validation used to choose the number of latent variables (5.0 s per held-out season for ~70 000 training spectra on one CPU core). On top of it, GC-D required 0.12 s and 83 MiB per season, i.e. 14.3 µs per test spectrum (Supplementary Fig. S2). Random split CP required 0.7 s (it fits an additional model), bagging 15 s, GPR 16 s, CQR 5 s and the hierarchical jackknife+ 0.6 s. Predicting a new spectrum with GC-D needs one PLS prediction, T², Q and three exponentiated coefficients, which is straightforward to implement in instrument software; no training data need to be stored. In terms of complexity, the group-wise cross-validation costs K + 1 PLS fits — the same work as the usual group-wise choice of the number of latent variables — and GC-D adds only a three-parameter scale model and one weighted quantile, whereas the hierarchical jackknife+ must keep and evaluate K leave-group-out models for every new spectrum."
   },
   {
    "type": "h2",

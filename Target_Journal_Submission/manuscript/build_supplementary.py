@@ -12,7 +12,8 @@ def rows_from_csv(path, cols=None, rename=None, fmt=3):
         d = d[[c for c in cols if c in d.columns]]
     for c in d.columns:
         if d[c].dtype.kind == "f":
-            d[c] = d[c].map(lambda v: "∞" if v == float("inf") else ("–" if pd.isna(v) else f"{v:.{fmt}f}"))
+            # |v| ≥ 1e8: the finite stand-in (statistics.tests.BIG) for an infinite interval score used in ranking
+            d[c] = d[c].map(lambda v: "–" if pd.isna(v) else ("∞" if v >= 1e8 else ("−∞" if v <= -1e8 else f"{v:.{fmt}f}")))
     if rename:
         d = d.rename(columns=rename)
     return [list(map(str, d.columns))] + d.astype(str).values.tolist()
@@ -104,10 +105,14 @@ def build(out):
         TAB(rows_from_csv(p), "Table S13. Coverage when only K training groups are used (three repetitions); finite = minimum share of bounded intervals.")
     H("S14. Paired comparisons")
     p = os.path.join(R, "comparisons_alpha0.1.csv")
-    TAB(rows_from_csv(p, ["task", "comparator", "unit", "n_units", "IS_median_diff", "IS_r_rb", "IS_p", "IS_p_holm", "IS_p_holm_all_main",
-                          "covgap_median_diff", "covgap_p_holm"], fmt=4),
-        "Table S14. All paired comparisons of GC-D with each comparator (two-sided Wilcoxon; Holm within scenario and, more "
-        "conservatively, across all main-scenario tests).")
+    rows = rows_from_csv(p, ["task", "comparator", "unit", "n_units", "IS_median_diff", "IS_r_rb", "IS_p", "IS_p_holm", "IS_p_holm_all_main",
+                             "covgap_median_diff", "covgap_p_holm"], fmt=4)
+    rows[0] = ["Scenario", "Comparator", "Unit", "n", "ΔIS (median)", "r", "p", "p Holm", "p Holm (all)", "Δ|cov. gap|", "p Holm (gap)"]
+    rows[1:] = [[r[0], r[1], r[2].replace("held-out group", "group").replace("outer fold (seed-0 partition)", "fold (seed 0)").replace("outer fold", "fold")] + r[3:] for r in rows[1:]]
+    TAB(rows, "Table S14. All paired comparisons of GC-D with each comparator (two-sided Wilcoxon signed-rank over units; "
+              "ΔIS = median of GC-D minus comparator interval score, −∞ when the comparator's intervals were unbounded; "
+              "r = rank-biserial correlation; Holm within scenario and, more conservatively, across all main-scenario tests "
+              "(all); Δ|cov. gap| = median difference of |coverage − 0.90|).")
     H("S15. Leave-one-cultivar-out test")
     p = os.path.join(R, "cultivar_summary.csv")
     if os.path.exists(p):
@@ -127,4 +132,4 @@ def build(out):
 
 
 if __name__ == "__main__":
-    build(sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "Supplementary_Material.docx"))
+    build(sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), "supplementary", "Supplementary_Material.docx"))

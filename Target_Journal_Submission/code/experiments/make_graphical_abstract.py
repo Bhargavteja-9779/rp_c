@@ -7,10 +7,15 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from src.visualization.figures import INK, INK2, SLOTS, style, save, color
 from src.utils import RESULTS
+FIG = os.environ.get("FIG_DIR", os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "figures"))
 style()
 s = pd.read_csv(os.path.join(RESULTS, "summary_results.csv")); s = s[s.alpha == 0.1]
 tasks = [("mango_season_forward", "Next season"), ("mango_season_loso", "New season"), ("mango_instrument", "New instrument"),
          ("ossl_lucas_block", "New soil region")]
+avail = set(s[s.method.isin(["SCP", "GC-D"])].task)
+tasks = [t for t in tasks if t[0] in avail]   # quick mode runs only a subset of scenarios
+if not tasks:
+    sys.exit("graphical abstract: no scenario with SCP and GC-D results")
 fig = plt.figure(figsize=(13 / 2.54 * 1.6, 5 / 2.54 * 1.6))
 ax0 = fig.add_axes([0.0, 0.0, 0.42, 1.0]); ax0.set_axis_off(); ax0.set_xlim(0, 10); ax0.set_ylim(0, 10)
 def box(x, y, w, h, t, fc="#f4f4f2", ec=INK2, bold=False, fs=7.5):
@@ -37,4 +42,4 @@ ax.set_yticks(y); ax.set_yticklabels([l for _, l in tasks]); ax.set_xlim(0.74, 0
 ax.set_xlabel("Coverage of nominal 90 % intervals (dashed: target)")
 ax.legend(fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, handletextpad=0.3)
 ax.grid(axis="y", visible=False)
-save(fig, os.path.join(os.path.dirname(RESULTS), "figures"), "graphical_abstract")
+save(fig, FIG, "graphical_abstract")

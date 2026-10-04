@@ -42,6 +42,8 @@ Verdict: not fatal if disclosed, which it now is everywhere (abstract, 4.2, 4.3,
 | 10.8 | Quick mode would run the full 3-season timing experiment (~15 min extra). | run_timing.py --quick (one season), used by run_all.py --mode quick. | Fixed |
 | 10.9 | Per-group coverage is widely dispersed (worst season 0.798, worst instrument 0.356, worst population 0.013) for every method; the group-averaged coverage hides this. | Already shown in Fig. 4 and Table S4; population 114500 analysed as a bias failure (Section 4.8). No further change. | Addressed (disclosed) |
 | 10.10 | The ≈ 1 % noise perturbation breaks all methods (GC-D 0.703; RMSEP 1.38 → 3.50). | Reported in 4.5 with numbers; GC-D degrades least among bounded intervals; ORACLE needs width 11.6. | Addressed (disclosed) |
+| 10.10a | Reproducibility audit: `make_graphical_abstract.py` crashed in quick mode and ignored `FIG_DIR` (would overwrite the reported graphical abstract); a fresh `run_main.py` would include WCP-clip, changing the main Holm families. | Both fixed; quick mode passes end to end; re-runs of two full jobs reproduce the committed per-group results exactly (GPR within 2 × 10⁻⁴). Details in final_audit.md §3. | Fixed |
+| 10.10b | Supplementary Table S14 printed the ranking stand-in −999999998.18 for unbounded comparators. | Printed as −∞/∞, caption explains; headers shortened. | Fixed |
 | 10.11 | Final result folders were git-ignored while experiments ran (iteration1/, robustness/, cnn/, cultivar/, error_analysis/, experiment_logs/). | Temporary ignore entries removed; only `*/partial/` and Parquet files stay ignored. | Fixed |
 
 ## Minor issues

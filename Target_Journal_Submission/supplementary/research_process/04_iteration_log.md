@@ -34,3 +34,10 @@ current fold (with an assertion that training spectra are unchanged) and rerun; 
   instruments it is less sharp than GC-D (6.36 vs 6.21), and on corn its coverage (0.81–0.90) is below CQR's.
 * Both variants were designed after seeing the data and are reported in the manuscript as post-hoc (Section 4.10,
   Supplementary Table S7, limitations). They require independent confirmation.
+
+## Timing experiment repeated on an idle machine (2026-10-04)
+The first run of the isolated timing experiment (E6, `run_timing.py`) was started while the 27 post-hoc iteration
+jobs were still running, so wall times were inflated by CPU contention. It was stopped, its outputs were deleted,
+and it was re-chained (`scripts/after_iteration.sh`) to start only after the iteration jobs had finished. Only the
+idle-machine run is reported (Section 4.7, Table S9, Fig. S2). Per-method times from the main runs are never used,
+because memoised shared components make them incomparable between methods.

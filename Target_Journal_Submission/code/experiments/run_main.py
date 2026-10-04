@@ -14,7 +14,8 @@ p.add_argument("--task", required=True)
 p.add_argument("--seed", type=int, default=0)
 p.add_argument("--alphas", default="0.05,0.1,0.2")
 POSTHOC = {"GC-D2", "GC-CQR"}  # evaluated separately in run_iteration.py
-p.add_argument("--methods", default=",".join(m for m in METHODS if m not in POSTHOC))
+SEPARATE = POSTHOC | {"WCP-clip"}  # WCP-clip (reviewer-requested baseline) is evaluated in run_wcp_clip.py
+p.add_argument("--methods", default=",".join(m for m in METHODS if m not in SEPARATE))
 p.add_argument("--quick", action="store_true")
 p.add_argument("--out", default=os.path.join(RESULTS, "main"))
 a = p.parse_args()

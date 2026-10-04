@@ -1,7 +1,7 @@
 """Reproduce the complete study.
 
     python run_all.py --mode quick     # pipeline check: 2 folds per task, seed 0, few methods (~15 min, 4 CPU cores)
-    python run_all.py --mode full      # complete study as reported (≈ 45 core-hours, about half a day on 4 CPU cores)
+    python run_all.py --mode full      # complete study as reported (≈ 42 core-hours, about half a day on 4 CPU cores)
 
 Steps: download data -> unit tests -> main experiments (E1-E3, E5) -> post-hoc iteration ->
 robustness/sensitivity (E4, E7) -> CNN model-agnosticism check -> aggregation & statistics ->

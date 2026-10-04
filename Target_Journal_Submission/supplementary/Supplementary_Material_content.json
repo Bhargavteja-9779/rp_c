@@ -4435,7 +4435,7 @@
      "20",
      "0.990",
      "0.002",
-     "122810248632.972",
+     "∞",
      "1.000"
     ],
     [
@@ -4558,22 +4558,22 @@
    "type": "table",
    "rows": [
     [
-     "task",
-     "comparator",
-     "unit",
-     "n_units",
-     "IS_median_diff",
-     "IS_r_rb",
-     "IS_p",
-     "IS_p_holm",
-     "IS_p_holm_all_main",
-     "covgap_median_diff",
-     "covgap_p_holm"
+     "Scenario",
+     "Comparator",
+     "Unit",
+     "n",
+     "ΔIS (median)",
+     "r",
+     "p",
+     "p Holm",
+     "p Holm (all)",
+     "Δ|cov. gap|",
+     "p Holm (gap)"
     ],
     [
      "corn_moisture",
      "ASTM-G",
-     "held-out group",
+     "group",
      "30",
      "0.0748",
      "0.1398",
@@ -4586,7 +4586,7 @@
     [
      "corn_moisture",
      "ASTM-R",
-     "held-out group",
+     "group",
      "30",
      "0.0859",
      "0.0839",
@@ -4599,7 +4599,7 @@
     [
      "corn_moisture",
      "BAG",
-     "held-out group",
+     "group",
      "30",
      "0.1250",
      "0.3548",
@@ -4612,7 +4612,7 @@
     [
      "corn_moisture",
      "CQR",
-     "held-out group",
+     "group",
      "30",
      "0.8063",
      "0.7677",
@@ -4625,7 +4625,7 @@
     [
      "corn_moisture",
      "CV+",
-     "held-out group",
+     "group",
      "30",
      "0.0882",
      "0.1699",
@@ -4638,7 +4638,7 @@
     [
      "corn_moisture",
      "G-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.0403",
      "0.0280",
@@ -4651,7 +4651,7 @@
     [
      "corn_moisture",
      "G-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0000",
      "0.0000",
@@ -4664,7 +4664,7 @@
     [
      "corn_moisture",
      "G-W-A",
-     "held-out group",
+     "group",
      "30",
      "0.0403",
      "0.0280",
@@ -4677,9 +4677,9 @@
     [
      "corn_moisture",
      "GC-D+",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.5609",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4690,7 +4690,7 @@
     [
      "corn_moisture",
      "GPR",
-     "held-out group",
+     "group",
      "30",
      "0.5050",
      "0.7720",
@@ -4703,9 +4703,9 @@
     [
      "corn_moisture",
      "HCP-A",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.5609",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4716,9 +4716,9 @@
     [
      "corn_moisture",
      "HCP-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.5609",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4729,9 +4729,9 @@
     [
      "corn_moisture",
      "HJ+",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.5609",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4742,9 +4742,9 @@
     [
      "corn_moisture",
      "HJ+-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.5609",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4755,7 +4755,7 @@
     [
      "corn_moisture",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "30",
      "-0.0029",
      "0.0452",
@@ -4768,7 +4768,7 @@
     [
      "corn_moisture",
      "QGB",
-     "held-out group",
+     "group",
      "30",
      "0.5840",
      "0.6946",
@@ -4781,7 +4781,7 @@
     [
      "corn_moisture",
      "R-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.0381",
      "-0.0237",
@@ -4794,7 +4794,7 @@
     [
      "corn_moisture",
      "R-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.1197",
      "0.1570",
@@ -4807,7 +4807,7 @@
     [
      "corn_moisture",
      "SCP",
-     "held-out group",
+     "group",
      "30",
      "0.0727",
      "0.3247",
@@ -4820,9 +4820,9 @@
     [
      "corn_moisture",
      "WCP",
-     "held-out group",
+     "group",
      "30",
-     "-999999997.3841",
+     "−∞",
      "-0.9871",
      "0.0000",
      "0.0000",
@@ -4833,7 +4833,7 @@
     [
      "corn_oil",
      "ASTM-G",
-     "held-out group",
+     "group",
      "30",
      "0.0272",
      "0.3075",
@@ -4846,7 +4846,7 @@
     [
      "corn_oil",
      "ASTM-R",
-     "held-out group",
+     "group",
      "30",
      "0.0053",
      "0.0968",
@@ -4859,7 +4859,7 @@
     [
      "corn_oil",
      "BAG",
-     "held-out group",
+     "group",
      "30",
      "0.0242",
      "0.4194",
@@ -4872,7 +4872,7 @@
     [
      "corn_oil",
      "CQR",
-     "held-out group",
+     "group",
      "30",
      "0.1022",
      "0.6559",
@@ -4885,7 +4885,7 @@
     [
      "corn_oil",
      "CV+",
-     "held-out group",
+     "group",
      "30",
      "0.0314",
      "0.2903",
@@ -4898,7 +4898,7 @@
     [
      "corn_oil",
      "G-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.0009",
      "0.0925",
@@ -4911,7 +4911,7 @@
     [
      "corn_oil",
      "G-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0000",
      "0.0000",
@@ -4924,7 +4924,7 @@
     [
      "corn_oil",
      "G-W-A",
-     "held-out group",
+     "group",
      "30",
      "0.0009",
      "0.0925",
@@ -4937,9 +4937,9 @@
     [
      "corn_oil",
      "GC-D+",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2904",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4950,7 +4950,7 @@
     [
      "corn_oil",
      "GPR",
-     "held-out group",
+     "group",
      "30",
      "0.0535",
      "0.4022",
@@ -4963,9 +4963,9 @@
     [
      "corn_oil",
      "HCP-A",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2904",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4976,9 +4976,9 @@
     [
      "corn_oil",
      "HCP-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2904",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -4989,9 +4989,9 @@
     [
      "corn_oil",
      "HJ+",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2904",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5002,9 +5002,9 @@
     [
      "corn_oil",
      "HJ+-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2904",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5015,7 +5015,7 @@
     [
      "corn_oil",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "30",
      "-0.0474",
      "-0.3247",
@@ -5028,7 +5028,7 @@
     [
      "corn_oil",
      "QGB",
-     "held-out group",
+     "group",
      "30",
      "0.0113",
      "0.0882",
@@ -5041,7 +5041,7 @@
     [
      "corn_oil",
      "R-U-A",
-     "held-out group",
+     "group",
      "30",
      "-0.0085",
      "0.0237",
@@ -5054,7 +5054,7 @@
     [
      "corn_oil",
      "R-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0639",
      "0.4925",
@@ -5067,7 +5067,7 @@
     [
      "corn_oil",
      "SCP",
-     "held-out group",
+     "group",
      "30",
      "-0.0359",
      "-0.2258",
@@ -5080,9 +5080,9 @@
     [
      "corn_oil",
      "WCP",
-     "held-out group",
+     "group",
      "30",
-     "-999999999.2429",
+     "−∞",
      "-0.9871",
      "0.0000",
      "0.0000",
@@ -5093,7 +5093,7 @@
     [
      "corn_protein",
      "ASTM-G",
-     "held-out group",
+     "group",
      "30",
      "0.1044",
      "0.2817",
@@ -5106,7 +5106,7 @@
     [
      "corn_protein",
      "ASTM-R",
-     "held-out group",
+     "group",
      "30",
      "0.1780",
      "0.1484",
@@ -5119,7 +5119,7 @@
     [
      "corn_protein",
      "BAG",
-     "held-out group",
+     "group",
      "30",
      "0.1267",
      "0.2086",
@@ -5132,7 +5132,7 @@
     [
      "corn_protein",
      "CQR",
-     "held-out group",
+     "group",
      "30",
      "0.3458",
      "0.6946",
@@ -5145,7 +5145,7 @@
     [
      "corn_protein",
      "CV+",
-     "held-out group",
+     "group",
      "30",
      "0.1527",
      "0.1054",
@@ -5158,7 +5158,7 @@
     [
      "corn_protein",
      "G-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.0920",
      "0.0753",
@@ -5171,7 +5171,7 @@
     [
      "corn_protein",
      "G-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0000",
      "0.0000",
@@ -5184,7 +5184,7 @@
     [
      "corn_protein",
      "G-W-A",
-     "held-out group",
+     "group",
      "30",
      "0.0920",
      "0.0753",
@@ -5197,9 +5197,9 @@
     [
      "corn_protein",
      "GC-D+",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5210,7 +5210,7 @@
     [
      "corn_protein",
      "GPR",
-     "held-out group",
+     "group",
      "30",
      "0.2833",
      "0.6645",
@@ -5223,9 +5223,9 @@
     [
      "corn_protein",
      "HCP-A",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5236,9 +5236,9 @@
     [
      "corn_protein",
      "HCP-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5249,9 +5249,9 @@
     [
      "corn_protein",
      "HJ+",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5262,9 +5262,9 @@
     [
      "corn_protein",
      "HJ+-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5275,7 +5275,7 @@
     [
      "corn_protein",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "30",
      "0.0470",
      "-0.0968",
@@ -5288,7 +5288,7 @@
     [
      "corn_protein",
      "QGB",
-     "held-out group",
+     "group",
      "30",
      "0.0569",
      "0.2258",
@@ -5301,7 +5301,7 @@
     [
      "corn_protein",
      "R-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.1778",
      "0.0323",
@@ -5314,7 +5314,7 @@
     [
      "corn_protein",
      "R-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.1248",
      "0.4237",
@@ -5327,7 +5327,7 @@
     [
      "corn_protein",
      "SCP",
-     "held-out group",
+     "group",
      "30",
      "0.0454",
      "-0.0968",
@@ -5340,9 +5340,9 @@
     [
      "corn_protein",
      "WCP",
-     "held-out group",
+     "group",
      "30",
-     "-999999998.1847",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5353,7 +5353,7 @@
     [
      "corn_starch",
      "ASTM-G",
-     "held-out group",
+     "group",
      "30",
      "0.4593",
      "0.3806",
@@ -5366,7 +5366,7 @@
     [
      "corn_starch",
      "ASTM-R",
-     "held-out group",
+     "group",
      "30",
      "0.3343",
      "0.1484",
@@ -5379,7 +5379,7 @@
     [
      "corn_starch",
      "BAG",
-     "held-out group",
+     "group",
      "30",
      "0.7404",
      "0.4581",
@@ -5392,7 +5392,7 @@
     [
      "corn_starch",
      "CQR",
-     "held-out group",
+     "group",
      "30",
      "0.7189",
      "0.8151",
@@ -5405,7 +5405,7 @@
     [
      "corn_starch",
      "CV+",
-     "held-out group",
+     "group",
      "30",
      "0.3772",
      "0.1484",
@@ -5418,7 +5418,7 @@
     [
      "corn_starch",
      "G-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.3859",
      "0.1957",
@@ -5431,7 +5431,7 @@
     [
      "corn_starch",
      "G-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0000",
      "0.0000",
@@ -5444,7 +5444,7 @@
     [
      "corn_starch",
      "G-W-A",
-     "held-out group",
+     "group",
      "30",
      "0.3859",
      "0.1957",
@@ -5457,9 +5457,9 @@
     [
      "corn_starch",
      "GC-D+",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5470,7 +5470,7 @@
     [
      "corn_starch",
      "GPR",
-     "held-out group",
+     "group",
      "30",
      "0.4886",
      "0.2602",
@@ -5483,9 +5483,9 @@
     [
      "corn_starch",
      "HCP-A",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5496,9 +5496,9 @@
     [
      "corn_starch",
      "HCP-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5509,9 +5509,9 @@
     [
      "corn_starch",
      "HJ+",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5522,9 +5522,9 @@
     [
      "corn_starch",
      "HJ+-D",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5535,7 +5535,7 @@
     [
      "corn_starch",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "30",
      "0.0716",
      "-0.1656",
@@ -5548,7 +5548,7 @@
     [
      "corn_starch",
      "QGB",
-     "held-out group",
+     "group",
      "30",
      "0.2059",
      "0.3849",
@@ -5561,7 +5561,7 @@
     [
      "corn_starch",
      "R-U-A",
-     "held-out group",
+     "group",
      "30",
      "0.3156",
      "0.0065",
@@ -5574,7 +5574,7 @@
     [
      "corn_starch",
      "R-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.6903",
      "0.6258",
@@ -5587,7 +5587,7 @@
     [
      "corn_starch",
      "SCP",
-     "held-out group",
+     "group",
      "30",
      "-0.0360",
      "-0.2000",
@@ -5600,9 +5600,9 @@
     [
      "corn_starch",
      "WCP",
-     "held-out group",
+     "group",
      "30",
-     "-999999995.6617",
+     "−∞",
      "-0.9957",
      "0.0000",
      "0.0000",
@@ -5613,7 +5613,7 @@
     [
      "mango_instrument",
      "ASTM-G",
-     "held-out group",
+     "group",
      "24",
      "-0.1169",
      "-0.3667",
@@ -5626,7 +5626,7 @@
     [
      "mango_instrument",
      "ASTM-R",
-     "held-out group",
+     "group",
      "24",
      "-0.0729",
      "-0.3067",
@@ -5639,7 +5639,7 @@
     [
      "mango_instrument",
      "BAG",
-     "held-out group",
+     "group",
      "24",
      "-0.0629",
      "-0.2867",
@@ -5652,7 +5652,7 @@
     [
      "mango_instrument",
      "CQR",
-     "held-out group",
+     "group",
      "24",
      "-0.8632",
      "-0.6467",
@@ -5665,7 +5665,7 @@
     [
      "mango_instrument",
      "CV+",
-     "held-out group",
+     "group",
      "24",
      "-0.1091",
      "-0.3867",
@@ -5678,7 +5678,7 @@
     [
      "mango_instrument",
      "G-U-A",
-     "held-out group",
+     "group",
      "24",
      "-0.0252",
      "-0.2067",
@@ -5691,7 +5691,7 @@
     [
      "mango_instrument",
      "G-U-D",
-     "held-out group",
+     "group",
      "24",
      "-0.0321",
      "0.0000",
@@ -5704,7 +5704,7 @@
     [
      "mango_instrument",
      "G-W-A",
-     "held-out group",
+     "group",
      "24",
      "-0.0537",
      "-0.2733",
@@ -5717,7 +5717,7 @@
     [
      "mango_instrument",
      "GC-D+",
-     "held-out group",
+     "group",
      "24",
      "-0.1321",
      "-0.2667",
@@ -5730,7 +5730,7 @@
     [
      "mango_instrument",
      "GPR",
-     "held-out group",
+     "group",
      "24",
      "-0.5475",
      "-0.5467",
@@ -5743,7 +5743,7 @@
     [
      "mango_instrument",
      "HCP-A",
-     "held-out group",
+     "group",
      "24",
      "-6.7965",
      "-1.0000",
@@ -5756,7 +5756,7 @@
     [
      "mango_instrument",
      "HCP-D",
-     "held-out group",
+     "group",
      "24",
      "-4.8531",
      "-1.0000",
@@ -5769,7 +5769,7 @@
     [
      "mango_instrument",
      "HJ+",
-     "held-out group",
+     "group",
      "24",
      "-0.2407",
      "-0.2800",
@@ -5782,7 +5782,7 @@
     [
      "mango_instrument",
      "HJ+-D",
-     "held-out group",
+     "group",
      "24",
      "-0.1533",
      "-0.3133",
@@ -5795,7 +5795,7 @@
     [
      "mango_instrument",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "24",
      "-0.6518",
      "-0.8800",
@@ -5808,7 +5808,7 @@
     [
      "mango_instrument",
      "QGB",
-     "held-out group",
+     "group",
      "24",
      "-1.3881",
      "-0.7333",
@@ -5821,7 +5821,7 @@
     [
      "mango_instrument",
      "R-U-A",
-     "held-out group",
+     "group",
      "24",
      "-0.1189",
      "-0.3933",
@@ -5834,7 +5834,7 @@
     [
      "mango_instrument",
      "R-U-D",
-     "held-out group",
+     "group",
      "24",
      "-0.0164",
      "-0.1400",
@@ -5847,7 +5847,7 @@
     [
      "mango_instrument",
      "SCP",
-     "held-out group",
+     "group",
      "24",
      "-0.1264",
      "-0.3867",
@@ -5860,9 +5860,9 @@
     [
      "mango_instrument",
      "WCP",
-     "held-out group",
+     "group",
      "24",
-     "-999999994.4245",
+     "−∞",
      "-1.0000",
      "0.0000",
      "0.0000",
@@ -5873,7 +5873,7 @@
     [
      "mango_population",
      "ASTM-G",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0471",
      "-0.5636",
@@ -5886,7 +5886,7 @@
     [
      "mango_population",
      "ASTM-R",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0477",
      "-0.5636",
@@ -5899,7 +5899,7 @@
     [
      "mango_population",
      "BAG",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0471",
      "-0.5636",
@@ -5912,7 +5912,7 @@
     [
      "mango_population",
      "CQR",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.3762",
      "-0.7091",
@@ -5925,7 +5925,7 @@
     [
      "mango_population",
      "CV+",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0464",
      "-0.6727",
@@ -5938,7 +5938,7 @@
     [
      "mango_population",
      "G-U-A",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0454",
      "-0.5636",
@@ -5951,7 +5951,7 @@
     [
      "mango_population",
      "G-U-D",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0011",
      "-0.0545",
@@ -5964,7 +5964,7 @@
     [
      "mango_population",
      "G-W-A",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0449",
      "-0.6364",
@@ -5977,7 +5977,7 @@
     [
      "mango_population",
      "GC-D+",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0004",
      "-0.1273",
@@ -5990,7 +5990,7 @@
     [
      "mango_population",
      "GPR",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "0.2715",
      "0.7455",
@@ -6003,7 +6003,7 @@
     [
      "mango_population",
      "HCP-A",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.1884",
      "-0.8545",
@@ -6016,7 +6016,7 @@
     [
      "mango_population",
      "HCP-D",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.1645",
      "-0.8909",
@@ -6029,7 +6029,7 @@
     [
      "mango_population",
      "HJ+",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0486",
      "-0.4182",
@@ -6042,7 +6042,7 @@
     [
      "mango_population",
      "HJ+-D",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0056",
      "0.1636",
@@ -6055,7 +6055,7 @@
     [
      "mango_population",
      "NCP-kNN",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "0.2138",
      "0.4182",
@@ -6068,7 +6068,7 @@
     [
      "mango_population",
      "QGB",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.7198",
      "-0.9636",
@@ -6081,7 +6081,7 @@
     [
      "mango_population",
      "R-U-A",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0467",
      "-0.7091",
@@ -6094,7 +6094,7 @@
     [
      "mango_population",
      "R-U-D",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "0.0018",
      "0.1273",
@@ -6107,7 +6107,7 @@
     [
      "mango_population",
      "SCP",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
      "-0.0527",
      "-0.7091",
@@ -6120,9 +6120,9 @@
     [
      "mango_population",
      "WCP",
-     "outer fold (seed-0 partition)",
+     "fold (seed 0)",
      "10",
-     "-999999995.1468",
+     "−∞",
      "-1.0000",
      "0.0020",
      "0.0391",
@@ -6133,7 +6133,7 @@
     [
      "mango_season_forward",
      "ASTM-G",
-     "held-out group",
+     "group",
      "5",
      "-0.2464",
      "-0.4667",
@@ -6146,7 +6146,7 @@
     [
      "mango_season_forward",
      "ASTM-R",
-     "held-out group",
+     "group",
      "5",
      "-0.0948",
      "-0.4667",
@@ -6159,7 +6159,7 @@
     [
      "mango_season_forward",
      "BAG",
-     "held-out group",
+     "group",
      "5",
      "-0.0583",
      "-0.4667",
@@ -6172,7 +6172,7 @@
     [
      "mango_season_forward",
      "CQR",
-     "held-out group",
+     "group",
      "5",
      "-1.1948",
      "-1.0000",
@@ -6185,7 +6185,7 @@
     [
      "mango_season_forward",
      "CV+",
-     "held-out group",
+     "group",
      "5",
      "-0.1315",
      "-0.6000",
@@ -6198,7 +6198,7 @@
     [
      "mango_season_forward",
      "G-U-A",
-     "held-out group",
+     "group",
      "5",
      "-0.1772",
      "-0.4667",
@@ -6211,7 +6211,7 @@
     [
      "mango_season_forward",
      "G-U-D",
-     "held-out group",
+     "group",
      "5",
      "-0.0383",
      "-0.4667",
@@ -6224,7 +6224,7 @@
     [
      "mango_season_forward",
      "G-W-A",
-     "held-out group",
+     "group",
      "5",
      "-0.1775",
      "-0.4667",
@@ -6237,9 +6237,9 @@
     [
      "mango_season_forward",
      "GC-D+",
-     "held-out group",
+     "group",
      "5",
-     "-999999993.6803",
+     "−∞",
      "-1.0000",
      "0.0625",
      "1.0000",
@@ -6250,7 +6250,7 @@
     [
      "mango_season_forward",
      "GPR",
-     "held-out group",
+     "group",
      "5",
      "-0.6755",
      "-1.0000",
@@ -6263,9 +6263,9 @@
     [
      "mango_season_forward",
      "HCP-A",
-     "held-out group",
+     "group",
      "5",
-     "-999999993.6803",
+     "−∞",
      "-1.0000",
      "0.0625",
      "1.0000",
@@ -6276,9 +6276,9 @@
     [
      "mango_season_forward",
      "HCP-D",
-     "held-out group",
+     "group",
      "5",
-     "-999999993.6803",
+     "−∞",
      "-1.0000",
      "0.0625",
      "1.0000",
@@ -6289,9 +6289,9 @@
     [
      "mango_season_forward",
      "HJ+",
-     "held-out group",
+     "group",
      "5",
-     "-999999993.6803",
+     "−∞",
      "-1.0000",
      "0.0625",
      "1.0000",
@@ -6302,9 +6302,9 @@
     [
      "mango_season_forward",
      "HJ+-D",
-     "held-out group",
+     "group",
      "5",
-     "-999999993.6803",
+     "−∞",
      "-1.0000",
      "0.0625",
      "1.0000",
@@ -6315,7 +6315,7 @@
     [
      "mango_season_forward",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "5",
      "-0.6276",
      "-0.6000",
@@ -6328,7 +6328,7 @@
     [
      "mango_season_forward",
      "QGB",
-     "held-out group",
+     "group",
      "5",
      "-1.9253",
      "-1.0000",
@@ -6341,7 +6341,7 @@
     [
      "mango_season_forward",
      "R-U-A",
-     "held-out group",
+     "group",
      "5",
      "-0.1418",
      "-0.6000",
@@ -6354,7 +6354,7 @@
     [
      "mango_season_forward",
      "R-U-D",
-     "held-out group",
+     "group",
      "5",
      "-0.0353",
      "-0.4667",
@@ -6367,7 +6367,7 @@
     [
      "mango_season_forward",
      "SCP",
-     "held-out group",
+     "group",
      "5",
      "-0.0972",
      "-0.4667",
@@ -6380,7 +6380,7 @@
     [
      "mango_season_forward",
      "WCP",
-     "held-out group",
+     "group",
      "5",
      "-4.3649",
      "-0.8667",
@@ -6393,7 +6393,7 @@
     [
      "mango_season_loso",
      "ASTM-G",
-     "held-out group",
+     "group",
      "7",
      "-0.1824",
      "-0.3571",
@@ -6406,7 +6406,7 @@
     [
      "mango_season_loso",
      "ASTM-R",
-     "held-out group",
+     "group",
      "7",
      "-0.0494",
      "-0.3571",
@@ -6419,7 +6419,7 @@
     [
      "mango_season_loso",
      "BAG",
-     "held-out group",
+     "group",
      "7",
      "-0.0535",
      "-0.3571",
@@ -6432,7 +6432,7 @@
     [
      "mango_season_loso",
      "CQR",
-     "held-out group",
+     "group",
      "7",
      "-0.5826",
      "-0.6429",
@@ -6445,7 +6445,7 @@
     [
      "mango_season_loso",
      "CV+",
-     "held-out group",
+     "group",
      "7",
      "-0.0810",
      "-0.4286",
@@ -6458,7 +6458,7 @@
     [
      "mango_season_loso",
      "G-U-A",
-     "held-out group",
+     "group",
      "7",
      "0.0544",
      "0.0000",
@@ -6471,7 +6471,7 @@
     [
      "mango_season_loso",
      "G-U-D",
-     "held-out group",
+     "group",
      "7",
      "-0.0465",
      "-0.2143",
@@ -6484,7 +6484,7 @@
     [
      "mango_season_loso",
      "G-W-A",
-     "held-out group",
+     "group",
      "7",
      "-0.1016",
      "-0.3571",
@@ -6497,9 +6497,9 @@
     [
      "mango_season_loso",
      "GC-D+",
-     "held-out group",
+     "group",
      "7",
-     "-999999993.9316",
+     "−∞",
      "-1.0000",
      "0.0156",
      "0.3125",
@@ -6510,7 +6510,7 @@
     [
      "mango_season_loso",
      "GPR",
-     "held-out group",
+     "group",
      "7",
      "-0.6049",
      "-0.5714",
@@ -6523,9 +6523,9 @@
     [
      "mango_season_loso",
      "HCP-A",
-     "held-out group",
+     "group",
      "7",
-     "-999999993.9316",
+     "−∞",
      "-1.0000",
      "0.0156",
      "0.3125",
@@ -6536,9 +6536,9 @@
     [
      "mango_season_loso",
      "HCP-D",
-     "held-out group",
+     "group",
      "7",
-     "-999999993.9316",
+     "−∞",
      "-1.0000",
      "0.0156",
      "0.3125",
@@ -6549,9 +6549,9 @@
     [
      "mango_season_loso",
      "HJ+",
-     "held-out group",
+     "group",
      "7",
-     "-999999993.9316",
+     "−∞",
      "-1.0000",
      "0.0156",
      "0.3125",
@@ -6562,9 +6562,9 @@
     [
      "mango_season_loso",
      "HJ+-D",
-     "held-out group",
+     "group",
      "7",
-     "-999999993.9316",
+     "−∞",
      "-1.0000",
      "0.0156",
      "0.3125",
@@ -6575,7 +6575,7 @@
     [
      "mango_season_loso",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "7",
      "-0.2430",
      "-0.4286",
@@ -6588,7 +6588,7 @@
     [
      "mango_season_loso",
      "QGB",
-     "held-out group",
+     "group",
      "7",
      "-1.0478",
      "-0.8571",
@@ -6601,7 +6601,7 @@
     [
      "mango_season_loso",
      "R-U-A",
-     "held-out group",
+     "group",
      "7",
      "-0.0812",
      "-0.5000",
@@ -6614,7 +6614,7 @@
     [
      "mango_season_loso",
      "R-U-D",
-     "held-out group",
+     "group",
      "7",
      "-0.0495",
      "-0.2857",
@@ -6627,7 +6627,7 @@
     [
      "mango_season_loso",
      "SCP",
-     "held-out group",
+     "group",
      "7",
      "-0.1138",
      "-0.3571",
@@ -6640,7 +6640,7 @@
     [
      "mango_season_loso",
      "WCP",
-     "held-out group",
+     "group",
      "7",
      "-0.4367",
      "-0.5000",
@@ -6653,7 +6653,7 @@
     [
      "ossl_kssl_to_lucas",
      "ASTM-G",
-     "outer fold",
+     "fold",
      "1",
      "-30.7141",
      "-1.0000",
@@ -6666,7 +6666,7 @@
     [
      "ossl_kssl_to_lucas",
      "ASTM-R",
-     "outer fold",
+     "fold",
      "1",
      "-41.0577",
      "-1.0000",
@@ -6679,7 +6679,7 @@
     [
      "ossl_kssl_to_lucas",
      "BAG",
-     "outer fold",
+     "fold",
      "1",
      "-41.4047",
      "-1.0000",
@@ -6692,7 +6692,7 @@
     [
      "ossl_kssl_to_lucas",
      "CQR",
-     "outer fold",
+     "fold",
      "1",
      "-10.0420",
      "-1.0000",
@@ -6705,7 +6705,7 @@
     [
      "ossl_kssl_to_lucas",
      "CV+",
-     "outer fold",
+     "fold",
      "1",
      "-43.7012",
      "-1.0000",
@@ -6718,7 +6718,7 @@
     [
      "ossl_kssl_to_lucas",
      "G-U-A",
-     "outer fold",
+     "fold",
      "1",
      "-40.1325",
      "-1.0000",
@@ -6731,7 +6731,7 @@
     [
      "ossl_kssl_to_lucas",
      "G-U-D",
-     "outer fold",
+     "fold",
      "1",
      "2.2407",
      "1.0000",
@@ -6744,7 +6744,7 @@
     [
      "ossl_kssl_to_lucas",
      "G-W-A",
-     "outer fold",
+     "fold",
      "1",
      "-33.3959",
      "-1.0000",
@@ -6757,7 +6757,7 @@
     [
      "ossl_kssl_to_lucas",
      "GC-D+",
-     "outer fold",
+     "fold",
      "1",
      "-3.6857",
      "-1.0000",
@@ -6770,7 +6770,7 @@
     [
      "ossl_kssl_to_lucas",
      "GPR",
-     "outer fold",
+     "fold",
      "1",
      "12.3398",
      "1.0000",
@@ -6783,7 +6783,7 @@
     [
      "ossl_kssl_to_lucas",
      "HCP-A",
-     "outer fold",
+     "fold",
      "1",
      "-22.5906",
      "-1.0000",
@@ -6796,7 +6796,7 @@
     [
      "ossl_kssl_to_lucas",
      "HCP-D",
-     "outer fold",
+     "fold",
      "1",
      "-5.9800",
      "-1.0000",
@@ -6809,7 +6809,7 @@
     [
      "ossl_kssl_to_lucas",
      "HJ+",
-     "outer fold",
+     "fold",
      "1",
      "-27.1396",
      "-1.0000",
@@ -6822,7 +6822,7 @@
     [
      "ossl_kssl_to_lucas",
      "HJ+-D",
-     "outer fold",
+     "fold",
      "1",
      "-3.5396",
      "-1.0000",
@@ -6835,7 +6835,7 @@
     [
      "ossl_kssl_to_lucas",
      "NCP-kNN",
-     "outer fold",
+     "fold",
      "1",
      "-28.6438",
      "-1.0000",
@@ -6848,7 +6848,7 @@
     [
      "ossl_kssl_to_lucas",
      "QGB",
-     "outer fold",
+     "fold",
      "1",
      "-13.5568",
      "-1.0000",
@@ -6861,7 +6861,7 @@
     [
      "ossl_kssl_to_lucas",
      "R-U-A",
-     "outer fold",
+     "fold",
      "1",
      "-43.7225",
      "-1.0000",
@@ -6874,7 +6874,7 @@
     [
      "ossl_kssl_to_lucas",
      "R-U-D",
-     "outer fold",
+     "fold",
      "1",
      "3.8305",
      "1.0000",
@@ -6887,7 +6887,7 @@
     [
      "ossl_kssl_to_lucas",
      "SCP",
-     "outer fold",
+     "fold",
      "1",
      "-52.8624",
      "-1.0000",
@@ -6900,9 +6900,9 @@
     [
      "ossl_kssl_to_lucas",
      "WCP",
-     "outer fold",
+     "fold",
      "1",
-     "-999999904.4804",
+     "−∞",
      "-1.0000",
      "1.0000",
      "1.0000",
@@ -6913,7 +6913,7 @@
     [
      "ossl_lucas_block",
      "ASTM-G",
-     "held-out group",
+     "group",
      "30",
      "-0.0701",
      "-0.4624",
@@ -6926,7 +6926,7 @@
     [
      "ossl_lucas_block",
      "ASTM-R",
-     "held-out group",
+     "group",
      "30",
      "-0.1610",
      "-0.7333",
@@ -6939,7 +6939,7 @@
     [
      "ossl_lucas_block",
      "BAG",
-     "held-out group",
+     "group",
      "30",
      "-0.1457",
      "-0.6516",
@@ -6952,7 +6952,7 @@
     [
      "ossl_lucas_block",
      "CQR",
-     "held-out group",
+     "group",
      "30",
      "1.5369",
      "1.0000",
@@ -6965,7 +6965,7 @@
     [
      "ossl_lucas_block",
      "CV+",
-     "held-out group",
+     "group",
      "30",
      "-0.1841",
      "-0.7935",
@@ -6978,7 +6978,7 @@
     [
      "ossl_lucas_block",
      "G-U-A",
-     "held-out group",
+     "group",
      "30",
      "-0.1556",
      "-0.6774",
@@ -6991,7 +6991,7 @@
     [
      "ossl_lucas_block",
      "G-U-D",
-     "held-out group",
+     "group",
      "30",
      "-0.0000",
      "0.2215",
@@ -7004,7 +7004,7 @@
     [
      "ossl_lucas_block",
      "G-W-A",
-     "held-out group",
+     "group",
      "30",
      "-0.1585",
      "-0.6387",
@@ -7017,7 +7017,7 @@
     [
      "ossl_lucas_block",
      "GC-D+",
-     "held-out group",
+     "group",
      "30",
      "-0.1610",
      "-0.0710",
@@ -7030,7 +7030,7 @@
     [
      "ossl_lucas_block",
      "GPR",
-     "held-out group",
+     "group",
      "30",
      "0.7942",
      "0.9398",
@@ -7043,7 +7043,7 @@
     [
      "ossl_lucas_block",
      "HCP-A",
-     "held-out group",
+     "group",
      "30",
      "-1.2277",
      "-0.7505",
@@ -7056,7 +7056,7 @@
     [
      "ossl_lucas_block",
      "HCP-D",
-     "held-out group",
+     "group",
      "30",
      "-1.1193",
      "-0.7935",
@@ -7069,7 +7069,7 @@
     [
      "ossl_lucas_block",
      "HJ+",
-     "held-out group",
+     "group",
      "30",
      "-0.1840",
      "-0.2473",
@@ -7082,7 +7082,7 @@
     [
      "ossl_lucas_block",
      "HJ+-D",
-     "held-out group",
+     "group",
      "30",
      "-0.1200",
      "-0.1011",
@@ -7095,7 +7095,7 @@
     [
      "ossl_lucas_block",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "30",
      "0.9220",
      "0.9828",
@@ -7108,7 +7108,7 @@
     [
      "ossl_lucas_block",
      "QGB",
-     "held-out group",
+     "group",
      "30",
      "1.1799",
      "0.9957",
@@ -7121,7 +7121,7 @@
     [
      "ossl_lucas_block",
      "R-U-A",
-     "held-out group",
+     "group",
      "30",
      "-0.1888",
      "-0.7935",
@@ -7134,7 +7134,7 @@
     [
      "ossl_lucas_block",
      "R-U-D",
-     "held-out group",
+     "group",
      "30",
      "0.0041",
      "-0.2860",
@@ -7147,7 +7147,7 @@
     [
      "ossl_lucas_block",
      "SCP",
-     "held-out group",
+     "group",
      "30",
      "-0.1912",
      "-0.8280",
@@ -7160,9 +7160,9 @@
     [
      "ossl_lucas_block",
      "WCP",
-     "held-out group",
+     "group",
      "30",
-     "-999999973.8658",
+     "−∞",
      "-0.9140",
      "0.0000",
      "0.0002",
@@ -7173,7 +7173,7 @@
     [
      "ossl_lucas_campaign",
      "ASTM-G",
-     "outer fold",
+     "fold",
      "2",
      "-0.5270",
      "-1.0000",
@@ -7186,7 +7186,7 @@
     [
      "ossl_lucas_campaign",
      "ASTM-R",
-     "outer fold",
+     "fold",
      "2",
      "-0.8751",
      "-1.0000",
@@ -7199,7 +7199,7 @@
     [
      "ossl_lucas_campaign",
      "BAG",
-     "outer fold",
+     "fold",
      "2",
      "-0.8964",
      "-1.0000",
@@ -7212,7 +7212,7 @@
     [
      "ossl_lucas_campaign",
      "CQR",
-     "outer fold",
+     "fold",
      "2",
      "2.4328",
      "1.0000",
@@ -7225,7 +7225,7 @@
     [
      "ossl_lucas_campaign",
      "CV+",
-     "outer fold",
+     "fold",
      "2",
      "-1.0897",
      "-1.0000",
@@ -7238,7 +7238,7 @@
     [
      "ossl_lucas_campaign",
      "G-U-A",
-     "outer fold",
+     "fold",
      "2",
      "-0.7462",
      "-1.0000",
@@ -7251,7 +7251,7 @@
     [
      "ossl_lucas_campaign",
      "G-U-D",
-     "outer fold",
+     "fold",
      "2",
      "0.0094",
      "0.3333",
@@ -7264,7 +7264,7 @@
     [
      "ossl_lucas_campaign",
      "G-W-A",
-     "outer fold",
+     "fold",
      "2",
      "-0.6831",
      "-1.0000",
@@ -7277,7 +7277,7 @@
     [
      "ossl_lucas_campaign",
      "GC-D+",
-     "outer fold",
+     "fold",
      "2",
      "0.3831",
      "1.0000",
@@ -7290,7 +7290,7 @@
     [
      "ossl_lucas_campaign",
      "GPR",
-     "outer fold",
+     "fold",
      "2",
      "-0.2450",
      "-0.3333",
@@ -7303,7 +7303,7 @@
     [
      "ossl_lucas_campaign",
      "HCP-A",
-     "outer fold",
+     "fold",
      "2",
      "0.0004",
      "0.3333",
@@ -7316,7 +7316,7 @@
     [
      "ossl_lucas_campaign",
      "HCP-D",
-     "outer fold",
+     "fold",
      "2",
      "-0.4856",
      "-0.3333",
@@ -7329,7 +7329,7 @@
     [
      "ossl_lucas_campaign",
      "HJ+",
-     "outer fold",
+     "fold",
      "2",
      "0.0808",
      "1.0000",
@@ -7342,7 +7342,7 @@
     [
      "ossl_lucas_campaign",
      "HJ+-D",
-     "outer fold",
+     "fold",
      "2",
      "0.3615",
      "1.0000",
@@ -7355,7 +7355,7 @@
     [
      "ossl_lucas_campaign",
      "NCP-kNN",
-     "outer fold",
+     "fold",
      "2",
      "0.5545",
      "1.0000",
@@ -7368,7 +7368,7 @@
     [
      "ossl_lucas_campaign",
      "QGB",
-     "outer fold",
+     "fold",
      "2",
      "1.4254",
      "0.3333",
@@ -7381,7 +7381,7 @@
     [
      "ossl_lucas_campaign",
      "R-U-A",
-     "outer fold",
+     "fold",
      "2",
      "-1.0909",
      "-1.0000",
@@ -7394,7 +7394,7 @@
     [
      "ossl_lucas_campaign",
      "R-U-D",
-     "outer fold",
+     "fold",
      "2",
      "-0.0877",
      "-1.0000",
@@ -7407,7 +7407,7 @@
     [
      "ossl_lucas_campaign",
      "SCP",
-     "outer fold",
+     "fold",
      "2",
      "-1.3354",
      "-1.0000",
@@ -7420,9 +7420,9 @@
     [
      "ossl_lucas_campaign",
      "WCP",
-     "outer fold",
+     "fold",
      "2",
-     "-999999987.8030",
+     "−∞",
      "-1.0000",
      "0.5000",
      "1.0000",
@@ -7433,7 +7433,7 @@
     [
      "tablets",
      "ASTM-G",
-     "held-out group",
+     "group",
      "2",
      "-1.1514",
      "-1.0000",
@@ -7446,7 +7446,7 @@
     [
      "tablets",
      "ASTM-R",
-     "held-out group",
+     "group",
      "2",
      "-1.1514",
      "-1.0000",
@@ -7459,7 +7459,7 @@
     [
      "tablets",
      "BAG",
-     "held-out group",
+     "group",
      "2",
      "-1.2932",
      "-1.0000",
@@ -7472,7 +7472,7 @@
     [
      "tablets",
      "CQR",
-     "held-out group",
+     "group",
      "2",
      "-13.5524",
      "-1.0000",
@@ -7485,7 +7485,7 @@
     [
      "tablets",
      "CV+",
-     "held-out group",
+     "group",
      "2",
      "-0.9594",
      "-1.0000",
@@ -7498,7 +7498,7 @@
     [
      "tablets",
      "G-U-A",
-     "held-out group",
+     "group",
      "2",
      "-1.3245",
      "-0.3333",
@@ -7511,7 +7511,7 @@
     [
      "tablets",
      "G-U-D",
-     "held-out group",
+     "group",
      "2",
      "0.0000",
      "0.0000",
@@ -7524,7 +7524,7 @@
     [
      "tablets",
      "G-W-A",
-     "held-out group",
+     "group",
      "2",
      "-1.3245",
      "-0.3333",
@@ -7537,7 +7537,7 @@
     [
      "tablets",
      "GC-D+",
-     "held-out group",
+     "group",
      "2",
      "-0.0156",
      "-0.3333",
@@ -7550,7 +7550,7 @@
     [
      "tablets",
      "GPR",
-     "held-out group",
+     "group",
      "2",
      "-3.4028",
      "-1.0000",
@@ -7563,7 +7563,7 @@
     [
      "tablets",
      "HCP-A",
-     "held-out group",
+     "group",
      "2",
      "-4.9206",
      "-1.0000",
@@ -7576,7 +7576,7 @@
     [
      "tablets",
      "HCP-D",
-     "held-out group",
+     "group",
      "2",
      "-3.8605",
      "-1.0000",
@@ -7589,7 +7589,7 @@
     [
      "tablets",
      "HJ+",
-     "held-out group",
+     "group",
      "2",
      "-0.9594",
      "-1.0000",
@@ -7602,7 +7602,7 @@
     [
      "tablets",
      "HJ+-D",
-     "held-out group",
+     "group",
      "2",
      "-0.0208",
      "-0.3333",
@@ -7615,7 +7615,7 @@
     [
      "tablets",
      "NCP-kNN",
-     "held-out group",
+     "group",
      "2",
      "-1.1166",
      "-1.0000",
@@ -7628,7 +7628,7 @@
     [
      "tablets",
      "QGB",
-     "held-out group",
+     "group",
      "2",
      "-13.8898",
      "-1.0000",
@@ -7641,7 +7641,7 @@
     [
      "tablets",
      "R-U-A",
-     "held-out group",
+     "group",
      "2",
      "-1.3245",
      "-0.3333",
@@ -7654,7 +7654,7 @@
     [
      "tablets",
      "R-U-D",
-     "held-out group",
+     "group",
      "2",
      "0.0000",
      "0.0000",
@@ -7667,7 +7667,7 @@
     [
      "tablets",
      "SCP",
-     "held-out group",
+     "group",
      "2",
      "-2.4731",
      "-1.0000",
@@ -7680,9 +7680,9 @@
     [
      "tablets",
      "WCP",
-     "held-out group",
+     "group",
      "2",
-     "-499999988.8037",
+     "−∞",
      "-1.0000",
      "0.5000",
      "1.0000",
@@ -7691,7 +7691,7 @@
      "1.0000"
     ]
    ],
-   "caption": "Table S14. All paired comparisons of GC-D with each comparator (two-sided Wilcoxon; Holm within scenario and, more conservatively, across all main-scenario tests).",
+   "caption": "Table S14. All paired comparisons of GC-D with each comparator (two-sided Wilcoxon signed-rank over units; ΔIS = median of GC-D minus comparator interval score, −∞ when the comparator's intervals were unbounded; r = rank-biserial correlation; Holm within scenario and, more conservatively, across all main-scenario tests (all); Δ|cov. gap| = median difference of |coverage − 0.90|).",
    "note": null
   },
   {

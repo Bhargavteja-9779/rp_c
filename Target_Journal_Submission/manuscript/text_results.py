@@ -360,7 +360,10 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"bagging {tv.loc['BAG','method_s']:.0f} s, GPR {tv.loc['GPR','method_s']:.0f} s, CQR {tv.loc['CQR','method_s']:.0f} s "
                     f"and the hierarchical jackknife+ {tv.loc['HJ+','method_s']:.1f} s. Predicting a new spectrum with GC-D needs "
                     "one PLS prediction, T², Q and three exponentiated coefficients, which is straightforward to implement in "
-                    "instrument software."),
+                    "instrument software; no training data need to be stored. In terms of complexity, the group-wise "
+                    "cross-validation costs K + 1 PLS fits — the same work as the usual group-wise choice of the number of "
+                    "latent variables — and GC-D adds only a three-parameter scale model and one weighted quantile, whereas "
+                    "the hierarchical jackknife+ must keep and evaluate K leave-group-out models for every new spectrum."),
               ]
     # ------------------------------------------------------------------ 4.8 error and decision analysis
     cc = _csv("conditional_coverage_mango_season_loso.csv", os.path.join(R, "error_analysis"))

@@ -23,3 +23,18 @@ Severity: High / Medium / Low (probability × impact on the editorial decision).
 **Overall**: the main residual risks are novelty perception (1), statistical strength of pairwise differences (4) and the
 strong simple alternative (8). They are inherent to the findings and are disclosed rather than hidden. The remaining
 blocking items are author actions (10).
+
+## Final decision (Phase 42)
+
+**READY for submission to Talanta — scientifically and technically — subject only to the author actions in risk 10**
+(names, affiliations, ORCID, funding, competing-interest confirmation, AI-declaration review, repository DOI,
+suggested reviewers), which cannot be supplied by the analysis.
+
+Basis: all pre-registered and reviewer-requested experiments are complete (main 12 scenarios × 5 seeds; post-hoc
+iteration; robustness, sensitivity, CNN, WCP-clip, cultivar, isolated timing); ten review rounds were addressed;
+the manuscript audit passes 33/33 checks; claims are mapped to evidence; citations are verified; negative results
+(corn, KSSL→LUCAS, noise, GC-D2, non-significant IS gains, ASTM-G as a strong simple alternative) are reported in
+the abstract or results; the reproducibility audit passed after two fixes (final_audit.md).
+
+Acceptance cannot be guaranteed, and neither can acceptance within 72 days: Talanta's measured historical
+median is 66 days (all research articles) and 74.5 days (chemometrics/ML papers).
