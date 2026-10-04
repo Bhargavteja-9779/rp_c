@@ -1,0 +1,101 @@
+season2016 ASTM-R setup 5.4s method 2.83s peak 193MiB
+season2016 ASTM-G setup 5.0s method 0.00s peak 2MiB
+season2016 GPR setup 5.0s method 12.95s peak 483MiB
+season2016 BAG setup 4.7s method 12.69s peak 191MiB
+season2016 QGB setup 4.7s method 4.91s peak 163MiB
+season2016 SCP setup 5.1s method 0.71s peak 162MiB
+season2016 NCP-kNN setup 5.0s method 9.60s peak 166MiB
+season2016 CV+ setup 5.3s method 3.63s peak 193MiB
+season2016 CQR setup 5.5s method 4.96s peak 162MiB
+season2016 WCP setup 4.9s method 0.68s peak 162MiB
+season2016 R-U-A setup 5.0s method 2.78s peak 193MiB
+season2016 R-U-D setup 4.7s method 3.22s peak 193MiB
+season2016 G-U-A setup 4.5s method 0.00s peak 4MiB
+season2016 G-W-A setup 4.7s method 0.01s peak 5MiB
+season2016 G-U-D setup 4.9s method 0.12s peak 83MiB
+season2016 GC-D setup 4.6s method 0.11s peak 83MiB
+season2016 GC-D+ setup 4.7s method 0.11s peak 83MiB
+season2016 HJ+ setup 4.5s method 0.54s peak 42MiB
+season2016 HJ+-D setup 4.9s method 0.66s peak 85MiB
+season2016 HCP-D setup 4.7s method 1.36s peak 147MiB
+season2016 HCP-A setup 5.2s method 0.82s peak 134MiB
+season2016 ORACLE setup 5.2s method 0.02s peak 1MiB
+season2016 WCP-clip setup 5.3s method 0.71s peak 162MiB
+season2016 GC-D2 setup 5.3s method 0.14s peak 82MiB
+season2016 GC-CQR setup 5.1s method 31.73s peak 205MiB
+season2018 ASTM-R setup 5.5s method 3.09s peak 191MiB
+season2018 ASTM-G setup 4.4s method 0.00s peak 2MiB
+season2018 GPR setup 4.4s method 20.65s peak 511MiB
+season2018 BAG setup 4.4s method 16.60s peak 191MiB
+season2018 QGB setup 4.6s method 5.63s peak 164MiB
+season2018 SCP setup 4.8s method 0.62s peak 164MiB
+season2018 NCP-kNN setup 4.7s method 8.65s peak 176MiB
+season2018 CV+ setup 5.0s method 3.62s peak 191MiB
+season2018 CQR setup 4.7s method 5.43s peak 164MiB
+season2018 WCP setup 4.8s method 0.67s peak 164MiB
+season2018 R-U-A setup 4.6s method 2.84s peak 191MiB
+season2018 R-U-D setup 4.7s method 2.87s peak 191MiB
+season2018 G-U-A setup 4.6s method 0.00s peak 4MiB
+season2018 G-W-A setup 4.3s method 0.01s peak 5MiB
+season2018 G-U-D setup 4.5s method 0.11s peak 84MiB
+season2018 GC-D setup 4.4s method 0.12s peak 84MiB
+season2018 GC-D+ setup 4.4s method 0.11s peak 84MiB
+season2018 HJ+ setup 4.6s method 0.59s peak 45MiB
+season2018 HJ+-D setup 4.6s method 0.63s peak 86MiB
+season2018 HCP-D setup 4.7s method 1.11s peak 115MiB
+season2018 HCP-A setup 5.0s method 0.70s peak 115MiB
+season2018 ORACLE setup 4.8s method 0.03s peak 1MiB
+season2018 WCP-clip setup 4.8s method 0.75s peak 164MiB
+season2018 GC-D2 setup 4.7s method 0.15s peak 83MiB
+season2018 GC-CQR setup 4.4s method 35.22s peak 207MiB
+season2020 ASTM-R setup 5.6s method 3.57s peak 222MiB
+season2020 ASTM-G setup 5.4s method 0.00s peak 2MiB
+season2020 GPR setup 5.5s method 13.24s peak 352MiB
+season2020 BAG setup 5.0s method 15.65s peak 216MiB
+season2020 QGB setup 5.1s method 5.24s peak 188MiB
+season2020 SCP setup 6.0s method 0.75s peak 188MiB
+season2020 NCP-kNN setup 5.4s method 8.55s peak 195MiB
+season2020 CV+ setup 5.6s method 3.57s peak 222MiB
+season2020 CQR setup 5.5s method 5.25s peak 188MiB
+season2020 WCP setup 5.7s method 0.71s peak 188MiB
+season2020 R-U-A setup 5.2s method 3.19s peak 222MiB
+season2020 R-U-D setup 5.1s method 3.61s peak 222MiB
+season2020 G-U-A setup 5.1s method 0.00s peak 5MiB
+season2020 G-W-A setup 5.1s method 0.01s peak 6MiB
+season2020 G-U-D setup 5.3s method 0.13s peak 83MiB
+season2020 GC-D setup 5.2s method 0.12s peak 83MiB
+season2020 GC-D+ setup 5.0s method 0.13s peak 83MiB
+season2020 HJ+ setup 5.2s method 0.56s peak 13MiB
+season2020 HJ+-D setup 5.2s method 0.62s peak 84MiB
+season2020 HCP-D setup 5.9s method 1.17s peak 147MiB
+season2020 HCP-A setup 5.4s method 0.79s peak 147MiB
+season2020 ORACLE setup 5.6s method 0.01s peak 0MiB
+season2020 WCP-clip setup 5.2s method 0.68s peak 188MiB
+season2020 GC-D2 setup 5.4s method 0.15s peak 82MiB
+season2020 GC-CQR setup 5.1s method 36.56s peak 239MiB
+      method  method_s  method_s_sd  peak_MiB  ms_per_test_spectrum  shared_setup_s
+0     ASTM-G     0.002        0.000     2.242                 0.000           4.895
+5      G-U-A     0.004        0.000     4.575                 0.000           4.742
+7      G-W-A     0.012        0.001     5.675                 0.001           4.695
+18    ORACLE     0.020        0.011     0.747                 0.002           5.190
+10     GC-D+     0.117        0.011    83.338                 0.014           4.670
+6      G-U-D     0.120        0.008    83.338                 0.015           4.887
+9       GC-D     0.120        0.005    83.338                 0.014           4.746
+11     GC-D2     0.146        0.009    82.218                 0.017           5.120
+15       HJ+     0.566        0.022    33.700                 0.066           4.766
+16     HJ+-D     0.637        0.021    84.985                 0.074           4.886
+23       WCP     0.688        0.020   171.217                 0.082           5.155
+22       SCP     0.692        0.069   171.217                 0.084           5.315
+24  WCP-clip     0.713        0.032   171.217                 0.082           5.093
+13     HCP-A     0.771        0.067   132.092                 0.092           5.210
+14     HCP-D     1.213        0.132   136.379                 0.140           5.085
+20     R-U-A     2.936        0.223   201.935                 0.358           4.914
+1     ASTM-R     3.161        0.378   201.935                 0.393           5.499
+21     R-U-D     3.236        0.370   201.935                 0.400           4.846
+4        CV+     3.603        0.034   201.935                 0.421           5.281
+3        CQR     5.213        0.239   171.217                 0.613           5.218
+19       QGB     5.257        0.361   171.573                 0.615           4.832
+17   NCP-kNN     8.933        0.579   179.120                 1.028           5.015
+2        BAG    14.980        2.041   198.978                 1.791           4.685
+12       GPR    15.613        4.368   448.503                 1.700           5.002
+8     GC-CQR    34.502        2.496   216.729                 4.156           4.882

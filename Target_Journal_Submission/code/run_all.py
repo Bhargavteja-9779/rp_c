@@ -1,7 +1,7 @@
 """Reproduce the complete study.
 
     python run_all.py --mode quick     # pipeline check: 2 folds per task, seed 0, few methods (~15 min, 4 CPU cores)
-    python run_all.py --mode full      # complete study as reported (several hours on 4 CPU cores)
+    python run_all.py --mode full      # complete study as reported (≈ 45 core-hours, about half a day on 4 CPU cores)
 
 Steps: download data -> unit tests -> main experiments (E1-E3, E5) -> post-hoc iteration ->
 robustness/sensitivity (E4, E7) -> CNN model-agnosticism check -> aggregation & statistics ->
@@ -72,7 +72,7 @@ def main():
         cmds += [f"{py} experiments/run_robustness.py --exp perturb --quick",
                  f"{py} experiments/run_cnn.py --seed 0 --quick"]
     parallel(cmds, env, a.workers)
-    sh(f"{py} experiments/run_timing.py", env)   # isolated timing on an idle machine (E6)
+    sh(f"{py} experiments/run_timing.py{quick}", env)   # isolated timing on an idle machine (E6)
     sh(f"{py} experiments/aggregate.py", env)
     sh(f"{py} experiments/aggregate_extra.py", env)
     sh(f"{py} experiments/analysis_points.py", env)

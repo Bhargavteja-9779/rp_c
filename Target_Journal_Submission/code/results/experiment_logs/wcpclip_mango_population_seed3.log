@@ -1,0 +1,10 @@
+2026-10-04 04:34:40,819   [mango_population] fold popfold0: n_tr=77806 n_te=7595 A=20 K=179 setup=1.4s
+2026-10-04 04:34:43,444   [mango_population] fold popfold1: n_tr=77718 n_te=7683 A=20 K=179 setup=1.2s
+2026-10-04 04:34:46,193   [mango_population] fold popfold2: n_tr=76463 n_te=8938 A=20 K=179 setup=1.3s
+2026-10-04 04:34:49,119   [mango_population] fold popfold3: n_tr=77677 n_te=7724 A=18 K=179 setup=1.3s
+2026-10-04 04:34:51,648   [mango_population] fold popfold4: n_tr=77105 n_te=8296 A=18 K=179 setup=1.1s
+2026-10-04 04:34:54,229   [mango_population] fold popfold5: n_tr=75873 n_te=9528 A=19 K=179 setup=1.2s
+2026-10-04 04:34:56,829   [mango_population] fold popfold6: n_tr=77023 n_te=8378 A=18 K=179 setup=1.3s
+2026-10-04 04:34:59,368   [mango_population] fold popfold7: n_tr=74956 n_te=10445 A=20 K=179 setup=1.2s
+2026-10-04 04:35:02,006   [mango_population] fold popfold8: n_tr=76885 n_te=8516 A=19 K=179 setup=1.2s
+2026-10-04 04:35:04,591   [mango_population] fold popfold9: n_tr=77103 n_te=8298 A=20 K=180 setup=1.3s

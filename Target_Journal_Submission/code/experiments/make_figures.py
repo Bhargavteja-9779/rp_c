@@ -242,7 +242,7 @@ def fig_efficiency(s=None):
     axs[0].barh(labels, t.method_s + 1e-4, color=[color(m) for m in t.method], height=0.6)
     axs[0].set_xscale("log"); axs[0].set_xlabel("Method-specific time per held-out season (s)")
     axs[0].axvline(shared, color=INK2, ls="--", lw=0.8)
-    axs[0].text(shared, len(t) - 0.4, f" shared group CV + PLS: {shared:.1f} s", fontsize=6, color=INK2, va="top")
+    axs[0].text(shared * 1.15, 1.0, f"shared group CV\n+ final PLS: {shared:.1f} s", fontsize=6, color=INK2, va="center")
     axs[1].barh(labels, t.peak_MiB, color=[color(m) for m in t.method], height=0.6)
     axs[1].set_xlabel("Peak additional memory (MiB)")
     fig.tight_layout(); save(fig, FIG, "fig7_efficiency")

@@ -1,0 +1,21 @@
+2026-10-04 05:00:20,316   [mango_population] fold popfold0: n_tr=75901 n_te=9500 A=18 K=179 setup=5.6s
+2026-10-04 05:00:30,374   [mango_population] fold popfold1: n_tr=77875 n_te=7526 A=19 K=179 setup=5.2s
+2026-10-04 05:00:40,759   [mango_population] fold popfold2: n_tr=77245 n_te=8156 A=20 K=179 setup=5.3s
+2026-10-04 05:00:50,366   [mango_population] fold popfold3: n_tr=74737 n_te=10664 A=20 K=179 setup=4.7s
+2026-10-04 05:01:00,412   [mango_population] fold popfold4: n_tr=76755 n_te=8646 A=20 K=179 setup=5.3s
+2026-10-04 05:01:10,671   [mango_population] fold popfold5: n_tr=74753 n_te=10648 A=18 K=179 setup=5.2s
+2026-10-04 05:01:20,491   [mango_population] fold popfold6: n_tr=77852 n_te=7549 A=20 K=179 setup=5.3s
+2026-10-04 05:01:30,818   [mango_population] fold popfold7: n_tr=79204 n_te=6197 A=20 K=179 setup=5.4s
+2026-10-04 05:01:40,654   [mango_population] fold popfold8: n_tr=75646 n_te=9755 A=18 K=179 setup=4.9s
+2026-10-04 05:01:51,508   [mango_population] fold popfold9: n_tr=78641 n_te=6760 A=19 K=180 setup=5.7s
+2026-10-04 05:02:17,312   [mango_population] fold popfold0: n_tr=75901 n_te=9500 A=19 K=179 setup=20.3s
+2026-10-04 05:02:44,187   [mango_population] fold popfold1: n_tr=77875 n_te=7526 A=19 K=179 setup=21.5s
+2026-10-04 05:03:09,571   [mango_population] fold popfold2: n_tr=77245 n_te=8156 A=19 K=179 setup=20.6s
+2026-10-04 05:03:32,344   [mango_population] fold popfold3: n_tr=74737 n_te=10664 A=20 K=179 setup=18.0s
+2026-10-04 05:03:56,740   [mango_population] fold popfold4: n_tr=76755 n_te=8646 A=20 K=179 setup=20.1s
+2026-10-04 05:04:21,215   [mango_population] fold popfold5: n_tr=74753 n_te=10648 A=20 K=179 setup=19.9s
+2026-10-04 05:04:46,731   [mango_population] fold popfold6: n_tr=77852 n_te=7549 A=18 K=179 setup=21.0s
+2026-10-04 05:05:13,443   [mango_population] fold popfold7: n_tr=79204 n_te=6197 A=20 K=179 setup=21.8s
+2026-10-04 05:05:39,948   [mango_population] fold popfold8: n_tr=75646 n_te=9755 A=18 K=179 setup=21.1s
+2026-10-04 05:06:07,293   [mango_population] fold popfold9: n_tr=78641 n_te=6760 A=19 K=180 setup=22.3s
+2026-10-04 05:06:12,465 done

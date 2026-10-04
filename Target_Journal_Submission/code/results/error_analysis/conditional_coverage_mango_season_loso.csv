@@ -1,0 +1,361 @@
+bin,coverage,width,n,method,by,task
+"(0.0707, 0.487]",0.9539866526167896,3.8611345,8541,ASTM-R,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9134660421545667,3.8047361,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8995316159250586,3.7740357,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8873536299765808,3.7558436,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8733021077283373,3.7418606,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8567915690866511,3.7319643,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8625292740046838,3.7325673,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8733021077283373,3.7426574,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8736533957845434,3.7762065,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7043325526932084,3.7596872,8540,ASTM-R,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9530499941458845,3.8557262,8541,BAG,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9118266978922717,3.8010516,8540,BAG,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8967213114754098,3.7719557,8540,BAG,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8855971896955503,3.7550428,8540,BAG,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8721311475409836,3.7422051,8540,BAG,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8565573770491803,3.733284,8540,BAG,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8612412177985949,3.7350109,8540,BAG,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.872248243559719,3.7462592,8540,BAG,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8703747072599531,3.7828615,8540,BAG,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7071428571428572,3.7885067,8540,BAG,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.8845568434609531,3.2877557,8541,CQR,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.84192037470726,3.4019985,8540,CQR,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8365339578454333,3.4395628,8540,CQR,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.828688524590164,3.463129,8540,CQR,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8206088992974239,3.4784834,8540,CQR,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8058548009367682,3.5044618,8540,CQR,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8023419203747073,3.5335355,8540,CQR,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8207259953161592,3.5459623,8540,CQR,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8402810304449648,3.6214461,8540,CQR,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.8016393442622951,4.2125945,8540,CQR,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9497716894977168,3.794365,8541,CV+,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9057377049180327,3.7371516,8540,CV+,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8923887587822014,3.7065365,8540,CV+,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8813817330210773,3.6886108,8540,CV+,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8653395784543325,3.675036,8540,CV+,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8501170960187353,3.6656897,8540,CV+,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8546838407494145,3.6673498,8540,CV+,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8642857142857143,3.6793149,8540,CV+,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8653395784543325,3.7176704,8540,CV+,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.6984777517564403,3.712043,8540,CV+,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9824376536705304,4.6290016,8541,G-W-A,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9601873536299765,4.5953717,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.9470725995316159,4.574533,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.9391100702576113,4.5626745,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.9340749414519907,4.5557003,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.9209601873536299,4.5484204,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.9241217798594847,4.549932,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.9374707259953161,4.5561657,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.9333723653395785,4.5782375,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7798594847775175,4.5842133,8540,G-W-A,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9460250556140967,3.751475,8541,GC-D,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.925175644028103,4.002894,8540,GC-D,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.921311475409836,4.1382117,8540,GC-D,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.9193208430913349,4.2586894,8540,GC-D,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.9195550351288057,4.380575,8540,GC-D,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.9169789227166276,4.510272,8540,GC-D,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.9293911007025761,4.6603975,8540,GC-D,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.9483606557377049,4.833902,8540,GC-D,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.9585480093676815,5.077184,8540,GC-D,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.8879391100702576,6.1038837,8540,GC-D,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9060999882917691,3.3534122,8541,GPR,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.8689695550351288,3.3637328,8540,GPR,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.859367681498829,3.381122,8540,GPR,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8503512880562061,3.406099,8540,GPR,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.843208430913349,3.4308863,8540,GPR,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8312646370023419,3.4617226,8540,GPR,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8405152224824356,3.5140226,8540,GPR,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8524590163934426,3.5685623,8540,GPR,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8813817330210773,3.726449,8540,GPR,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7985948477751756,5.120634,8540,GPR,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9443859032900129,3.8329072,8541,ORACLE,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9247072599531616,3.9759564,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.9224824355971897,4.069276,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.9099531615925058,4.1287603,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.9098360655737705,4.1684127,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8992974238875878,4.2138505,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.9032786885245901,4.2268305,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.9165105386416862,4.2228203,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.9060889929742388,4.1394186,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7550351288056206,4.2615848,8540,ORACLE,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9469617140850017,3.7289913,8541,SCP,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.9039812646370023,3.664694,8540,SCP,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8911007025761124,3.634524,8540,SCP,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8796252927400469,3.617714,8540,SCP,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8607728337236534,3.6026418,8540,SCP,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8440281030444965,3.5921338,8540,SCP,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.8515222482435597,3.5939841,8540,SCP,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8594847775175644,3.6020186,8540,SCP,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8566744730679157,3.6324809,8540,SCP,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.6936768149882904,3.6179254,8540,SCP,Q-ratio decile,mango_season_loso
+"(0.0707, 0.487]",0.9500058541154431,3.7801769,8541,WCP,Q-ratio decile,mango_season_loso
+"(0.487, 0.666]",0.911943793911007,3.7778356,8540,WCP,Q-ratio decile,mango_season_loso
+"(0.666, 0.833]",0.8973067915690867,3.7645836,8540,WCP,Q-ratio decile,mango_season_loso
+"(0.833, 1.008]",0.8877049180327868,3.7627602,8540,WCP,Q-ratio decile,mango_season_loso
+"(1.008, 1.201]",0.8789227166276347,3.7715385,8540,WCP,Q-ratio decile,mango_season_loso
+"(1.201, 1.433]",0.8599531615925059,3.7848487,8540,WCP,Q-ratio decile,mango_season_loso
+"(1.433, 1.734]",0.870023419203747,3.797479,8540,WCP,Q-ratio decile,mango_season_loso
+"(1.734, 2.199]",0.8830210772833723,3.8377078,8540,WCP,Q-ratio decile,mango_season_loso
+"(2.199, 3.262]",0.8864168618266979,3.8932135,8540,WCP,Q-ratio decile,mango_season_loso
+"(3.262, 55.214]",0.7544496487119438,inf,8540,WCP,Q-ratio decile,mango_season_loso
+"(7.992, 12.813]",0.7892151128786993,3.79113,8549,ASTM-R,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8769464933848495,3.7871153,8541,ASTM-R,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8928445953858766,3.7853074,8539,ASTM-R,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9177408014998828,3.8008113,8534,ASTM-R,reference decile,mango_season_loso
+"(15.057, 15.808]",0.8942375263527759,3.7932563,8538,ASTM-R,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9006087567314446,3.7771025,8542,ASTM-R,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8987830564006553,3.764329,8546,ASTM-R,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8755274261603375,3.7539766,8532,ASTM-R,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8567915690866511,3.7386308,8540,ASTM-R,reference decile,mango_season_loso
+"(19.102, 27.809]",0.7956674473067916,3.6890366,8540,ASTM-R,reference decile,mango_season_loso
+"(7.992, 12.813]",0.7861738214995906,3.7946403,8549,BAG,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8778831518557546,3.7908056,8541,BAG,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8901510715540462,3.7887197,8539,BAG,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9155144129364894,3.8055472,8534,BAG,reference decile,mango_season_loso
+"(15.057, 15.808]",0.8961115015226049,3.7974522,8538,BAG,reference decile,mango_season_loso
+"(15.808, 16.492]",0.8995551393116367,3.7801986,8542,BAG,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8989000702082846,3.7667756,8546,BAG,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8758790436005626,3.7556202,8532,BAG,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8556206088992975,3.740524,8540,BAG,reference decile,mango_season_loso
+"(19.102, 27.809]",0.7912177985948478,3.6916223,8540,BAG,reference decile,mango_season_loso
+"(7.992, 12.813]",0.5836939992981636,3.7393262,8549,CQR,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8152441166139797,3.5289524,8541,CQR,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8606394191357302,3.431048,8539,CQR,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9418795406608859,3.443178,8534,CQR,reference decile,mango_season_loso
+"(15.057, 15.808]",0.9270320918247833,3.3830922,8538,CQR,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9188714586747834,3.3292763,8542,CQR,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8978469459396209,3.3635068,8546,CQR,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8788091889357712,3.4495375,8532,CQR,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8296252927400468,3.6885948,8540,CQR,reference decile,mango_season_loso
+"(19.102, 27.809]",0.6298594847775175,4.132151,8540,CQR,reference decile,mango_season_loso
+"(7.992, 12.813]",0.7782196748157679,3.7268777,8549,CV+,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8688678140732935,3.724028,8541,CV+,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8855837920131163,3.7225227,8539,CV+,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9122334192641199,3.7394195,8534,CV+,reference decile,mango_season_loso
+"(15.057, 15.808]",0.8909580698055751,3.7314277,8538,CV+,reference decile,mango_season_loso
+"(15.808, 16.492]",0.8946382580191993,3.7145827,8542,CV+,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8938684764802247,3.7002835,8546,CV+,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8703703703703703,3.6892154,8532,CV+,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8485948477751757,3.6735065,8540,CV+,reference decile,mango_season_loso
+"(19.102, 27.809]",0.7843091334894614,3.6219082,8540,CV+,reference decile,mango_season_loso
+"(7.992, 12.813]",0.8636097789215113,4.5765495,8549,G-W-A,reference decile,mango_season_loso
+"(12.813, 13.682]",0.9293993677555321,4.584552,8541,G-W-A,reference decile,mango_season_loso
+"(13.682, 14.38]",0.9412109146270055,4.585271,8539,G-W-A,reference decile,mango_season_loso
+"(14.38, 15.057]",0.954183266932271,4.5812984,8534,G-W-A,reference decile,mango_season_loso
+"(15.057, 15.808]",0.9365190911220427,4.586113,8538,G-W-A,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9435729337391712,4.5829015,8542,G-W-A,reference decile,mango_season_loso
+"(16.492, 17.2]",0.9482798970278493,4.5728545,8546,G-W-A,reference decile,mango_season_loso
+"(17.2, 18.064]",0.9349507735583685,4.574187,8532,G-W-A,reference decile,mango_season_loso
+"(18.064, 19.102]",0.9188524590163935,4.559654,8540,G-W-A,reference decile,mango_season_loso
+"(19.102, 27.809]",0.8881733021077284,4.5308805,8540,G-W-A,reference decile,mango_season_loso
+"(7.992, 12.813]",0.8647795063750147,4.647901,8549,GC-D,reference decile,mango_season_loso
+"(12.813, 13.682]",0.9285797915934902,4.6419344,8541,GC-D,reference decile,mango_season_loso
+"(13.682, 14.38]",0.9428504508724675,4.5989985,8539,GC-D,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9670728849308647,4.653189,8534,GC-D,reference decile,mango_season_loso
+"(15.057, 15.808]",0.9489341766221597,4.607826,8538,GC-D,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9481386092250058,4.5273604,8542,GC-D,reference decile,mango_season_loso
+"(16.492, 17.2]",0.9467587175286684,4.4838653,8546,GC-D,reference decile,mango_season_loso
+"(17.2, 18.064]",0.929676511954993,4.4672556,8532,GC-D,reference decile,mango_season_loso
+"(18.064, 19.102]",0.9139344262295082,4.5061655,8540,GC-D,reference decile,mango_season_loso
+"(19.102, 27.809]",0.8819672131147541,4.5828466,8540,GC-D,reference decile,mango_season_loso
+"(7.992, 12.813]",0.767341209498187,3.6979377,8549,GPR,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8721461187214612,3.6925237,8541,GPR,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8862864504040285,3.6854675,8539,GPR,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9136395594094211,3.7403886,8534,GPR,reference decile,mango_season_loso
+"(15.057, 15.808]",0.8943546498008902,3.765447,8538,GPR,reference decile,mango_season_loso
+"(15.808, 16.492]",0.883165535003512,3.6394217,8542,GPR,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8747952258366487,3.5428104,8546,GPR,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8645100796999531,3.5030587,8532,GPR,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8385245901639344,3.535329,8540,GPR,reference decile,mango_season_loso
+"(19.102, 27.809]",0.7375878220140515,3.5242035,8540,GPR,reference decile,mango_season_loso
+"(7.992, 12.813]",0.8073458884080009,4.03949,8549,ORACLE,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8975529797447606,4.0414705,8541,ORACLE,reference decile,mango_season_loso
+"(13.682, 14.38]",0.9162665417496194,4.0585427,8539,ORACLE,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9342629482071713,4.105531,8534,ORACLE,reference decile,mango_season_loso
+"(15.057, 15.808]",0.9187163270086671,4.0661693,8538,ORACLE,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9280028096464529,4.1012588,8542,ORACLE,reference decile,mango_season_loso
+"(16.492, 17.2]",0.9316639363444886,4.1571417,8546,ORACLE,reference decile,mango_season_loso
+"(17.2, 18.064]",0.9041256446319738,4.1434827,8532,ORACLE,reference decile,mango_season_loso
+"(18.064, 19.102]",0.894496487119438,4.181101,8540,ORACLE,reference decile,mango_season_loso
+"(19.102, 27.809]",0.8592505854800937,4.345661,8540,ORACLE,reference decile,mango_season_loso
+"(7.992, 12.813]",0.7757632471634109,3.655482,8549,SCP,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8678140732935253,3.6529272,8541,SCP,reference decile,mango_season_loso
+"(13.682, 14.38]",0.883241597376742,3.6448326,8539,SCP,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9105929224279353,3.6691813,8534,SCP,reference decile,mango_season_loso
+"(15.057, 15.808]",0.889435464980089,3.6595623,8538,SCP,reference decile,mango_season_loso
+"(15.808, 16.492]",0.8920627487707796,3.641786,8542,SCP,reference decile,mango_season_loso
+"(16.492, 17.2]",0.8905920898666042,3.628183,8546,SCP,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8655649320206282,3.6107335,8532,SCP,reference decile,mango_season_loso
+"(18.064, 19.102]",0.8427400468384075,3.5883975,8540,SCP,reference decile,mango_season_loso
+"(19.102, 27.809]",0.7701405152224824,3.5360208,8540,SCP,reference decile,mango_season_loso
+"(7.992, 12.813]",0.7959995321090186,3.8221164,8549,WCP,reference decile,mango_season_loso
+"(12.813, 13.682]",0.8802247980330172,3.7970502,8541,WCP,reference decile,mango_season_loso
+"(13.682, 14.38]",0.8975289846586252,3.823014,8539,WCP,reference decile,mango_season_loso
+"(14.38, 15.057]",0.9234825404265292,inf,8534,WCP,reference decile,mango_season_loso
+"(15.057, 15.808]",0.9038416490981495,3.8124666,8538,WCP,reference decile,mango_season_loso
+"(15.808, 16.492]",0.9116132053383282,inf,8542,WCP,reference decile,mango_season_loso
+"(16.492, 17.2]",0.9111865200093611,3.8555944,8546,WCP,reference decile,mango_season_loso
+"(17.2, 18.064]",0.8864275668073136,inf,8532,WCP,reference decile,mango_season_loso
+"(18.064, 19.102]",0.859367681498829,inf,8540,WCP,reference decile,mango_season_loso
+"(19.102, 27.809]",0.8101873536299766,3.842041,8540,WCP,reference decile,mango_season_loso
+1201,0.934931506849315,3.8943338,2336,ASTM-R,cultivar,mango_season_loso
+1243,0.9749087591240876,3.91067,2192,ASTM-R,cultivar,mango_season_loso
+4069,0.975925925925926,3.9156413,2160,ASTM-R,cultivar,mango_season_loso
+caly,0.8653430633128134,3.7105951,24529,ASTM-R,cultivar,mango_season_loso
+hg,0.876355421686747,3.6955907,13280,ASTM-R,cultivar,mango_season_loso
+keitt,0.8596116504854369,3.803238,5150,ASTM-R,cultivar,mango_season_loso
+kp,0.8196495685776296,3.7619026,18891,ASTM-R,cultivar,mango_season_loso
+ladyg,0.8945981554677207,3.941312,1518,ASTM-R,cultivar,mango_season_loso
+ladyj,0.9916666666666667,3.939901,1440,ASTM-R,cultivar,mango_season_loso
+r2e2,0.8841423948220065,3.8307126,13905,ASTM-R,cultivar,mango_season_loso
+1201,0.9220890410958904,3.8935046,2336,BAG,cultivar,mango_season_loso
+1243,0.9698905109489051,3.9078918,2192,BAG,cultivar,mango_season_loso
+4069,0.9768518518518519,3.9090323,2160,BAG,cultivar,mango_season_loso
+caly,0.8655469036650495,3.712498,24529,BAG,cultivar,mango_season_loso
+hg,0.8737951807228915,3.6973794,13280,BAG,cultivar,mango_season_loso
+keitt,0.8590291262135923,3.8162053,5150,BAG,cultivar,mango_season_loso
+kp,0.8203906622201048,3.7656538,18891,BAG,cultivar,mango_season_loso
+ladyg,0.880764163372859,3.9679797,1518,BAG,cultivar,mango_season_loso
+ladyj,0.9895833333333334,3.934671,1440,BAG,cultivar,mango_season_loso
+r2e2,0.8829917295936713,3.8341522,13905,BAG,cultivar,mango_season_loso
+1201,0.7658390410958904,3.9722867,2336,CQR,cultivar,mango_season_loso
+1243,0.9133211678832117,3.7436879,2192,CQR,cultivar,mango_season_loso
+4069,0.8907407407407407,3.3614116,2160,CQR,cultivar,mango_season_loso
+caly,0.8326470708141384,3.3880458,24529,CQR,cultivar,mango_season_loso
+hg,0.8322289156626506,3.5331354,13280,CQR,cultivar,mango_season_loso
+keitt,0.8466019417475729,3.7331064,5150,CQR,cultivar,mango_season_loso
+kp,0.7746545974273463,3.645103,18891,CQR,cultivar,mango_season_loso
+ladyg,0.8840579710144928,4.793385,1518,CQR,cultivar,mango_season_loso
+ladyj,0.9631944444444445,3.647297,1440,CQR,cultivar,mango_season_loso
+r2e2,0.8504135203164329,3.4299643,13905,CQR,cultivar,mango_season_loso
+1201,0.9165239726027398,3.833702,2336,CV+,cultivar,mango_season_loso
+1243,0.968065693430657,3.8524861,2192,CV+,cultivar,mango_season_loso
+4069,0.9740740740740741,3.854257,2160,CV+,cultivar,mango_season_loso
+caly,0.8592686208161767,3.6440237,24529,CV+,cultivar,mango_season_loso
+hg,0.8685993975903614,3.629622,13280,CV+,cultivar,mango_season_loso
+keitt,0.856116504854369,3.7460148,5150,CV+,cultivar,mango_season_loso
+kp,0.8113916679900481,3.6963215,18891,CV+,cultivar,mango_season_loso
+ladyg,0.8820816864295126,3.9021244,1518,CV+,cultivar,mango_season_loso
+ladyj,0.9895833333333334,3.8788524,1440,CV+,cultivar,mango_season_loso
+r2e2,0.8773822366055376,3.769752,13905,CV+,cultivar,mango_season_loso
+1201,0.9824486301369864,4.5850716,2336,G-W-A,cultivar,mango_season_loso
+1243,0.9908759124087592,4.6038737,2192,G-W-A,cultivar,mango_season_loso
+4069,0.9921296296296296,4.6115313,2160,G-W-A,cultivar,mango_season_loso
+caly,0.9233152594887684,4.5567236,24529,G-W-A,cultivar,mango_season_loso
+hg,0.9359186746987952,4.5360494,13280,G-W-A,cultivar,mango_season_loso
+keitt,0.9209708737864077,4.658731,5150,G-W-A,cultivar,mango_season_loso
+kp,0.8931237097030332,4.5722566,18891,G-W-A,cultivar,mango_season_loso
+ladyg,0.9308300395256917,4.6247644,1518,G-W-A,cultivar,mango_season_loso
+ladyj,0.9944444444444445,4.624764,1440,G-W-A,cultivar,mango_season_loso
+r2e2,0.9293779216109314,4.5849814,13905,G-W-A,cultivar,mango_season_loso
+1201,0.971318493150685,4.737922,2336,GC-D,cultivar,mango_season_loso
+1243,0.988594890510949,4.45441,2192,GC-D,cultivar,mango_season_loso
+4069,0.9796296296296296,4.303157,2160,GC-D,cultivar,mango_season_loso
+caly,0.9306127440988218,4.4212995,24529,GC-D,cultivar,mango_season_loso
+hg,0.9375753012048192,4.5510077,13280,GC-D,cultivar,mango_season_loso
+keitt,0.9401941747572815,5.09802,5150,GC-D,cultivar,mango_season_loso
+kp,0.8806839235614843,4.465436,18891,GC-D,cultivar,mango_season_loso
+ladyg,0.9894598155467721,5.873408,1518,GC-D,cultivar,mango_season_loso
+ladyj,0.9930555555555556,4.537734,1440,GC-D,cultivar,mango_season_loso
+r2e2,0.9311758360302049,4.7001395,13905,GC-D,cultivar,mango_season_loso
+1201,0.8249143835616438,3.5881357,2336,GPR,cultivar,mango_season_loso
+1243,0.9447992700729927,3.4490297,2192,GPR,cultivar,mango_season_loso
+4069,0.9217592592592593,3.4143286,2160,GPR,cultivar,mango_season_loso
+caly,0.9037465856741,3.6596978,24529,GPR,cultivar,mango_season_loso
+hg,0.834789156626506,3.4867144,13280,GPR,cultivar,mango_season_loso
+keitt,0.8592233009708737,4.2203593,5150,GPR,cultivar,mango_season_loso
+kp,0.7674554020433011,3.496304,18891,GPR,cultivar,mango_season_loso
+ladyg,0.8998682476943346,5.4114976,1518,GPR,cultivar,mango_season_loso
+ladyj,0.9833333333333333,3.5420773,1440,GPR,cultivar,mango_season_loso
+r2e2,0.8571017619561309,3.5774689,13905,GPR,cultivar,mango_season_loso
+1201,0.8925513698630136,3.7709427,2336,ORACLE,cultivar,mango_season_loso
+1243,0.9744525547445255,3.6544187,2192,ORACLE,cultivar,mango_season_loso
+4069,0.9587962962962963,3.6160736,2160,ORACLE,cultivar,mango_season_loso
+caly,0.8973867666843328,4.2476573,24529,ORACLE,cultivar,mango_season_loso
+hg,0.9250753012048193,4.3942385,13280,ORACLE,cultivar,mango_season_loso
+keitt,0.8912621359223301,3.9624898,5150,ORACLE,cultivar,mango_season_loso
+kp,0.8654385686305648,4.105875,18891,ORACLE,cultivar,mango_season_loso
+ladyg,0.857707509881423,3.4932518,1518,ORACLE,cultivar,mango_season_loso
+ladyj,0.9861111111111112,3.4918349,1440,ORACLE,cultivar,mango_season_loso
+r2e2,0.9017619561308882,4.0786457,13905,ORACLE,cultivar,mango_season_loso
+1201,0.9019691780821918,3.6995733,2336,SCP,cultivar,mango_season_loso
+1243,0.9616788321167883,3.708896,2192,SCP,cultivar,mango_season_loso
+4069,0.9606481481481481,3.7122188,2160,SCP,cultivar,mango_season_loso
+caly,0.855517958335032,3.5760946,24529,SCP,cultivar,mango_season_loso
+hg,0.861144578313253,3.5373106,13280,SCP,cultivar,mango_season_loso
+keitt,0.8504854368932039,3.7202036,5150,SCP,cultivar,mango_season_loso
+kp,0.8099624159652745,3.6435018,18891,SCP,cultivar,mango_season_loso
+ladyg,0.8741765480895916,3.73248,1518,SCP,cultivar,mango_season_loso
+ladyj,0.9854166666666667,3.7324798,1440,SCP,cultivar,mango_season_loso
+r2e2,0.8775979863358504,3.695254,13905,SCP,cultivar,mango_season_loso
+1201,0.8929794520547946,3.6897228,2336,WCP,cultivar,mango_season_loso
+1243,0.9666970802919708,3.6888566,2192,WCP,cultivar,mango_season_loso
+4069,0.9564814814814815,3.6676908,2160,WCP,cultivar,mango_season_loso
+caly,0.8759835296995393,inf,24529,WCP,cultivar,mango_season_loso
+hg,0.8982680722891566,inf,13280,WCP,cultivar,mango_season_loso
+keitt,0.8933980582524271,inf,5150,WCP,cultivar,mango_season_loso
+kp,0.8289132391085702,3.7647097,18891,WCP,cultivar,mango_season_loso
+ladyg,0.8616600790513834,3.6001148,1518,WCP,cultivar,mango_season_loso
+ladyj,0.9805555555555555,3.598619,1440,WCP,cultivar,mango_season_loso
+r2e2,0.8855088097806545,3.8485022,13905,WCP,cultivar,mango_season_loso
+high,0.8153882519796715,3.6154587,8461,ASTM-R,temp,mango_season_loso
+low,0.8515356187077864,3.6714807,7847,ASTM-R,temp,mango_season_loso
+mid,0.8449239713774598,3.6583452,8944,ASTM-R,temp,mango_season_loso
+undef,0.8835724617200619,3.8184547,60149,ASTM-R,temp,mango_season_loso
+high,0.8126698971752748,3.6228504,8461,BAG,temp,mango_season_loso
+low,0.8543392379253217,3.675561,7847,BAG,temp,mango_season_loso
+mid,0.8432468694096601,3.6628594,8944,BAG,temp,mango_season_loso
+undef,0.8822258059153103,3.8206427,60149,BAG,temp,mango_season_loso
+high,0.811133435764094,3.7564578,8461,CQR,temp,mango_season_loso
+low,0.8278322925958965,3.5772026,7847,CQR,temp,mango_season_loso
+mid,0.8214445438282647,3.5763817,8944,CQR,temp,mango_season_loso
+undef,0.8318176528288085,3.5119102,60149,CQR,temp,mango_season_loso
+high,0.8058149154946224,3.550262,8461,CV+,temp,mango_season_loso
+low,0.847457627118644,3.6063128,7847,CV+,temp,mango_season_loso
+mid,0.8357558139534884,3.5915983,8944,CV+,temp,mango_season_loso
+undef,0.8767726811750819,3.7556205,60149,CV+,temp,mango_season_loso
+high,0.8974116534688571,4.5236783,8461,G-W-A,temp,mango_season_loso
+low,0.9244297183637059,4.560322,7847,G-W-A,temp,mango_season_loso
+mid,0.9155858676207513,4.554757,8944,G-W-A,temp,mango_season_loso
+undef,0.931586560042561,4.584909,60149,G-W-A,temp,mango_season_loso
+high,0.9107670488121972,4.7571955,8461,GC-D,temp,mango_season_loso
+low,0.9088823754301006,4.480682,7847,GC-D,temp,mango_season_loso
+mid,0.90608228980322,4.4973845,8944,GC-D,temp,mango_season_loso
+undef,0.9351277660476484,4.568587,60149,GC-D,temp,mango_season_loso
+high,0.804751211440728,3.8503957,8461,GPR,temp,mango_season_loso
+low,0.8284694787817,3.6145892,7847,GPR,temp,mango_season_loso
+mid,0.8426878354203936,3.6351607,8944,GPR,temp,mango_season_loso
+undef,0.8648356581156794,3.6040187,60149,GPR,temp,mango_season_loso
+high,0.8842926368041603,4.340568,8461,ORACLE,temp,mango_season_loso
+low,0.9000892060660125,4.1201925,7847,ORACLE,temp,mango_season_loso
+mid,0.8938953488372093,4.191359,8944,ORACLE,temp,mango_season_loso
+undef,0.9019102561971105,4.083986,60149,ORACLE,temp,mango_season_loso
+high,0.7945869282590711,3.4696388,8461,SCP,temp,mango_season_loso
+low,0.8417229514464126,3.5430224,7847,SCP,temp,mango_season_loso
+mid,0.8297182468694096,3.52741,8944,SCP,temp,mango_season_loso
+undef,0.8743620010307736,3.6773307,60149,SCP,temp,mango_season_loso
+high,0.8255525351613284,inf,8461,WCP,temp,mango_season_loso
+low,0.8557410475340894,inf,7847,WCP,temp,mango_season_loso
+mid,0.848613595706619,inf,8944,WCP,temp,mango_season_loso
+undef,0.8926166686062944,inf,60149,WCP,temp,mango_season_loso
+green,0.8737985356882613,3.7592216,57638,ASTM-R,physio_stage,mango_season_loso
+ripen,0.8615783596873536,3.786441,27763,ASTM-R,physio_stage,mango_season_loso
+green,0.8723758631458413,3.762023,57638,BAG,physio_stage,mango_season_loso
+ripen,0.8610380722544394,3.7902257,27763,BAG,physio_stage,mango_season_loso
+green,0.8205871126687255,3.53252,57638,CQR,physio_stage,mango_season_loso
+ripen,0.8443612001584843,3.582875,27763,CQR,physio_stage,mango_season_loso
+green,0.8659738367049516,3.6944911,57638,CV+,physio_stage,mango_season_loso
+ripen,0.8560674278716277,3.7249036,27763,CV+,physio_stage,mango_season_loso
+green,0.9307401367153614,4.5528073,57638,G-W-A,physio_stage,mango_season_loso
+ripen,0.9157511796275619,4.61623,27763,G-W-A,physio_stage,mango_season_loso
+green,0.9235920746729588,4.44515,57638,GC-D,physio_stage,mango_season_loso
+ripen,0.9348773547527285,4.834547,27763,GC-D,physio_stage,mango_season_loso
+green,0.8443735035913806,3.5021617,57638,GPR,physio_stage,mango_season_loso
+ripen,0.8715916867773655,3.903587,27763,GPR,physio_stage,mango_season_loso
+green,0.9029980221381727,4.122929,57638,ORACLE,physio_stage,mango_season_loso
+ripen,0.8911861110110579,4.126157,27763,ORACLE,physio_stage,mango_season_loso
+green,0.863215239945869,3.6190884,57638,SCP,physio_stage,mango_season_loso
+ripen,0.849583978676656,3.6486914,27763,SCP,physio_stage,mango_season_loso
+green,0.8713001839064506,3.7201588,57638,WCP,physio_stage,mango_season_loso
+ripen,0.8918344559305551,inf,27763,WCP,physio_stage,mango_season_loso

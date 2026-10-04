@@ -1,0 +1,1120 @@
+{
+ "meta": {
+  "title": "Group-conformal calibration of near-infrared prediction intervals for new seasons, instruments and regions using PLS diagnostics",
+  "authors": "[Author 1]^{a,*}, [Author 2]^{a}, [Author 3]^{b}",
+  "affiliations": [
+   "^{a} [Department, Institution, City, Country]",
+   "^{b} [Department, Institution, City, Country]"
+  ],
+  "corresponding": "* Corresponding author: [name], [postal address], [e-mail address]",
+  "abstract": [
+   "Prediction intervals for multivariate calibration are usually calibrated on samples that resemble the calibration set, but near-infrared (NIR) models are deployed on new harvest seasons, instruments and regions. Using 146,873 public spectra (mango dry matter, soil organic carbon, corn, tablets) in 12 deployment-shift scenarios with sample-disjoint group splits, we show that classical partial least squares (PLS) intervals and random-split conformal prediction under-cover new groups: for new mango seasons and instruments, random-split conformal prediction covered 0.78–0.83 of spectra at a nominal 0.90. We propose group-conformal calibration (GC-D), which computes conformity scores out-of-group with group-balanced weights and scales them by Hotelling T² and Q residuals. GC-D covered 0.88–0.90 for new seasons, 0.88 for new instruments and 0.90 for new soil regions, with interval scores close to an oracle calibrated on the new group, and lowered false acceptances in specification-limit decisions. Out-of-group calibration supplied most of the gain — a classical interval based on the group-wise root-mean-square error of cross-validation reached similar coverage with higher interval scores — whereas diagnostic scaling protected coverage under spectral drift. Interval-score gains over random-split conformal prediction were consistent in direction but mostly not significant at the group level. Finite-sample group-level guarantees required about ten or more calibration groups, and no interval method rescued uncorrected instrument transfer."
+  ],
+  "keywords": [
+   "Near-infrared spectroscopy",
+   "Multivariate calibration",
+   "Conformal prediction",
+   "Prediction interval",
+   "Calibration transfer",
+   "Measurement uncertainty"
+  ]
+ },
+ "blocks": [
+  {
+   "type": "h1",
+   "text": "1. Introduction"
+  },
+  {
+   "type": "p",
+   "text": "Near-infrared (NIR) spectroscopy combined with multivariate calibration is used routinely to predict composition in agriculture, food, soil and pharmaceutical analysis because it is rapid, non-destructive and inexpensive per sample [1,2]. A predicted concentration is, however, only useful for a decision when it is accompanied by an honest statement of its uncertainty [3]. Standard practice derives sample-specific prediction intervals from the calibration error and the leverage of the new spectrum [4–6], or from linearisation and resampling approximations [7–9]. These intervals rest on distributional assumptions and, more importantly, on the assumption that future samples resemble the calibration samples."
+  },
+  {
+   "type": "p",
+   "text": "Conformal prediction offers prediction intervals with a finite-sample, distribution-free coverage guarantee under a single assumption: exchangeability of calibration and test data [10–12]. It has begun to enter chemometrics and analytical chemistry: jackknife+ intervals for PLS regression [13], normalised inductive conformal predictors for mid-infrared food adulteration [14], conformalised uncertainty models for soil organic carbon from Raman spectra [15], aggregated inductive conformal prediction for NIR spectra [16] and multiview conformal identification of microplastics [17]; it has also been used for applicability-domain assessment in QSAR [18]. In the regression studies, calibration and test samples are obtained by random partitioning of one data pool, which is exactly the setting in which the exchangeability assumption holds by construction."
+  },
+  {
+   "type": "p",
+   "text": "The setting in which NIR calibrations are actually used is different. A fruit-quality model is calibrated on past harvest seasons and applied to the next one; a model developed on one spectrometer is used on another unit; a soil model is applied to a region that did not contribute calibration samples. Such season, instrument and region effects are a central problem of NIR practice [19–22] and motivate calibration transfer and domain-adaptation methods [23,24]. Under these deployment shifts calibration and test samples are no longer exchangeable, so the coverage guarantee of randomly calibrated conformal intervals no longer applies. Statistical work has proposed weighted conformal prediction for covariate shift [25,26], adaptive procedures for sequential shift [27] and, most relevant here, conformal methods for hierarchical (grouped) data [28–30], which guarantee coverage for an observation from a new group when the groups themselves are exchangeable. To our knowledge these group-level ideas have not been examined for multivariate calibration, and it is not known how large the coverage loss of current practice is in real NIR deployments, nor whether the remedy is practical with the limited number of seasons or instruments typically available."
+  },
+  {
+   "type": "p",
+   "text": "This work addresses that gap with three contributions. (i) We quantify, on four public data sets comprising 146,873 spectra and 12 deployment-shift scenarios, how much classical PLS intervals, random-split conformal methods and model-based uncertainty estimates miscover when a calibration meets a new season, instrument, population or region. (ii) We propose a group-conformal calibration for PLS models (GC-D) that computes conformity scores out-of-group with group-balanced weights and scales them by the classical chemometric diagnostics Hotelling T² and Q residual, so that interval width grows for spectra that extrapolate. (iii) We test every component in a factorial ablation, examine when distribution-free group-level guarantees are attainable, and evaluate the consequences for specification-limit decisions. The experimental protocol, hypotheses and primary end-points were fixed before the held-out evaluation."
+  },
+  {
+   "type": "h1",
+   "text": "2. Theory"
+  },
+  {
+   "type": "h2",
+   "text": "2.1. Problem setting"
+  },
+  {
+   "type": "p",
+   "text": "Let the calibration data consist of spectra xᵢ ∈ ℝᵖ with reference values yᵢ, i = 1, …, n, each belonging to one of K groups gᵢ ∈ {1, …, K} (harvest seasons, instruments, populations or regions) and to a physical unit uᵢ (fruit, soil sample, tablet). Several spectra may share a unit. A model is deployed on spectra of a new group K + 1. For a miscoverage level α we seek an interval C(x) with"
+  },
+  {
+   "type": "eq",
+   "text": "P{ Y_{new} ∈ C(X_{new}) } ≥ 1 − α,   (X_{new}, Y_{new}) drawn from the new group",
+   "num": "1"
+  },
+  {
+   "type": "p",
+   "text": "Random-split conformal prediction attains (1) when calibration and test points are exchangeable [11]. Here we instead assume hierarchical exchangeability [29]: the groups are exchangeable with one another (a new season is a priori like past seasons) and spectra are exchangeable within a group, while spectra of the same group may share a common effect (for example a seasonal bias)."
+  },
+  {
+   "type": "h2",
+   "text": "2.2. PLS model and spectral diagnostics"
+  },
+  {
+   "type": "p",
+   "text": "The point predictor is PLS1 regression [2] with A latent variables, ŷ(x) = ȳ + (x − x̄)ᵀ R_{A} q_{A}, where R_{A} = W_{A} (P_{A}ᵀ W_{A})⁻¹ maps a mean-centred spectrum to its scores t = R_{A}ᵀ(x − x̄). Two diagnostics describe how a spectrum relates to the calibration space [31]:"
+  },
+  {
+   "type": "eq",
+   "text": "T²(x) = Σₐ tₐ² / sₐ²,     Q(x) = ‖(x − x̄) − P_{A} t‖²",
+   "num": "2"
+  },
+  {
+   "type": "p",
+   "text": "where sₐ² is the variance of the a-th training score. T² measures extrapolation within the model subspace and Q measures spectral variation the model has not seen. The leverage used in classical intervals is h(x) = 1/n + Σₐ tₐ²/(tₐᵀtₐ), a rescaled version of T²."
+  },
+  {
+   "type": "h2",
+   "text": "2.3. Group-conformal calibration with diagnostic scaling (GC-D)"
+  },
+  {
+   "type": "p",
+   "text": "Step 1 (out-of-group residuals). The calibration groups are partitioned into folds (one group per fold when K is small). For each fold k, a PLS model μ̂_{−k} is fitted on the remaining groups after removing every unit that also occurs in fold k, so that no physical sample contributes to the model that predicts it. The out-of-group residual of spectrum i in fold k(i) is rᵢ = yᵢ − μ̂_{−k(i)}(xᵢ), with diagnostics T²ᵢ and Qᵢ computed by the same model. The number of latent variables A is chosen by minimising the group-balanced root mean squared error of these residuals, so the step costs nothing beyond the group-wise cross-validation that is usual practice."
+  },
+  {
+   "type": "p",
+   "text": "Step 2 (diagnostic scale). The expected absolute residual is modelled as"
+  },
+  {
+   "type": "eq",
+   "text": "log σ(x) = β₀ + β₁ log(1 + T²(x)) + β₂ log(Q(x)/Q̃)",
+   "num": "3"
+  },
+  {
+   "type": "p",
+   "text": "with Q̃ the median training Q of the final model. β is estimated by a log-link generalised linear model with Poisson quasi-likelihood on (|rᵢ|, T²ᵢ, Qᵢ), which is robust to the skewness of absolute residuals; σ is bounded below by 10 % of its median to avoid division by near-zero scales. Eq. (3) generalises the √(1 + h) factor of classical intervals by letting the data decide how strongly extrapolation (T²) and unmodelled spectral variation (Q) inflate the error."
+  },
+  {
+   "type": "p",
+   "text": "Step 3 (group-balanced quantile). With conformity scores sᵢ = |rᵢ|/σ(xᵢ) and weights wᵢ = 1/(K·N_{gᵢ}), where N_{g} is the number of spectra in group g, every group contributes the same total mass regardless of its size. The calibrated multiplier is"
+  },
+  {
+   "type": "eq",
+   "text": "q̂ = inf{ t : Σᵢ wᵢ 1(sᵢ ≤ t) ≥ 1 − α }",
+   "num": "4"
+  },
+  {
+   "type": "p",
+   "text": "Step 4 (interval). The final PLS model, fitted on all calibration spectra, provides ŷ(x), T²(x) and Q(x) for a new spectrum, and"
+  },
+  {
+   "type": "eq",
+   "text": "C(x) = [ ŷ(x) − q̂ σ(x),  ŷ(x) + q̂ σ(x) ]",
+   "num": "5"
+  },
+  {
+   "type": "p",
+   "text": "The procedure is summarised in Fig. 1."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig1_method_schematic.png",
+   "caption": "Fig. 1. Group-conformal calibration with diagnostic scaling (GC-D). Out-of-group residuals and the PLS diagnostics T² and Q of the training spectra are obtained from the group-wise cross-validation; a scale model σ(T², Q) and a group-balanced quantile q̂ of the normalised residuals turn the final model's prediction into an interval.",
+   "width_in": 6.3
+  },
+  {
+   "type": "h2",
+   "text": "2.4. Coverage guarantees and their limits"
+  },
+  {
+   "type": "p",
+   "text": "Because q̂ in (4) equalises group contributions, it estimates the quantile of the score distribution of a randomly chosen new group (pooled empirical distribution functions), which is asymptotically valid as K grows [28]. Finite-sample guarantees under hierarchical exchangeability are available for two variants that we also evaluate [29]: hierarchical split conformal prediction (HCP), in which half of the groups fit the model and σ and the other K₁ groups calibrate with weights 1/((K₁ + 1)N_{g}) and a point mass 1/(K₁ + 1) at +∞, has coverage ≥ 1 − α; the hierarchical jackknife+ (HJ+), the leave-one-group-out analogue of the jackknife+ [32], has coverage ≥ 1 − 2α. The point mass at +∞ implies that a finite interval at level 1 − α requires K₁ + 1 > 1/α, i.e. at least 10 calibration groups at α = 0.10 for HCP. With six past harvest seasons a distribution-free season-level guarantee is therefore impossible at 90 % coverage; the cross-fitted GC-D trades this guarantee for usability, and its coverage must be assessed empirically, which is what Section 4 does."
+  },
+  {
+   "type": "h1",
+   "text": "3. Experimental"
+  },
+  {
+   "type": "h2",
+   "text": "3.1. Data sets"
+  },
+  {
+   "type": "p",
+   "text": "Mango. The public Mango DMC and NIR spectra data set (version 5, file v4) [33] contains 85,401 short-wave NIR absorbance spectra (285–1200 nm, 3 nm steps) of 10,560 intact mango fruit with dry-matter content (DM, % w/w) reference values, collected over seven harvest seasons (2015–2021; Fig. 2a) with 31 individual spectrometer units (instrument identifiers in the data set), 199 populations (orchard and harvest-date lots) and ten cultivars [21,34]. Many fruit were scanned several times and on several instruments (on average 8.1 spectra per fruit)."
+  },
+  {
+   "type": "p",
+   "text": "Soil. The Open Soil Spectral Library v1.2 [35] provides visible-NIR reflectance spectra (400–2500 nm) and organic carbon (OC) for the LUCAS topsoil survey [36] (40,175 samples from the 2009 and 2015 campaigns) and the USDA KSSL library (19,747 samples with OC and spectra after quality filtering)."
+  },
+  {
+   "type": "p",
+   "text": "Corn and tablets. The corn data set [37] contains 80 ground-corn samples measured on three NIR spectrometers (m5, mp5, mp6; 1100–2498 nm) with moisture, oil, protein and starch values. The IDRC 2002 pharmaceutical tablet shoot-out data [38] contain 655 tablets measured on two spectrometers (600–1898 nm) with their official calibration (155), validation (40) and test (460) sets; the active-ingredient assay was modelled."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig2_data_overview.png",
+   "caption": "Fig. 2. Data overview. (a) Dry matter of mango fruit by harvest season (boxes: quartiles; whiskers: 1.5 IQR; tick labels give the number of fruit); (b) the 30 spatial blocks of the LUCAS soil samples used as held-out regions; (c) distribution of LUCAS organic carbon (log scale).",
+   "width_in": 6.3
+  },
+  {
+   "type": "h2",
+   "text": "3.2. Deployment-shift scenarios and leakage control"
+  },
+  {
+   "type": "p",
+   "text": "Each scenario holds out complete groups (Table 1). Mango: leave-one-season-out (LOSO, 7 folds), forward prediction of each season from all earlier seasons (2017–2021), leave-one-instrument-out for the 24 instruments with ≥ 300 fruit, and grouped 10-fold splitting of populations. Soil: leave-one-region-out over 30 spatial blocks obtained by k-means clustering of LUCAS coordinates (Fig. 2b) (spatial blocking [39]), and two stress tests, LUCAS 2009 ↔ 2015 campaigns and KSSL → LUCAS across libraries, instruments and continents. Corn: leave-one-instrument-out, repeated ten times with 20 randomly chosen test samples. Tablets: instrument 1 calibration applied to the instrument-1 test set (exchangeable control) and to the instrument-2 test set (instrument shift without group information)."
+  },
+  {
+   "type": "p",
+   "text": "Leakage control was enforced in code by an assertion in every outer and inner split: a physical unit (fruit, soil sample, corn sample, tablet) never appears in both a training set and the set it predicts. This matters in practice: 7100 mango fruit were scanned on more than one instrument, and the corn and tablet samples were measured on every instrument, so instrument-wise splitting without unit exclusion would leak the reference value of the test sample into training. All preprocessing is row-wise (no parameters estimated across samples) and fixed a priori per data set: Savitzky–Golay second derivative (window 13, 684–990 nm) for mango [40]; absorbance log₁₀(1/R) at 10 nm steps and first derivative (window 11) for soil; SNV [41] followed by first derivative (window 15) for corn and tablets. Soil OC was modelled as log(1 + OC) and interval end-points were back-transformed, which preserves coverage exactly."
+  },
+  {
+   "type": "h2",
+   "text": "3.3. Interval methods compared"
+  },
+  {
+   "type": "p",
+   "text": "All PLS-based methods share the same preprocessing, the same number of latent variables (selected by group-wise cross-validation in the training data) and the same final model, so differences arise from the uncertainty calibration only. Prediction errors are summarised by the root mean squared error of prediction (RMSEP) on held-out spectra and of cross-validation (RMSECV) within the training data. Baselines: (a) the classical interval ŷ ± t·RMSECV·√(1 + h) [4] with random cross-validation (ASTM-R) or with group-wise cross-validation (ASTM-G); (b) bagged PLS [42] (25 unit-level bootstrap models) with bootstrap variance plus out-of-bag residual variance (BAG); (c) Gaussian-process regression on PLS scores [43] (GPR, 1000-sample subset); (d) quantile gradient boosting [44] (300 trees, learning rate 0.05, 31 leaves) on PLS scores, log(1 + T²) and log Q (QGB) and its conformalised version CQR [45]; (e) split conformal prediction with a random 75/25 unit-wise split (SCP) [11]; (f) normalised split CP with k-nearest-neighbour difficulty (NCP-kNN) [46]; (g) CV+ with random unit-grouped folds [13,32]; and (h) weighted split CP under covariate shift [25], with the density ratio estimated by logistic regression between calibration spectra and the unlabelled spectra of the deployment group (WCP; this method uses test spectra transductively). The proposed GC-D was compared with the guaranteed variants HCP and HJ+ (Section 2.4), with GC-D plus the finite-sample point mass at +∞ (GC-D+), and with an oracle that calibrates split CP on labelled spectra of the test group itself (2-fold within the group; not available in practice, reported as a reference for the attainable width)."
+  },
+  {
+   "type": "p",
+   "text": "The factorial ablation crosses three components of GC-D: calibration folds that are random (R) or out-of-group (G); uniform (U) or group-balanced (W) weights; and absolute (A) or diagnostic-normalised (D) scores. GC-D corresponds to G-W-D; R-U-A is ordinary cross-conformal calibration."
+  },
+  {
+   "type": "h2",
+   "text": "3.4. Evaluation and statistics"
+  },
+  {
+   "type": "p",
+   "text": "Primary end-points (fixed in advance) at α = 0.10 were the group-averaged empirical coverage on held-out groups and the mean interval (Winkler) score [47]"
+  },
+  {
+   "type": "eq",
+   "text": "IS_{α}(l, u; y) = (u − l) + (2/α)(l − y)·1(y < l) + (2/α)(y − u)·1(y > u)",
+   "num": "6"
+  },
+  {
+   "type": "p",
+   "text": "a proper score that rewards narrow intervals and penalises misses in proportion to their size. Secondary end-points were mean width, worst-group coverage, the share of groups with coverage below 0.85, and results at α = 0.05 and 0.20. Three hypotheses were pre-specified: H1, random-split SCP covers less than 0.85 on at least one shift task; H2, GC-D covers between 0.87 and 0.95 on every task with ≥ 10 training groups; H3, diagnostic normalisation lowers the interval score relative to absolute scores (GC-D vs G-W-A). The unit of analysis for method comparisons is the held-out group or, where an outer fold holds out several groups that share one model (populations, campaigns), the outer fold; per-group values were averaged over five pre-specified seeds (0–4) and compared with two-sided Wilcoxon signed-rank tests [48] with Holm correction across comparators within each task [49]. Effect sizes are matched-pairs rank-biserial correlations [50]; 95 % confidence intervals of group-averaged coverage are percentile bootstraps over groups, and within-task pooled coverage intervals use a cluster bootstrap over physical units."
+  },
+  {
+   "type": "h2",
+   "text": "3.5. Software and reproducibility"
+  },
+  {
+   "type": "p",
+   "text": "All code is in Python (NumPy, SciPy, scikit-learn [51], LightGBM [44], PyTorch [52]). PLS1 was implemented with NIPALS and checked against scikit-learn to 10⁻¹⁴. A single command (python run_all.py --mode full) downloads the data, runs every experiment and regenerates all tables, figures and the statistics files from which every number in this paper is read; all computations ran on a 4-core CPU without a GPU."
+  },
+  {
+   "type": "h1",
+   "text": "4. Results and discussion"
+  },
+  {
+   "type": "h2",
+   "text": "4.1. Current practice miscovers under deployment shift"
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Scenario",
+     "Outer folds",
+     "Held-out groups",
+     "Training spectra",
+     "Test spectra (total)",
+     "Calibration groups K",
+     "PLS LVs"
+    ],
+    [
+     "M-season",
+     "7",
+     "7",
+     "58089–84011",
+     "85401",
+     "6–6",
+     "12–19"
+    ],
+    [
+     "M-forward",
+     "5",
+     "5",
+     "30510–84011",
+     "54891",
+     "2–6",
+     "13–19"
+    ],
+    [
+     "M-instrument",
+     "24",
+     "24",
+     "26279–80757",
+     "82383",
+     "27–30",
+     "12–19"
+    ],
+    [
+     "M-population",
+     "10",
+     "199",
+     "74737–79204",
+     "85401",
+     "179–180",
+     "18–20"
+    ],
+    [
+     "S-region",
+     "30",
+     "30",
+     "37525–40099",
+     "40175",
+     "29–29",
+     "23–25"
+    ],
+    [
+     "C-moist",
+     "30",
+     "30",
+     "120–120",
+     "600",
+     "2–2",
+     "1–4"
+    ],
+    [
+     "C-oil",
+     "30",
+     "30",
+     "120–120",
+     "600",
+     "2–2",
+     "1–7"
+    ],
+    [
+     "C-prot",
+     "30",
+     "30",
+     "120–120",
+     "600",
+     "2–2",
+     "1–7"
+    ],
+    [
+     "C-starch",
+     "30",
+     "30",
+     "120–120",
+     "600",
+     "2–2",
+     "1–6"
+    ],
+    [
+     "S-campaign",
+     "2",
+     "58",
+     "18393–21782",
+     "40175",
+     "28–30",
+     "25–25"
+    ],
+    [
+     "S-KSSL→LUCAS",
+     "1",
+     "30",
+     "19747–19747",
+     "40175",
+     "84–84",
+     "21–21"
+    ],
+    [
+     "Tablets",
+     "2",
+     "2",
+     "195–195",
+     "920",
+     "195–195",
+     "7–7"
+    ]
+   ],
+   "caption": "Table 1. Deployment-shift scenarios. K is the number of distinct calibration groups available in the training data of an outer fold; PLS LVs is the range of latent variables selected by group-wise cross-validation.",
+   "note": null,
+   "highlight_rows": null
+  },
+  {
+   "type": "p",
+   "text": "Fig. 3 and Tables 2–3 summarise coverage and interval score at the nominal level 0.90. When the held-out group was a new harvest season or a new instrument, the classical PLS interval covered 0.788–0.833 and random-split conformal prediction (SCP) 0.783–0.826 of the test spectra on average across groups, and SCP covered less than 0.85 in 7 of the 9 main scenarios, so pre-registered hypothesis H1 is supported. CV+ and bagged PLS behaved like SCP (e.g. new instrument: 0.796 and 0.805), and GPR, quantile boosting and CQR covered even less on the mango shift scenarios (0.750–0.797, 0.660–0.735 and 0.726–0.789). The under-coverage is not a consequence of poor point predictions alone: the oracle, which calibrates on labelled spectra of the test group, attains nominal coverage with widths of 4.47 (new season) and 4.59 % DM (new instrument), against 3.65 and 3.66 % DM for SCP. Random calibration simply under-estimates the error that a new group brings, because the calibration spectra come from seasons, instruments and populations that the model has already seen."
+  },
+  {
+   "type": "p",
+   "text": "Weighted conformal prediction (WCP), which uses the unlabelled spectra of the new group to reweight the calibration residuals, reached high coverage (e.g. 0.905 for new instruments) but did so by returning unbounded intervals for part of the test spectra in every scenario, because the estimated density ratios put more than α of the weight on the test point when calibration and test spectra are well separated in the PLS score space. Clipping the density ratios at 20 (WCP-clip, Supplementary Table S8) left 1 % (new instruments) and 0 % (new seasons) of the intervals unbounded, with coverage 0.851 and 0.855."
+  },
+  {
+   "type": "p",
+   "text": "For new mango populations, where training data contain other populations of the same seasons and instruments, all methods were close to nominal (SCP 0.889, classical 0.894), which is consistent with the population effect being largely absorbed by season and instrument effects already represented in training. On the exchangeable control (tablets measured on the calibration instrument) every method reached at least nominal coverage (Supplementary Table S2)."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig3_main_coverage_score.png",
+   "caption": "Fig. 3. Group-averaged coverage (left; bars are 95 % bootstrap intervals over held-out groups) and interval score relative to the oracle (right; lower is better; values beyond 3 or infinite are printed) at nominal coverage 0.90, means over five seeds. GC-D: proposed group-conformal calibration with diagnostic scaling.",
+   "width_in": 6.3
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Method",
+     "M-season",
+     "M-forward",
+     "M-instrument",
+     "M-population",
+     "S-region",
+     "C-moist",
+     "C-oil",
+     "C-prot",
+     "C-starch"
+    ],
+    [
+     "ASTM-R",
+     "0.833",
+     "0.788",
+     "0.803",
+     "0.894",
+     "0.890",
+     "0.619",
+     "0.826",
+     "0.675",
+     "0.608"
+    ],
+    [
+     "ASTM-G",
+     "0.906",
+     "0.884",
+     "0.884",
+     "0.906",
+     "0.905",
+     "0.623",
+     "0.884",
+     "0.737",
+     "0.645"
+    ],
+    [
+     "BAG",
+     "0.833",
+     "0.790",
+     "0.805",
+     "0.895",
+     "0.891",
+     "0.625",
+     "0.867",
+     "0.708",
+     "0.665"
+    ],
+    [
+     "GPR",
+     "0.797",
+     "0.750",
+     "0.753",
+     "0.875",
+     "0.884",
+     "0.682",
+     "0.831",
+     "0.732",
+     "0.627"
+    ],
+    [
+     "CQR",
+     "0.789",
+     "0.726",
+     "0.771",
+     "0.841",
+     "0.886",
+     "0.906",
+     "0.888",
+     "0.913",
+     "0.848"
+    ],
+    [
+     "SCP",
+     "0.826",
+     "0.783",
+     "0.794",
+     "0.889",
+     "0.884",
+     "0.618",
+     "0.805",
+     "0.651",
+     "0.613"
+    ],
+    [
+     "CV+",
+     "0.826",
+     "0.780",
+     "0.796",
+     "0.889",
+     "0.884",
+     "0.615",
+     "0.838",
+     "0.678",
+     "0.626"
+    ],
+    [
+     "WCP",
+     "0.880",
+     "0.875",
+     "0.905",
+     "0.907",
+     "0.917",
+     "0.964",
+     "0.945",
+     "0.989",
+     "0.936"
+    ],
+    [
+     "HJ+",
+     "1.000",
+     "1.000",
+     "0.925",
+     "0.906",
+     "0.931",
+     "1.000",
+     "1.000",
+     "1.000",
+     "1.000"
+    ],
+    [
+     "HCP-D",
+     "1.000",
+     "1.000",
+     "0.932",
+     "0.911",
+     "0.964",
+     "1.000",
+     "1.000",
+     "1.000",
+     "1.000"
+    ],
+    [
+     "GC-D+",
+     "1.000",
+     "1.000",
+     "0.912",
+     "0.904",
+     "0.929",
+     "1.000",
+     "1.000",
+     "1.000",
+     "1.000"
+    ],
+    [
+     "GC-D",
+     "0.895",
+     "0.877",
+     "0.879",
+     "0.899",
+     "0.898",
+     "0.527",
+     "0.761",
+     "0.709",
+     "0.685"
+    ],
+    [
+     "ORACLE",
+     "0.899",
+     "0.899",
+     "0.900",
+     "0.898",
+     "0.901",
+     "0.917",
+     "0.905",
+     "0.903",
+     "0.913"
+    ]
+   ],
+   "caption": "Table 2. Group-averaged empirical coverage at nominal coverage 0.90 (means over five seeds). M = mango, S = soil (LUCAS), C = corn.",
+   "note": "HJ+, HCP-D and GC-D+ are unbounded (coverage 1) whenever the number of calibration groups is too small for their finite-sample correction (Section 2.4); WCP returns unbounded intervals when the estimated density ratio places more than α of the weight on the test point.",
+   "highlight_rows": [
+    12
+   ]
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Method",
+     "M-season",
+     "M-forward",
+     "M-instrument",
+     "M-population",
+     "S-region",
+     "C-moist",
+     "C-oil",
+     "C-prot",
+     "C-starch"
+    ],
+    [
+     "ASTM-R",
+     "6.38",
+     "7.18",
+     "6.88",
+     "4.95",
+     "12.63",
+     "4.85",
+     "0.82",
+     "2.02",
+     "6.41"
+    ],
+    [
+     "ASTM-G",
+     "6.18",
+     "6.73",
+     "6.48",
+     "4.95",
+     "12.39",
+     "4.74",
+     "0.77",
+     "1.94",
+     "5.97"
+    ],
+    [
+     "BAG",
+     "6.35",
+     "7.10",
+     "6.76",
+     "4.95",
+     "12.50",
+     "4.42",
+     "0.73",
+     "1.91",
+     "5.73"
+    ],
+    [
+     "GPR",
+     "6.32",
+     "7.14",
+     "7.70",
+     "4.76",
+     "9.25",
+     "3.30",
+     "0.72",
+     "1.73",
+     "6.06"
+    ],
+    [
+     "CQR",
+     "6.42",
+     "7.49",
+     "7.08",
+     "5.23",
+     "8.06",
+     "1.53",
+     "0.64",
+     "1.52",
+     "3.39"
+    ],
+    [
+     "SCP",
+     "6.43",
+     "7.21",
+     "6.95",
+     "4.96",
+     "12.70",
+     "4.62",
+     "0.91",
+     "2.60",
+     "7.26"
+    ],
+    [
+     "CV+",
+     "6.42",
+     "7.21",
+     "6.89",
+     "4.96",
+     "12.71",
+     "4.75",
+     "0.78",
+     "2.10",
+     "6.37"
+    ],
+    [
+     "WCP",
+     "∞",
+     "∞",
+     "∞",
+     "∞",
+     "∞",
+     "∞",
+     "∞",
+     "∞",
+     "∞"
+    ],
+    [
+     "HJ+",
+     "∞",
+     "∞",
+     "6.30",
+     "4.95",
+     "12.05",
+     "∞",
+     "∞",
+     "∞",
+     "∞"
+    ],
+    [
+     "HCP-D",
+     "∞",
+     "∞",
+     "14.80",
+     "5.04",
+     "14.14",
+     "∞",
+     "∞",
+     "∞",
+     "∞"
+    ],
+    [
+     "GC-D+",
+     "∞",
+     "∞",
+     "6.21",
+     "4.92",
+     "11.77",
+     "∞",
+     "∞",
+     "∞",
+     "∞"
+    ],
+    [
+     "GC-D",
+     "5.90",
+     "6.14",
+     "6.21",
+     "4.92",
+     "11.90",
+     "4.73",
+     "0.81",
+     "2.14",
+     "6.13"
+    ],
+    [
+     "ORACLE",
+     "5.90",
+     "6.36",
+     "5.71",
+     "4.28",
+     "11.74",
+     "2.05",
+     "0.78",
+     "1.40",
+     "3.55"
+    ]
+   ],
+   "caption": "Table 3. Mean interval score (Eq. (6); lower is better; units of the analyte) at nominal coverage 0.90. ∞: at least one group received an unbounded interval.",
+   "note": null,
+   "highlight_rows": [
+    12
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "4.2. Group-conformal calibration restores near-nominal coverage"
+  },
+  {
+   "type": "p",
+   "text": "GC-D achieved group-averaged coverage between 0.877 and 0.899 on the mango season, instrument and population scenarios and on new soil regions (Table 2). Relative to SCP, coverage on new seasons rose from 0.826 to 0.895 (LOSO) and from 0.783 to 0.877 (forward prediction), and on new instruments from 0.794 to 0.879. The intervals were wider (4.54 vs 3.66 % DM for new instruments), but the width was close to that of the oracle (4.59), and the interval score, which weighs width against misses, was lower: 5.90 vs 6.43 (new season), 6.14 vs 7.21 (next season) and 6.21 vs 6.95 (new instrument). For new seasons GC-D's interval score differed from the oracle's by less than 1 %, and for the next season it was lower than the oracle's, because the oracle uses a constant width within a group."
+  },
+  {
+   "type": "p",
+   "text": "Pre-registered hypothesis H2 required coverage between 0.87 and 0.95 on every task with at least ten training groups (mango, new instrument; mango, new population; soil, new region); it is supported. Paired over held-out groups (outer folds for the population task, where ten folds each hold out about 20 populations that share one model), GC-D had a lower interval score than SCP in 7 of 9 main scenarios, but the differences were significant after Holm correction only for soil, new region (Table 4). With five to seven seasons the smallest attainable two-sided Wilcoxon p-value is 0.0625 (n = 5) or 0.0156 (n = 7), so season-level comparisons cannot reach significance after correction for the 19 comparators; for new instruments (24 groups) the effect on the interval score was r = -0.39 (uncorrected p = 0.101). The evidence for GC-D is therefore the consistent direction of the coverage shift across all scenarios with several calibration groups and the pre-registered coverage criteria (H1, H2), rather than group-level significance of each pairwise difference."
+  },
+  {
+   "type": "p",
+   "text": "A simple alternative captured much of the same benefit: the classical interval with the root mean squared error of group-wise rather than random cross-validation (ASTM-G) covered 0.906 (new season), 0.884 (next season), 0.884 (new instrument) and 0.905 (new region). GC-D had a lower interval score than ASTM-G in all four of these scenarios (5.90 vs 6.18, 6.14 vs 6.73, 6.21 vs 6.48 and 11.90 vs 12.39), but these differences were not significant after correction. The central practical message is thus that intervals must be calibrated on out-of-group errors; the conformal formulation adds a distribution-free quantile instead of a Gaussian t-multiplier, a sample-specific width driven by T² and Q, and, with enough groups, access to the finite-sample guarantees of Section 2.4."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig4_per_group_coverage.png",
+   "caption": "Fig. 4. Coverage in each held-out group (points; seed-averaged) for the classical PLS interval, random-split conformal prediction and GC-D; horizontal bars are medians and the dashed line is the nominal 0.90.",
+   "width_in": 6.3
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Scenario",
+     "Units",
+     "SCP",
+     "ASTM-R",
+     "ASTM-G",
+     "CV+",
+     "CQR",
+     "WCP",
+     "G-W-A"
+    ],
+    [
+     "M-season",
+     "7",
+     "-0.36 (1.000)",
+     "-0.36 (1.000)",
+     "-0.36 (1.000)",
+     "-0.43 (1.000)",
+     "-0.64 (1.000)",
+     "-0.50 (1.000)",
+     "-0.36 (1.000)"
+    ],
+    [
+     "M-forward",
+     "5",
+     "-0.47 (1.000)",
+     "-0.47 (1.000)",
+     "-0.47 (1.000)",
+     "-0.60 (1.000)",
+     "-1.00 (1.000)",
+     "-0.87 (1.000)",
+     "-0.47 (1.000)"
+    ],
+    [
+     "M-instrument",
+     "24",
+     "-0.39 (1.000)",
+     "-0.31 (1.000)",
+     "-0.37 (1.000)",
+     "-0.39 (1.000)",
+     "-0.65 (0.065)",
+     "-1.00 (<0.001)",
+     "-0.27 (1.000)"
+    ],
+    [
+     "M-population",
+     "10",
+     "-0.71 (0.732)",
+     "-0.56 (1.000)",
+     "-0.56 (1.000)",
+     "-0.67 (0.773)",
+     "-0.71 (0.732)",
+     "-1.00 (0.039)",
+     "-0.64 (0.924)"
+    ],
+    [
+     "S-region",
+     "30",
+     "-0.83 (0.001)",
+     "-0.73 (0.005)",
+     "-0.46 (0.162)",
+     "-0.79 (0.002)",
+     "+1.00 (<0.001)",
+     "-0.91 (<0.001)",
+     "-0.64 (0.016)"
+    ],
+    [
+     "C-moist",
+     "30",
+     "+0.32 (1.000)",
+     "+0.08 (1.000)",
+     "+0.14 (1.000)",
+     "+0.17 (1.000)",
+     "+0.77 (0.003)",
+     "-0.99 (<0.001)",
+     "+0.03 (1.000)"
+    ],
+    [
+     "C-oil",
+     "30",
+     "-0.23 (1.000)",
+     "+0.10 (1.000)",
+     "+0.31 (1.000)",
+     "+0.29 (1.000)",
+     "+0.66 (0.024)",
+     "-0.99 (<0.001)",
+     "+0.09 (1.000)"
+    ],
+    [
+     "C-prot",
+     "30",
+     "-0.10 (1.000)",
+     "+0.15 (1.000)",
+     "+0.28 (1.000)",
+     "+0.11 (1.000)",
+     "+0.69 (0.013)",
+     "-1.00 (<0.001)",
+     "+0.08 (1.000)"
+    ],
+    [
+     "C-starch",
+     "30",
+     "-0.20 (1.000)",
+     "+0.15 (1.000)",
+     "+0.38 (0.722)",
+     "+0.15 (1.000)",
+     "+0.82 (0.001)",
+     "-1.00 (<0.001)",
+     "+0.20 (1.000)"
+    ],
+    [
+     "S-campaign",
+     "2",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "+1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)"
+    ],
+    [
+     "S-KSSL→LUCAS",
+     "1",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)"
+    ],
+    [
+     "Tablets",
+     "2",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-1.00 (1.000)",
+     "-0.33 (1.000)"
+    ]
+   ],
+   "caption": "Table 4. Paired comparison of GC-D with each comparator over held-out groups: matched-pairs rank-biserial correlation of the interval score (negative: GC-D lower) with Holm-adjusted two-sided Wilcoxon p-values in parentheses.",
+   "note": null,
+   "highlight_rows": null
+  },
+  {
+   "type": "h2",
+   "text": "4.3. Which components matter"
+  },
+  {
+   "type": "p",
+   "text": "The factorial ablation (Fig. 5) separates the three ingredients. Because every cell uses the same final PLS model as GC-D, differences between cells reflect the calibration alone; in particular, ordinary cross-conformal calibration with random folds (R-U-A) under-covered as much as SCP (new instruments 0.795 vs 0.794), so the shortfall of SCP is not caused by its smaller training set. Replacing random calibration folds by out-of-group folds (R-U-A → G-U-A) carried most of the coverage gain on the mango shift scenarios, e.g. 0.795 → 0.861 for new instruments and 0.779 → 0.855 for the next season. Group-balanced weights (G-U-A → G-W-A) changed coverage little when groups were of similar size and mattered most when group sizes were unequal (new instruments: 0.861 → 0.878). Diagnostic normalisation (G-W-A → GC-D) lowered the interval score in 5 of 9 main scenarios (significantly after Holm correction in 1), so H3 is only partly supported: the scaling redistributes width from typical to atypical spectra, which helps most when test groups contain spectra the model has not seen (Section 4.6)."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig5_ablation.png",
+   "caption": "Fig. 5. Factorial ablation of GC-D at nominal coverage 0.90: (a) coverage (colour: deviation from 0.90, red = under-coverage) and (b) interval score relative to GC-D (values > 1: worse than GC-D).",
+   "width_in": 6.3
+  },
+  {
+   "type": "h2",
+   "text": "4.4. Distribution-free guarantees need many groups"
+  },
+  {
+   "type": "p",
+   "text": "The variants with finite-sample guarantees behaved as theory predicts. With at most six training seasons or two corn instruments, HJ+, HCP and GC-D+ returned unbounded intervals (Tables 2–3), because the point mass 1/(K + 1) at +∞ exceeds α. With 27–30 instruments or 29 soil regions they were finite and covered 0.925 (HJ+) and 0.932 (HCP-D) for new instruments and 0.931 and 0.964 for new regions, above the nominal level as their guarantees require, but at a higher interval score than GC-D (6.30 and 14.80 vs 6.21 for instruments). HCP-D pays for its exactness by fitting the model on half of the groups."
+  },
+  {
+   "type": "p",
+   "text": "Subsampling the training groups (Fig. 6a) shows how many are needed. With K = 3 training instruments, GC-D covered 0.757 of new-instrument spectra and SCP 0.627; with K = 10 the values were 0.861 and 0.725, and with K = 20 0.865 and 0.754. For soil regions GC-D covered 0.864 (K = 3) to 0.898 (K = 20). HJ+ became finite in all repetitions only from K = 10 (fraction of finite intervals 0.00 at K = 5 and 1.00 at K = 10 for instruments). In practice, GC-D improves on random calibration already with a handful of groups, while formal group-level guarantees at 90 % require on the order of ten or more groups — a design target for calibration campaigns that span seasons or instruments."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig6_robustness.png",
+   "caption": "Fig. 6. Robustness. (a) Coverage on new mango instruments (circles) and new soil regions (squares) when only K randomly chosen training groups are available (three repetitions; HJ+ shown only where all intervals were finite). (b) Coverage for new seasons when 10–50 % of training fruit are used (mean ± SD over three repetitions). (c) Coverage for new seasons when the test spectra are perturbed (gain, linear baseline tilt, wavelength shift, white noise relative to the median absorbance SD); training spectra are unperturbed.",
+   "width_in": 6.3
+  },
+  {
+   "type": "h2",
+   "text": "4.5. Robustness, sensitivity and choice of point predictor"
+  },
+  {
+   "type": "p",
+   "text": "Coverage of GC-D did not depend on the amount of training data: with 10, 25 and 50 % of the training fruit it covered 0.896, 0.892 and 0.898 of new-season spectra, against 0.829, 0.825 and 0.832 for SCP (Fig. 6b). The coverage gap of random calibration is therefore a consequence of the shift, not of a small sample. Under simulated instrument drift of the test spectra (Fig. 6c), the second-derivative preprocessing removed linear baseline tilts entirely. A 2-nm wavelength shift lowered SCP coverage to 0.755 and that of group calibration with absolute scores (G-W-A) to 0.846, whereas GC-D widened its intervals for the affected spectra (larger Q) and covered 0.938. White noise of 1 % of the median absorbance SD raised the RMSEP from 1.38 to 3.50 % DM; coverage fell to 0.398 for SCP and to 0.703 for GC-D. The diagnostic scale thus detects and partly compensates for spectral anomalies, but it cannot restore coverage when the predictions themselves degrade this strongly; such spectra should be rejected by an outlier rule rather than reported with an interval."
+  },
+  {
+   "type": "p",
+   "text": "Sensitivity analyses (Supplementary Table S5) varied the number of latent variables by ±4, used T² or Q alone in the scale model, changed the floor of σ and replaced the preprocessing by SNV plus first derivative. For new seasons, GC-D coverage stayed between 0.884 and 0.898 and SCP between 0.806 and 0.837; the floor of σ never became active. For new soil regions the corresponding ranges were 0.898–0.899 (GC-D) and 0.883–0.886 (SCP), and using 5 or 20 instead of 10 population folds changed GC-D coverage for new populations to 0.898–0.900."
+  },
+  {
+   "type": "p",
+   "text": "Replacing PLS by a one-dimensional convolutional network [53,54] as point predictor (mango, new season, 3 seeds; σ still computed from PLS diagnostics) gave the same picture: random split conformal covered 0.651, out-of-group calibration with absolute scores 0.881 and GC-D 0.886 (RMSEP of the CNN 1.40 % DM; Supplementary Table S6). For this network, at least, the calibration principle did not depend on PLS as the point predictor."
+  },
+  {
+   "type": "h2",
+   "text": "4.6. When group calibration cannot help — or is not needed"
+  },
+  {
+   "type": "p",
+   "text": "Three settings mark the limits of the approach. First, corn: with only two training instruments, no interval method based on the PLS model reached nominal coverage, because the uncorrected instrument shift made the model weakly informative — the RMSEP on the new instrument was 0.61–2.45 times (median 0.91) the standard deviation of the reference values, and the instrument-level bias reached 1.26 units. CQR covered 0.913 (protein), but its interval widths (0.53–2.62) matched the central 90 % range of the reference values (0.57–2.56): with ~100 training spectra the quantile models reverted to the marginal distribution, i.e. they ignored the spectra. Such shifts require calibration transfer [19,20] before uncertainty can be quantified. Second, the KSSL → LUCAS transfer across libraries, instruments and continents produced an RMSEP of 23.7 % OC; SCP covered 0.046. The diagnostic scale recognised the unfamiliar spectra and raised GC-D coverage to 0.604, and the exact HCP-D (42 calibration projects) reached 0.712, but with intervals so wide (91 % OC on average) that the predictions are of no analytical use. Third, for the tablet instrument change no group structure was available in the calibration data; GC-D then degenerates to cross-conformal calibration and covered 0.912 averaged over the control and the shifted instrument (Supplementary Table S2). Group-conformal calibration can only account for variation that is represented by several groups in the calibration set."
+  },
+  {
+   "type": "p",
+   "text": "Conversely, group calibration is unnecessary when the held-out factor adds little group-level error. In an additional leave-one-cultivar-out test requested during internal review (ten cultivars, 3 seeds; Supplementary Table S15), SCP covered 0.900, the classical interval 0.907 and GC-D 0.902, with nearly identical interval scores (4.71 and 4.68). Every cultivar was measured in several seasons and on several instruments that remained in the training data, so a new cultivar brought little error that random calibration had not already seen — the same situation as for new populations. Per-cultivar coverage nevertheless ranged from 0.778 to 0.983 for GC-D (and similarly for all methods), and HJ+ was impractical with nine training groups (mean width 20.6 % DM). GC-D therefore did not cost sharpness when the shift was small and helped when the held-out factor carried an unrepresented group effect (season, instrument)."
+  },
+  {
+   "type": "h2",
+   "text": "4.7. Computational cost"
+  },
+  {
+   "type": "p",
+   "text": "The out-of-group residuals of GC-D are a by-product of the group-wise cross-validation used to choose the number of latent variables (5.0 s per held-out season for ~70 000 training spectra on one CPU core). On top of it, GC-D required 0.12 s and 83 MiB per season, i.e. 14.3 µs per test spectrum (Supplementary Fig. S2). Random split CP required 0.7 s (it fits an additional model), bagging 15 s, GPR 16 s, CQR 5 s and the hierarchical jackknife+ 0.6 s. Predicting a new spectrum with GC-D needs one PLS prediction, T², Q and three exponentiated coefficients, which is straightforward to implement in instrument software."
+  },
+  {
+   "type": "h2",
+   "text": "4.8. Error analysis and consequences for decisions"
+  },
+  {
+   "type": "p",
+   "text": "Coverage failures were concentrated in identifiable spectra and samples (Fig. 7; the Q-residual ratio is Q(x)/Q̃, the residual of a test spectrum relative to the median training residual). For new seasons, SCP covered 0.947 of the spectra with the smallest Q residuals but only 0.694 in the highest Q decile; GC-D covered 0.946 and 0.888, and G-W-A (absolute scores) 0.780 in the highest decile, which shows how the diagnostic scale moves width to atypical spectra. All methods under-covered at the extremes of the DM range (lowest decile: SCP 0.776, GC-D 0.865), where PLS predictions regress towards the mean. Across new instruments, per-instrument coverage of GC-D fell with the absolute mean prediction bias of that instrument (Pearson r = -0.73); the worst instrument (bias -2.45 % DM) was covered 0.356. Such a large instrument offset is better corrected by bias adjustment with a few reference samples than absorbed into wider intervals. For new populations, every method failed on the same few lots; the worst (population 114500, 80 spectra, green 'Kensington Pride' fruit of 2020) had a mean DM far below the data-set mean and a prediction bias of +3.33 % DM, so that GC-D covered 0.013 of its spectra and the oracle, which sees its labels, remained the only method close to nominal. Pooled over all spectra (cluster bootstrap over 10560 fruit), new-season coverage was 0.859 [0.853, 0.865] for SCP and 0.927 [0.923, 0.932] for GC-D; the difference from the group-averaged values reflects unequal season sizes: GC-D over-covered the large seasons whose spectra resembled the calibration data (e.g. 2016 and 2017, Fig. 4), which is the price of calibrating to the between-season error distribution."
+  },
+  {
+   "type": "p",
+   "text": "For a harvest decision 'DM ≥ L', accepting a fruit only when the lower interval limit exceeds L is a one-sided 95 % statement. For new seasons and L = 16 % DM, the share of accepted spectra whose true DM was below L was 0.041 with SCP, 0.039 with the classical interval and 0.021 with GC-D; at L = 17 % the values were 0.057, 0.056 and 0.024 (Fig. 8). The price is a lower yield of accepted compliant fruit (0.342 vs 0.434 at L = 16 %), slightly below that of the oracle (0.375). The false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %, that of GC-D did not."
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig8_error_analysis.png",
+   "caption": "Fig. 7. Error analysis. Coverage for new mango seasons by decile of (a) the Q residual ratio and (b) the reference DM; (c) coverage of each held-out instrument against the absolute mean prediction bias on that instrument.",
+   "width_in": 6.3
+  },
+  {
+   "type": "fig",
+   "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig9_decisions.png",
+   "caption": "Fig. 8. Specification-limit decisions for new mango seasons: (a) fraction of accepted spectra ('lower limit ≥ L') whose reference DM is below L; dashed line: nominal one-sided 5 %; (b) fraction of truly compliant spectra accepted.",
+   "width_in": 6.3
+  },
+  {
+   "type": "h2",
+   "text": "4.9. Position relative to existing approaches"
+  },
+  {
+   "type": "p",
+   "text": "Several elements of GC-D are not new in isolation, and we state precisely what is borrowed. Group-wise (season-, instrument- or region-wise) validation is established chemometric practice for estimating RMSEP under shift [21,39]; conformal prediction for new groups and its finite-sample theory are due to Dunn et al. and Lee et al. [28,29]; normalised conformity scores date back to Papadopoulos et al. [46] and were recently applied to mid-infrared spectra [14]; T² and Q are the standard chemometric diagnostics [31]. What this work adds is (i) the evidence, across four data sets and twelve real deployment scenarios, that intervals calibrated on random partitions — classical, conformal or model-based — under-cover new seasons and instruments, whereas group-calibrated intervals do not; (ii) a conformity score that uses T² and Q fitted on out-of-group residuals, which made the intervals react to spectral drift (Section 4.5); (iii) a cross-fitted procedure that reuses the group-wise cross-validation already performed for model selection; and (iv) a quantification of how many groups are needed for distribution-free group-level guarantees. GC-D is complementary to calibration transfer and domain adaptation [23,24], which reduce the error under shift: any such model can be wrapped by the same out-of-group calibration, which would then quantify the remaining error."
+  },
+  {
+   "type": "h2",
+   "text": "4.10. Post-hoc extension: level-dependent errors"
+  },
+  {
+   "type": "p",
+   "text": "The soil results revealed a weakness of GC-D that was not anticipated in the protocol: on new soil regions CQR and GPR had clearly lower interval scores (8.06 and 9.25) than GC-D (11.90) and even than the oracle, because OC errors grow with the OC level and are asymmetric, which a symmetric interval with a T²/Q scale cannot represent. We therefore tested two post-hoc variants (seeds 0–2; labelled as post-hoc throughout): GC-D2 adds the predicted value to the scale model, and GC-CQR computes CQR conformity scores out-of-group with group-balanced weights. On new soil regions GC-D2 scored 13.53 and GC-CQR 7.77 (coverage 0.898 and 0.902). On new mango instruments, GC-CQR covered 0.900 against 0.770 for random-split CQR, and on the next season 0.858 against 0.727. GC-CQR had a lower median interval score than CQR in 8 of 9 scenarios (Holm-adjusted p < 0.05 in 4), but on new mango instruments it remained less sharp than GC-D (6.36 vs 6.21), and on corn its coverage (0.814–0.898) was below that of CQR. GC-D2 did not improve on GC-D: its median score was lower in 6 of 9 scenarios, none significant after Holm correction, and its mean score on new soil regions was higher (13.53 vs 11.90) (Supplementary Table S7). The post-hoc hypothesis that a level-dependent scale helps was therefore not supported, whereas the hypothesis that out-of-group calibration transfers to other conformity scores was; which score is best depends on whether the error is dominated by spectral novelty (mango) or by level-dependent heteroscedasticity (soil)."
+  },
+  {
+   "type": "h2",
+   "text": "4.11. Limitations"
+  },
+  {
+   "type": "bullets",
+   "items": [
+    "GC-D's coverage is asymptotic in the number of groups and was verified empirically, not guaranteed; with few groups (six seasons) its season-level coverage varied between groups (Fig. 4). Formal guarantees (HCP, HJ+) require ≥ 10 groups at 90 %.",
+    "All methods assume that the new group is exchangeable with the calibration groups. A systematic trend over seasons, a new cultivar or a new instrument type outside the calibration population is not covered.",
+    "Large group-level biases (for example an uncorrected instrument offset) are absorbed into wider intervals rather than removed; bias or slope correction with a few reference samples of the new group remains preferable when available.",
+    "The evaluation used public data sets with fixed preprocessing; other analytes, techniques (Raman, MIR) and deep models were tested only partially (one CNN).",
+    "The post-hoc variants GC-D2 and GC-CQR (Section 4.10) were designed after seeing the soil results and were evaluated on the same scenarios; they require independent confirmation."
+   ]
+  },
+  {
+   "type": "h1",
+   "text": "5. Conclusions"
+  },
+  {
+   "type": "p",
+   "text": "Prediction intervals for NIR calibrations should be calibrated against the kind of variation the model will meet. When the calibration data contain several seasons, instruments or regions, computing conformity scores out-of-group, weighting groups equally and scaling by the PLS diagnostics T² and Q gave intervals that remained close to nominal coverage for new seasons, instruments and regions in our scenarios with several groups, at little computational cost and with the cross-validation that chemometricians already run. Calibration campaigns that aim at reliable uncertainty statements should therefore span as many seasons or instruments as possible — about ten or more for formal group-level guarantees — and report coverage under group-wise rather than random validation. Group calibration does not replace calibration transfer or bias correction when a new group is far outside the calibration population; in that case the diagnostic scale at least signals the problem by widening the interval. The out-of-group principle is not tied to the diagnostic score: in a post-hoc analysis, applying it to quantile-regression scores restored their coverage and gave the sharpest intervals where errors depended on the analyte level (soil), a combination that deserves independent confirmation."
+  },
+  {
+   "type": "h1",
+   "text": "CRediT authorship contribution statement"
+  },
+  {
+   "type": "p",
+   "text": "[Author 1]: Conceptualization, Methodology, Software, Formal analysis, Writing – original draft. [Author 2]: Validation, Writing – review & editing. [Author 3]: Supervision, Writing – review & editing. [To be completed by the authors.]"
+  },
+  {
+   "type": "h1",
+   "text": "Declaration of competing interest"
+  },
+  {
+   "type": "p",
+   "text": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. [To be confirmed by the authors.]"
+  },
+  {
+   "type": "h1",
+   "text": "Data availability"
+  },
+  {
+   "type": "p",
+   "text": "All data are public: Mango DMC and NIR spectra [33], Open Soil Spectral Library [35], corn [37] and tablet shoot-out data [38]. Code, configuration, per-group results and the scripts that regenerate every number, table and figure are provided as supplementary material [repository DOI to be added on acceptance]."
+  },
+  {
+   "type": "h1",
+   "text": "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process"
+  },
+  {
+   "type": "p",
+   "text": "During the preparation of this work the authors used an AI assistant (Claude, Anthropic) for literature search, code development, analysis and drafting of the text. The authors reviewed and edited the content as needed and take full responsibility for the content of the publication. [Authors to review and adapt this statement.]"
+  },
+  {
+   "type": "h1",
+   "text": "Acknowledgements"
+  },
+  {
+   "type": "p",
+   "text": "We thank the providers of the public data sets used in this study. [Funding information to be added by the authors.]"
+  }
+ ],
+ "references": [
+  "[1] K.B. Walsh, J. Blasco, M. Zude-Sasse, X. Sun, Visible-NIR ‘point’ spectroscopy in postharvest fruit and vegetable assessment: the science behind three decades of commercial use, Postharvest Biol. Technol. 168 (2020) 111246. https://doi.org/10.1016/j.postharvbio.2020.111246",
+  "[2] S. Wold, M. Sjöström, L. Eriksson, PLS-regression: a basic tool of chemometrics, Chemom. Intell. Lab. Syst. 58 (2001) 109–130. https://doi.org/10.1016/S0169-7439(01)00155-1",
+  "[3] JCGM 100:2008, Evaluation of measurement data — Guide to the expression of uncertainty in measurement, Joint Committee for Guides in Metrology (BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, OIML), 2008. https://doi.org/10.59161/JCGM100-2008E",
+  "[4] ASTM International, ASTM E1655-17, Standard Practices for Infrared Multivariate Quantitative Analysis, West Conshohocken, PA. https://doi.org/10.1520/E1655-17",
+  "[5] K. Faber, B.R. Kowalski, Propagation of measurement errors for the validation of predictions obtained by principal component regression and partial least squares, J. Chemom. 11 (1997) 181–238. https://doi.org/10.1002/(SICI)1099-128X(199705)11:3<181::AID-CEM459>3.0.CO;2-7",
+  "[6] M.C. Denham, Prediction intervals in partial least squares, J. Chemom. 11 (1997) 39–52. https://doi.org/10.1002/(SICI)1099-128X(199701)11:1<39::AID-CEM433>3.0.CO;2-S",
+  "[7] J.A. Fernández Pierna, L. Jin, F. Wahl, N.M. Faber, D.L. Massart, Estimation of partial least squares regression prediction uncertainty when the reference values carry a sizeable measurement error, Chemom. Intell. Lab. Syst. 65 (2003) 281–291. https://doi.org/10.1016/S0169-7439(02)00139-9",
+  "[8] L. Zhang, S. Garcia-Munoz, A comparison of different methods to estimate prediction uncertainty using partial least squares (PLS): a practitioner's perspective, Chemom. Intell. Lab. Syst. 97 (2009) 152–158. https://doi.org/10.1016/j.chemolab.2009.03.007",
+  "[9] R. Romera, Prediction intervals in partial least squares regression via a new local linearization approach, Chemom. Intell. Lab. Syst. 103 (2010) 122–128. https://doi.org/10.1016/j.chemolab.2010.06.007",
+  "[10] V. Vovk, A. Gammerman, G. Shafer, Algorithmic Learning in a Random World, Springer, New York, 2005. https://doi.org/10.1007/b106715",
+  "[11] J. Lei, M. G’Sell, A. Rinaldo, R.J. Tibshirani, L. Wasserman, Distribution-free predictive inference for regression, J. Am. Stat. Assoc. 113 (2018) 1094–1111. https://doi.org/10.1080/01621459.2017.1307116",
+  "[12] A.N. Angelopoulos, S. Bates, Conformal prediction: a gentle introduction, Found. Trends Mach. Learn. 16 (2023) 494–591. https://doi.org/10.1561/2200000101",
+  "[13] Y. Lin, C. Xu, Z. Zhou, L. Shen, S. Huang, Distribution-free predictive inference for partial least squares regression with applications to molecular descriptors datasets, J. Chemom. 36 (2022) e3457. https://doi.org/10.1002/cem.3457",
+  "[14] O. Jovic, Conformal predictors in chemometric study of mid-infrared food adulteration: quantification of prediction uncertainty, Food Chem. 492 (2025) 145387. https://doi.org/10.1016/j.foodchem.2025.145387",
+  "[15] J.K. Wiens, N. Solomatova, S. Shokatian, Calibrated uncertainty estimation for soil organic carbon from Raman spectra, Anal. Chem. 98 (2026) 309–316. https://doi.org/10.1021/acs.analchem.5c04616",
+  "[16] H. Cui, Y. Qiao, C. Sun, Aggregated inductive conformal prediction for distribution-free uncertainty quantification in near-infrared spectroscopy, SSRN preprint (2026). https://doi.org/10.2139/ssrn.7528488",
+  "[17] R.L. Parham, E. Ochoa Rivera, A.M. Ayala, M.E. Clough, Y. Patel, A.J. McNeil, A. Tewari, A.P. Ault, Improved microplastic identification from simultaneously collected photothermal infrared and Raman spectra using multiview conformal prediction, ACS Meas. Sci. Au 6 (2026) 690–702. https://doi.org/10.1021/acsmeasuresciau.6c00002",
+  "[18] U. Norinder, L. Carlsson, S. Boyer, M. Eklund, Introducing conformal prediction in predictive modeling. A transparent and flexible alternative to applicability domain determination, J. Chem. Inf. Model. 54 (2014) 1596–1603. https://doi.org/10.1021/ci5001168",
+  "[19] R.N. Feudale, N.A. Woody, H. Tan, A.J. Myles, S.D. Brown, J. Ferré, Transfer of multivariate calibration models: a review, Chemom. Intell. Lab. Syst. 64 (2002) 181–192. https://doi.org/10.1016/S0169-7439(02)00085-0",
+  "[20] J.J. Workman, A review of calibration transfer practices and instrument differences in spectroscopy, Appl. Spectrosc. 72 (2018) 340–365. https://doi.org/10.1177/0003702817736064",
+  "[21] N.T. Anderson, K.B. Walsh, P.P. Subedi, C.H. Hayes, Achieving robustness across season, location and cultivar for a NIRS model for intact mango fruit dry matter content, Postharvest Biol. Technol. 168 (2020) 111202. https://doi.org/10.1016/j.postharvbio.2020.111202",
+  "[22] X. Sun, P. Subedi, K.B. Walsh, Achieving robustness to temperature change of a NIRS-PLSR model for intact mango fruit dry matter content, Postharvest Biol. Technol. 162 (2020) 111117. https://doi.org/10.1016/j.postharvbio.2019.111117",
+  "[23] R. Nikzad-Langerodi, W. Zellinger, E. Lughofer, S. Saminger-Platz, Domain-invariant partial-least-squares regression, Anal. Chem. 90 (2018) 6693–6701. https://doi.org/10.1021/acs.analchem.8b00498",
+  "[24] B. Mikulasek, V. Fonseca Diaz, D. Gabauer, C. Herwig, R. Nikzad-Langerodi, Partial least squares regression with multiple domains, J. Chemom. 37 (2023) e3477. https://doi.org/10.1002/cem.3477",
+  "[25] R.J. Tibshirani, R. Foygel Barber, E. Candès, A. Ramdas, Conformal prediction under covariate shift, in: Adv. Neural Inf. Process. Syst. 32 (NeurIPS 2019). arXiv:1904.06019",
+  "[26] R.F. Barber, E.J. Candès, A. Ramdas, R.J. Tibshirani, Conformal prediction beyond exchangeability, Ann. Stat. 51 (2023) 816–845. https://doi.org/10.1214/23-AOS2276",
+  "[27] I. Gibbs, E. Candès, Adaptive conformal inference under distribution shift, in: Adv. Neural Inf. Process. Syst. 34 (NeurIPS 2021). arXiv:2106.00170",
+  "[28] R. Dunn, L. Wasserman, A. Ramdas, Distribution-free prediction sets for two-layer hierarchical models, J. Am. Stat. Assoc. 118 (2023) 2491–2502. https://doi.org/10.1080/01621459.2022.2060112",
+  "[29] Y. Lee, R.F. Barber, R. Willett, Distribution-free inference with hierarchical data, ACM J. Data Sci. (2026) 3786352. https://doi.org/10.1145/3786352 (preprint arXiv:2306.06342)",
+  "[30] S. Mallick, E. Tchetgen Tchetgen, E. Dobriban, Y. Lee, Generalized hierarchical conformal prediction, arXiv:2608.15500 (2026)",
+  "[31] J.E. Jackson, G.S. Mudholkar, Control procedures for residuals associated with principal component analysis, Technometrics 21 (1979) 341–349. https://doi.org/10.1080/00401706.1979.10489779",
+  "[32] R.F. Barber, E.J. Candès, A. Ramdas, R.J. Tibshirani, Predictive inference with the jackknife+, Ann. Stat. 49 (2021) 486–507. https://doi.org/10.1214/20-AOS1965",
+  "[33] N. Anderson, Mango DMC and NIR spectra (Version 5), Mendeley Data (2024). https://doi.org/10.17632/46htwnp833.5",
+  "[34] N.T. Anderson, K.B. Walsh, J.R. Flynn, J.P. Walsh, Achieving robustness across season, location and cultivar for a NIRS model for intact mango fruit dry matter content. II. Local PLSR and ANN modelling, Postharvest Biol. Technol. 171 (2021) 111358. https://doi.org/10.1016/j.postharvbio.2020.111358",
+  "[35] J.L. Safanelli, T. Hengl, L.L. Parente, R. Minarik, D.E. Bloom, K. Todd-Brown, et al., Open Soil Spectral Library (OSSL): building reproducible soil calibration models through open development and community engagement, PLoS One 20 (2025) e0296545. https://doi.org/10.1371/journal.pone.0296545",
+  "[36] A. Orgiazzi, C. Ballabio, P. Panagos, A. Jones, O. Fernández-Ugalde, LUCAS Soil, the largest expandable soil dataset for Europe: a review, Eur. J. Soil Sci. 69 (2018) 140–153. https://doi.org/10.1111/ejss.12499",
+  "[37] Eigenvector Research, Inc., Corn data set (80 samples measured on three NIR spectrometers; data from Cargill). https://eigenvector.com/resources/data-sets/ (accessed 3 October 2026)",
+  "[38] Eigenvector Research, Inc., NIR pharmaceutical tablets ‘Shootout 2002’ data set. https://eigenvector.com/resources/data-sets/ (accessed 3 October 2026)",
+  "[39] D.R. Roberts, V. Bahn, S. Ciuti, M.S. Boyce, J. Elith, G. Guillera-Arroita, et al., Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure, Ecography 40 (2017) 913–929. https://doi.org/10.1111/ecog.02881",
+  "[40] A. Savitzky, M.J.E. Golay, Smoothing and differentiation of data by simplified least squares procedures, Anal. Chem. 36 (1964) 1627–1639. https://doi.org/10.1021/ac60214a047",
+  "[41] R.J. Barnes, M.S. Dhanoa, S.J. Lister, Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra, Appl. Spectrosc. 43 (1989) 772–777. https://doi.org/10.1366/0003702894202201",
+  "[42] L. Breiman, Bagging predictors, Mach. Learn. 24 (1996) 123–140. https://doi.org/10.1007/BF00058655",
+  "[43] C.E. Rasmussen, C.K.I. Williams, Gaussian Processes for Machine Learning, MIT Press, Cambridge, MA, 2006. https://doi.org/10.7551/mitpress/3206.001.0001",
+  "[44] G. Ke, Q. Meng, T. Finley, T. Wang, W. Chen, W. Ma, et al., LightGBM: a highly efficient gradient boosting decision tree, in: Adv. Neural Inf. Process. Syst. 30 (NIPS 2017).",
+  "[45] Y. Romano, E. Patterson, E. Candès, Conformalized quantile regression, in: Adv. Neural Inf. Process. Syst. 32 (NeurIPS 2019). arXiv:1905.03222",
+  "[46] H. Papadopoulos, V. Vovk, A. Gammerman, Regression conformal prediction with nearest neighbours, J. Artif. Intell. Res. 40 (2011) 815–840. https://doi.org/10.1613/jair.3198",
+  "[47] T. Gneiting, A.E. Raftery, Strictly proper scoring rules, prediction, and estimation, J. Am. Stat. Assoc. 102 (2007) 359–378. https://doi.org/10.1198/016214506000001437",
+  "[48] F. Wilcoxon, Individual comparisons by ranking methods, Biom. Bull. 1 (1945) 80–83. https://doi.org/10.2307/3001968",
+  "[49] S. Holm, A simple sequentially rejective multiple test procedure, Scand. J. Stat. 6 (1979) 65–70.",
+  "[50] D.S. Kerby, The simple difference formula: an approach to teaching nonparametric correlation, Compr. Psychol. 3 (2014) 11.IT.3.1. https://doi.org/10.2466/11.IT.3.1",
+  "[51] F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, et al., Scikit-learn: machine learning in Python, J. Mach. Learn. Res. 12 (2011) 2825–2830.",
+  "[52] A. Paszke, S. Gross, F. Massa, A. Lerer, J. Bradbury, G. Chanan, et al., PyTorch: an imperative style, high-performance deep learning library, in: Adv. Neural Inf. Process. Syst. 32 (NeurIPS 2019).",
+  "[53] C. Cui, T. Fearn, Modern practical convolutional neural networks for multivariate regression: applications to NIR calibration, Chemom. Intell. Lab. Syst. 182 (2018) 9–20. https://doi.org/10.1016/j.chemolab.2018.07.008",
+  "[54] P. Mishra, D. Passos, A synergistic use of chemometrics and deep learning improved the predictive performance of near-infrared spectroscopy models for dry matter prediction in mango fruit, Chemom. Intell. Lab. Syst. 212 (2021) 104287. https://doi.org/10.1016/j.chemolab.2021.104287"
+ ]
+}

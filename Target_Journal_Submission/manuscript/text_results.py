@@ -305,7 +305,8 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"(mango, new season, {int(cv.n_seeds.iloc[0])} seeds; σ still computed from PLS diagnostics) gave the same "
                     f"picture: random split conformal covered {cv.loc['CNN-SCP','coverage']:.3f}, out-of-group calibration with "
                     f"absolute scores {cv.loc['CNN-G-W-A','coverage']:.3f} and GC-D {cv.loc['CNN-GC-D','coverage']:.3f} (RMSEP of the "
-                    f"CNN {cv.loc['CNN-GC-D','rmse']:.2f} % DM; Supplementary Table S6). The calibration principle is not tied to PLS.")]
+                    f"CNN {cv.loc['CNN-GC-D','rmse']:.2f} % DM; Supplementary Table S6). For this network, at least, the calibration principle did not depend on PLS as the "
+                    "point predictor.")]
     # ------------------------------------------------------------------ 4.6 stress tests
     ci = _csv("corn_model_informativeness.csv", os.path.join(R, "error_analysis"))
     B += [("h2", "4.6. When group calibration cannot help — or is not needed")]
@@ -459,11 +460,19 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"{ivv('ossl_lucas_block','GC-CQR','coverage'):.3f}). On new mango instruments, GC-CQR covered "
                     f"{ivv('mango_instrument','GC-CQR','coverage'):.3f} against {ivv('mango_instrument','CQR','coverage'):.3f} for "
                     f"random-split CQR, and on the next season {ivv('mango_season_forward','GC-CQR','coverage'):.3f} against "
-                    f"{ivv('mango_season_forward','CQR','coverage'):.3f}. GC-CQR had a lower interval score than CQR in "
-                    f"{int((k.IS_median_diff < 0).sum())} of {len(k)} scenarios and GC-D2 a lower score than GC-D in "
-                    f"{int((k2.IS_median_diff < 0).sum())} of {len(k2)} (Supplementary Table S7). The out-of-group calibration "
-                    "principle therefore transfers to other conformity scores; which score is best depends on whether the "
-                    "error is dominated by spectral novelty (mango) or by level-dependent heteroscedasticity (soil).")]
+                    f"{ivv('mango_season_forward','CQR','coverage'):.3f}. GC-CQR had a lower median interval score than CQR in "
+                    f"{int((k.IS_median_diff < 0).sum())} of {len(k)} scenarios (Holm-adjusted p < 0.05 in "
+                    f"{int((k.IS_p_holm < 0.05).sum())}), but on new mango instruments it remained less sharp than GC-D "
+                    f"({ivv('mango_instrument','GC-CQR'):.2f} vs {ivv('mango_instrument','GC-D'):.2f}), and on corn its coverage "
+                    f"({it[(it.task.str.startswith('corn')) & (it.method == 'GC-CQR')].coverage.min():.3f}–"
+                    f"{it[(it.task.str.startswith('corn')) & (it.method == 'GC-CQR')].coverage.max():.3f}) was below that of CQR. "
+                    f"GC-D2 did not improve on GC-D: its median score was lower in {int((k2.IS_median_diff < 0).sum())} of {len(k2)} "
+                    f"scenarios, none significant after Holm correction, and its mean score on new soil regions was higher "
+                    f"({ivv('ossl_lucas_block','GC-D2'):.2f} vs {ivv('ossl_lucas_block','GC-D'):.2f}) (Supplementary Table S7). "
+                    "The post-hoc hypothesis that a level-dependent scale helps was therefore not supported, whereas the hypothesis "
+                    "that out-of-group calibration transfers to other conformity scores was; which score is best depends on whether "
+                    "the error is dominated by "
+                    "spectral novelty (mango) or by level-dependent heteroscedasticity (soil).")]
     # ------------------------------------------------------------------ 4.10 limitations
     B += [("h2", "4.11. Limitations"),
           ("bullets", [
@@ -485,9 +494,9 @@ def front_and_back(C, N, s, c, h, ex, g):
     title = ("Group-conformal calibration of near-infrared prediction intervals for new seasons, instruments and "
              "regions using PLS diagnostics")
     ab = (f"Prediction intervals for multivariate calibration are usually calibrated on samples that resemble the calibration "
-          f"set, but NIR models are deployed on new harvest seasons, instruments and regions. Using {N['n_spectra_total']} "
+          f"set, but near-infrared (NIR) models are deployed on new harvest seasons, instruments and regions. Using {N['n_spectra_total']} "
           f"public spectra (mango dry matter, soil organic carbon, corn, tablets) in {N['n_shift_tasks']} deployment-shift scenarios "
-          f"with sample-disjoint group splits, we show that classical PLS intervals and random-split conformal prediction "
+          f"with sample-disjoint group splits, we show that classical partial least squares (PLS) intervals and random-split conformal prediction "
           f"under-cover new groups: for new mango seasons and instruments, random-split conformal prediction covered "
           f"{g('mango_season_forward','SCP'):.2f}–{g('mango_season_loso','SCP'):.2f} of spectra at a nominal 0.90. We propose "
           f"group-conformal calibration (GC-D), which computes conformity scores out-of-group with group-balanced weights and "
@@ -495,8 +504,11 @@ def front_and_back(C, N, s, c, h, ex, g):
           f"{g('mango_season_loso','GC-D'):.2f} for new seasons, {g('mango_instrument','GC-D'):.2f} for new instruments and "
           f"{g('ossl_lucas_block','GC-D'):.2f} for new soil regions, with interval scores close to an oracle calibrated on the "
           f"new group, and lowered false acceptances in specification-limit decisions. Out-of-group calibration supplied most "
-          f"of the gain; diagnostic scaling protected coverage under spectral drift. Finite-sample group-level guarantees "
-          f"required about ten or more calibration groups, and no interval method rescued uncorrected instrument transfer.")
+          f"of the gain — a classical interval based on the group-wise root-mean-square error of cross-validation reached similar coverage with higher interval scores — "
+          f"whereas diagnostic scaling protected coverage under spectral drift. Interval-score gains over random-split "
+          f"conformal prediction were consistent in direction but mostly not significant at the group level. Finite-sample "
+          f"group-level guarantees required about ten or more calibration groups, and no interval method rescued uncorrected "
+          f"instrument transfer.")
     meta = dict(
         title=title,
         authors="[Author 1]^{a,*}, [Author 2]^{a}, [Author 3]^{b}",
@@ -510,13 +522,15 @@ def front_and_back(C, N, s, c, h, ex, g):
         ("h1", "5. Conclusions"),
         ("p", "Prediction intervals for NIR calibrations should be calibrated against the kind of variation the model will meet. "
               "When the calibration data contain several seasons, instruments or regions, computing conformity scores out-of-group, "
-              "weighting groups equally and scaling by the PLS diagnostics T² and Q gives intervals that remained close to nominal "
-              "coverage for new groups, at little computational cost and with the cross-validation that chemometricians already run. "
+              "weighting groups equally and scaling by the PLS diagnostics T² and Q gave intervals that remained close to nominal "
+              "coverage for new seasons, instruments and regions in our scenarios with several groups, at little computational cost and with the cross-validation that chemometricians already run. "
               "Calibration campaigns that aim at reliable uncertainty statements should therefore span as many seasons or "
               "instruments as possible — about ten or more for formal group-level guarantees — and report coverage under "
               "group-wise rather than random validation. Group calibration does not replace calibration transfer or bias "
               "correction when a new group is far outside the calibration population; in that case the diagnostic scale at least "
-              "signals the problem by widening the interval."),
+              "signals the problem by widening the interval. The out-of-group principle is not tied to the diagnostic score: in a "
+              "post-hoc analysis, applying it to quantile-regression scores restored their coverage and gave the sharpest "
+              "intervals where errors depended on the analyte level (soil), a combination that deserves independent confirmation."),
         ("h1", "CRediT authorship contribution statement"),
         ("p", "[Author 1]: Conceptualization, Methodology, Software, Formal analysis, Writing – original draft. [Author 2]: "
               "Validation, Writing – review & editing. [Author 3]: Supervision, Writing – review & editing. [To be completed by the authors.]"),

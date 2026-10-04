@@ -1,0 +1,11 @@
+2026-10-04 06:24:48,609   [mango_population] fold popfold0: n_tr=76066 n_te=9335 A=19 K=179 setup=10.3s
+2026-10-04 06:26:11,328   [mango_population] fold popfold1: n_tr=77363 n_te=8038 A=19 K=179 setup=10.9s
+2026-10-04 06:27:35,211   [mango_population] fold popfold2: n_tr=74099 n_te=11302 A=19 K=179 setup=10.0s
+2026-10-04 06:28:54,134   [mango_population] fold popfold3: n_tr=74799 n_te=10602 A=18 K=179 setup=10.4s
+2026-10-04 06:30:15,870   [mango_population] fold popfold4: n_tr=79251 n_te=6150 A=20 K=179 setup=12.0s
+2026-10-04 06:31:40,808   [mango_population] fold popfold5: n_tr=77808 n_te=7593 A=19 K=179 setup=10.0s
+2026-10-04 06:33:03,419   [mango_population] fold popfold6: n_tr=76397 n_te=9004 A=18 K=179 setup=10.0s
+2026-10-04 06:34:26,018   [mango_population] fold popfold7: n_tr=78562 n_te=6839 A=19 K=179 setup=11.3s
+2026-10-04 06:35:49,273   [mango_population] fold popfold8: n_tr=77029 n_te=8372 A=19 K=179 setup=10.4s
+2026-10-04 06:37:11,294   [mango_population] fold popfold9: n_tr=77235 n_te=8166 A=20 K=180 setup=9.8s
+2026-10-04 06:38:27,482 done mango_population seed 1 in 829.2s

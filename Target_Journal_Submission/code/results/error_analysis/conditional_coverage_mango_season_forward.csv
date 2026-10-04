@@ -1,0 +1,361 @@
+bin,coverage,width,n,method,by,task
+"(0.116, 0.584]",0.9154826958105646,3.4551702,5490,ASTM-R,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.905447258152669,3.4624934,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.8843140827108763,3.4645896,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.8584441610493715,3.4631972,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.8648205501912917,3.4627745,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.8404080889050829,3.460897,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.8260156676990345,3.4607158,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.813991619602842,3.456749,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8282018582619785,3.447382,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.5434505374385133,3.3904934,5489,ASTM-R,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9178506375227686,3.469887,5490,BAG,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9089087265439971,3.4801204,5489,BAG,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.8872290034614684,3.4827948,5489,BAG,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.8631809072690836,3.4815266,5489,BAG,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.8688285662233558,3.4854763,5489,BAG,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.843505192202587,3.4912336,5489,BAG,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.8294771360903626,3.5017247,5489,BAG,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.8201858261978503,3.5095432,5489,BAG,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8394971761705229,3.5036821,5489,BAG,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.5403534341410093,3.4503105,5489,BAG,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.8448087431693989,3.300761,5490,CQR,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.8178174530879941,3.4443243,5489,CQR,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.781198761158681,3.4403925,5489,CQR,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.7762798323920569,3.3933182,5489,CQR,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.7673528875933685,3.4678469,5489,CQR,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.7560575696848242,3.555652,5489,CQR,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.7402076881034797,3.6645827,5489,CQR,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.7436691564948078,3.871945,5489,CQR,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.7684459828748406,3.944913,5489,CQR,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.6990344325013663,4.03629,5489,CQR,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9111111111111111,3.385656,5490,CV+,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.8988886864638368,3.3914576,5489,CV+,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.8759336855529241,3.3940423,5489,CV+,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.8498815813445072,3.3943956,5489,CV+,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.8566223355802514,3.3939645,5489,CV+,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.8303880488249226,3.3924952,5489,CV+,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.8200036436509383,3.3919182,5489,CV+,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.8048824922572417,3.3871365,5489,CV+,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8185461832756422,3.3824015,5489,CV+,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.5372563308435052,3.3483078,5489,CV+,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9632058287795993,4.5469613,5490,G-W-A,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9631991255237748,4.597722,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.9433412279103662,4.5875363,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.9349608307524139,4.5438485,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.9424303151758061,4.561397,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.9284022590635818,4.5820475,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.9101840043723811,4.6366997,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.9136454727637092,4.6808968,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.9169247586081254,4.583642,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.6141373656403717,4.0792136,5489,G-W-A,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9178506375227686,3.762822,5490,GC-D,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9322280925487338,4.025665,5489,GC-D,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.9185644015303334,4.157116,5489,GC-D,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.9129167425760613,4.256372,5489,GC-D,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.9340499180178539,4.4129205,5489,GC-D,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.9320459100018218,4.5731797,5489,GC-D,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.9262160685006376,4.750155,5489,GC-D,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.9340499180178539,4.913459,5489,GC-D,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.9548187283658226,5.1163764,5489,GC-D,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.8367644379668427,6.3250523,5489,GC-D,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.8448087431693989,2.8945422,5490,GPR,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.8358535252322827,2.947552,5489,GPR,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.814355984696666,2.9991415,5489,GPR,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.8163599927126981,3.0564775,5489,GPR,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.8318455092002186,3.1463876,5489,GPR,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.8183640007287302,3.2483318,5489,GPR,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.7928584441610493,3.3553808,5489,GPR,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.8028784842412097,3.5757563,5489,GPR,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8316633266533067,3.9188166,5489,GPR,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.6022955000910912,4.3136287,5489,GPR,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9577413479052823,4.399836,5490,ORACLE,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9504463472399344,4.290875,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.9345964656585899,4.3202243,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.9234833302969575,4.4151893,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.9265804335944616,4.365403,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.9078156312625251,4.295265,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.8990708690107487,4.142803,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.8804882492257242,4.0214705,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8941519402441246,4.160653,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.7267261796319913,5.0713487,5489,ORACLE,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9129326047358834,3.4308708,5490,SCP,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9028967024959009,3.4395065,5489,SCP,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.8817635270541082,3.4386635,5489,SCP,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.8553470577518674,3.4324067,5489,SCP,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.8586263435962834,3.4335563,5489,SCP,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.8338495172162507,3.4313226,5489,SCP,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.8205501912916743,3.433606,5489,SCP,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.811623246492986,3.4381049,5489,SCP,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.8260156676990345,3.4108493,5489,SCP,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.5203133539806887,3.3172755,5489,SCP,Q-ratio decile,mango_season_forward
+"(0.116, 0.584]",0.9382513661202185,5.472625,5490,WCP,Q-ratio decile,mango_season_forward
+"(0.584, 0.795]",0.9338677354709419,5.4312353,5489,WCP,Q-ratio decile,mango_season_forward
+"(0.795, 1.037]",0.9167425760612133,5.5366406,5489,WCP,Q-ratio decile,mango_season_forward
+"(1.037, 1.347]",0.9014392421206049,5.707818,5489,WCP,Q-ratio decile,mango_season_forward
+"(1.347, 1.738]",0.9098196392785571,5.677682,5489,WCP,Q-ratio decile,mango_season_forward
+"(1.738, 2.212]",0.8977955911823647,5.814267,5489,WCP,Q-ratio decile,mango_season_forward
+"(2.212, 2.816]",0.9019857897613409,5.8657217,5489,WCP,Q-ratio decile,mango_season_forward
+"(2.816, 3.756]",0.8959737657132447,5.563217,5489,WCP,Q-ratio decile,mango_season_forward
+"(3.756, 6.001]",0.9291309892512297,6.522026,5489,WCP,Q-ratio decile,mango_season_forward
+"(6.001, 133.547]",0.8821278921479322,inf,5489,WCP,Q-ratio decile,mango_season_forward
+"(7.992, 12.826]",0.7473588342440801,3.485728,5490,ASTM-R,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8594063012201785,3.464051,5491,ASTM-R,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8839658616306519,3.4556417,5507,ASTM-R,reference decile,mango_season_forward
+"(14.447, 15.098]",0.8720335889010588,3.4565253,5478,ASTM-R,reference decile,mango_season_forward
+"(15.098, 15.843]",0.8392335766423358,3.4516013,5480,ASTM-R,reference decile,mango_season_forward
+"(15.843, 16.544]",0.8679039301310044,3.4463334,5496,ASTM-R,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8665451230628988,3.4495254,5485,ASTM-R,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8552679547940212,3.43695,5486,ASTM-R,reference decile,mango_season_forward
+"(18.119, 19.15]",0.816378525932666,3.4412503,5495,ASTM-R,reference decile,mango_season_forward
+"(19.15, 27.809]",0.6722597118365858,3.4368346,5483,ASTM-R,reference decile,mango_season_forward
+"(7.992, 12.826]",0.7553734061930784,3.5141873,5490,BAG,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8628665088326353,3.496759,5491,BAG,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8881423642636644,3.4909203,5507,BAG,reference decile,mango_season_forward
+"(14.447, 15.098]",0.8723986856516976,3.489584,5478,BAG,reference decile,mango_season_forward
+"(15.098, 15.843]",0.8414233576642336,3.487507,5480,BAG,reference decile,mango_season_forward
+"(15.843, 16.544]",0.8713609898107715,3.4796913,5496,BAG,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8692798541476755,3.4801843,5485,BAG,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8572730586948596,3.468604,5486,BAG,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8205641492265696,3.4779515,5495,BAG,reference decile,mango_season_forward
+"(19.15, 27.809]",0.6801021338683203,3.4708784,5483,BAG,reference decile,mango_season_forward
+"(7.992, 12.826]",0.42477231329690346,3.7411776,5490,CQR,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8155162993990166,3.5549755,5491,CQR,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8964953695296894,3.508813,5507,CQR,reference decile,mango_season_forward
+"(14.447, 15.098]",0.9191310697334794,3.4621198,5478,CQR,reference decile,mango_season_forward
+"(15.098, 15.843]",0.9087591240875912,3.5181441,5480,CQR,reference decile,mango_season_forward
+"(15.843, 16.544]",0.9226710334788938,3.4609294,5496,CQR,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8887876025524157,3.4783344,5485,CQR,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8436018957345972,3.5503032,5486,CQR,reference decile,mango_season_forward
+"(18.119, 19.15]",0.70828025477707,3.8326366,5495,CQR,reference decile,mango_season_forward
+"(19.15, 27.809]",0.36658763450665693,4.0126753,5483,CQR,reference decile,mango_season_forward
+"(7.992, 12.826]",0.7344262295081967,3.4153268,5490,CV+,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8528501183755236,3.3960927,5491,CV+,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8796077719266389,3.3881845,5507,CV+,reference decile,mango_season_forward
+"(14.447, 15.098]",0.8676524278933917,3.3917727,5478,CV+,reference decile,mango_season_forward
+"(15.098, 15.843]",0.8335766423357664,3.3865185,5480,CV+,reference decile,mango_season_forward
+"(15.843, 16.544]",0.8618995633187773,3.381192,5496,CV+,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8599817684594349,3.3845103,5485,CV+,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8465184104994532,3.3712308,5486,CV+,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8061874431301183,3.3740854,5495,CV+,reference decile,mango_season_forward
+"(19.15, 27.809]",0.6605872697428415,3.3728542,5483,CV+,reference decile,mango_season_forward
+"(7.992, 12.826]",0.8755919854280511,4.6511493,5490,G-W-A,reference decile,mango_season_forward
+"(12.826, 13.74]",0.9311600801311236,4.602559,5491,G-W-A,reference decile,mango_season_forward
+"(13.74, 14.447]",0.9337207190848011,4.592556,5507,G-W-A,reference decile,mango_season_forward
+"(14.447, 15.098]",0.9211391018619934,4.5118217,5478,G-W-A,reference decile,mango_season_forward
+"(15.098, 15.843]",0.9007299270072993,4.535673,5480,G-W-A,reference decile,mango_season_forward
+"(15.843, 16.544]",0.9204876273653566,4.5159116,5496,G-W-A,reference decile,mango_season_forward
+"(16.544, 17.263]",0.918869644484959,4.4911237,5485,G-W-A,reference decile,mango_season_forward
+"(17.263, 18.119]",0.9210718191760846,4.495496,5486,G-W-A,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8968152866242038,4.5478435,5495,G-W-A,reference decile,mango_season_forward
+"(19.15, 27.809]",0.8106875797920846,4.455424,5483,G-W-A,reference decile,mango_season_forward
+"(7.992, 12.826]",0.8737704918032787,4.696925,5490,GC-D,reference decile,mango_season_forward
+"(12.826, 13.74]",0.9510107448552176,4.695708,5491,GC-D,reference decile,mango_season_forward
+"(13.74, 14.447]",0.9585981478118758,4.690461,5507,GC-D,reference decile,mango_season_forward
+"(14.447, 15.098]",0.9519897772909821,4.6890593,5478,GC-D,reference decile,mango_season_forward
+"(15.098, 15.843]",0.9306569343065694,4.7354984,5480,GC-D,reference decile,mango_season_forward
+"(15.843, 16.544]",0.9448689956331878,4.6408963,5496,GC-D,reference decile,mango_season_forward
+"(16.544, 17.263]",0.9367365542388332,4.544245,5485,GC-D,reference decile,mango_season_forward
+"(17.263, 18.119]",0.9369303682099891,4.5492897,5486,GC-D,reference decile,mango_season_forward
+"(18.119, 19.15]",0.9062784349408554,4.568765,5495,GC-D,reference decile,mango_season_forward
+"(19.15, 27.809]",0.8084989968995075,4.481952,5483,GC-D,reference decile,mango_season_forward
+"(7.992, 12.826]",0.7038251366120218,3.3617468,5490,GPR,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8260790384265161,3.2910454,5491,GPR,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8692573088796077,3.3401144,5507,GPR,reference decile,mango_season_forward
+"(14.447, 15.098]",0.8472070098576122,3.3751454,5478,GPR,reference decile,mango_season_forward
+"(15.098, 15.843]",0.8156934306569343,3.4048493,5480,GPR,reference decile,mango_season_forward
+"(15.843, 16.544]",0.8318777292576419,3.3267121,5496,GPR,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8306289881494986,3.3204777,5485,GPR,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8346700692672256,3.2090163,5486,GPR,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8063694267515924,3.3747241,5495,GPR,reference decile,mango_season_forward
+"(19.15, 27.809]",0.6253875615538939,3.4523087,5483,GPR,reference decile,mango_season_forward
+"(7.992, 12.826]",0.8109289617486338,4.1575375,5490,ORACLE,reference decile,mango_season_forward
+"(12.826, 13.74]",0.903660535421599,4.2486587,5491,ORACLE,reference decile,mango_season_forward
+"(13.74, 14.447]",0.9286362810967859,4.244757,5507,ORACLE,reference decile,mango_season_forward
+"(14.447, 15.098]",0.9357429718875502,4.456373,5478,ORACLE,reference decile,mango_season_forward
+"(15.098, 15.843]",0.9122262773722628,4.4056864,5480,ORACLE,reference decile,mango_season_forward
+"(15.843, 16.544]",0.9352256186317321,4.373189,5496,ORACLE,reference decile,mango_season_forward
+"(16.544, 17.263]",0.9412944393801276,4.441168,5485,ORACLE,reference decile,mango_season_forward
+"(17.263, 18.119]",0.9265402843601895,4.384996,5486,ORACLE,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8959053685168334,4.30046,5495,ORACLE,reference decile,mango_season_forward
+"(19.15, 27.809]",0.8108699616997994,4.471216,5483,ORACLE,reference decile,mango_season_forward
+"(7.992, 12.826]",0.7424408014571949,3.4465718,5490,SCP,reference decile,mango_season_forward
+"(12.826, 13.74]",0.8575851393188855,3.433189,5491,SCP,reference decile,mango_season_forward
+"(13.74, 14.447]",0.8817868167786453,3.427751,5507,SCP,reference decile,mango_season_forward
+"(14.447, 15.098]",0.8654618473895582,3.423736,5478,SCP,reference decile,mango_season_forward
+"(15.098, 15.843]",0.8350364963503649,3.4260383,5480,SCP,reference decile,mango_season_forward
+"(15.843, 16.544]",0.8611717612809315,3.414758,5496,SCP,reference decile,mango_season_forward
+"(16.544, 17.263]",0.8583409298085688,3.4139688,5485,SCP,reference decile,mango_season_forward
+"(17.263, 18.119]",0.8481589500546847,3.4041152,5486,SCP,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8120109190172884,3.4161954,5495,SCP,reference decile,mango_season_forward
+"(19.15, 27.809]",0.66168156118913,3.3997986,5483,SCP,reference decile,mango_season_forward
+"(7.992, 12.826]",0.843351548269581,6.190806,5490,WCP,reference decile,mango_season_forward
+"(12.826, 13.74]",0.9302494991804772,5.9147234,5491,WCP,reference decile,mango_season_forward
+"(13.74, 14.447]",0.9502451425458507,inf,5507,WCP,reference decile,mango_season_forward
+"(14.447, 15.098]",0.9353778751369113,inf,5478,WCP,reference decile,mango_season_forward
+"(15.098, 15.843]",0.9175182481751825,5.5646143,5480,WCP,reference decile,mango_season_forward
+"(15.843, 16.544]",0.9359534206695779,inf,5496,WCP,reference decile,mango_season_forward
+"(16.544, 17.263]",0.9316317228805834,6.080795,5485,WCP,reference decile,mango_season_forward
+"(17.263, 18.119]",0.9234414874225301,inf,5486,WCP,reference decile,mango_season_forward
+"(18.119, 19.15]",0.8949954504094632,inf,5495,WCP,reference decile,mango_season_forward
+"(19.15, 27.809]",0.8442458508115995,6.292924,5483,WCP,reference decile,mango_season_forward
+1201,0.8313356164383562,3.4760056,2336,ASTM-R,cultivar,mango_season_forward
+1243,0.9406934306569343,3.4740877,2192,ASTM-R,cultivar,mango_season_forward
+4069,0.9597222222222223,3.465508,2160,ASTM-R,cultivar,mango_season_forward
+caly,0.8301914689140238,3.4364743,13527,ASTM-R,cultivar,mango_season_forward
+hg,0.8332671300893744,3.4254043,10070,ASTM-R,cultivar,mango_season_forward
+keitt,0.6566265060240963,3.417039,1826,ASTM-R,cultivar,mango_season_forward
+kp,0.7614532282122309,3.4824529,9386,ASTM-R,cultivar,mango_season_forward
+ladyg,0.9578392621870883,3.4657197,1518,ASTM-R,cultivar,mango_season_forward
+ladyj,0.975,3.462848,1440,ASTM-R,cultivar,mango_season_forward
+r2e2,0.8193752395553852,3.4625616,10436,ASTM-R,cultivar,mango_season_forward
+1201,0.84375,3.5321088,2336,BAG,cultivar,mango_season_forward
+1243,0.9443430656934306,3.5310273,2192,BAG,cultivar,mango_season_forward
+4069,0.9648148148148148,3.512226,2160,BAG,cultivar,mango_season_forward
+caly,0.8313742884601169,3.463352,13527,BAG,cultivar,mango_season_forward
+hg,0.8356504468718967,3.450571,10070,BAG,cultivar,mango_season_forward
+keitt,0.6593647316538883,3.4542444,1826,BAG,cultivar,mango_season_forward
+kp,0.7668868527594289,3.5120955,9386,BAG,cultivar,mango_season_forward
+ladyg,0.9650856389986825,3.5591106,1518,BAG,cultivar,mango_season_forward
+ladyj,0.9763888888888889,3.5122976,1440,BAG,cultivar,mango_season_forward
+r2e2,0.8245496358758145,3.4902115,10436,BAG,cultivar,mango_season_forward
+1201,0.6142979452054794,4.2544584,2336,CQR,cultivar,mango_season_forward
+1243,0.8905109489051095,4.321928,2192,CQR,cultivar,mango_season_forward
+4069,0.9185185185185185,3.635963,2160,CQR,cultivar,mango_season_forward
+caly,0.7636578694462925,3.4506338,13527,CQR,cultivar,mango_season_forward
+hg,0.7357497517378352,3.350159,10070,CQR,cultivar,mango_season_forward
+keitt,0.7217962760131434,3.832896,1826,CQR,cultivar,mango_season_forward
+kp,0.7130833155763904,3.723787,9386,CQR,cultivar,mango_season_forward
+ladyg,0.8234519104084321,4.7127743,1518,CQR,cultivar,mango_season_forward
+ladyj,0.9847222222222223,3.8544037,1440,CQR,cultivar,mango_season_forward
+r2e2,0.8096013798390188,3.443165,10436,CQR,cultivar,mango_season_forward
+1201,0.8176369863013698,3.3999388,2336,CV+,cultivar,mango_season_forward
+1243,0.9361313868613139,3.3965726,2192,CV+,cultivar,mango_season_forward
+4069,0.9569444444444445,3.3865414,2160,CV+,cultivar,mango_season_forward
+caly,0.8223552894211577,3.3738465,13527,CV+,cultivar,mango_season_forward
+hg,0.8268123138033764,3.3640745,10070,CV+,cultivar,mango_season_forward
+keitt,0.6522453450164294,3.3701568,1826,CV+,cultivar,mango_season_forward
+kp,0.7517579373535053,3.4133265,9386,CV+,cultivar,mango_season_forward
+ladyg,0.9519104084321476,3.392476,1518,CV+,cultivar,mango_season_forward
+ladyj,0.9729166666666667,3.3806884,1440,CV+,cultivar,mango_season_forward
+r2e2,0.810463779225757,3.3963768,10436,CV+,cultivar,mango_season_forward
+1201,0.96875,4.850343,2336,G-W-A,cultivar,mango_season_forward
+1243,0.989507299270073,4.90029,2192,G-W-A,cultivar,mango_season_forward
+4069,0.9981481481481481,4.9118752,2160,G-W-A,cultivar,mango_season_forward
+caly,0.8950986915058772,4.4350357,13527,G-W-A,cultivar,mango_season_forward
+hg,0.898609731876862,4.365096,10070,G-W-A,cultivar,mango_season_forward
+keitt,0.7371303395399781,4.054811,1826,G-W-A,cultivar,mango_season_forward
+kp,0.8719369273385894,4.597138,9386,G-W-A,cultivar,mango_season_forward
+ladyg,0.9920948616600791,4.9852405,1518,G-W-A,cultivar,mango_season_forward
+ladyj,0.9923611111111111,4.9852405,1440,G-W-A,cultivar,mango_season_forward
+r2e2,0.8967995400536604,4.5299973,10436,G-W-A,cultivar,mango_season_forward
+1201,0.9456335616438356,4.816573,2336,GC-D,cultivar,mango_season_forward
+1243,0.9940693430656934,4.7606688,2192,GC-D,cultivar,mango_season_forward
+4069,0.9949074074074075,4.587333,2160,GC-D,cultivar,mango_season_forward
+caly,0.9256302210394026,4.5953035,13527,GC-D,cultivar,mango_season_forward
+hg,0.9246276067527309,4.5697417,10070,GC-D,cultivar,mango_season_forward
+keitt,0.880065717415115,5.5276723,1826,GC-D,cultivar,mango_season_forward
+kp,0.8700191774984019,4.5243726,9386,GC-D,cultivar,mango_season_forward
+ladyg,0.9927536231884058,5.113493,1518,GC-D,cultivar,mango_season_forward
+ladyj,0.9916666666666667,4.737265,1440,GC-D,cultivar,mango_season_forward
+r2e2,0.9026446914526639,4.5218415,10436,GC-D,cultivar,mango_season_forward
+1201,0.6879280821917808,3.6518354,2336,GPR,cultivar,mango_season_forward
+1243,0.9324817518248175,3.232587,2192,GPR,cultivar,mango_season_forward
+4069,0.8356481481481481,3.079545,2160,GPR,cultivar,mango_season_forward
+caly,0.8065350779921638,3.1454256,13527,GPR,cultivar,mango_season_forward
+hg,0.7962264150943397,3.2148015,10070,GPR,cultivar,mango_season_forward
+keitt,0.5985761226725083,3.801709,1826,GPR,cultivar,mango_season_forward
+kp,0.7569784785851268,3.2221942,9386,GPR,cultivar,mango_season_forward
+ladyg,0.9466403162055336,6.4943748,1518,GPR,cultivar,mango_season_forward
+ladyj,0.9263888888888889,3.338371,1440,GPR,cultivar,mango_season_forward
+r2e2,0.8156381755461862,3.3156621,10436,GPR,cultivar,mango_season_forward
+1201,0.8351883561643836,3.729449,2336,ORACLE,cultivar,mango_season_forward
+1243,0.9566605839416058,3.5906346,2192,ORACLE,cultivar,mango_season_forward
+4069,0.9601851851851851,3.5729809,2160,ORACLE,cultivar,mango_season_forward
+caly,0.8919198639757522,4.529887,13527,ORACLE,cultivar,mango_season_forward
+hg,0.927408142999007,4.5949697,10070,ORACLE,cultivar,mango_season_forward
+keitt,0.835158817086528,5.1611743,1826,ORACLE,cultivar,mango_season_forward
+kp,0.8628808864265928,4.3614945,9386,ORACLE,cultivar,mango_season_forward
+ladyg,0.9545454545454546,3.4389272,1518,ORACLE,cultivar,mango_season_forward
+ladyj,0.9736111111111111,3.4354532,1440,ORACLE,cultivar,mango_season_forward
+r2e2,0.9013990034495976,4.437227,10436,ORACLE,cultivar,mango_season_forward
+1201,0.8274828767123288,3.471199,2336,SCP,cultivar,mango_season_forward
+1243,0.9429744525547445,3.472582,2192,SCP,cultivar,mango_season_forward
+4069,0.9648148148148148,3.476475,2160,SCP,cultivar,mango_season_forward
+caly,0.8211724698750646,3.3977525,13527,SCP,cultivar,mango_season_forward
+hg,0.826514399205561,3.375328,10070,SCP,cultivar,mango_season_forward
+keitt,0.6308871851040526,3.3242984,1826,SCP,cultivar,mango_season_forward
+kp,0.7549541870871511,3.4521785,9386,SCP,cultivar,mango_season_forward
+ladyg,0.9604743083003953,3.4936225,1518,SCP,cultivar,mango_season_forward
+ladyj,0.9798611111111111,3.493622,1440,SCP,cultivar,mango_season_forward
+r2e2,0.8164047527788425,3.4279273,10436,SCP,cultivar,mango_season_forward
+1201,0.8330479452054794,4.953425,2336,WCP,cultivar,mango_season_forward
+1243,0.9753649635036497,4.9631195,2192,WCP,cultivar,mango_season_forward
+4069,0.9587962962962963,4.3809876,2160,WCP,cultivar,mango_season_forward
+caly,0.9264434094773416,inf,13527,WCP,cultivar,mango_season_forward
+hg,0.9628599801390268,inf,10070,WCP,cultivar,mango_season_forward
+keitt,0.963855421686747,inf,1826,WCP,cultivar,mango_season_forward
+kp,0.8545706371191135,5.4808726,9386,WCP,cultivar,mango_season_forward
+ladyg,0.958498023715415,3.465261,1518,WCP,cultivar,mango_season_forward
+ladyj,0.9777777777777777,3.441117,1440,WCP,cultivar,mango_season_forward
+r2e2,0.858853967037179,5.9071465,10436,WCP,cultivar,mango_season_forward
+high,0.8120767494356659,3.4143345,3544,ASTM-R,temp,mango_season_forward
+low,0.8567275747508306,3.4417498,2408,ASTM-R,temp,mango_season_forward
+mid,0.8390992167101827,3.4231339,3064,ASTM-R,temp,mango_season_forward
+undef,0.8270517711171662,3.4579098,45875,ASTM-R,temp,mango_season_forward
+high,0.8163092550790068,3.4721947,3544,BAG,temp,mango_season_forward
+low,0.8612956810631229,3.4937477,2408,BAG,temp,mango_season_forward
+mid,0.8433420365535248,3.4718215,3064,BAG,temp,mango_season_forward
+undef,0.8308010899182562,3.4871638,45875,BAG,temp,mango_season_forward
+high,0.7954288939051919,3.9976313,3544,CQR,temp,mango_season_forward
+low,0.8305647840531561,4.392967,2408,CQR,temp,mango_season_forward
+mid,0.7989556135770235,3.838517,3064,CQR,temp,mango_season_forward
+undef,0.7623106267029973,3.5260825,45875,CQR,temp,mango_season_forward
+high,0.8033295711060948,3.3524103,3544,CV+,temp,mango_season_forward
+low,0.848421926910299,3.3675308,2408,CV+,temp,mango_season_forward
+mid,0.8325718015665796,3.3562815,3064,CV+,temp,mango_season_forward
+undef,0.8193787465940054,3.391762,45875,CV+,temp,mango_season_forward
+high,0.885158013544018,4.500128,3544,G-W-A,temp,mango_season_forward
+low,0.9422757475083057,4.770698,2408,G-W-A,temp,mango_season_forward
+mid,0.9086161879895561,4.5899763,3064,G-W-A,temp,mango_season_forward
+undef,0.9019945504087193,4.527629,45875,G-W-A,temp,mango_season_forward
+high,0.9379232505643341,5.0975122,3544,GC-D,temp,mango_season_forward
+low,0.9460132890365448,4.7845054,2408,GC-D,temp,mango_season_forward
+mid,0.9402741514360313,4.891844,3064,GC-D,temp,mango_season_forward
+undef,0.9158365122615804,4.567442,45875,GC-D,temp,mango_season_forward
+high,0.7477426636568849,3.9410129,3544,GPR,temp,mango_season_forward
+low,0.7209302325581395,3.841828,2408,GPR,temp,mango_season_forward
+mid,0.7829634464751958,3.5297937,3064,GPR,temp,mango_season_forward
+undef,0.808283378746594,3.2612448,45875,GPR,temp,mango_season_forward
+high,0.8888261851015802,4.266183,3544,ORACLE,temp,mango_season_forward
+low,0.8833056478405316,3.7998521,2408,ORACLE,temp,mango_season_forward
+mid,0.8971932114882507,4.114313,3064,ORACLE,temp,mango_season_forward
+undef,0.9020599455040872,4.3990693,45875,ORACLE,temp,mango_season_forward
+high,0.8019187358916479,3.3905008,3544,SCP,temp,mango_season_forward
+low,0.8550664451827242,3.4480164,2408,SCP,temp,mango_season_forward
+mid,0.8306135770234987,3.4096,3064,SCP,temp,mango_season_forward
+undef,0.8217111716621254,3.4222405,45875,SCP,temp,mango_season_forward
+high,0.9384875846501128,inf,3544,WCP,temp,mango_season_forward
+low,0.90656146179402,inf,2408,WCP,temp,mango_season_forward
+mid,0.9301566579634465,inf,3064,WCP,temp,mango_season_forward
+undef,0.9074877384196185,inf,45875,WCP,temp,mango_season_forward
+green,0.8624935717958974,3.4804595,35002,ASTM-R,physio_stage,mango_season_forward
+ripen,0.7674593996681582,3.4031467,19889,ASTM-R,physio_stage,mango_season_forward
+green,0.8677789840580539,3.5168304,35002,BAG,physio_stage,mango_season_forward
+ripen,0.7687666549348886,3.4307206,19889,BAG,physio_stage,mango_season_forward
+green,0.7959545168847495,3.6873302,35002,CQR,physio_stage,mango_season_forward
+ripen,0.7229121625018855,3.4794207,19889,CQR,physio_stage,mango_season_forward
+green,0.8544940289126336,3.4093592,35002,CV+,physio_stage,mango_season_forward
+ripen,0.7602694957011413,3.345381,19889,CV+,physio_stage,mango_season_forward
+green,0.9386606479629735,4.6860065,35002,G-W-A,physio_stage,mango_season_forward
+ripen,0.8403640203127357,4.2830386,19889,G-W-A,physio_stage,mango_season_forward
+green,0.9356036797897263,4.5762844,35002,GC-D,physio_stage,mango_season_forward
+ripen,0.8924028357383478,4.7225895,19889,GC-D,physio_stage,mango_season_forward
+green,0.816610479401177,3.3791254,35002,GPR,physio_stage,mango_season_forward
+ripen,0.7683644225451255,3.2865813,19889,GPR,physio_stage,mango_season_forward
+green,0.9100908519513171,4.149514,35002,ORACLE,physio_stage,mango_season_forward
+ripen,0.8825481421891498,4.698158,19889,ORACLE,physio_stage,mango_season_forward
+green,0.859865150562825,3.4594498,35002,SCP,physio_stage,mango_season_forward
+ripen,0.756448287998391,3.3522747,19889,SCP,physio_stage,mango_season_forward
+green,0.8902634135192274,5.2655926,35002,WCP,physio_stage,mango_season_forward
+ripen,0.9467042083563779,inf,19889,WCP,physio_stage,mango_season_forward

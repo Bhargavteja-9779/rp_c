@@ -18,7 +18,8 @@ task = get_task("mango_season_loso")
 X, y, units = task["X"], task["ds"].y.astype(float), task["ds"].meta.unit.to_numpy()
 rows = []
 methods = [m for m in METHODS if m not in ("GC-D2", "GC-CQR")] + ["GC-D2", "GC-CQR"]
-for f in [f for f in task["folds"] if f["name"] in ("season2016", "season2018", "season2020")]:
+TIMED = ("season2016",) if "--quick" in sys.argv else ("season2016", "season2018", "season2020")
+for f in [f for f in task["folds"] if f["name"] in TIMED]:
     tr, te = f["train"], f["test"]
     args = (X[tr], y[tr], f["calib_group"][tr], units[tr], X[te], y[te], f["test_group"][te], units[te], task["cfg"])
     for m in methods:

@@ -1,0 +1,3 @@
+2026-10-03 22:17:37,743   [tablets] fold cal1_test1: n_tr=195 n_te=460 A=7 K=195 setup=0.0s
+2026-10-03 22:17:38,533   [tablets] fold cal1_test2: n_tr=195 n_te=460 A=7 K=195 setup=0.0s
+2026-10-03 22:17:39,290 done tablets seed 0 in 1.6s

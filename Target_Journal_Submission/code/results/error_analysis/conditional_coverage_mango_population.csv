@@ -1,0 +1,361 @@
+bin,coverage,width,n,method,by,task
+"(0.1, 0.469]",0.9333801662568786,3.6293023,8541,ASTM-R,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9275175644028103,3.6264086,8540,ASTM-R,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9197892271662763,3.625627,8540,ASTM-R,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9105386416861827,3.6242752,8540,ASTM-R,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8973067915690867,3.6233242,8540,ASTM-R,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8889929742388759,3.6215065,8540,ASTM-R,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8774004683840749,3.618995,8540,ASTM-R,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8553864168618267,3.6172945,8540,ASTM-R,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8496487119437939,3.6194792,8540,ASTM-R,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8553864168618267,3.617262,8540,ASTM-R,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9331460016391523,3.6306086,8541,BAG,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9271662763466042,3.6281137,8540,BAG,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9199063231850118,3.6276429,8540,BAG,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9103044496487119,3.6266289,8540,BAG,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.897423887587822,3.6258714,8540,BAG,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8891100702576112,3.6244133,8540,BAG,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8772833723653396,3.622285,8540,BAG,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8559718969555035,3.6212902,8540,BAG,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8505854800936768,3.6246855,8540,BAG,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8559718969555035,3.6277044,8540,BAG,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.8787027280177965,3.1160817,8541,CQR,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.8620608899297424,3.181432,8540,CQR,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.8613583138173302,3.2261868,8540,CQR,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.8549180327868853,3.2849553,8540,CQR,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8587822014051523,3.3411148,8540,CQR,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8581967213114754,3.389723,8540,CQR,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8557377049180328,3.433525,8540,CQR,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8338407494145199,3.503825,8540,CQR,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8344262295081967,3.5544517,8540,CQR,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8480093676814988,3.8320236,8540,CQR,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.929282285446669,3.5685174,8541,CV+,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.922599531615925,3.5647652,8540,CV+,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9147540983606557,3.564071,8540,CV+,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9044496487119438,3.5627916,8540,CV+,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8932084309133489,3.5619953,8540,CV+,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8832552693208431,3.5597374,8540,CV+,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8711943793911007,3.5571015,8540,CV+,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8494145199063232,3.5556676,8540,CV+,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8430913348946136,3.558291,8540,CV+,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8494145199063232,3.5593429,8540,CV+,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9386488701557195,3.7029512,8541,G-W-A,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9323185011709602,3.7017274,8540,G-W-A,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9258782201405152,3.7017727,8540,G-W-A,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9169789227166276,3.7016811,8540,G-W-A,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.9031615925058548,3.7010534,8540,G-W-A,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8955503512880562,3.6984217,8540,G-W-A,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8841920374707259,3.696098,8540,G-W-A,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8642857142857143,3.6951756,8540,G-W-A,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8570257611241218,3.6961699,8540,G-W-A,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8625292740046838,3.687864,8540,G-W-A,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.89790422667135,3.1827207,8541,GC-D,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9032786885245901,3.3389075,8540,GC-D,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9024590163934426,3.4333627,8540,GC-D,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.8991803278688525,3.5214198,8540,GC-D,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8942622950819672,3.5970774,8540,GC-D,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8928571428571429,3.6782572,8540,GC-D,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8881733021077284,3.766778,8540,GC-D,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8776346604215457,3.8741863,8540,GC-D,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8875878220140515,4.0278287,8540,GC-D,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.9190866510538642,4.3937864,8540,GC-D,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9022362720992858,3.1076257,8541,GPR,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.8908665105386416,3.1306443,8540,GPR,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.88384074941452,3.1469877,8540,GPR,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.8769320843091335,3.1692991,8540,GPR,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8730679156908665,3.1909845,8540,GPR,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8631147540983607,3.2150187,8540,GPR,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.857728337236534,3.2469735,8540,GPR,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8494145199063232,3.2896137,8540,GPR,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8607728337236534,3.3827047,8540,GPR,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8921545667447307,3.8643007,8540,GPR,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9153494906919565,3.2230027,8541,ORACLE,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9144028103044497,3.3192935,8540,ORACLE,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9125292740046839,3.3690765,8540,ORACLE,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9086651053864169,3.4356918,8540,ORACLE,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.9033957845433255,3.485566,8540,ORACLE,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.9016393442622951,3.5741835,8540,ORACLE,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.9009367681498829,3.6044202,8540,ORACLE,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8778688524590164,3.6142862,8540,ORACLE,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8704918032786885,3.625853,8540,ORACLE,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8601873536299766,3.6204286,8540,ORACLE,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9270577215782695,3.5350335,8541,SCP,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9192037470725996,3.533885,8540,SCP,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9112412177985948,3.5352724,8540,SCP,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9,3.5356236,8540,SCP,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.8899297423887588,3.5325243,8540,SCP,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.8798594847775175,3.5270343,8540,SCP,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8669789227166277,3.5202806,8540,SCP,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8447306791569087,3.5206392,8540,SCP,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8379391100702576,3.5219755,8540,SCP,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.8443793911007026,3.5160315,8540,SCP,Q-ratio decile,mango_population
+"(0.1, 0.469]",0.9352534831986887,inf,8541,WCP,Q-ratio decile,mango_population
+"(0.469, 0.608]",0.9283372365339578,inf,8540,WCP,Q-ratio decile,mango_population
+"(0.608, 0.74]",0.9215456674473068,inf,8540,WCP,Q-ratio decile,mango_population
+"(0.74, 0.879]",0.9160421545667448,inf,8540,WCP,Q-ratio decile,mango_population
+"(0.879, 1.043]",0.9036299765807962,inf,8540,WCP,Q-ratio decile,mango_population
+"(1.043, 1.242]",0.9065573770491804,inf,8540,WCP,Q-ratio decile,mango_population
+"(1.242, 1.497]",0.8946135831381733,inf,8540,WCP,Q-ratio decile,mango_population
+"(1.497, 1.886]",0.8857142857142857,inf,8540,WCP,Q-ratio decile,mango_population
+"(1.886, 2.629]",0.8811475409836066,inf,8540,WCP,Q-ratio decile,mango_population
+"(2.629, 317.167]",0.9084309133489461,inf,8540,WCP,Q-ratio decile,mango_population
+"(7.992, 12.813]",0.8135454439115686,3.6204891,8549,ASTM-R,reference decile,mango_population
+"(12.813, 13.682]",0.9063341529094954,3.6174853,8541,ASTM-R,reference decile,mango_population
+"(13.682, 14.38]",0.9272748565405785,3.6241672,8539,ASTM-R,reference decile,mango_population
+"(14.38, 15.057]",0.9503163815326927,3.6262476,8534,ASTM-R,reference decile,mango_population
+"(15.057, 15.808]",0.9300773014757554,3.622175,8538,ASTM-R,reference decile,mango_population
+"(15.808, 16.492]",0.9232029969562163,3.6271892,8542,ASTM-R,reference decile,mango_population
+"(16.492, 17.2]",0.915047975661128,3.6265378,8546,ASTM-R,reference decile,mango_population
+"(17.2, 18.064]",0.8877168307548055,3.6286643,8532,ASTM-R,reference decile,mango_population
+"(18.064, 19.102]",0.8629976580796253,3.6231163,8540,ASTM-R,reference decile,mango_population
+"(19.102, 27.809]",0.7989461358313817,3.607411,8540,ASTM-R,reference decile,mango_population
+"(7.992, 12.813]",0.8143642531290209,3.624727,8549,BAG,reference decile,mango_population
+"(12.813, 13.682]",0.9056316590563166,3.6214156,8541,BAG,reference decile,mango_population
+"(13.682, 14.38]",0.927509076004216,3.627654,8539,BAG,reference decile,mango_population
+"(14.38, 15.057]",0.9498476681509257,3.6300018,8534,BAG,reference decile,mango_population
+"(15.057, 15.808]",0.9300773014757554,3.6259136,8538,BAG,reference decile,mango_population
+"(15.808, 16.492]",0.9233200655584173,3.6304195,8542,BAG,reference decile,mango_population
+"(16.492, 17.2]",0.9149309618534988,3.6295135,8546,BAG,reference decile,mango_population
+"(17.2, 18.064]",0.8870135958743554,3.631706,8532,BAG,reference decile,mango_population
+"(18.064, 19.102]",0.8640515222482436,3.6262634,8540,BAG,reference decile,mango_population
+"(19.102, 27.809]",0.8002341920374707,3.6116357,8540,BAG,reference decile,mango_population
+"(7.992, 12.813]",0.6166803134869575,3.6363525,8549,CQR,reference decile,mango_population
+"(12.813, 13.682]",0.8754244233696289,3.4143727,8541,CQR,reference decile,mango_population
+"(13.682, 14.38]",0.9115821524768708,3.288311,8539,CQR,reference decile,mango_population
+"(14.38, 15.057]",0.9585188657136161,3.2289028,8534,CQR,reference decile,mango_population
+"(15.057, 15.808]",0.9421410166315296,3.159038,8538,CQR,reference decile,mango_population
+"(15.808, 16.492]",0.9292905642706626,3.1433525,8542,CQR,reference decile,mango_population
+"(16.492, 17.2]",0.9158670723145331,3.1924574,8546,CQR,reference decile,mango_population
+"(17.2, 18.064]",0.8938115330520394,3.2811716,8532,CQR,reference decile,mango_population
+"(18.064, 19.102]",0.8484777517564402,3.5242798,8540,CQR,reference decile,mango_population
+"(19.102, 27.809]",0.6545667447306791,3.9947014,8540,CQR,reference decile,mango_population
+"(7.992, 12.813]",0.8045385425195929,3.556777,8549,CV+,reference decile,mango_population
+"(12.813, 13.682]",0.9016508605549701,3.5552323,8541,CV+,reference decile,mango_population
+"(13.682, 14.38]",0.9237615645860171,3.563042,8539,CV+,reference decile,mango_population
+"(14.38, 15.057]",0.9453948910241388,3.5660374,8534,CV+,reference decile,mango_population
+"(15.057, 15.808]",0.926914968376669,3.5609288,8538,CV+,reference decile,mango_population
+"(15.808, 16.492]",0.9202762819011941,3.5667315,8542,CV+,reference decile,mango_population
+"(16.492, 17.2]",0.9106014509712146,3.5656476,8546,CV+,reference decile,mango_population
+"(17.2, 18.064]",0.8806844819503047,3.568113,8532,CV+,reference decile,mango_population
+"(18.064, 19.102]",0.8558548009367681,3.5614274,8540,CV+,reference decile,mango_population
+"(19.102, 27.809]",0.7911007025761124,3.5483553,8540,CV+,reference decile,mango_population
+"(7.992, 12.813]",0.823137209030296,3.6992135,8549,G-W-A,reference decile,mango_population
+"(12.813, 13.682]",0.9120711860437888,3.6963103,8541,G-W-A,reference decile,mango_population
+"(13.682, 14.38]",0.9325447944724207,3.7017066,8539,G-W-A,reference decile,mango_population
+"(14.38, 15.057]",0.9545348019685962,3.6980276,8534,G-W-A,reference decile,mango_population
+"(15.057, 15.808]",0.9341766221597564,3.6939647,8538,G-W-A,reference decile,mango_population
+"(15.808, 16.492]",0.9280028096464529,3.7001567,8542,G-W-A,reference decile,mango_population
+"(16.492, 17.2]",0.9210156798502224,3.702315,8546,G-W-A,reference decile,mango_population
+"(17.2, 18.064]",0.8939287388654478,3.70073,8532,G-W-A,reference decile,mango_population
+"(18.064, 19.102]",0.8721311475409836,3.6964898,8540,G-W-A,reference decile,mango_population
+"(19.102, 27.809]",0.8091334894613583,3.6939995,8540,G-W-A,reference decile,mango_population
+"(7.992, 12.813]",0.828400982571061,3.7603242,8549,GC-D,reference decile,mango_population
+"(12.813, 13.682]",0.9133590914412832,3.7250822,8541,GC-D,reference decile,mango_population
+"(13.682, 14.38]",0.9327790139360581,3.6925375,8539,GC-D,reference decile,mango_population
+"(14.38, 15.057]",0.9567611905319897,3.712667,8534,GC-D,reference decile,mango_population
+"(15.057, 15.808]",0.9392129304286718,3.6791494,8538,GC-D,reference decile,mango_population
+"(15.808, 16.492]",0.9255443690002342,3.6614978,8542,GC-D,reference decile,mango_population
+"(16.492, 17.2]",0.9168031827755675,3.635731,8546,GC-D,reference decile,mango_population
+"(17.2, 18.064]",0.8880684481950305,3.6228647,8532,GC-D,reference decile,mango_population
+"(18.064, 19.102]",0.8622950819672132,3.633922,8540,GC-D,reference decile,mango_population
+"(19.102, 27.809]",0.7992974238875878,3.6904068,8540,GC-D,reference decile,mango_population
+"(7.992, 12.813]",0.8327289741490232,3.3170009,8549,GPR,reference decile,mango_population
+"(12.813, 13.682]",0.9012996136283807,3.272819,8541,GPR,reference decile,mango_population
+"(13.682, 14.38]",0.9087715189132217,3.2647002,8539,GPR,reference decile,mango_population
+"(14.38, 15.057]",0.9346144832434966,3.3200812,8534,GPR,reference decile,mango_population
+"(15.057, 15.808]",0.9101663152963223,3.282314,8538,GPR,reference decile,mango_population
+"(15.808, 16.492]",0.8966284242566144,3.2687697,8542,GPR,reference decile,mango_population
+"(16.492, 17.2]",0.8918792417505266,3.2391222,8546,GPR,reference decile,mango_population
+"(17.2, 18.064]",0.8804500703234881,3.2445784,8532,GPR,reference decile,mango_population
+"(18.064, 19.102]",0.8566744730679157,3.256942,8540,GPR,reference decile,mango_population
+"(19.102, 27.809]",0.7370023419203747,3.2777917,8540,GPR,reference decile,mango_population
+"(7.992, 12.813]",0.8167037080360277,3.5520186,8549,ORACLE,reference decile,mango_population
+"(12.813, 13.682]",0.9168715607071771,3.4059784,8541,ORACLE,reference decile,mango_population
+"(13.682, 14.38]",0.9309052582269587,3.3290331,8539,ORACLE,reference decile,mango_population
+"(14.38, 15.057]",0.9336770564799625,3.3290355,8534,ORACLE,reference decile,mango_population
+"(15.057, 15.808]",0.9280862028578122,3.335369,8538,ORACLE,reference decile,mango_population
+"(15.808, 16.492]",0.9302271130882698,3.4880002,8542,ORACLE,reference decile,mango_population
+"(16.492, 17.2]",0.9186754036976363,3.4796262,8546,ORACLE,reference decile,mango_population
+"(17.2, 18.064]",0.8887716830754805,3.5196795,8532,ORACLE,reference decile,mango_population
+"(18.064, 19.102]",0.8735362997658079,3.5421522,8540,ORACLE,reference decile,mango_population
+"(19.102, 27.809]",0.8281030444964871,3.8906898,8540,ORACLE,reference decile,mango_population
+"(7.992, 12.813]",0.8005614691776816,3.5291026,8549,SCP,reference decile,mango_population
+"(12.813, 13.682]",0.89790422667135,3.5254662,8541,SCP,reference decile,mango_population
+"(13.682, 14.38]",0.9217706991450989,3.533322,8539,SCP,reference decile,mango_population
+"(14.38, 15.057]",0.9435200374970706,3.5329697,8534,SCP,reference decile,mango_population
+"(15.057, 15.808]",0.9243382525181542,3.5279937,8538,SCP,reference decile,mango_population
+"(15.808, 16.492]",0.9158276750175602,3.529855,8542,SCP,reference decile,mango_population
+"(16.492, 17.2]",0.9079101333957407,3.5310142,8546,SCP,reference decile,mango_population
+"(17.2, 18.064]",0.8765822784810127,3.5265112,8532,SCP,reference decile,mango_population
+"(18.064, 19.102]",0.8475409836065574,3.5214255,8540,SCP,reference decile,mango_population
+"(19.102, 27.809]",0.785480093676815,3.5206397,8540,SCP,reference decile,mango_population
+"(7.992, 12.813]",0.84910515849807,inf,8549,WCP,reference decile,mango_population
+"(12.813, 13.682]",0.9152324083830933,inf,8541,WCP,reference decile,mango_population
+"(13.682, 14.38]",0.9283288441269469,inf,8539,WCP,reference decile,mango_population
+"(14.38, 15.057]",0.9525427700960862,inf,8534,WCP,reference decile,mango_population
+"(15.057, 15.808]",0.9406184118060436,inf,8538,WCP,reference decile,mango_population
+"(15.808, 16.492]",0.925661437602435,inf,8542,WCP,reference decile,mango_population
+"(16.492, 17.2]",0.9201965831968172,inf,8546,WCP,reference decile,mango_population
+"(17.2, 18.064]",0.8905297702766057,inf,8532,WCP,reference decile,mango_population
+"(18.064, 19.102]",0.8946135831381733,inf,8540,WCP,reference decile,mango_population
+"(19.102, 27.809]",0.864519906323185,inf,8540,WCP,reference decile,mango_population
+1201,0.8972602739726028,3.6441362,2336,ASTM-R,cultivar,mango_population
+1243,0.9730839416058394,3.633686,2192,ASTM-R,cultivar,mango_population
+4069,0.9717592592592592,3.649073,2160,ASTM-R,cultivar,mango_population
+caly,0.9162623833013983,3.6317468,24529,ASTM-R,cultivar,mango_population
+hg,0.8907379518072289,3.6092293,13280,ASTM-R,cultivar,mango_population
+keitt,0.8998058252427185,3.6358316,5150,ASTM-R,cultivar,mango_population
+kp,0.8318246784182944,3.6111956,18891,ASTM-R,cultivar,mango_population
+ladyg,0.9545454545454546,3.661421,1518,ASTM-R,cultivar,mango_population
+ladyj,0.9854166666666667,3.6430864,1440,ASTM-R,cultivar,mango_population
+r2e2,0.8838547285149226,3.6124394,13905,ASTM-R,cultivar,mango_population
+1201,0.896404109589041,3.6465325,2336,BAG,cultivar,mango_population
+1243,0.9735401459854015,3.6367009,2192,BAG,cultivar,mango_population
+4069,0.9717592592592592,3.6502495,2160,BAG,cultivar,mango_population
+caly,0.9161808471605039,3.6348674,24529,BAG,cultivar,mango_population
+hg,0.8922439759036145,3.612597,13280,BAG,cultivar,mango_population
+keitt,0.9,3.6437807,5150,BAG,cultivar,mango_population
+kp,0.8318246784182944,3.6144836,18891,BAG,cultivar,mango_population
+ladyg,0.9571805006587615,3.667484,1518,BAG,cultivar,mango_population
+ladyj,0.9868055555555556,3.6464472,1440,BAG,cultivar,mango_population
+r2e2,0.8830636461704423,3.6162045,13905,BAG,cultivar,mango_population
+1201,0.7504280821917808,3.745804,2336,CQR,cultivar,mango_population
+1243,0.9552919708029197,3.516405,2192,CQR,cultivar,mango_population
+4069,0.9152777777777777,3.294345,2160,CQR,cultivar,mango_population
+caly,0.8595539973093074,3.2232473,24529,CQR,cultivar,mango_population
+hg,0.8474397590361445,3.3298247,13280,CQR,cultivar,mango_population
+keitt,0.8745631067961165,3.5366569,5150,CQR,cultivar,mango_population
+kp,0.8280133396855646,3.608698,18891,CQR,cultivar,mango_population
+ladyg,0.8043478260869565,3.5907698,1518,CQR,cultivar,mango_population
+ladyj,0.9277777777777778,3.171806,1440,CQR,cultivar,mango_population
+r2e2,0.871556993887091,3.303483,13905,CQR,cultivar,mango_population
+1201,0.8865582191780822,3.582737,2336,CV+,cultivar,mango_population
+1243,0.9698905109489051,3.579251,2192,CV+,cultivar,mango_population
+4069,0.9694444444444444,3.5948536,2160,CV+,cultivar,mango_population
+caly,0.9104325492274451,3.5672743,24529,CV+,cultivar,mango_population
+hg,0.8853915662650602,3.5497558,13280,CV+,cultivar,mango_population
+keitt,0.8947572815533981,3.5835493,5150,CV+,cultivar,mango_population
+kp,0.825737123497962,3.5493374,18891,CV+,cultivar,mango_population
+ladyg,0.9512516469038208,3.5923085,1518,CV+,cultivar,mango_population
+ladyj,0.9840277777777777,3.5817702,1440,CV+,cultivar,mango_population
+r2e2,0.8789644012944984,3.5522084,13905,CV+,cultivar,mango_population
+1201,0.9075342465753424,3.725182,2336,G-W-A,cultivar,mango_population
+1243,0.9762773722627737,3.7110524,2192,G-W-A,cultivar,mango_population
+4069,0.9717592592592592,3.7432559,2160,G-W-A,cultivar,mango_population
+caly,0.9220514493049043,3.7045493,24529,G-W-A,cultivar,mango_population
+hg,0.8984939759036145,3.6892676,13280,G-W-A,cultivar,mango_population
+keitt,0.9079611650485437,3.7131937,5150,G-W-A,cultivar,mango_population
+kp,0.8398708379651686,3.6903408,18891,G-W-A,cultivar,mango_population
+ladyg,0.955862977602108,3.7095509,1518,G-W-A,cultivar,mango_population
+ladyj,0.9868055555555556,3.7015083,1440,G-W-A,cultivar,mango_population
+r2e2,0.8898238043869112,3.6860774,13905,G-W-A,cultivar,mango_population
+1201,0.8921232876712328,3.7263694,2336,GC-D,cultivar,mango_population
+1243,0.9762773722627737,3.587966,2192,GC-D,cultivar,mango_population
+4069,0.9611111111111111,3.5172307,2160,GC-D,cultivar,mango_population
+caly,0.9155285580333483,3.6143374,24529,GC-D,cultivar,mango_population
+hg,0.8992469879518072,3.6714437,13280,GC-D,cultivar,mango_population
+keitt,0.926990291262136,4.000905,5150,GC-D,cultivar,mango_population
+kp,0.837065269175798,3.6509776,18891,GC-D,cultivar,mango_population
+ladyg,0.9756258234519104,4.2350044,1518,GC-D,cultivar,mango_population
+ladyj,0.9826388888888888,3.5391908,1440,GC-D,cultivar,mango_population
+r2e2,0.888745055735347,3.7193365,13905,GC-D,cultivar,mango_population
+1201,0.8818493150684932,3.3358426,2336,GPR,cultivar,mango_population
+1243,0.9712591240875912,3.259198,2192,GPR,cultivar,mango_population
+4069,0.9226851851851852,3.1353865,2160,GPR,cultivar,mango_population
+caly,0.9202984222756737,3.1984808,24529,GPR,cultivar,mango_population
+hg,0.8559487951807229,3.2152588,13280,GPR,cultivar,mango_population
+keitt,0.8471844660194174,3.6419125,5150,GPR,cultivar,mango_population
+kp,0.7993753639299137,3.197361,18891,GPR,cultivar,mango_population
+ladyg,0.9650856389986825,4.3643956,1518,GPR,cultivar,mango_population
+ladyj,0.9680555555555556,3.2384176,1440,GPR,cultivar,mango_population
+r2e2,0.8832074793239841,3.3318374,13905,GPR,cultivar,mango_population
+1201,0.9028253424657534,3.348398,2336,ORACLE,cultivar,mango_population
+1243,0.9041970802919708,2.59428,2192,ORACLE,cultivar,mango_population
+4069,0.8953703703703704,2.5043437,2160,ORACLE,cultivar,mango_population
+caly,0.8977536793183578,3.3343236,24529,ORACLE,cultivar,mango_population
+hg,0.895105421686747,3.6383438,13280,ORACLE,cultivar,mango_population
+keitt,0.8912621359223301,3.500244,5150,ORACLE,cultivar,mango_population
+kp,0.8933883860039172,3.8857687,18891,ORACLE,cultivar,mango_population
+ladyg,0.9071146245059288,2.8566554,1518,ORACLE,cultivar,mango_population
+ladyj,0.9027777777777778,2.321077,1440,ORACLE,cultivar,mango_population
+r2e2,0.8981661272923409,3.5724285,13905,ORACLE,cultivar,mango_population
+1201,0.8886986301369864,3.5969615,2336,SCP,cultivar,mango_population
+1243,0.9708029197080292,3.547736,2192,SCP,cultivar,mango_population
+4069,0.9662037037037037,3.5550613,2160,SCP,cultivar,mango_population
+caly,0.9056626849851197,3.5267117,24529,SCP,cultivar,mango_population
+hg,0.8789156626506024,3.5021064,13280,SCP,cultivar,mango_population
+keitt,0.8881553398058253,3.5524366,5150,SCP,cultivar,mango_population
+kp,0.822772748928061,3.528192,18891,SCP,cultivar,mango_population
+ladyg,0.9486166007905138,3.5313632,1518,SCP,cultivar,mango_population
+ladyj,0.9833333333333333,3.5661123,1440,SCP,cultivar,mango_population
+r2e2,0.8762315713772024,3.5214329,13905,SCP,cultivar,mango_population
+1201,0.9678938356164384,inf,2336,WCP,cultivar,mango_population
+1243,0.9831204379562044,inf,2192,WCP,cultivar,mango_population
+4069,0.9675925925925926,inf,2160,WCP,cultivar,mango_population
+caly,0.9127970973133842,inf,24529,WCP,cultivar,mango_population
+hg,0.9060993975903614,inf,13280,WCP,cultivar,mango_population
+keitt,0.9419417475728156,inf,5150,WCP,cultivar,mango_population
+kp,0.8826954634482028,inf,18891,WCP,cultivar,mango_population
+ladyg,0.8880105401844532,inf,1518,WCP,cultivar,mango_population
+ladyj,0.9701388888888889,inf,1440,WCP,cultivar,mango_population
+r2e2,0.8885293060050342,inf,13905,WCP,cultivar,mango_population
+high,0.8507268644368278,3.625036,8461,ASTM-R,temp,mango_population
+low,0.8623677838664457,3.6314785,7847,ASTM-R,temp,mango_population
+mid,0.8647137745974955,3.6300056,8944,ASTM-R,temp,mango_population
+undef,0.9050690784551697,3.6196394,60149,ASTM-R,temp,mango_population
+high,0.850963243115471,3.6305187,8461,BAG,temp,mango_population
+low,0.8628775328150886,3.6342735,7847,BAG,temp,mango_population
+mid,0.8643783542039356,3.633891,8944,BAG,temp,mango_population
+undef,0.9052353322582254,3.6230042,60149,BAG,temp,mango_population
+high,0.8514360004727574,3.7130625,8461,CQR,temp,mango_population
+low,0.8443991334267873,3.4742994,7847,CQR,temp,mango_population
+mid,0.8651610017889088,3.4816506,8944,CQR,temp,mango_population
+undef,0.854810553791418,3.314717,60149,CQR,temp,mango_population
+high,0.8442264507741402,3.5646167,8461,CV+,temp,mango_population
+low,0.8565056709570537,3.568779,7847,CV+,temp,mango_population
+mid,0.8593470483005367,3.568862,8944,CV+,temp,mango_population
+undef,0.899782207517997,3.5586312,60149,CV+,temp,mango_population
+high,0.8598274435645905,3.7039127,8461,G-W-A,temp,mango_population
+low,0.8695042691474448,3.7119238,7847,G-W-A,temp,mango_population
+mid,0.8713103756708408,3.7078965,8944,G-W-A,temp,mango_population
+undef,0.9111373422667044,3.6942942,60149,G-W-A,temp,mango_population
+high,0.8649095851554189,3.802708,8461,GC-D,temp,mango_population
+low,0.8600739135975533,3.6464074,7847,GC-D,temp,mango_population
+mid,0.8628130590339893,3.6379082,8944,GC-D,temp,mango_population
+undef,0.9103393240120368,3.675406,60149,GC-D,temp,mango_population
+high,0.8331166528779104,3.441649,8461,GPR,temp,mango_population
+low,0.8409583280234485,3.2948167,7847,GPR,temp,mango_population
+mid,0.8411225402504472,3.2889404,8944,GPR,temp,mango_population
+undef,0.8903888676453474,3.2460668,60149,GPR,temp,mango_population
+high,0.895993381396998,3.834655,8461,ORACLE,temp,mango_population
+low,0.8900216643303173,3.7366607,7847,ORACLE,temp,mango_population
+mid,0.8940071556350626,3.7165256,8944,ORACLE,temp,mango_population
+undef,0.8978536634025504,3.3716474,60149,ORACLE,temp,mango_population
+high,0.8350076823070559,3.5145292,8461,SCP,temp,mango_population
+low,0.8502612463361794,3.5339832,7847,SCP,temp,mango_population
+mid,0.8527504472271914,3.5234323,8944,SCP,temp,mango_population
+undef,0.8972884004721609,3.5295522,60149,SCP,temp,mango_population
+high,0.8898475357522752,inf,8461,WCP,temp,mango_population
+low,0.883394927997961,inf,7847,WCP,temp,mango_population
+mid,0.8897584973166368,inf,8944,WCP,temp,mango_population
+undef,0.916656968528155,inf,60149,WCP,temp,mango_population
+green,0.8794371768624866,3.6178174,57638,ASTM-R,physio_stage,mango_population
+ripen,0.916651658682419,3.631752,27763,ASTM-R,physio_stage,mango_population
+green,0.8795933238488497,3.6209393,57638,BAG,physio_stage,mango_population
+ripen,0.9167957353311962,3.6362736,27763,BAG,physio_stage,mango_population
+green,0.8522155522398418,3.4455416,57638,CQR,physio_stage,mango_population
+ripen,0.8595612866044736,3.2633986,27763,CQR,physio_stage,mango_population
+green,0.8730871994170513,3.5548248,57638,CV+,physio_stage,mango_population
+ripen,0.913013723300796,3.5745218,27763,CV+,physio_stage,mango_population
+green,0.8867413858912523,3.695649,57638,G-W-A,physio_stage,mango_population
+ripen,0.9215502647408421,3.7037778,27763,G-W-A,physio_stage,mango_population
+green,0.881328290363996,3.6432931,57638,GC-D,physio_stage,mango_population
+ripen,0.9272052732053453,3.760595,27763,GC-D,physio_stage,mango_population
+green,0.864863458135258,3.247582,57638,GPR,physio_stage,mango_population
+ripen,0.896084717069481,3.3301172,27763,GPR,physio_stage,mango_population
+green,0.8979319199139456,3.5625627,57638,ORACLE,physio_stage,mango_population
+ripen,0.8936714332024637,3.3306713,27763,ORACLE,physio_stage,mango_population
+green,0.8688885804503973,3.520239,57638,SCP,physio_stage,mango_population
+ripen,0.909627922054533,3.543589,27763,SCP,physio_stage,mango_population
+green,0.9030153718033241,inf,57638,WCP,physio_stage,mango_population
+ripen,0.9187407700896877,inf,27763,WCP,physio_stage,mango_population

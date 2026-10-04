@@ -18,11 +18,11 @@ Every quantitative statement in the manuscript is generated from result files by
 | C10 | No interval method rescues uncorrected instrument transfer (Abstract, 4.6) | Corn: all PLS-based methods < nominal, RMSEP/SD 0.61–2.45; CQR = marginal range; KSSL→LUCAS RMSEP 23.7 % OC | E1/E5 | Table S12, Table S2 | Feudale; Workman | Supported |
 | C11 | GC-D lowers false acceptances in specification-limit decisions (Abstract, 4.8) | L = 16 %: 0.021 vs 0.041 (SCP); L = 17 %: 0.024 vs 0.057; at the cost of lower yield (0.342 vs 0.434) | E9 | Fig. 8, Table S11 | – | Supported (cost stated) |
 | C12 | Coverage gap is not a small-sample effect (4.5) | 10–50 % of training fruit: GC-D 0.892–0.898, SCP 0.825–0.832 | E4b | Fig. 6b | – | Supported |
-| C13 | Results do not depend on PLS as point predictor (4.5) | 1D-CNN: see Table S6 (filled when complete) | E4d | Table S6 | Cui & Fearn; Mishra & Passos | To verify at final build |
+| C13 | Out-of-group calibration also works with a non-PLS point predictor (4.5) | 1D-CNN (seeds 0–2, 7 seasons): SCP 0.651 / IS 8.30; R-U-A 0.646; G-W-A 0.881; GC-D 0.886 / IS 6.11 (σ from PLS diagnostics) | E4d | Table S6 | Cui & Fearn; Mishra & Passos | Supported for one CNN on one scenario — wording limited accordingly (limitations bullet 4) |
 | C14 | GC-D costs no sharpness when the shift is small (4.6) | Leave-one-cultivar-out: IS 4.68 vs 4.71 (SCP); populations 4.92 vs 4.96 | E5 (cultivar), E1 | Table S15 | – | Supported |
 | C15 | GC-D is computationally cheap (4.7) | Isolated timing (timing_summary.csv) | E6 | Table S9, Fig. S2 | – | To verify at final build |
 | C16 | WCP achieves coverage only via unbounded intervals; clipped WCP under-covers (4.1) | WCP finite fraction 0.81 (instr.); WCP-clip 0.851/0.855/0.822 on instrument/season/next season | Reviewer-requested baseline | Table S8 | Tibshirani et al. | Supported |
-| C17 | Post-hoc GC-D2 / GC-CQR (4.10) | iteration1_summary.csv | Post-hoc | Table S7 | Romano et al. | To verify at final build; labelled post-hoc |
+| C17 | Post-hoc: out-of-group calibration transfers to CQR scores (GC-CQR); a level-dependent scale (GC-D2) does not help (4.10) | GC-CQR coverage: instrument 0.770 → 0.900, next season 0.727 → 0.858; soil IS 7.77 vs CQR 8.04 (Holm p < 0.001); median IS lower than CQR in 8/9 (4 significant); corn coverage 0.81–0.90 below CQR. GC-D2: 6/9 lower medians, none significant; soil mean IS 13.53 vs 11.90 | Post-hoc (seeds 0–2) | Table S7 | Romano et al. | Supported as stated; labelled post-hoc in text, limitations and iteration log; negative result for GC-D2 reported |
 
 Claims removed or weakened during the audit:
 * "Prediction intervals that stay valid…" (title) → removed (C3 is empirical, C10 shows failures).

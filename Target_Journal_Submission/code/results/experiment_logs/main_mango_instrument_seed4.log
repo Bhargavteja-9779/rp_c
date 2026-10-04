@@ -1,0 +1,25 @@
+2026-10-04 00:43:12,736   [mango_instrument] fold inst14002: n_tr=63981 n_te=3364 A=14 K=29 setup=23.0s
+2026-10-04 00:44:27,956   [mango_instrument] fold inst15006: n_tr=26279 n_te=15040 A=16 K=29 setup=6.5s
+2026-10-04 00:45:43,346   [mango_instrument] fold inst15013: n_tr=79273 n_te=768 A=12 K=30 setup=28.3s
+2026-10-04 00:46:57,949   [mango_instrument] fold inst15014: n_tr=42937 n_te=8219 A=15 K=27 setup=12.4s
+2026-10-04 00:48:10,393   [mango_instrument] fold inst15015: n_tr=66405 n_te=2987 A=14 K=30 setup=21.3s
+2026-10-04 00:49:32,351   [mango_instrument] fold inst15016: n_tr=48179 n_te=7584 A=12 K=29 setup=13.7s
+2026-10-04 00:50:44,723   [mango_instrument] fold inst15023: n_tr=52400 n_te=5835 A=13 K=29 setup=16.8s
+2026-10-04 00:52:06,292   [mango_instrument] fold inst15025: n_tr=79321 n_te=800 A=12 K=30 setup=27.3s
+2026-10-04 00:53:34,150   [mango_instrument] fold inst15027: n_tr=72246 n_te=2100 A=13 K=30 setup=26.0s
+2026-10-04 00:54:49,919   [mango_instrument] fold inst15029: n_tr=63834 n_te=4480 A=12 K=30 setup=19.7s
+2026-10-04 00:56:12,146   [mango_instrument] fold inst15038: n_tr=64713 n_te=3634 A=14 K=30 setup=21.8s
+2026-10-04 00:57:47,107   [mango_instrument] fold inst16032: n_tr=79381 n_te=828 A=12 K=30 setup=28.6s
+2026-10-04 00:59:12,861   [mango_instrument] fold inst16033: n_tr=75865 n_te=1504 A=13 K=29 setup=26.7s
+2026-10-04 01:00:29,866   [mango_instrument] fold inst16041: n_tr=56679 n_te=4672 A=13 K=29 setup=18.6s
+2026-10-04 01:01:55,095   [mango_instrument] fold inst16048: n_tr=76378 n_te=2466 A=19 K=30 setup=25.8s
+2026-10-04 01:04:00,701   [mango_instrument] fold inst17033: n_tr=65543 n_te=3816 A=12 K=30 setup=23.5s
+2026-10-04 01:05:24,816   [mango_instrument] fold inst17040: n_tr=77415 n_te=872 A=12 K=30 setup=27.8s
+2026-10-04 01:06:47,240   [mango_instrument] fold inst17052: n_tr=69821 n_te=2244 A=12 K=30 setup=25.1s
+2026-10-04 01:08:10,642   [mango_instrument] fold inst17057: n_tr=75361 n_te=2570 A=19 K=30 setup=27.9s
+2026-10-04 01:10:05,581   [mango_instrument] fold inst18007: n_tr=75603 n_te=1946 A=12 K=30 setup=26.1s
+2026-10-04 01:11:28,513   [mango_instrument] fold inst18029: n_tr=77625 n_te=2022 A=13 K=30 setup=28.6s
+2026-10-04 01:13:00,481   [mango_instrument] fold inst18030: n_tr=80757 n_te=702 A=13 K=30 setup=30.0s
+2026-10-04 01:14:32,795   [mango_instrument] fold inst18044: n_tr=79161 n_te=1066 A=13 K=30 setup=29.3s
+2026-10-04 01:15:59,226   [mango_instrument] fold inst30004: n_tr=68450 n_te=2864 A=14 K=30 setup=22.0s
+2026-10-04 01:17:02,330 done mango_instrument seed 4 in 2052.6s

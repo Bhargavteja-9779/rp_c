@@ -1,0 +1,3 @@
+finished rc=0 :: python experiments/run_cultivar.py 2 > results/experiment_logs/stdout_cultivar_2.txt 2>&1
+finished rc=0 :: python experiments/run_cultivar.py 1 > results/experiment_logs/stdout_cultivar_1.txt 2>&1
+finished rc=0 :: python experiments/run_cultivar.py 0 > results/experiment_logs/stdout_cultivar_0.txt 2>&1

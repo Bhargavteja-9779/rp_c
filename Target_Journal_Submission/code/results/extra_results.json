@@ -1,5 +1,739 @@
 {
- "iteration1": null,
+ "iteration1": {
+  "summary": [
+   {
+    "task": "corn_moisture",
+    "method": "CQR",
+    "coverage": 0.9011111111111111,
+    "coverage_min": 0.8166666666666668,
+    "width": 1.1905560509913267,
+    "interval_score": 1.5282450836618517,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_moisture",
+    "method": "GC-CQR",
+    "coverage": 0.8138888888888889,
+    "coverage_min": 0.65,
+    "width": 0.9591093347952537,
+    "interval_score": 1.5473691798532567,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_moisture",
+    "method": "GC-D",
+    "coverage": 0.5288888888888889,
+    "coverage_min": 0.0,
+    "width": 0.8785181135537121,
+    "interval_score": 4.752844165816746,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_moisture",
+    "method": "GC-D2",
+    "coverage": 0.5383333333333333,
+    "coverage_min": 0.0,
+    "width": 0.8512060490722071,
+    "interval_score": 4.95118131497949,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_moisture",
+    "method": "SCP",
+    "coverage": 0.6122222222222222,
+    "coverage_min": 0.0,
+    "width": 0.9938726943651033,
+    "interval_score": 4.635431139398493,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_oil",
+    "method": "CQR",
+    "coverage": 0.8888888888888888,
+    "coverage_min": 0.6833333333333332,
+    "width": 0.5224601472283025,
+    "interval_score": 0.6416098468774136,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-CQR",
+    "coverage": 0.8766666666666667,
+    "coverage_min": 0.6666666666666666,
+    "width": 0.46256887893678295,
+    "interval_score": 0.5811316065671918,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-D",
+    "coverage": 0.7661111111111112,
+    "coverage_min": 0.31666666666666665,
+    "width": 0.40622767513986163,
+    "interval_score": 0.7601971908921504,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-D2",
+    "coverage": 0.7522222222222222,
+    "coverage_min": 0.31666666666666665,
+    "width": 0.3963235441927656,
+    "interval_score": 0.7744165138879093,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_oil",
+    "method": "SCP",
+    "coverage": 0.81,
+    "coverage_min": 0.35000000000000003,
+    "width": 0.4547576853438374,
+    "interval_score": 0.8545456993714582,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_protein",
+    "method": "CQR",
+    "coverage": 0.9266666666666666,
+    "coverage_min": 0.7666666666666666,
+    "width": 1.3100597125560354,
+    "interval_score": 1.5137607068825965,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-CQR",
+    "coverage": 0.8977777777777778,
+    "coverage_min": 0.6333333333333333,
+    "width": 1.1371626695186519,
+    "interval_score": 1.413709786493095,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-D",
+    "coverage": 0.7100000000000001,
+    "coverage_min": 0.08333333333333333,
+    "width": 1.097711263895097,
+    "interval_score": 2.1191124402976116,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-D2",
+    "coverage": 0.6727777777777778,
+    "coverage_min": 0.11666666666666665,
+    "width": 0.9670895867000122,
+    "interval_score": 2.25726563172053,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_protein",
+    "method": "SCP",
+    "coverage": 0.6644444444444445,
+    "coverage_min": 0.0,
+    "width": 0.9699348449461412,
+    "interval_score": 2.6061542305873386,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_starch",
+    "method": "CQR",
+    "coverage": 0.8355555555555555,
+    "coverage_min": 0.4166666666666667,
+    "width": 2.2631558625352928,
+    "interval_score": 3.3946573922809686,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-CQR",
+    "coverage": 0.8266666666666667,
+    "coverage_min": 0.5,
+    "width": 2.031168359415915,
+    "interval_score": 3.2832970071264986,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-D",
+    "coverage": 0.6911111111111111,
+    "coverage_min": 0.0,
+    "width": 2.7571794349269596,
+    "interval_score": 6.115991817863303,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-D2",
+    "coverage": 0.6766666666666666,
+    "coverage_min": 0.0,
+    "width": 2.559222161230736,
+    "interval_score": 6.016869435570942,
+    "n_groups": 30
+   },
+   {
+    "task": "corn_starch",
+    "method": "SCP",
+    "coverage": 0.6,
+    "coverage_min": 0.0,
+    "width": 1.983085685583277,
+    "interval_score": 7.344701158437655,
+    "n_groups": 30
+   },
+   {
+    "task": "mango_instrument",
+    "method": "CQR",
+    "coverage": 0.7702066338024359,
+    "coverage_min": 0.36272141706924316,
+    "width": 3.621338893925305,
+    "interval_score": 7.029768049360627,
+    "n_groups": 24
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-CQR",
+    "coverage": 0.8997714801303328,
+    "coverage_min": 0.45933977455716585,
+    "width": 4.945610453356392,
+    "interval_score": 6.359955134734132,
+    "n_groups": 24
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D",
+    "coverage": 0.8787936208505172,
+    "coverage_min": 0.35628019323671484,
+    "width": 4.542267510057839,
+    "interval_score": 6.210891309556043,
+    "n_groups": 24
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D2",
+    "coverage": 0.8785226642421952,
+    "coverage_min": 0.3115942028985507,
+    "width": 4.5676255279856575,
+    "interval_score": 6.301621000774575,
+    "n_groups": 24
+   },
+   {
+    "task": "mango_instrument",
+    "method": "SCP",
+    "coverage": 0.7925259478388913,
+    "coverage_min": 0.23913043478260865,
+    "width": 3.6466748663809394,
+    "interval_score": 6.950905019180948,
+    "n_groups": 24
+   },
+   {
+    "task": "mango_population",
+    "method": "CQR",
+    "coverage": 0.8399524739300664,
+    "coverage_min": 0.041666666666666664,
+    "width": 3.3620411294047443,
+    "interval_score": 5.235513523054311,
+    "n_groups": 199
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-CQR",
+    "coverage": 0.9028310213262679,
+    "coverage_min": 0.10833333333333332,
+    "width": 3.8790017186756334,
+    "interval_score": 4.9804165557344415,
+    "n_groups": 199
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-D",
+    "coverage": 0.8989642211149106,
+    "coverage_min": 0.012500000000000002,
+    "width": 3.686186957420686,
+    "interval_score": 4.93159803955194,
+    "n_groups": 199
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-D2",
+    "coverage": 0.8983089069848711,
+    "coverage_min": 0.012500000000000002,
+    "width": 3.6653587966498358,
+    "interval_score": 4.914505454276461,
+    "n_groups": 199
+   },
+   {
+    "task": "mango_population",
+    "method": "SCP",
+    "coverage": 0.8864119577020224,
+    "coverage_min": 0.012500000000000002,
+    "width": 3.5379911335126497,
+    "interval_score": 4.971489185742818,
+    "n_groups": 199
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "CQR",
+    "coverage": 0.7267118589040635,
+    "coverage_min": 0.6419224363549846,
+    "width": 3.4704715198116802,
+    "interval_score": 7.473636043699523,
+    "n_groups": 5
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-CQR",
+    "coverage": 0.858247133058456,
+    "coverage_min": 0.7901498929336187,
+    "width": 4.559712809617867,
+    "interval_score": 6.365565827589401,
+    "n_groups": 5
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-D",
+    "coverage": 0.8771547871787355,
+    "coverage_min": 0.7719486081370451,
+    "width": 4.526175809778417,
+    "interval_score": 6.142640485977408,
+    "n_groups": 5
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-D2",
+    "coverage": 0.8786418368360058,
+    "coverage_min": 0.7648108493932905,
+    "width": 4.53242408912373,
+    "interval_score": 6.136144503153622,
+    "n_groups": 5
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "SCP",
+    "coverage": 0.7804702409199352,
+    "coverage_min": 0.6865929098263145,
+    "width": 3.4576178344468653,
+    "interval_score": 7.241085942879524,
+    "n_groups": 5
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "CQR",
+    "coverage": 0.788193620430059,
+    "coverage_min": 0.6733812949640288,
+    "width": 3.531551412371403,
+    "interval_score": 6.404865133707049,
+    "n_groups": 7
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-CQR",
+    "coverage": 0.9007204573692286,
+    "coverage_min": 0.8026378896882495,
+    "width": 4.665367289821311,
+    "interval_score": 5.876640540519411,
+    "n_groups": 7
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-D",
+    "coverage": 0.8954201979152783,
+    "coverage_min": 0.7980014275517487,
+    "width": 4.518645751184226,
+    "interval_score": 5.899531336900444,
+    "n_groups": 7
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-D2",
+    "coverage": 0.8924967750711559,
+    "coverage_min": 0.7646324054246967,
+    "width": 4.508609140792959,
+    "interval_score": 5.973701317467231,
+    "n_groups": 7
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "SCP",
+    "coverage": 0.8246642096659861,
+    "coverage_min": 0.7220437782536284,
+    "width": 3.6315489332732036,
+    "interval_score": 6.446818062652194,
+    "n_groups": 7
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "CQR",
+    "coverage": 0.8859900997644333,
+    "coverage_min": 0.8137071651090343,
+    "width": 5.5198679252195335,
+    "interval_score": 8.03842966296647,
+    "n_groups": 30
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-CQR",
+    "coverage": 0.9017097918501907,
+    "coverage_min": 0.8342679127725857,
+    "width": 5.6121814508992145,
+    "interval_score": 7.767233260936174,
+    "n_groups": 30
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D",
+    "coverage": 0.8982412565267069,
+    "coverage_min": 0.785986290936786,
+    "width": 7.141703963027112,
+    "interval_score": 11.900433770539356,
+    "n_groups": 30
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D2",
+    "coverage": 0.8984984280394367,
+    "coverage_min": 0.7894736842105262,
+    "width": 10.429682429209617,
+    "interval_score": 13.529177345709433,
+    "n_groups": 30
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "SCP",
+    "coverage": 0.8838971679928326,
+    "coverage_min": 0.7595836506727597,
+    "width": 6.109817096412,
+    "interval_score": 12.777299793960992,
+    "n_groups": 30
+   }
+  ],
+  "comparisons": [
+   {
+    "task": "corn_moisture",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.007847571102839845,
+    "IS_r_rb": 0.015053763440860216,
+    "IS_p": 0.9426105124576512,
+    "covgap_median_diff": 0.0,
+    "covgap_p": 0.2841644287109375,
+    "IS_p_holm": 1.0
+   },
+   {
+    "task": "corn_moisture",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 30,
+    "IS_median_diff": -0.04078989338594774,
+    "IS_r_rb": 0.01935483870967742,
+    "IS_p": 0.9262550873076122,
+    "covgap_median_diff": 0.050000000000000044,
+    "covgap_p": 0.0016422974040006142,
+    "IS_p_holm": 0.9262550873076122
+   },
+   {
+    "task": "corn_moisture",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.5161356268098665,
+    "IS_r_rb": -0.7634408602150538,
+    "IS_p": 0.00026134309226671514,
+    "covgap_median_diff": -0.1583333333333333,
+    "covgap_p": 0.00035923694907586957,
+    "IS_p_holm": 0.0015680585536002908
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.0025136004254988353,
+    "IS_r_rb": -0.15698924731182795,
+    "IS_p": 0.4528065046691958,
+    "covgap_median_diff": 0.0,
+    "covgap_p": 0.49480247497558594,
+    "IS_p_holm": 1.0
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 30,
+    "IS_median_diff": -0.0506392927645265,
+    "IS_r_rb": -0.6946236559139785,
+    "IS_p": 0.0008944300647461546,
+    "covgap_median_diff": 0.016666666666666607,
+    "covgap_p": 0.4046908791376246,
+    "IS_p_holm": 0.006261010453223082
+   },
+   {
+    "task": "corn_oil",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.11573825888210137,
+    "IS_r_rb": -0.7763440860215054,
+    "IS_p": 0.0002051529226187778,
+    "covgap_median_diff": -0.08333333333333337,
+    "covgap_p": 0.0012190679363912353,
+    "IS_p_holm": 0.0014360704583314446
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": 0.029394873314156134,
+    "IS_r_rb": 0.432258064516129,
+    "IS_p": 0.038723026479358956,
+    "covgap_median_diff": 0.0,
+    "covgap_p": 0.016311168670654297,
+    "IS_p_holm": 0.30978421183487165
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 30,
+    "IS_median_diff": -0.09874333084232095,
+    "IS_r_rb": -0.7333333333333333,
+    "IS_p": 0.00045335631776461847,
+    "covgap_median_diff": 0.016666666666666607,
+    "covgap_p": 0.47962866912703883,
+    "IS_p_holm": 0.0036268505421169477
+   },
+   {
+    "task": "corn_protein",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.3573915611779396,
+    "IS_r_rb": -0.8236559139784946,
+    "IS_p": 8.187753439649276e-05,
+    "covgap_median_diff": -0.09999999999999992,
+    "covgap_p": 0.0004350791976426513,
+    "IS_p_holm": 0.0006550202751719421
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.13048251866714677,
+    "IS_r_rb": -0.432258064516129,
+    "IS_p": 0.038723026479358956,
+    "covgap_median_diff": 0.0,
+    "covgap_p": 0.6788630485534668,
+    "IS_p_holm": 0.30978421183487165
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 30,
+    "IS_median_diff": -0.19875024661056107,
+    "IS_r_rb": -0.27741935483870966,
+    "IS_p": 0.18462187723062606,
+    "covgap_median_diff": 0.0,
+    "covgap_p": 0.29022222154476573,
+    "IS_p_holm": 0.625
+   },
+   {
+    "task": "corn_starch",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.840151511570939,
+    "IS_r_rb": -0.7247311827956989,
+    "IS_p": 0.0005287248371505039,
+    "covgap_median_diff": -0.041666666666666574,
+    "covgap_p": 0.044311301744746866,
+    "IS_p_holm": 0.0026436241857525195
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 24,
+    "IS_median_diff": 0.0034928388890222983,
+    "IS_r_rb": 0.34,
+    "IS_p": 0.15150094032287598,
+    "covgap_median_diff": 0.0003837238101723761,
+    "covgap_p": 0.3446848392486572,
+    "IS_p_holm": 0.9090056419372559
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 24,
+    "IS_median_diff": -0.3299753166269559,
+    "IS_r_rb": -0.6133333333333333,
+    "IS_p": 0.007189035415649414,
+    "covgap_median_diff": -0.053227599134883286,
+    "covgap_p": 0.0020009279251098633,
+    "IS_p_holm": 0.043134212493896484
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 24,
+    "IS_median_diff": 0.33574881299439774,
+    "IS_r_rb": 0.48,
+    "IS_p": 0.03948163986206055,
+    "covgap_median_diff": -0.0035973400476657647,
+    "covgap_p": 0.3305051326751709,
+    "IS_p_holm": 0.1579265594482422
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 199,
+    "IS_median_diff": -0.03136475119496396,
+    "IS_r_rb": -0.2258291457286432,
+    "IS_p": 0.00573846823576042,
+    "covgap_median_diff": -0.0008333333333333526,
+    "covgap_p": 0.013751545947233774,
+    "IS_p_holm": 0.05164621412184378
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 199,
+    "IS_median_diff": 0.04390941981526986,
+    "IS_r_rb": -0.10824120603015075,
+    "IS_p": 0.18549762269406977,
+    "covgap_median_diff": 0.01416666666666666,
+    "covgap_p": 0.09620838203261399,
+    "IS_p_holm": 0.625
+   },
+   {
+    "task": "mango_population",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 199,
+    "IS_median_diff": 0.06760595654907586,
+    "IS_r_rb": 0.13045226130653267,
+    "IS_p": 0.11055489865827074,
+    "covgap_median_diff": -0.0012499999999999734,
+    "covgap_p": 0.16387269666639936,
+    "IS_p_holm": 0.33166469597481224
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 5,
+    "IS_median_diff": -0.014478985198119965,
+    "IS_r_rb": -0.06666666666666667,
+    "IS_p": 1.0,
+    "covgap_median_diff": -0.0029200359389038866,
+    "covgap_p": 0.625,
+    "IS_p_holm": 1.0
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 5,
+    "IS_median_diff": -0.9971045921662025,
+    "IS_r_rb": -1.0,
+    "IS_p": 0.0625,
+    "covgap_median_diff": -0.12925659472422069,
+    "covgap_p": 0.0625,
+    "IS_p_holm": 0.3125
+   },
+   {
+    "task": "mango_season_forward",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 5,
+    "IS_median_diff": 0.17426265303056798,
+    "IS_r_rb": 0.7333333333333333,
+    "IS_p": 0.1875,
+    "covgap_median_diff": -0.006978137166816389,
+    "covgap_p": 0.625,
+    "IS_p_holm": 0.375
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 7,
+    "IS_median_diff": 0.0036381770573488126,
+    "IS_r_rb": 0.21428571428571427,
+    "IS_p": 0.6875,
+    "covgap_median_diff": 0.0004572175048986882,
+    "covgap_p": 0.9375,
+    "IS_p_holm": 1.0
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 7,
+    "IS_median_diff": -0.7654866838298959,
+    "IS_r_rb": -0.6428571428571429,
+    "IS_p": 0.15625,
+    "covgap_median_diff": -0.11723569931117095,
+    "covgap_p": 0.15625,
+    "IS_p_holm": 0.625
+   },
+   {
+    "task": "mango_season_loso",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 7,
+    "IS_median_diff": -0.03275577881459668,
+    "IS_r_rb": -0.07142857142857142,
+    "IS_p": 0.9375,
+    "covgap_median_diff": -0.004898758981058293,
+    "covgap_p": 0.9375,
+    "IS_p_holm": 0.9375
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D2",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -0.14554386486844528,
+    "IS_r_rb": -0.14838709677419354,
+    "IS_p": 0.47794743855272326,
+    "covgap_median_diff": -0.008984285386556545,
+    "covgap_p": 0.003378854437718857,
+    "IS_p_holm": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-CQR",
+    "comparator": "CQR",
+    "n_groups": 30,
+    "IS_median_diff": -0.14052512676228668,
+    "IS_r_rb": -0.9827956989247312,
+    "IS_p": 2.603328389538926e-06,
+    "covgap_median_diff": -0.0022143896478167835,
+    "covgap_p": 0.21335807338945145,
+    "IS_p_holm": 2.3429955505850334e-05
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-CQR",
+    "comparator": "GC-D",
+    "n_groups": 30,
+    "IS_median_diff": -1.653057552998026,
+    "IS_r_rb": -1.0,
+    "IS_p": 1.7343976283205784e-06,
+    "covgap_median_diff": -0.03067033540490527,
+    "covgap_p": 0.00041955098606127764,
+    "IS_p_holm": 1.5609578654885204e-05
+   }
+  ]
+ },
  "robustness": {
   "groups": [
    {
@@ -1333,6 +2067,42 @@
   "sensitivity": [
    {
     "task": "mango_population",
+    "variant": "group_folds=20",
+    "method": "G-W-A",
+    "coverage": 0.8995570470772078,
+    "width": 3.693641226833018,
+    "interval_score": 4.9588282635553895,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=20",
+    "method": "GC-D",
+    "coverage": 0.8980548393845907,
+    "width": 3.6803481245086003,
+    "interval_score": 4.920714693015591,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=20",
+    "method": "R-U-D",
+    "coverage": 0.8908630788479791,
+    "width": 3.571145765130073,
+    "interval_score": 4.919895415665111,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
+    "variant": "group_folds=20",
+    "method": "SCP",
+    "coverage": 0.8845161538628094,
+    "width": 3.530272244356872,
+    "interval_score": 4.97702080668949,
+    "A": 19.201005025125628
+   },
+   {
+    "task": "mango_population",
     "variant": "group_folds=5",
     "method": "G-W-A",
     "coverage": 0.9008596939218286,
@@ -1690,6 +2460,150 @@
     "width": 6.083481070661082,
     "interval_score": 12.850135841438034,
     "A": 25.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=Q",
+    "method": "G-W-A",
+    "coverage": 0.8988921463879538,
+    "width": 6.4697977094740855,
+    "interval_score": 12.495524532029672,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=Q",
+    "method": "GC-D",
+    "coverage": 0.897938366780107,
+    "width": 6.95100450241131,
+    "interval_score": 11.979338640968841,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=Q",
+    "method": "R-U-D",
+    "coverage": 0.8882389597235093,
+    "width": 6.645586877362596,
+    "interval_score": 12.12304669564627,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=Q",
+    "method": "SCP",
+    "coverage": 0.8829002815075846,
+    "width": 6.085755556670587,
+    "interval_score": 12.854800012516877,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=T2",
+    "method": "G-W-A",
+    "coverage": 0.8988921463879538,
+    "width": 6.4697977094740855,
+    "interval_score": 12.495524532029672,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=T2",
+    "method": "GC-D",
+    "coverage": 0.898704482453771,
+    "width": 7.139254903698596,
+    "interval_score": 11.90203749347376,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=T2",
+    "method": "R-U-D",
+    "coverage": 0.8891754471880081,
+    "width": 6.845093850473864,
+    "interval_score": 12.00922586658107,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "diag_mode=T2",
+    "method": "SCP",
+    "coverage": 0.8829002815075846,
+    "width": 6.085755556670587,
+    "interval_score": 12.854800012516877,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.02",
+    "method": "G-W-A",
+    "coverage": 0.8988921463879538,
+    "width": 6.4697977094740855,
+    "interval_score": 12.495524532029672,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.02",
+    "method": "GC-D",
+    "coverage": 0.8982412565267069,
+    "width": 7.141703963027112,
+    "interval_score": 11.900433770539356,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.02",
+    "method": "R-U-D",
+    "coverage": 0.8894268203517686,
+    "width": 6.855113258048413,
+    "interval_score": 11.997580097017668,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.02",
+    "method": "SCP",
+    "coverage": 0.8829002815075846,
+    "width": 6.085755556670587,
+    "interval_score": 12.854800012516877,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.3",
+    "method": "G-W-A",
+    "coverage": 0.8988921463879538,
+    "width": 6.4697977094740855,
+    "interval_score": 12.495524532029672,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.3",
+    "method": "GC-D",
+    "coverage": 0.8982412565267069,
+    "width": 7.141703963027112,
+    "interval_score": 11.900433770539356,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.3",
+    "method": "R-U-D",
+    "coverage": 0.8894268203517686,
+    "width": 6.855113258048413,
+    "interval_score": 11.997580097017668,
+    "A": 24.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "floor_frac=0.3",
+    "method": "SCP",
+    "coverage": 0.8829002815075846,
+    "width": 6.085755556670587,
+    "interval_score": 12.854800012516877,
+    "A": 24.9
    }
   ],
   "cnn": [

@@ -1,0 +1,2 @@
+2026-10-03 23:49:17,061   [ossl_kssl_to_lucas] fold KSSL_to_LUCAS: n_tr=19747 n_te=40175 A=21 K=84 setup=47.5s
+2026-10-03 23:52:56,555 done ossl_kssl_to_lucas seed 2 in 267.1s

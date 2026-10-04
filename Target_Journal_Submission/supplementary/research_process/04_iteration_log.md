@@ -23,3 +23,14 @@ The first run of the test-time perturbation experiment (E4c) perturbed *all* spe
 perturbed as well. Because PLS predictions are invariant to a common scaling, the "gain" perturbation showed no
 effect at all, which exposed the bug. The experiment was corrected to perturb only the test spectra of the
 current fold (with an assertion that training spectra are unchanged) and rerun; the invalid results were deleted.
+
+## Iteration 1 — outcome (2026-10-04, after the run; seeds 0–2, 27 jobs)
+* **H4 not supported.** GC-D2 had a lower median interval score than GC-D in 6 of 9 scenarios, none significant after
+  Holm correction; its mean interval score on new soil regions was *higher* (13.53 vs 11.90) and coverage unchanged.
+  GC-D2 is not adopted; GC-D remains the proposed method.
+* **H5 supported.** GC-CQR restored CQR coverage under group shift (mango instrument 0.770 → 0.900, next season
+  0.727 → 0.858, new season 0.788 → 0.901) and had the lowest soil interval score of all methods (7.77 vs CQR 8.04,
+  Holm p < 0.001). Its median IS was lower than CQR's in 8/9 scenarios (Holm p < 0.05 in 4: corn oil, corn protein, mango instrument, soil). Caveats: on new mango
+  instruments it is less sharp than GC-D (6.36 vs 6.21), and on corn its coverage (0.81–0.90) is below CQR's.
+* Both variants were designed after seeing the data and are reported in the manuscript as post-hoc (Section 4.10,
+  Supplementary Table S7, limitations). They require independent confirmation.
