@@ -63,6 +63,13 @@ def get_task(name, quick=False, seed=0):
                 folds.append(dict(name=f"popfold{j}", train=np.where(_ud(~te, units, te))[0], test=np.where(te)[0],
                                   calib_group=m.population.to_numpy(), test_group=m.population.to_numpy()))
             cfg = dict(A_max=20, group_mode="group", group_folds=10)
+        elif name == "mango_cultivar":
+            # reviewer-requested external-validity test: an unseen cultivar (10 cultivars, leave-one-out)
+            for cv in sorted(m.cultivar.unique()):
+                te = (m.cultivar == cv).to_numpy()
+                folds.append(dict(name=f"cultivar_{cv}", train=np.where(_ud(~te, units, te))[0], test=np.where(te)[0],
+                                  calib_group=m.cultivar.to_numpy(), test_group=m.cultivar.to_numpy()))
+            cfg = dict(A_max=20, group_mode="group")
         else:
             raise ValueError(name)
         recipe = RECIPES["mango"]

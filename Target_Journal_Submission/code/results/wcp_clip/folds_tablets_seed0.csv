@@ -1,0 +1,2 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+cal1_test2,195,460,7,195,0.01,0.0,0.008

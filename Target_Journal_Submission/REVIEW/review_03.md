@@ -1,0 +1,11 @@
+# Review round 3 — Reviewer #3 (statistical validity, fairness, seeds, splitting, leakage)
+
+| # | Issue | Severity | Fix | Status |
+|---|---|---|---|---|
+| 3.1 | In the population scenario, ten outer folds each hold out ~20 populations that share one model; treating 199 populations as independent pairs inflated significance (p ≈ 1e-12). | MAJOR | Unit of analysis changed to the outer fold whenever a fold holds out several groups (population, campaign). The population grouped-fold partition is redrawn for each seed, so the 10 folds of the seed-0 partition are used. After the fix GC-D vs SCP: r = −0.71, uncorrected p = 0.049, Holm p = 0.73. | Fixed (re-analysis) |
+| 3.2 | Seed-averaging bug: because population folds differ between seeds, per-group averaging keyed on (fold, group) split one population into several rows. | MAJOR | Per-group averaging now keyed on the group; n_groups = 199 as expected. Same fix applied to the post-hoc iteration aggregation. | Fixed |
+| 3.3 | With 5–7 seasons, Holm-corrected Wilcoxon tests cannot be significant; claims of superiority must not rest on them. | MAJOR | Section 4.2 now states the smallest attainable p-values, reports effect sizes and uncorrected p, and bases the coverage claim on the consistent direction across scenarios and on the pre-registered H1/H2. H3 reported as "only partly supported" (lower IS in 5/9, significant in 1–2). | Fixed (wording + analysis) |
+| 3.4 | Multiplicity across scenarios not addressed. | MODERATE | Additional, more conservative Holm adjustment across all main-scenario tests reported (Table S14, column IS_p_holm_all_main). | Fixed |
+| 3.5 | Group-averaged coverage weights small groups as much as large ones; pooled coverage may differ. | MODERATE | Pooled coverage with cluster bootstrap over fruit/soil samples reported (Table S10, Section 4.8). | Fixed |
+| 3.6 | Seed variability of deterministic methods is zero; this should be stated to avoid the impression of robustness by construction. | MINOR | Stated: leave-one-group-out components are deterministic; seed SDs ≤ 0.03 for stochastic methods (README, Section 3.4). | Fixed |
+| 3.7 | Leakage through repeated measurements of the same fruit / sample across instruments. | (checked) | Unit-disjointness asserted in code for every outer fold and enforced in inner folds; unit test. | Verified |

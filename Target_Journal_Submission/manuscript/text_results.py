@@ -96,6 +96,7 @@ def results(C, N):
                 f"{g('mango_instrument','SCP','width'):.2f} % DM for SCP. Random calibration simply under-estimates the error "
                 f"that a new group brings, because the calibration spectra come from seasons, instruments and "
                 f"populations that the model has already seen."),
+          ("p", wcp_text(g)),
           ("p", f"For new mango populations, where training data contain other populations of the same seasons and "
                 f"instruments, all methods were close to nominal (SCP {g('mango_population','SCP'):.3f}, classical "
                 f"{g('mango_population','ASTM-R'):.3f}), which is consistent with the population effect being largely "
@@ -181,7 +182,11 @@ def results(C, N):
     # ------------------------------------------------------------------ 4.3 ablation
     h3 = h["H3"]
     B += [("h2", "4.3. Which components matter"),
-          ("p", "The factorial ablation (Fig. 5) separates the three ingredients. Replacing random calibration folds by "
+          ("p", "The factorial ablation (Fig. 5) separates the three ingredients. Because every cell uses the same final PLS model "
+                "as GC-D, differences between cells reflect the calibration alone; in particular, ordinary cross-conformal "
+                f"calibration with random folds (R-U-A) under-covered as much as SCP (new instruments {g('mango_instrument','R-U-A'):.3f} "
+                f"vs {g('mango_instrument','SCP'):.3f}), so the shortfall of SCP is not caused by its smaller training set. "
+                "Replacing random calibration folds by "
                 f"out-of-group folds (R-U-A → G-U-A) carried most of the coverage gain on the mango shift scenarios, e.g. "
                 f"{g('mango_instrument','R-U-A'):.3f} → {g('mango_instrument','G-U-A'):.3f} for new instruments and "
                 f"{g('mango_season_forward','R-U-A'):.3f} → {g('mango_season_forward','G-U-A'):.3f} for the next season. "
@@ -204,6 +209,24 @@ def results(C, N):
 def _csv(name, sub=R):
     p = os.path.join(sub, name)
     return pd.read_csv(p) if os.path.exists(p) else None
+
+
+def wcp_text(g):
+    wc = _csv("wcp_clip_summary.csv")
+    t = (f"Weighted conformal prediction (WCP), which uses the unlabelled spectra of the new group to reweight the calibration "
+         f"residuals, reached high coverage (e.g. {g('mango_instrument','WCP'):.3f} for new instruments) but did so by returning "
+         "unbounded intervals for part of the test spectra in every scenario, because the estimated density ratios put more than "
+         "α of the weight on the test point when calibration and test spectra are well separated in the PLS score space.")
+    if wc is not None:
+        v = wc.set_index(["task", "method"])
+        try:
+            t += (f" Clipping the density ratios at 20 (WCP-clip, Supplementary Table S8) left "
+                  f"{100*(1-v.loc[('mango_instrument','WCP-clip'),'finite_frac']):.0f} % (new instruments) and "
+                  f"{100*(1-v.loc[('mango_season_loso','WCP-clip'),'finite_frac']):.0f} % (new seasons) of the intervals unbounded, "
+                  f"with coverage {v.loc[('mango_instrument','WCP-clip'),'coverage']:.3f} and {v.loc[('mango_season_loso','WCP-clip'),'coverage']:.3f}.")
+        except KeyError:
+            pass
+    return t
 
 
 def results_part2(C, N, s, c, h, ex, g):
@@ -309,15 +332,12 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"number of latent variables ({tv.shared_setup_s.mean():.1f} s per held-out season for ~70 000 training spectra "
                     f"on one CPU core). On top of it, GC-D required {tv.loc['GC-D','method_s']:.2f} s and "
                     f"{tv.loc['GC-D','peak_MiB']:.0f} MiB per season, i.e. {tv.loc['GC-D','ms_per_test_spectrum']*1000:.1f} µs per test "
-                    f"spectrum (Fig. 7). Random split CP required {tv.loc['SCP','method_s']:.1f} s (it fits an additional model), "
+                    f"spectrum (Supplementary Fig. S2). Random split CP required {tv.loc['SCP','method_s']:.1f} s (it fits an additional model), "
                     f"bagging {tv.loc['BAG','method_s']:.0f} s, GPR {tv.loc['GPR','method_s']:.0f} s, CQR {tv.loc['CQR','method_s']:.0f} s "
                     f"and the hierarchical jackknife+ {tv.loc['HJ+','method_s']:.1f} s. Predicting a new spectrum with GC-D needs "
                     "one PLS prediction, T², Q and three exponentiated coefficients, which is straightforward to implement in "
                     "instrument software."),
-              ("fig", os.path.join(FIG, "fig7_efficiency.png"),
-               "Fig. 7. Method-specific computing time (left, log scale) and peak additional memory (right) per held-out season "
-               "(mango, ~70 000 training spectra, single CPU core; mean of three seasons, each method measured in a fresh context). "
-               "The dashed line marks the shared group-wise cross-validation and final PLS fit.")]
+              ]
     # ------------------------------------------------------------------ 4.8 error and decision analysis
     cc = _csv("conditional_coverage_mango_season_loso.csv", os.path.join(R, "error_analysis"))
     gb = _csv("group_bias_mango_instrument.csv", os.path.join(R, "error_analysis"))
@@ -331,7 +351,8 @@ def results_part2(C, N, s, c, h, ex, g):
             e = q[q.method == m].coverage.values
             return e[i]
         yv = cc[cc.by == "reference decile"]
-        t += (f"Coverage failures were concentrated in identifiable spectra and samples (Fig. 8). For new seasons, SCP covered "
+        t += (f"Coverage failures were concentrated in identifiable spectra and samples (Fig. 7; the Q-residual ratio is "
+              f"Q(x)/Q̃, the residual of a test spectrum relative to the median training residual). For new seasons, SCP covered "
               f"{qv('SCP',0):.3f} of the spectra with the smallest Q residuals but only {qv('SCP',-1):.3f} in the highest Q decile; "
               f"GC-D covered {qv('GC-D',0):.3f} and {qv('GC-D',-1):.3f}, and G-W-A (absolute scores) {qv('G-W-A',-1):.3f} in the highest "
               f"decile, which shows how the diagnostic scale moves width to atypical spectra. All methods under-covered at the "
@@ -344,6 +365,14 @@ def results_part2(C, N, s, c, h, ex, g):
               f"instrument (Pearson r = {r:.2f}); the worst instrument (bias {e.loc[e.coverage.idxmin(),'bias']:+.2f} % DM) was "
               f"covered {e.coverage.min():.3f}. Such a large instrument offset is better corrected by bias adjustment with a few "
               "reference samples than absorbed into wider intervals. ")
+    pgr = _csv("per_group_results.csv")
+    if pgr is not None:
+        pp = pgr[(pgr.task == "mango_population") & (pgr.alpha == 0.1) & (pgr.method == "GC-D")].sort_values("coverage")
+        w0 = pp.iloc[0]
+        t += (f"For new populations, every method failed on the same few lots; the worst (population {w0.group}, {int(w0.n)} spectra, "
+              f"green 'Kensington Pride' fruit of 2020) had a mean DM far below the data-set mean and a prediction bias of "
+              f"{w0.bias:+.2f} % DM, so that GC-D covered {w0.coverage:.3f} of its spectra and the oracle, which sees its labels, "
+              "remained the only method close to nominal. ")
     if cb is not None:
         v = cb[(cb.task == "mango_season_loso")].set_index("method")
         t += (f"Pooled over all spectra (cluster bootstrap over {int(v.loc['GC-D','n_units'])} fruit), new-season coverage was "
@@ -359,17 +388,33 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"{d.loc[('ASTM-R',16.0),'false_accept_among_accepted']:.3f} with the classical interval and "
                     f"{d.loc[('GC-D',16.0),'false_accept_among_accepted']:.3f} with GC-D; at L = 17 % the values were "
                     f"{d.loc[('SCP',17.0),'false_accept_among_accepted']:.3f}, {d.loc[('ASTM-R',17.0),'false_accept_among_accepted']:.3f} "
-                    f"and {d.loc[('GC-D',17.0),'false_accept_among_accepted']:.3f} (Fig. 9). The price is a lower yield of accepted "
+                    f"and {d.loc[('GC-D',17.0),'false_accept_among_accepted']:.3f} (Fig. 8). The price is a lower yield of accepted "
                     f"compliant fruit ({d.loc[('GC-D',16.0),'yield_of_compliant']:.3f} vs {d.loc[('SCP',16.0),'yield_of_compliant']:.3f} "
                     f"at L = 16 %), slightly below that of the oracle ({d.loc[('ORACLE',16.0),'yield_of_compliant']:.3f}). The "
                     "false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %, that of GC-D did not."),
               ("fig", os.path.join(FIG, "fig8_error_analysis.png"),
-               "Fig. 8. Error analysis. Coverage for new mango seasons by decile of (a) the Q residual ratio and (b) the reference DM; "
+               "Fig. 7. Error analysis. Coverage for new mango seasons by decile of (a) the Q residual ratio and (b) the reference DM; "
                "(c) coverage of each held-out instrument against the absolute mean prediction bias on that instrument."),
               ("fig", os.path.join(FIG, "fig9_decisions.png"),
-               "Fig. 9. Specification-limit decisions for new mango seasons: (a) fraction of accepted spectra ('lower limit ≥ L') "
+               "Fig. 8. Specification-limit decisions for new mango seasons: (a) fraction of accepted spectra ('lower limit ≥ L') "
                "whose reference DM is below L; dashed line: nominal one-sided 5 %; (b) fraction of truly compliant spectra accepted.")]
-    # ------------------------------------------------------------------ 4.9 post-hoc iteration
+    # ------------------------------------------------------------------ position relative to prior work
+    B += [("h2", "4.9. Position relative to existing approaches"),
+          ("p", "Several elements of GC-D are not new in isolation, and we state precisely what is borrowed. Group-wise "
+                f"(season-, instrument- or region-wise) validation is established chemometric practice for estimating RMSEP "
+                f"under shift {C('anderson2020', 'roberts2017')}; conformal prediction for new groups and its finite-sample theory "
+                f"are due to Dunn et al. and Lee et al. {C('dunn2023', 'lee2026')}; normalised conformity scores date back to "
+                f"Papadopoulos et al. {C('papadopoulos2011')} and were recently applied to mid-infrared spectra {C('jovic2025')}; "
+                f"T² and Q are the standard chemometric diagnostics {C('jackson1979')}. What this work adds is (i) the evidence, "
+                "across four data sets and twelve real deployment scenarios, that intervals calibrated on random partitions — "
+                "classical, conformal or model-based — under-cover new seasons and instruments, whereas group-calibrated intervals "
+                "do not; (ii) a conformity score that uses T² and Q fitted on out-of-group residuals, which made the intervals "
+                "react to spectral drift (Section 4.5); (iii) a cross-fitted procedure that reuses the group-wise cross-validation "
+                "already performed for model selection; and (iv) a quantification of how many groups are needed for distribution-free "
+                f"group-level guarantees. GC-D is complementary to calibration transfer and domain adaptation {C('nikzad2018', 'mikulasek2023')}, "
+                "which reduce the error under shift: any such model can be wrapped by the same out-of-group calibration, which would "
+                "then quantify the remaining error.")]
+    # ------------------------------------------------------------------ 4.10 post-hoc iteration
     it = _csv("iteration1_summary.csv"); itc = _csv("iteration1_comparisons.csv")
     if it is not None and itc is not None and len(it):
         iv = it.set_index(["task", "method"])
@@ -377,7 +422,7 @@ def results_part2(C, N, s, c, h, ex, g):
             return float(iv.loc[(t_, m), col]) if (t_, m) in iv.index else float("nan")
         k = itc[(itc.method == "GC-CQR") & (itc.comparator == "CQR")]
         k2 = itc[(itc.method == "GC-D2") & (itc.comparator == "GC-D")]
-        B += [("h2", "4.9. Post-hoc extension: level-dependent errors"),
+        B += [("h2", "4.10. Post-hoc extension: level-dependent errors"),
               ("p", "The soil results revealed a weakness of GC-D that was not anticipated in the protocol: on new soil regions "
                     f"CQR and GPR had clearly lower interval scores ({g('ossl_lucas_block','CQR','interval_score'):.2f} and "
                     f"{g('ossl_lucas_block','GPR','interval_score'):.2f}) than GC-D ({g('ossl_lucas_block','GC-D','interval_score'):.2f}) "
@@ -395,7 +440,7 @@ def results_part2(C, N, s, c, h, ex, g):
                     "principle therefore transfers to other conformity scores; which score is best depends on whether the "
                     "error is dominated by spectral novelty (mango) or by level-dependent heteroscedasticity (soil).")]
     # ------------------------------------------------------------------ 4.10 limitations
-    B += [("h2", "4.10. Limitations"),
+    B += [("h2", "4.11. Limitations"),
           ("bullets", [
               "GC-D's coverage is asymptotic in the number of groups and was verified empirically, not guaranteed; with few groups "
               "(six seasons) its season-level coverage varied between groups (Fig. 4). Formal guarantees (HCP, HJ+) require ≥ 10 groups at 90 %.",
@@ -405,7 +450,7 @@ def results_part2(C, N, s, c, h, ex, g):
               "removed; bias or slope correction with a few reference samples of the new group remains preferable when available.",
               "The evaluation used public data sets with fixed preprocessing; other analytes, techniques (Raman, MIR) and deep models "
               "were tested only partially (one CNN).",
-              "The post-hoc variants GC-D2 and GC-CQR (Section 4.9) were designed after seeing the soil results and were evaluated "
+              "The post-hoc variants GC-D2 and GC-CQR (Section 4.10) were designed after seeing the soil results and were evaluated "
               "on the same scenarios; they require independent confirmation.",
           ])]
     return B

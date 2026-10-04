@@ -1,0 +1,2 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+season2019,73955,5604,13,4,1.34,0.007,1.28

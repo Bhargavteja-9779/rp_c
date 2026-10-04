@@ -125,7 +125,7 @@ for (const b of C.blocks) {
   else throw new Error("unknown block " + b.type);
 }
 // ---------- references
-children.push(H("References", 1));
+if (C.references.length) children.push(H("References", 1));
 for (const r of C.references) children.push(P(r, { align: AlignmentType.LEFT, line: LINE, after: 60, indent: { left: 400, hanging: 400 } }));
 
 const doc = new Document({

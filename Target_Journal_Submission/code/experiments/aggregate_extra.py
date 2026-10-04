@@ -108,7 +108,34 @@ def wcp_clip():
     return s.to_dict("records")
 
 
+def cultivar():
+    fs = glob.glob(os.path.join(RESULTS, "cultivar", "groups_*.csv"))
+    if not fs:
+        return None
+    d = pd.concat([pd.read_csv(f) for f in fs])
+    pg = d.groupby(["method", "group"], as_index=False).agg(coverage=("coverage", "mean"), width=("width_mean", "mean"),
+                                                            interval_score=("interval_score", "mean"), rmse=("rmse", "mean"),
+                                                            bias=("bias", "mean"))
+    pg.to_csv(os.path.join(RESULTS, "cultivar_per_group.csv"), index=False)
+    s = pg.groupby("method", as_index=False).agg(coverage=("coverage", "mean"), coverage_min=("coverage", "min"),
+                                                 width=("width", "mean"), interval_score=("interval_score", "mean"),
+                                                 n_cultivars=("group", "nunique"))
+    s["n_seeds"] = d.seed.nunique()
+    rows = []
+    P = pg.pivot(index="group", columns="method", values="interval_score")
+    Cv = pg.pivot(index="group", columns="method", values="coverage")
+    for m in [c for c in P.columns if c not in ("GC-D", "ORACLE")]:
+        r = wilcoxon_paired(P["GC-D"].values, P[m].values)
+        rc = wilcoxon_paired(np.abs(Cv["GC-D"].values - 0.9), np.abs(Cv[m].values - 0.9))
+        rows.append(dict(comparator=m, n=r["n_pairs"], IS_median_diff=r["median_diff"], IS_r_rb=r["r_rb"], IS_p=r["p"],
+                         covgap_median_diff=rc["median_diff"], covgap_p=rc["p"]))
+    c = pd.DataFrame(rows); c["IS_p_holm"] = holm(c.IS_p.values); c["covgap_p_holm"] = holm(c.covgap_p.values)
+    s.to_csv(os.path.join(RESULTS, "cultivar_summary.csv"), index=False)
+    c.to_csv(os.path.join(RESULTS, "cultivar_comparisons.csv"), index=False)
+    return dict(summary=s.to_dict("records"), comparisons=c.to_dict("records"))
+
+
 if __name__ == "__main__":
-    res = {"iteration1": iteration(), "robustness": robustness(), "wcp_clip": wcp_clip()}
+    res = {"iteration1": iteration(), "robustness": robustness(), "wcp_clip": wcp_clip(), "cultivar": cultivar()}
     json.dump(res, open(os.path.join(RESULTS, "extra_results.json"), "w"), indent=1, default=float)
     print("written extra_results.json:", {k: (list(v) if isinstance(v, dict) else bool(v)) for k, v in res.items()})

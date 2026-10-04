@@ -67,6 +67,7 @@ def main():
                  f"{py} experiments/run_robustness.py --exp sens_popfolds"]
         cmds += [f"{py} experiments/run_cnn.py --seed {s}" for s in (0, 1, 2)]
         cmds += [f"{py} experiments/run_wcp_clip.py {t} {s}" for s in seeds for t in MAIN_TASKS]
+        cmds += [f"{py} experiments/run_cultivar.py {s}" for s in (0, 1, 2)]
     else:
         cmds += [f"{py} experiments/run_robustness.py --exp perturb --quick",
                  f"{py} experiments/run_cnn.py --seed 0 --quick"]

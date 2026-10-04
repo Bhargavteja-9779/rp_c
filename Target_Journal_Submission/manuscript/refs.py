@@ -5,6 +5,7 @@ Style: Elsevier numbered (Talanta): Authors, Title, Journal Volume (Year) pages.
 # Formatted entries (author lists abbreviated to "et al." after six authors, per common Elsevier practice).
 REFS = {
  "walsh2020": "K.B. Walsh, J. Blasco, M. Zude-Sasse, X. Sun, Visible-NIR ‘point’ spectroscopy in postharvest fruit and vegetable assessment: the science behind three decades of commercial use, Postharvest Biol. Technol. 168 (2020) 111246. https://doi.org/10.1016/j.postharvbio.2020.111246",
+ "gum2008": "JCGM 100:2008, Evaluation of measurement data — Guide to the expression of uncertainty in measurement, Joint Committee for Guides in Metrology (BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, OIML), 2008. https://doi.org/10.59161/JCGM100-2008E",
  "wold2001": "S. Wold, M. Sjöström, L. Eriksson, PLS-regression: a basic tool of chemometrics, Chemom. Intell. Lab. Syst. 58 (2001) 109–130. https://doi.org/10.1016/S0169-7439(01)00155-1",
  "astm1655": "ASTM International, ASTM E1655-17, Standard Practices for Infrared Multivariate Quantitative Analysis, West Conshohocken, PA. https://doi.org/10.1520/E1655-17",
  "faber1997": "K. Faber, B.R. Kowalski, Propagation of measurement errors for the validation of predictions obtained by principal component regression and partial least squares, J. Chemom. 11 (1997) 181–238. https://doi.org/10.1002/(SICI)1099-128X(199705)11:3<181::AID-CEM459>3.0.CO;2-7",
