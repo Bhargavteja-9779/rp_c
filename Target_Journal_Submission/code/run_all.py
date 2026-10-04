@@ -78,6 +78,7 @@ def main():
     sh(f"{py} experiments/analysis_points.py", env)
     sh(f"{py} experiments/make_figures.py", env)
     sh(f"{py} experiments/make_tables.py", env)
+    sh(f"{py} experiments/make_graphical_abstract.py", env)
     print("done; outputs in", env["RESULTS_DIR"], "figures/ and tables/")
 
 

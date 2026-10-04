@@ -71,7 +71,7 @@ def theory(C):
               "exchangeable within a group, while spectra of the same group may share a common effect (for example a "
               "seasonal bias)."),
         ("h2", "2.2. PLS model and spectral diagnostics"),
-        ("p", f"The point predictor is PLS1 regression {C('wold2001')} with A latent variables, ŷ(x) = ȳ + (x − x̄)ᵀ R_{A} q_{A}, "
+        ("p", f"The point predictor is PLS1 regression {C('wold2001')} with A latent variables, ŷ(x) = ȳ + (x − x̄)ᵀ R_{{A}} q_{{A}}, "
               "where R_{A} = W_{A} (P_{A}ᵀ W_{A})⁻¹ maps a mean-centred spectrum to its scores t = R_{A}ᵀ(x − x̄). Two "
               f"diagnostics describe how a spectrum relates to the calibration space {C('jackson1979')}:"),
         ("eq", "T²(x) = Σₐ tₐ² / sₐ²,     Q(x) = ‖(x − x̄) − P_{A} t‖²", "2"),
@@ -97,7 +97,8 @@ def theory(C):
               "wᵢ = 1/(K·N_{gᵢ}), where N_{g} is the number of spectra in group g, every group contributes the same total "
               "mass regardless of its size. The calibrated multiplier is"),
         ("eq", "q̂ = inf{ t : Σᵢ wᵢ 1(sᵢ ≤ t) ≥ 1 − α }", "4"),
-        ("p", "Step 4 (interval). The final PLS model, fitted on all calibration spectra, gives for a new spectrum"),
+        ("p", "Step 4 (interval). The final PLS model, fitted on all calibration spectra, provides ŷ(x), T²(x) and Q(x) for a new "
+              "spectrum, and"),
         ("eq", "C(x) = [ ŷ(x) − q̂ σ(x),  ŷ(x) + q̂ σ(x) ]", "5"),
         ("h2", "2.4. Coverage guarantees and their limits"),
         ("p", "Because q̂ in (4) equalises group contributions, it estimates the quantile of the score distribution "
@@ -184,7 +185,8 @@ def experimental(C, N):
               "0.85, and results at α = 0.05 and 0.20. Three hypotheses were pre-specified: H1, random-split SCP "
               "covers less than 0.85 on at least one shift task; H2, GC-D covers between 0.87 and 0.95 on every task "
               "with ≥ 10 training groups; H3, diagnostic normalisation lowers the interval score relative to "
-              "absolute scores (GC-D vs G-W-A). The unit of analysis for method comparisons is the held-out group; "
+              "absolute scores (GC-D vs G-W-A). The unit of analysis for method comparisons is the held-out group or, where an "
+              "outer fold holds out several groups that share one model (populations, campaigns), the outer fold; "
               f"per-group values were averaged over five pre-specified seeds (0–4) and compared with two-sided Wilcoxon "
               f"signed-rank tests {C('wilcoxon1945')} with Holm correction across comparators within each task "
               f"{C('holm1979')}. Effect sizes are matched-pairs rank-biserial correlations {C('kerby2014')}; 95 % "

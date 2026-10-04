@@ -143,7 +143,7 @@ def results(C, N):
                 + (lambda d: "less than 1 %" if d < 1 else f"{d:.0f} %")(100*abs(g('mango_season_loso','GC-D','interval_score')/g('mango_season_loso','ORACLE','interval_score')-1))
                 + ", and for the next season it was lower than the oracle's, because the oracle uses a constant width within a group."),
           ("p", "Pre-registered hypothesis H2 required coverage between 0.87 and 0.95 on every task with at least ten "
-                f"training groups ({', '.join(NICE[t] for t in many)}); it is "
+                f"training groups ({'; '.join(NICE[t] for t in many)}); it is "
                 f"{'supported' if h['H2']['supported'] else 'not supported'}"
                 + ("" if h["H2"]["supported"] else
                    f" (outside the range: {', '.join(NICE[t] + ' ' + f3(h['H2']['values'][t]) for t, ok in h['H2']['per_task'].items() if not ok)})")
@@ -234,8 +234,8 @@ def results_part2(C, N, s, c, h, ex, g):
     # ------------------------------------------------------------------ 4.4 guarantees and number of groups
     rg = _csv("robustness_groups_summary.csv")
     B += [("h2", "4.4. Distribution-free guarantees need many groups"),
-          ("p", f"The variants with finite-sample guarantees behaved as theory predicts. With 6 training seasons, "
-                f"2 corn instruments or 2 earlier seasons, HJ+, HCP and GC-D+ returned unbounded intervals (Table 2), because "
+          ("p", f"The variants with finite-sample guarantees behaved as theory predicts. With at most six training seasons "
+                f"or two corn instruments, HJ+, HCP and GC-D+ returned unbounded intervals (Tables 2–3), because "
                 f"the point mass 1/(K + 1) at +∞ exceeds α. With 27–30 instruments or 29 soil regions they were finite "
                 f"and covered {g('mango_instrument','HJ+'):.3f} (HJ+) and {g('mango_instrument','HCP-D'):.3f} (HCP-D) for new "
                 f"instruments and {g('ossl_lucas_block','HJ+'):.3f} and {g('ossl_lucas_block','HCP-D'):.3f} for new regions, "
@@ -307,8 +307,9 @@ def results_part2(C, N, s, c, h, ex, g):
     if ci is not None:
         ratio = (ci.rmsep / ci.sd_reference)
         t += (f"interval method based on the PLS model reached nominal coverage, because the uncorrected instrument shift made "
-              f"the model nearly uninformative — the RMSEP on the new instrument was {ratio.min():.2f}–{ratio.max():.2f} times the "
-              f"standard deviation of the reference values. CQR covered {g('corn_protein','CQR'):.3f} (protein), but its interval "
+              f"the model weakly informative — the RMSEP on the new instrument was {ratio.min():.2f}–{ratio.max():.2f} times (median "
+              f"{ratio.median():.2f}) the standard deviation of the reference values, and the instrument-level bias reached "
+              f"{ci.bias.abs().max():.2f} units. CQR covered {g('corn_protein','CQR'):.3f} (protein), but its interval "
               f"widths ({ci.cqr_width.min():.2f}–{ci.cqr_width.max():.2f}) matched the central 90 % range of the reference values "
               f"({ci.marginal_90_range.min():.2f}–{ci.marginal_90_range.max():.2f}): with ~100 training spectra the quantile models "
               "reverted to the marginal distribution, i.e. they ignored the spectra. Such shifts require calibration transfer "
@@ -378,7 +379,9 @@ def results_part2(C, N, s, c, h, ex, g):
         t += (f"Pooled over all spectra (cluster bootstrap over {int(v.loc['GC-D','n_units'])} fruit), new-season coverage was "
               f"{v.loc['SCP','pooled_coverage']:.3f} [{v.loc['SCP','ci_lo']:.3f}, {v.loc['SCP','ci_hi']:.3f}] for SCP and "
               f"{v.loc['GC-D','pooled_coverage']:.3f} [{v.loc['GC-D','ci_lo']:.3f}, {v.loc['GC-D','ci_hi']:.3f}] for GC-D; the "
-              "difference from the group-averaged values reflects unequal season sizes.")
+              "difference from the group-averaged values reflects unequal season sizes: GC-D over-covered the large seasons whose "
+              "spectra resembled the calibration data (e.g. 2016 and 2017, Fig. 4), which is the price of calibrating to the "
+              "between-season error distribution.")
     B += [("p", t)]
     if dec is not None:
         d = dec[dec.subset == "all"].set_index(["method", "limit"])
