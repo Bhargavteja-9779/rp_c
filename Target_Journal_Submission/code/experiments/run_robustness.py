@@ -90,13 +90,16 @@ elif a.exp == "perturb":
         grid = grid[:2]
     for kind, lev in grid:
         rng = np.random.default_rng(0)
-        Xp = task["X"].copy()
-        for f in task["folds"]:
+        dfs = []
+        for f in (task["folds"][:2] if a.quick else task["folds"]):
+            # perturb ONLY the test spectra of this fold; the training spectra stay untouched
             te = f["test"]
+            Xp = task["X"].copy()
             Xp[te] = preprocess(pert(raw[te], kind, lev, rng) if kind != "none" else raw[te], task["recipe"])
-        df = run_task(task, "mango_season_loso", methods, A01, 0, os.path.join(out, "tmp"), log=log.info,
-                      store_points=False, resume=False, X_override=Xp,
-                      fold_filter=[f["name"] for f in task["folds"][:2]] if a.quick else None)
+            assert np.array_equal(Xp[f["train"]], task["X"][f["train"]])
+            dfs.append(run_task(task, "mango_season_loso", methods, A01, 0, os.path.join(out, "tmp"), log=log.info,
+                                store_points=False, resume=False, X_override=Xp, fold_filter=[f["name"]]))
+        df = pd.concat(dfs, ignore_index=True)
         df["perturbation"] = kind; df["level"] = lev
         df.to_csv(os.path.join(out, f"perturb_{kind}_{lev}.csv"), index=False)
 

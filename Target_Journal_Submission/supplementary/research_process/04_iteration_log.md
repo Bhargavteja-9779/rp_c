@@ -16,3 +16,10 @@ group shift where random-split CQR under-covers (mango instrument).
 
 **Experiment:** methods GC-D2 and GC-CQR added; rerun on all main tasks, α = 0.1, seeds 0–2 (reduced from 0–4 for computing time; post-hoc analysis), compared with GC-D,
 CQR, SCP under the same statistics. Results reported whether positive or negative.
+
+## Bug found and fixed during the robustness experiment (2026-10-04)
+The first run of the test-time perturbation experiment (E4c) perturbed *all* spectra of the mango data set
+(every spectrum is a test spectrum in some leave-one-season-out fold), so the training spectra of each fold were
+perturbed as well. Because PLS predictions are invariant to a common scaling, the "gain" perturbation showed no
+effect at all, which exposed the bug. The experiment was corrected to perturb only the test spectra of the
+current fold (with an assertion that training spectra are unchanged) and rerun; the invalid results were deleted.
