@@ -1,6 +1,6 @@
 **share_groups_under at alpha = 0.1**
 
-| Method | M-season | M-forward | M-instrument | M-population | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
+| Method | M-season | M-forward | M-instr. | M-pop. | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ASTM-R | 0.57 | 0.80 | 0.46 | 0.23 | 0.27 | 0.37 | 0.40 | 0.53 | 0.43 | 0.40 | 1.00 | 0.00 |
 | ASTM-G | 0.14 | 0.40 | 0.17 | 0.18 | 0.23 | 0.33 | 0.23 | 0.43 | 0.33 | 0.34 | 1.00 | 0.00 |

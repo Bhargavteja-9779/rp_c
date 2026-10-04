@@ -236,7 +236,7 @@
      "7",
      "58089–84011",
      "85401",
-     "6–6",
+     "6",
      "12–19"
     ],
     [
@@ -249,7 +249,7 @@
      "13–19"
     ],
     [
-     "M-instrument",
+     "M-instr.",
      "24",
      "24",
      "26279–80757",
@@ -258,7 +258,7 @@
      "12–19"
     ],
     [
-     "M-population",
+     "M-pop.",
      "10",
      "199",
      "74737–79204",
@@ -272,43 +272,43 @@
      "30",
      "37525–40099",
      "40175",
-     "29–29",
+     "29",
      "23–25"
     ],
     [
      "C-moist",
      "30",
      "30",
-     "120–120",
+     "120",
      "600",
-     "2–2",
+     "2",
      "1–4"
     ],
     [
      "C-oil",
      "30",
      "30",
-     "120–120",
+     "120",
      "600",
-     "2–2",
+     "2",
      "1–7"
     ],
     [
      "C-prot",
      "30",
      "30",
-     "120–120",
+     "120",
      "600",
-     "2–2",
+     "2",
      "1–7"
     ],
     [
      "C-starch",
      "30",
      "30",
-     "120–120",
+     "120",
      "600",
-     "2–2",
+     "2",
      "1–6"
     ],
     [
@@ -318,25 +318,25 @@
      "18393–21782",
      "40175",
      "28–30",
-     "25–25"
+     "25"
     ],
     [
      "S-KSSL→LUCAS",
      "1",
      "30",
-     "19747–19747",
+     "19747",
      "40175",
-     "84–84",
-     "21–21"
+     "84",
+     "21"
     ],
     [
      "Tablets",
      "2",
      "2",
-     "195–195",
+     "195",
      "920",
-     "195–195",
-     "7–7"
+     "195",
+     "7"
     ]
    ],
    "caption": "Table 1. Deployment-shift scenarios. K is the number of distinct calibration groups available in the training data of an outer fold; PLS LVs is the range of latent variables selected by group-wise cross-validation.",
@@ -358,7 +358,7 @@
   {
    "type": "fig",
    "path": "/home/user/rp_c/Target_Journal_Submission/code/figures/fig3_main_coverage_score.png",
-   "caption": "Fig. 3. Group-averaged coverage (left; bars are 95 % bootstrap intervals over held-out groups) and interval score relative to the oracle (right; lower is better; values beyond 3 or infinite are printed) at nominal coverage 0.90, means over five seeds. GC-D: proposed group-conformal calibration with diagnostic scaling.",
+   "caption": "Fig. 3. Group-averaged coverage (left; bars are 95 % bootstrap intervals over held-out groups) and interval score relative to the oracle (right; lower is better; ratios above 3 and infinite scores are plotted at 3 and labelled) at nominal coverage 0.90, means over five seeds. GC-D: proposed group-conformal calibration with diagnostic scaling.",
    "width_in": 6.3
   },
   {
@@ -368,8 +368,8 @@
      "Method",
      "M-season",
      "M-forward",
-     "M-instrument",
-     "M-population",
+     "M-instr.",
+     "M-pop.",
      "S-region",
      "C-moist",
      "C-oil",
@@ -533,7 +533,7 @@
      "0.913"
     ]
    ],
-   "caption": "Table 2. Group-averaged empirical coverage at nominal coverage 0.90 (means over five seeds). M = mango, S = soil (LUCAS), C = corn.",
+   "caption": "Table 2. Group-averaged empirical coverage at nominal coverage 0.90 (means over five seeds). M = mango (instr. = instrument, pop. = population), S = soil (LUCAS), C = corn.",
    "note": "HJ+, HCP-D and GC-D+ are unbounded (coverage 1) whenever the number of calibration groups is too small for their finite-sample correction (Section 2.4); WCP returns unbounded intervals when the estimated density ratio places more than α of the weight on the test point.",
    "highlight_rows": [
     12
@@ -546,8 +546,8 @@
      "Method",
      "M-season",
      "M-forward",
-     "M-instrument",
-     "M-population",
+     "M-instr.",
+     "M-pop.",
      "S-region",
      "C-moist",
      "C-oil",
@@ -727,7 +727,7 @@
   },
   {
    "type": "p",
-   "text": "Pre-registered hypothesis H2 required coverage between 0.87 and 0.95 on every task with at least ten training groups (mango, new instrument; mango, new population; soil, new region); it is supported. Paired over held-out groups (outer folds for the population task, where ten folds each hold out about 20 populations that share one model), GC-D had a lower interval score than SCP in 7 of 9 main scenarios, but the differences were significant after Holm correction only for soil, new region (Table 4). With five to seven seasons the smallest attainable two-sided Wilcoxon p-value is 0.0625 (n = 5) or 0.0156 (n = 7), so season-level comparisons cannot reach significance after correction for the 19 comparators; for new instruments (24 groups) the effect on the interval score was r = -0.39 (uncorrected p = 0.101). The evidence for GC-D is therefore the consistent direction of the coverage shift across all scenarios with several calibration groups and the pre-registered coverage criteria (H1, H2), rather than group-level significance of each pairwise difference."
+   "text": "Pre-registered hypothesis H2 required coverage between 0.87 and 0.95 on every task with at least ten training groups (mango, new instrument; mango, new population; soil, new region); it is supported. Paired over held-out groups (outer folds for the population task, where ten folds each hold out about 20 populations that share one model), GC-D had a lower interval score than SCP in 7 of 9 main scenarios, but the differences were significant after Holm correction only for soil, new region (Table 4). With five to seven seasons the smallest attainable two-sided Wilcoxon p-value is 0.0625 (n = 5) or 0.0156 (n = 7), so season-level comparisons cannot reach significance after correction for the 19 comparators; for new instruments (24 groups) the effect on the interval score was r = −0.39 (uncorrected p = 0.101). The evidence for GC-D is therefore the consistent direction of the coverage shift across all scenarios with several calibration groups and the pre-registered coverage criteria (H1, H2), rather than group-level significance of each pairwise difference."
   },
   {
    "type": "p",
@@ -756,57 +756,57 @@
     [
      "M-season",
      "7",
-     "-0.36 (1.000)",
-     "-0.36 (1.000)",
-     "-0.36 (1.000)",
-     "-0.43 (1.000)",
-     "-0.64 (1.000)",
-     "-0.50 (1.000)",
-     "-0.36 (1.000)"
+     "−0.36 (1.000)",
+     "−0.36 (1.000)",
+     "−0.36 (1.000)",
+     "−0.43 (1.000)",
+     "−0.64 (1.000)",
+     "−0.50 (1.000)",
+     "−0.36 (1.000)"
     ],
     [
      "M-forward",
      "5",
-     "-0.47 (1.000)",
-     "-0.47 (1.000)",
-     "-0.47 (1.000)",
-     "-0.60 (1.000)",
-     "-1.00 (1.000)",
-     "-0.87 (1.000)",
-     "-0.47 (1.000)"
+     "−0.47 (1.000)",
+     "−0.47 (1.000)",
+     "−0.47 (1.000)",
+     "−0.60 (1.000)",
+     "−1.00 (1.000)",
+     "−0.87 (1.000)",
+     "−0.47 (1.000)"
     ],
     [
-     "M-instrument",
+     "M-instr.",
      "24",
-     "-0.39 (1.000)",
-     "-0.31 (1.000)",
-     "-0.37 (1.000)",
-     "-0.39 (1.000)",
-     "-0.65 (0.065)",
-     "-1.00 (<0.001)",
-     "-0.27 (1.000)"
+     "−0.39 (1.000)",
+     "−0.31 (1.000)",
+     "−0.37 (1.000)",
+     "−0.39 (1.000)",
+     "−0.65 (0.065)",
+     "−1.00 (<0.001)",
+     "−0.27 (1.000)"
     ],
     [
-     "M-population",
+     "M-pop.",
      "10",
-     "-0.71 (0.732)",
-     "-0.56 (1.000)",
-     "-0.56 (1.000)",
-     "-0.67 (0.773)",
-     "-0.71 (0.732)",
-     "-1.00 (0.039)",
-     "-0.64 (0.924)"
+     "−0.71 (0.732)",
+     "−0.56 (1.000)",
+     "−0.56 (1.000)",
+     "−0.67 (0.773)",
+     "−0.71 (0.732)",
+     "−1.00 (0.039)",
+     "−0.64 (0.924)"
     ],
     [
      "S-region",
      "30",
-     "-0.83 (0.001)",
-     "-0.73 (0.005)",
-     "-0.46 (0.162)",
-     "-0.79 (0.002)",
+     "−0.83 (0.001)",
+     "−0.73 (0.005)",
+     "−0.46 (0.162)",
+     "−0.79 (0.002)",
      "+1.00 (<0.001)",
-     "-0.91 (<0.001)",
-     "-0.64 (0.016)"
+     "−0.91 (<0.001)",
+     "−0.64 (0.016)"
     ],
     [
      "C-moist",
@@ -816,74 +816,74 @@
      "+0.14 (1.000)",
      "+0.17 (1.000)",
      "+0.77 (0.003)",
-     "-0.99 (<0.001)",
+     "−0.99 (<0.001)",
      "+0.03 (1.000)"
     ],
     [
      "C-oil",
      "30",
-     "-0.23 (1.000)",
+     "−0.23 (1.000)",
      "+0.10 (1.000)",
      "+0.31 (1.000)",
      "+0.29 (1.000)",
      "+0.66 (0.024)",
-     "-0.99 (<0.001)",
+     "−0.99 (<0.001)",
      "+0.09 (1.000)"
     ],
     [
      "C-prot",
      "30",
-     "-0.10 (1.000)",
+     "−0.10 (1.000)",
      "+0.15 (1.000)",
      "+0.28 (1.000)",
      "+0.11 (1.000)",
      "+0.69 (0.013)",
-     "-1.00 (<0.001)",
+     "−1.00 (<0.001)",
      "+0.08 (1.000)"
     ],
     [
      "C-starch",
      "30",
-     "-0.20 (1.000)",
+     "−0.20 (1.000)",
      "+0.15 (1.000)",
      "+0.38 (0.722)",
      "+0.15 (1.000)",
      "+0.82 (0.001)",
-     "-1.00 (<0.001)",
+     "−1.00 (<0.001)",
      "+0.20 (1.000)"
     ],
     [
      "S-campaign",
      "2",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
      "+1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)"
+     "−1.00 (1.000)",
+     "−1.00 (1.000)"
     ],
     [
      "S-KSSL→LUCAS",
      "1",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)"
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)"
     ],
     [
      "Tablets",
      "2",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-1.00 (1.000)",
-     "-0.33 (1.000)"
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−1.00 (1.000)",
+     "−0.33 (1.000)"
     ]
    ],
    "caption": "Table 4. Paired comparison of GC-D with each comparator over held-out groups: matched-pairs rank-biserial correlation of the interval score (negative: GC-D lower) with Holm-adjusted two-sided Wilcoxon p-values in parentheses.",
@@ -964,11 +964,11 @@
   },
   {
    "type": "p",
-   "text": "Coverage failures were concentrated in identifiable spectra and samples (Fig. 7; the Q-residual ratio is Q(x)/Q̃, the residual of a test spectrum relative to the median training residual). For new seasons, SCP covered 0.947 of the spectra with the smallest Q residuals but only 0.694 in the highest Q decile; GC-D covered 0.946 and 0.888, and G-W-A (absolute scores) 0.780 in the highest decile, which shows how the diagnostic scale moves width to atypical spectra. All methods under-covered at the extremes of the DM range (lowest decile: SCP 0.776, GC-D 0.865), where PLS predictions regress towards the mean. Across new instruments, per-instrument coverage of GC-D fell with the absolute mean prediction bias of that instrument (Pearson r = -0.73); the worst instrument (bias -2.45 % DM) was covered 0.356. Such a large instrument offset is better corrected by bias adjustment with a few reference samples than absorbed into wider intervals. For new populations, every method failed on the same few lots; the worst (population 114500, 80 spectra, green 'Kensington Pride' fruit of 2020) had a mean DM far below the data-set mean and a prediction bias of +3.33 % DM, so that GC-D covered 0.013 of its spectra and the oracle, which sees its labels, remained the only method close to nominal. Pooled over all spectra (cluster bootstrap over 10560 fruit), new-season coverage was 0.859 [0.853, 0.865] for SCP and 0.927 [0.923, 0.932] for GC-D; the difference from the group-averaged values reflects unequal season sizes: GC-D over-covered the large seasons whose spectra resembled the calibration data (e.g. 2016 and 2017, Fig. 4), which is the price of calibrating to the between-season error distribution."
+   "text": "Coverage failures were concentrated in identifiable spectra and samples (Fig. 7; the Q-residual ratio is Q(x)/Q̃, the residual of a test spectrum relative to the median training residual). For new seasons, SCP covered 0.947 of the spectra with the smallest Q residuals but only 0.694 in the highest Q decile; GC-D covered 0.946 and 0.888, and G-W-A (absolute scores) 0.780 in the highest decile, which shows how the diagnostic scale moves width to atypical spectra. All methods under-covered at the extremes of the DM range (lowest decile: SCP 0.776, GC-D 0.865), where PLS predictions regress towards the mean. Across new instruments, per-instrument coverage of GC-D fell with the absolute mean prediction bias of that instrument (Pearson r = −0.73); the worst instrument (bias −2.45 % DM) was covered 0.356. Such a large instrument offset is better corrected by bias adjustment with a few reference samples than absorbed into wider intervals. For new populations, every method failed on the same few lots; the worst (population 114500, 80 spectra, green 'Kensington Pride' fruit of 2020) had a mean DM far below the data-set mean and a prediction bias of +3.33 % DM, so that GC-D covered 0.013 of its spectra and the oracle, which sees its labels, remained the only method close to nominal. Pooled over all spectra (cluster bootstrap over 10560 fruit), new-season coverage was 0.859 [0.853, 0.865] for SCP and 0.927 [0.923, 0.932] for GC-D; the difference from the group-averaged values reflects unequal season sizes: GC-D over-covered the large seasons whose spectra resembled the calibration data (e.g. 2016 and 2017, Fig. 4), which is the price of calibrating to the between-season error distribution."
   },
   {
    "type": "p",
-   "text": "For a harvest decision 'DM ≥ L', accepting a fruit only when the lower interval limit exceeds L is a one-sided 95 % statement. For new seasons and L = 16 % DM, the share of accepted spectra whose true DM was below L was 0.041 with SCP, 0.039 with the classical interval and 0.021 with GC-D; at L = 17 % the values were 0.057, 0.056 and 0.024 (Fig. 8). The price is a lower yield of accepted compliant fruit (0.342 vs 0.434 at L = 16 %), slightly below that of the oracle (0.375). The false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %, that of GC-D did not."
+   "text": "For a harvest decision 'DM ≥ L', accepting a fruit only when the lower interval limit exceeds L is a one-sided 95 % statement. For new seasons and L = 16 % DM, the share of accepted spectra whose true DM was below L was 0.041 with SCP, 0.039 with the classical interval and 0.021 with GC-D; at L = 17 % the values were 0.057, 0.056 and 0.024 (Fig. 8). The price is a lower yield of accepted compliant fruit (0.342 vs 0.434 at L = 16 %), slightly below that of the oracle (0.375). The false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %; that of GC-D did not."
   },
   {
    "type": "fig",
@@ -1006,7 +1006,7 @@
    "type": "bullets",
    "items": [
     "GC-D's coverage is asymptotic in the number of groups and was verified empirically, not guaranteed; with few groups (six seasons) its season-level coverage varied between groups (Fig. 4). Formal guarantees (HCP, HJ+) require ≥ 10 groups at 90 %.",
-    "All methods assume that the new group is exchangeable with the calibration groups. A systematic trend over seasons, a new cultivar or a new instrument type outside the calibration population is not covered.",
+    "All methods assume that the new group is exchangeable with the calibration groups. A trend over seasons that goes beyond the variation among past seasons, or a cultivar or instrument type unlike any in the calibration population, is not covered (the new cultivars of Section 4.6 were measured in seasons and on instruments represented in training).",
     "Large group-level biases (for example an uncorrected instrument offset) are absorbed into wider intervals rather than removed; bias or slope correction with a few reference samples of the new group remains preferable when available.",
     "The evaluation used public data sets with fixed preprocessing; other analytes, techniques (Raman, MIR) and deep models were tested only partially (one CNN).",
     "The post-hoc variants GC-D2 and GC-CQR (Section 4.10) were designed after seeing the soil results and were evaluated on the same scenarios; they require independent confirmation."

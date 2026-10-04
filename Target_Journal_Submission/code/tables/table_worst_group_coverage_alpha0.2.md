@@ -1,6 +1,6 @@
 **worst_group_coverage at alpha = 0.2**
 
-| Method | M-season | M-forward | M-instrument | M-population | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
+| Method | M-season | M-forward | M-instr. | M-pop. | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ASTM-R | 0.611 | 0.567 | 0.161 | 0.007 | 0.650 | 0.000 | 0.220 | 0.050 | 0.000 | 0.520 | 0.002 | 0.813 |
 | ASTM-G | 0.688 | 0.700 | 0.209 | 0.010 | 0.679 | 0.000 | 0.340 | 0.050 | 0.000 | 0.541 | 0.003 | 0.813 |

@@ -1,6 +1,6 @@
 **interval_score at alpha = 0.2**
 
-| Method | M-season | M-forward | M-instrument | M-population | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
+| Method | M-season | M-forward | M-instr. | M-pop. | S-region | C-moist | C-oil | C-prot | C-starch | S-campaign | S-KSSL→LUCAS | Tablets |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ASTM-R | 5.10 | 5.60 | 5.51 | 4.08 | 9.62 | 3.10 | 0.64 | 1.60 | 4.58 | 9.83 | 92.28 | 16.53 |
 | ASTM-G | 5.04 | 5.42 | 5.34 | 4.08 | 9.53 | 3.06 | 0.62 | 1.56 | 4.43 | 9.68 | 88.39 | 16.53 |

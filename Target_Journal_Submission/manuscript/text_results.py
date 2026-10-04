@@ -105,19 +105,19 @@ def results(C, N):
                 f"(Supplementary Table S2).")]
     B += [("fig", os.path.join(FIG, "fig3_main_coverage_score.png"),
            "Fig. 3. Group-averaged coverage (left; bars are 95 % bootstrap intervals over held-out groups) and interval "
-           "score relative to the oracle (right; lower is better; values beyond 3 or infinite are printed) at nominal "
+           "score relative to the oracle (right; lower is better; ratios above 3 and infinite scores are plotted at 3 and labelled) at nominal "
            "coverage 0.90, means over five seeds. GC-D: proposed group-conformal calibration with diagnostic scaling.")]
     # Table 2
     t2 = pd.read_csv(os.path.join(TAB, "table_coverage_alpha0.1.csv"), dtype=str)
     t3 = pd.read_csv(os.path.join(TAB, "table_interval_score_alpha0.1.csv"), dtype=str)
-    cols = ["Method", "M-season", "M-forward", "M-instrument", "M-population", "S-region", "C-moist", "C-oil", "C-prot", "C-starch"]
+    cols = ["Method", "M-season", "M-forward", "M-instr.", "M-pop.", "S-region", "C-moist", "C-oil", "C-prot", "C-starch"]
     keep = ["ASTM-R", "ASTM-G", "BAG", "GPR", "CQR", "SCP", "CV+", "WCP", "HJ+", "HCP-D", "GC-D+", "GC-D", "ORACLE"]
     sel2 = t2[t2.Method.isin(keep)].set_index("Method").loc[keep].reset_index()[cols]
     sel3 = t3[t3.Method.isin(keep)].set_index("Method").loc[keep].reset_index()[cols]
     rows2 = [cols] + sel2.values.tolist(); rows3 = [cols] + sel3.values.tolist()
     hl = [keep.index("GC-D") + 1]
     B += [("table", rows2, "Table 2. Group-averaged empirical coverage at nominal coverage 0.90 (means over five seeds). "
-                           "M = mango, S = soil (LUCAS), C = corn.",
+                           "M = mango (instr. = instrument, pop. = population), S = soil (LUCAS), C = corn.",
            "HJ+, HCP-D and GC-D+ are unbounded (coverage 1) whenever the number of calibration groups is too small for their "
            "finite-sample correction (Section 2.4); WCP returns unbounded intervals when the estimated density ratio places more "
            "than α of the weight on the test point.", hl),
@@ -420,7 +420,7 @@ def results_part2(C, N, s, c, h, ex, g):
                     f"and {d.loc[('GC-D',17.0),'false_accept_among_accepted']:.3f} (Fig. 8). The price is a lower yield of accepted "
                     f"compliant fruit ({d.loc[('GC-D',16.0),'yield_of_compliant']:.3f} vs {d.loc[('SCP',16.0),'yield_of_compliant']:.3f} "
                     f"at L = 16 %), slightly below that of the oracle ({d.loc[('ORACLE',16.0),'yield_of_compliant']:.3f}). The "
-                    "false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %, that of GC-D did not."),
+                    "false-acceptance rate of random calibration exceeded its nominal 5 % at L = 17 %; that of GC-D did not."),
               ("fig", os.path.join(FIG, "fig8_error_analysis.png"),
                "Fig. 7. Error analysis. Coverage for new mango seasons by decile of (a) the Q residual ratio and (b) the reference DM; "
                "(c) coverage of each held-out instrument against the absolute mean prediction bias on that instrument."),
@@ -481,8 +481,9 @@ def results_part2(C, N, s, c, h, ex, g):
           ("bullets", [
               "GC-D's coverage is asymptotic in the number of groups and was verified empirically, not guaranteed; with few groups "
               "(six seasons) its season-level coverage varied between groups (Fig. 4). Formal guarantees (HCP, HJ+) require ≥ 10 groups at 90 %.",
-              "All methods assume that the new group is exchangeable with the calibration groups. A systematic trend over "
-              "seasons, a new cultivar or a new instrument type outside the calibration population is not covered.",
+              "All methods assume that the new group is exchangeable with the calibration groups. A trend over seasons that goes "
+              "beyond the variation among past seasons, or a cultivar or instrument type unlike any in the calibration population, "
+              "is not covered (the new cultivars of Section 4.6 were measured in seasons and on instruments represented in training).",
               "Large group-level biases (for example an uncorrected instrument offset) are absorbed into wider intervals rather than "
               "removed; bias or slope correction with a few reference samples of the new group remains preferable when available.",
               "The evaluation used public data sets with fixed preprocessing; other analytes, techniques (Raman, MIR) and deep models "

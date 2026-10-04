@@ -45,6 +45,12 @@ def build(out_docx, results_module=None, extra_flags=()):
         return re.sub(r"Section (4\.\d+)", lambda m_: "Section " + mapping.get(m_.group(1), m_.group(1)), t)
     blocks = [(b[0], remap(b[1]), *b[2:]) if b[0] in ("p", "h1") else
               (b[0], [remap(x) for x in b[1]]) if b[0] == "bullets" else b for b in blocks]
+    # typographic minus for negative numbers in running text, captions and table cells (not in references/DOIs)
+    MINUS = lambda t: re.sub(r"(?<=[\s(=\[])-(?=\d)", "−", t) if isinstance(t, str) else t
+    blocks = [(b[0], MINUS(b[1]), *b[2:]) if b[0] in ("p",) else
+              (b[0], [MINUS(x) for x in b[1]]) if b[0] == "bullets" else
+              (b[0], [[MINUS(c) if not c.startswith("-") else "−" + c[1:] for c in map(str, r)] for r in b[1]], MINUS(b[2]), *b[3:])
+              if b[0] == "table" else b for b in blocks]
     conv = []
     for b in blocks:
         t = b[0]

@@ -54,6 +54,18 @@ Verdict: not fatal if disclosed, which it now is everywhere (abstract, 4.2, 4.3,
 | 10.13 | Claim–evidence rows C13, C15, C17 were "to verify at final build". | Verified and rewritten with numbers (claim_evidence_audit.md). | Fixed |
 | 10.14 | Author information, ORCID, funding, repository DOI, suggested reviewers. | Cannot be supplied by the analysis; placeholders clearly marked. | Open (author action) |
 
+## Final proofreading pass (complete read of the rendered PDF)
+
+| # | Issue | Fix | Status |
+|---|---|---|---|
+| 10.15 | Limitations said "a new cultivar … is not covered", contradicting the leave-one-cultivar-out result (Section 4.6). | Reworded: a trend beyond the variation among past seasons, or a cultivar/instrument type unlike any in the calibration population, is not covered; the tested cultivars were measured in represented seasons and on represented instruments. | Fixed |
+| 10.16 | Table 2/3 headers broke mid-word ("Minstrumen t", "Mpopulatio n"). | Labels shortened to M-instr./M-pop. in all tables (abbreviations in the caption). | Fixed |
+| 10.17 | Table 1 printed degenerate ranges ("6–6", "120–120"). | A single value is printed when all outer folds agree. | Fixed |
+| 10.18 | Fig. 3 caption ("values beyond 3 or infinite are printed") was garbled. | "ratios above 3 and infinite scores are plotted at 3 and labelled" (labels verified in the figure). | Fixed |
+| 10.19 | Hyphen-minus in negative numbers (r = -0.39; Table 4). | Typographic minus applied to running text, captions and table cells (not to references/DOIs). | Fixed |
+| 10.20 | Comma splice in Section 4.8 ("…at L = 17 %, that of GC-D did not"). | Semicolon. | Fixed |
+| 10.21 | Hand-written claim "GC-D over-covered the large seasons (2016, 2017)" checked against per_group_results.csv. | Confirmed (0.970 and 0.972; 15,310 and 27,312 spectra). No change. | Verified |
+
 ## Decision of the simulated reviewer after fixes
 
 Major revision → **minor revision / acceptable for review**. The paper is an honest, well-controlled empirical

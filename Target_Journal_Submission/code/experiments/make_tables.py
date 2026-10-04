@@ -10,12 +10,17 @@ os.makedirs(TAB, exist_ok=True)
 TASKS = ["mango_season_loso", "mango_season_forward", "mango_instrument", "mango_population", "ossl_lucas_block",
          "corn_moisture", "corn_oil", "corn_protein", "corn_starch"]
 GEN = ["ossl_lucas_campaign", "ossl_kssl_to_lucas", "tablets"]
-SHORT = {"mango_season_loso": "M-season", "mango_season_forward": "M-forward", "mango_instrument": "M-instrument",
-         "mango_population": "M-population", "ossl_lucas_block": "S-region", "corn_moisture": "C-moist",
+SHORT = {"mango_season_loso": "M-season", "mango_season_forward": "M-forward", "mango_instrument": "M-instr.",
+         "mango_population": "M-pop.", "ossl_lucas_block": "S-region", "corn_moisture": "C-moist",
          "corn_oil": "C-oil", "corn_protein": "C-prot", "corn_starch": "C-starch", "ossl_lucas_campaign": "S-campaign",
          "ossl_kssl_to_lucas": "S-KSSL→LUCAS", "tablets": "Tablets"}
 METHODS = ["ASTM-R", "ASTM-G", "BAG", "GPR", "QGB", "CQR", "SCP", "NCP-kNN", "CV+", "WCP", "HJ+", "HCP-D", "GC-D+", "GC-D", "ORACLE"]
 
+
+
+def rng(v):
+    """'lo–hi', or a single value when every outer fold has the same value."""
+    return f"{v.min()}" if v.min() == v.max() else f"{v.min()}–{v.max()}"
 
 def fmt(x, d=3):
     if x is None or (isinstance(x, float) and np.isnan(x)):
@@ -46,10 +51,10 @@ def main():
         ng = s[(s.task == t) & (s.method == "GC-D") & (s.alpha == 0.1)]
         rows.append({"Scenario": SHORT[t], "Outer folds": len(fi),
                      "Held-out groups": int(ng.n_groups.iloc[0]) if len(ng) else "–",
-                     "Training spectra": f"{fi.n_train.min()}–{fi.n_train.max()}",
+                     "Training spectra": rng(fi.n_train),
                      "Test spectra (total)": int(fi.n_test.sum()),
-                     "Calibration groups K": f"{fi.n_calib_groups.min()}–{fi.n_calib_groups.max()}",
-                     "PLS LVs": f"{fi.A.min()}–{fi.A.max()}"})
+                     "Calibration groups K": rng(fi.n_calib_groups),
+                     "PLS LVs": rng(fi.A)})
     write(pd.DataFrame(rows), "table1_scenarios", "Table 1. Deployment-shift scenarios")
     # ---- Table 2/3: coverage and interval score at alpha = 0.1 (main tasks + generalisation)
     for alpha in (0.1, 0.05, 0.2):

@@ -1,4 +1,4 @@
-Method,M-season,M-forward,M-instrument,M-population,S-region,C-moist,C-oil,C-prot,C-starch,S-campaign,S-KSSL→LUCAS,Tablets
+Method,M-season,M-forward,M-instr.,M-pop.,S-region,C-moist,C-oil,C-prot,C-starch,S-campaign,S-KSSL→LUCAS,Tablets
 ASTM-R,0.833,0.788,0.803,0.894,0.890,0.619,0.826,0.675,0.608,0.861,0.053,0.932
 ASTM-G,0.906,0.884,0.884,0.906,0.905,0.623,0.884,0.737,0.645,0.876,0.071,0.932
 BAG,0.833,0.790,0.805,0.895,0.891,0.625,0.867,0.708,0.665,0.861,0.055,0.943
