@@ -1,0 +1,170 @@
+{
+ "all_passed": true,
+ "checks": [
+  {
+   "check": "mango spectra 85,401",
+   "ok": true,
+   "detail": "85401"
+  },
+  {
+   "check": "mango fruit 10,560",
+   "ok": true,
+   "detail": "10560"
+  },
+  {
+   "check": "31 instruments",
+   "ok": true,
+   "detail": "31"
+  },
+  {
+   "check": "199 populations",
+   "ok": true,
+   "detail": "199"
+  },
+  {
+   "check": "ten cultivars",
+   "ok": true,
+   "detail": "10"
+  },
+  {
+   "check": "seasons 2015-2021",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "7100 fruit on >1 instrument",
+   "ok": true,
+   "detail": "7100"
+  },
+  {
+   "check": "8.1 spectra per fruit",
+   "ok": true,
+   "detail": "8.087"
+  },
+  {
+   "check": "24 instruments with >=300 fruit",
+   "ok": true,
+   "detail": "24"
+  },
+  {
+   "check": "LUCAS 40,175",
+   "ok": true,
+   "detail": "40175"
+  },
+  {
+   "check": "KSSL 19,747",
+   "ok": true,
+   "detail": "19747"
+  },
+  {
+   "check": "30 LUCAS blocks",
+   "ok": true,
+   "detail": "30"
+  },
+  {
+   "check": "146,873 total spectra",
+   "ok": true,
+   "detail": "146873"
+  },
+  {
+   "check": "655 tablets (155/40/460)",
+   "ok": true,
+   "detail": "655"
+  },
+  {
+   "check": "80 corn samples x 3 instruments",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "population 114500 = green Kensington Pride 2020",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "section 4 subsections consecutive",
+   "ok": true,
+   "detail": "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+  },
+  {
+   "check": "figure numbers consecutive",
+   "ok": true,
+   "detail": "[1, 2, 3, 4, 5, 6, 7, 8]"
+  },
+  {
+   "check": "every cited figure exists",
+   "ok": true,
+   "detail": "[1, 2, 3, 4, 5, 6, 7, 8]"
+  },
+  {
+   "check": "table numbers consecutive",
+   "ok": true,
+   "detail": "[1, 2, 3, 4]"
+  },
+  {
+   "check": "every cited table exists",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "supplementary tables cited within S1-S14",
+   "ok": true,
+   "detail": "['S2', 'S5', 'S8']"
+  },
+  {
+   "check": "no nan in text",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every citation number has a reference",
+   "ok": true,
+   "detail": "(52, 52)"
+  },
+  {
+   "check": "every reference is cited",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig1_method_schematic.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig2_data_overview.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig3_main_coverage_score.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig4_per_group_coverage.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig5_ablation.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig6_robustness.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig8_error_analysis.png",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "figure file exists: fig9_decisions.png",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

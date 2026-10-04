@@ -4,6 +4,8 @@ Blocks are tuples consumed by build_manuscript.py:
   ("h1"|"h2"|"h3", text) · ("p", text) · ("eq", latex-like text, number) · ("bullets", [..])
 Citations are inserted with C("key", ...) so that numbering follows first appearance.
 """
+import os
+FIGDIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "code", "figures")
 
 
 def introduction(C, N):
@@ -100,6 +102,11 @@ def theory(C):
         ("p", "Step 4 (interval). The final PLS model, fitted on all calibration spectra, provides ŷ(x), T²(x) and Q(x) for a new "
               "spectrum, and"),
         ("eq", "C(x) = [ ŷ(x) − q̂ σ(x),  ŷ(x) + q̂ σ(x) ]", "5"),
+        ("p", "The procedure is summarised in Fig. 1."),
+        ("fig", os.path.join(FIGDIR, "fig1_method_schematic.png"),
+         "Fig. 1. Group-conformal calibration with diagnostic scaling (GC-D). Out-of-group residuals and the PLS diagnostics "
+         "T² and Q of the training spectra are obtained from the group-wise cross-validation; a scale model σ(T², Q) and a "
+         "group-balanced quantile q̂ of the normalised residuals turn the final model's prediction into an interval."),
         ("h2", "2.4. Coverage guarantees and their limits"),
         ("p", "Because q̂ in (4) equalises group contributions, it estimates the quantile of the score distribution "
               "of a randomly chosen new group (pooled empirical distribution functions), which is asymptotically "
@@ -123,7 +130,7 @@ def experimental(C, N):
         ("p", f"Mango. The public Mango DMC and NIR spectra data set (version 5, file v4) {C('mango_data')} contains "
               f"{N['mango_spectra']} short-wave NIR absorbance spectra (285–1200 nm, 3 nm steps) of {N['mango_fruit']} "
               f"intact mango fruit with dry-matter content (DM, % w/w) reference values, collected over seven harvest seasons "
-              f"(2015–2021) with {N['mango_instruments']} individual spectrometer units (instrument identifiers in the data set), {N['mango_pops']} "
+              f"(2015–2021; Fig. 2a) with {N['mango_instruments']} individual spectrometer units (instrument identifiers in the data set), {N['mango_pops']} "
               f"populations (orchard and harvest-date lots) and ten cultivars {C('anderson2020', 'anderson2021')}. "
               "Many fruit were scanned several times and on several instruments (on average 8.1 spectra per fruit)."),
         ("p", f"Soil. The Open Soil Spectral Library v1.2 {C('safanelli2025')} provides visible-NIR reflectance "
@@ -135,11 +142,15 @@ def experimental(C, N):
               f"IDRC 2002 pharmaceutical tablet shoot-out data {C('tablet_data')} contain 655 tablets measured on two "
               "spectrometers (600–1898 nm) with their official calibration (155), validation (40) and test (460) sets; "
               "the active-ingredient assay was modelled."),
+        ("fig", os.path.join(FIGDIR, "fig2_data_overview.png"),
+         "Fig. 2. Data overview. (a) Dry matter of mango fruit by harvest season (boxes: quartiles; whiskers: 1.5 IQR; tick "
+         "labels give the number of fruit); (b) the 30 spatial blocks of the LUCAS soil samples used as held-out regions; "
+         "(c) distribution of LUCAS organic carbon (log scale)."),
         ("h2", "3.2. Deployment-shift scenarios and leakage control"),
         ("p", "Each scenario holds out complete groups (Table 1). Mango: leave-one-season-out (LOSO, 7 folds), forward "
               "prediction of each season from all earlier seasons (2017–2021), leave-one-instrument-out for the "
               f"{N['mango_inst_tasks']} instruments with ≥ 300 fruit, and grouped 10-fold splitting of populations. Soil: "
-              "leave-one-region-out over 30 spatial blocks obtained by k-means clustering of LUCAS coordinates "
+              "leave-one-region-out over 30 spatial blocks obtained by k-means clustering of LUCAS coordinates (Fig. 2b) "
               f"(spatial blocking {C('roberts2017')}), and two stress tests, LUCAS 2009 ↔ 2015 campaigns and KSSL → LUCAS "
               "across libraries, instruments and continents. Corn: leave-one-instrument-out, repeated ten times with "
               "20 randomly chosen test samples. Tablets: instrument 1 calibration applied to the instrument-1 test set "

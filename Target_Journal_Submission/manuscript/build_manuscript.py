@@ -32,6 +32,19 @@ def build(out_docx, results_module=None, extra_flags=()):
     if meta is None:
         meta = dict(title="DRAFT", authors="[Author names]", affiliations=["[Affiliation]"], corresponding="[Corresponding author]",
                     abstract=["[abstract]"], keywords=["NIR"])
+    # automatic numbering of the Section-4 subsections (results-dependent sections may be absent)
+    import re
+    mapping, k = {}, 0
+    for i, b in enumerate(blocks):
+        if b[0] == "h2" and re.match(r"4\.\d+\. ", b[1]):
+            k += 1
+            old = re.match(r"4\.(\d+)\. ", b[1]).group(1)
+            mapping[f"4.{old}"] = f"4.{k}"
+            blocks[i] = ("h2", re.sub(r"^4\.\d+\. ", f"4.{k}. ", b[1]))
+    def remap(t):
+        return re.sub(r"Section (4\.\d+)", lambda m_: "Section " + mapping.get(m_.group(1), m_.group(1)), t)
+    blocks = [(b[0], remap(b[1]), *b[2:]) if b[0] in ("p", "h1") else
+              (b[0], [remap(x) for x in b[1]]) if b[0] == "bullets" else b for b in blocks]
     conv = []
     for b in blocks:
         t = b[0]

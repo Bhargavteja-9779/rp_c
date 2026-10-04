@@ -1,2 +1,2 @@
 fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
-block29,39075,1100,25,29,1.51,0.003,1.466
+mp6_rep9,120,20,2,2,0.0,0.0,0.003
