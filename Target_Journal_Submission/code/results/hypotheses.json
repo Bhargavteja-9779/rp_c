@@ -2,14 +2,15 @@
  "H1": {
   "statement": "SCP group-averaged coverage < 0.85 on at least one shift task",
   "values": {
-   "corn_moisture": 0.63,
-   "corn_oil": 0.825,
-   "corn_protein": 0.6667,
-   "corn_starch": 0.585,
-   "mango_instrument": 0.794,
-   "mango_population": 0.8876,
-   "mango_season_forward": 0.7779,
-   "mango_season_loso": 0.8259
+   "corn_moisture": 0.6183,
+   "corn_oil": 0.805,
+   "corn_protein": 0.6507,
+   "corn_starch": 0.613,
+   "mango_instrument": 0.7942,
+   "mango_population": 0.8889,
+   "mango_season_forward": 0.7827,
+   "mango_season_loso": 0.8263,
+   "ossl_lucas_block": 0.8836
   },
   "supported": true
  },
@@ -17,45 +18,48 @@
   "statement": "GC-D group-averaged coverage in [0.87, 0.95] on every task with >= 10 training groups",
   "tasks_with_ge10_groups": [
    "mango_instrument",
-   "mango_population"
+   "mango_population",
+   "ossl_lucas_block"
   ],
   "values": {
-   "corn_moisture": 0.5217,
-   "corn_oil": 0.77,
-   "corn_protein": 0.71,
-   "corn_starch": 0.6917,
+   "corn_moisture": 0.5267,
+   "corn_oil": 0.7613,
+   "corn_protein": 0.709,
+   "corn_starch": 0.685,
    "mango_instrument": 0.8788,
-   "mango_population": 0.9015,
+   "mango_population": 0.8991,
    "mango_season_forward": 0.8772,
-   "mango_season_loso": 0.8954
+   "mango_season_loso": 0.8954,
+   "ossl_lucas_block": 0.8982
   },
   "supported": true,
   "per_task": {
    "mango_instrument": true,
-   "mango_population": true
+   "mango_population": true,
+   "ossl_lucas_block": true
   }
  },
  "H3": {
   "statement": "Diagnostic normalisation lowers interval score vs. absolute scores (GC-D vs G-W-A)",
   "per_task": {
    "corn_moisture": {
-    "median_diff": 0.0863,
-    "r_rb": 0.303,
-    "p_holm": 0.5881583145738108
+    "median_diff": 0.0403,
+    "r_rb": 0.028,
+    "p_holm": 1.0
    },
    "corn_oil": {
-    "median_diff": 0.0228,
-    "r_rb": 0.144,
+    "median_diff": 0.0009,
+    "r_rb": 0.092,
     "p_holm": 1.0
    },
    "corn_protein": {
-    "median_diff": 0.0868,
-    "r_rb": 0.067,
+    "median_diff": 0.092,
+    "r_rb": 0.075,
     "p_holm": 1.0
    },
    "corn_starch": {
-    "median_diff": 0.4225,
-    "r_rb": 0.277,
+    "median_diff": 0.3859,
+    "r_rb": 0.196,
     "p_holm": 1.0
    },
    "mango_instrument": {
@@ -64,9 +68,9 @@
     "p_holm": 1.0
    },
    "mango_population": {
-    "median_diff": -0.0558,
-    "r_rb": -0.313,
-    "p_holm": 1.3368501434064745e-06
+    "median_diff": -0.0538,
+    "r_rb": -0.296,
+    "p_holm": 1.2063287269230599e-12
    },
    "mango_season_forward": {
     "median_diff": -0.1775,
@@ -77,10 +81,15 @@
     "median_diff": -0.1016,
     "r_rb": -0.357,
     "p_holm": 1.0
+   },
+   "ossl_lucas_block": {
+    "median_diff": -0.1585,
+    "r_rb": -0.639,
+    "p_holm": 0.015785867235509635
    }
   },
-  "n_tasks_lower": 4,
-  "n_tasks_significant_lower": 1,
-  "n_tasks": 8
+  "n_tasks_lower": 5,
+  "n_tasks_significant_lower": 2,
+  "n_tasks": 9
  }
 }

@@ -107,8 +107,10 @@ def fig_main(s):
     axs[1].axvline(1.0, color=INK2, lw=0.8, ls="--"); axs[1].set_xlabel("Interval score ÷ oracle interval score")
     axs[1].set_xlim(0.8, 3.15)
     h, l = axs[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="upper center", ncol=4, bbox_to_anchor=(0.5, 1.0 + 0.25 / len(tasks)))
-    fig.tight_layout(rect=(0, 0, 1, 0.93)); save(fig, FIG, "fig3_main_coverage_score")
+    axs[1].set_xlim(0.8, 3.25)
+    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    fig.legend(h, l, loc="lower center", ncol=4, bbox_to_anchor=(0.5, 0.945))
+    save(fig, FIG, "fig3_main_coverage_score")
 
 
 # ------------------------------------------------------------------ Fig 4: per-group coverage
@@ -168,49 +170,63 @@ def fig_ablation(s):
 
 # ------------------------------------------------------------------ Fig 6: robustness
 def fig_robust():
+    from matplotlib.ticker import NullFormatter, FixedLocator
     rd = os.path.join(RESULTS, "robustness")
-    panels = []
     g = sorted(glob.glob(os.path.join(rd, "groups_*_K*_rep*.csv")))
     sz = sorted(glob.glob(os.path.join(rd, "size_frac*.csv")))
     pt = sorted(glob.glob(os.path.join(rd, "perturb_*.csv")))
     if not (g or sz or pt):
         return
-    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.4))
+    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.9))
     if g:
         d = pd.concat([pd.read_csv(f) for f in g])
-        d = d.groupby(["task", "method", "K", "rep"]).coverage.mean().reset_index()
-        d = d.groupby(["task", "method", "K"]).coverage.agg(["mean", "std"]).reset_index()
-        for m, ls in [("SCP", ":"), ("G-W-A", "--"), ("GC-D", "-"), ("HCP-D", "-.")]:
-            for t, mk in [("mango_instrument", "o"), ("ossl_lucas_block", "s")]:
-                e = d[(d.method == m) & (d.task == t)]
+        d = d.groupby(["task", "method", "K", "rep"]).agg(coverage=("coverage", "mean"), fin=("finite_frac", "min")).reset_index()
+        d = d.groupby(["task", "method", "K"]).agg(mean=("coverage", "mean"), fin=("fin", "min")).reset_index()
+        for m in ["SCP", "G-W-A", "GC-D", "HJ+"]:
+            for t, mk, ls in [("mango_instrument", "o", "-"), ("ossl_lucas_block", "s", "--")]:
+                e = d[(d.method == m) & (d.task == t) & (d.fin >= 1)]
                 if len(e):
-                    fin = e[np.isfinite(e["mean"])]
-                    axs[0].plot(fin.K, fin["mean"], ls=ls, marker=mk, ms=3.5, color=color(m) if m != "HCP-D" else SLOTS[7], lw=1.4,
-                                label=f"{METHOD_LABEL[m]} – {'mango' if t.startswith('mango') else 'soil'}")
-        axs[0].axhline(0.9, color=INK2, ls="--", lw=0.8); axs[0].set_xscale("log"); axs[0].set_xticks([3, 5, 10, 20])
-        axs[0].set_xticklabels(["3", "5", "10", "20"]); axs[0].set_xlabel("Number of training groups K")
-        axs[0].set_ylabel("Group-averaged coverage"); axs[0].set_title("(a) Number of calibration groups")
-        axs[0].legend(fontsize=5, loc="lower right")
+                    axs[0].plot(e.K, e["mean"], ls=ls, marker=mk, ms=3.5, lw=1.4,
+                                color=color(m) if m != "HJ+" else SLOTS[7])
+        axs[0].axhline(0.9, color=INK2, ls=":", lw=0.8)
+        axs[0].set_xscale("log"); axs[0].xaxis.set_major_locator(FixedLocator([3, 5, 10, 20]))
+        axs[0].xaxis.set_minor_formatter(NullFormatter()); axs[0].set_xticklabels(["3", "5", "10", "20"])
+        axs[0].set_xlabel("Training groups K"); axs[0].set_ylabel("Group-averaged coverage")
+        axs[0].set_title("(a) Number of calibration groups")
+        from matplotlib.lines import Line2D
+        hs = [Line2D([], [], color=color(m) if m != "HJ+" else SLOTS[7], lw=1.4) for m in ["SCP", "G-W-A", "GC-D", "HJ+"]]
+        hs += [Line2D([], [], color=INK2, marker="o", ls="-", ms=3), Line2D([], [], color=INK2, marker="s", ls="--", ms=3)]
+        axs[0].legend(hs, ["Split CP", "Group CP abs.", "GC-D", "Hier. jackknife+ (finite only)", "mango instr.", "soil region"],
+                      fontsize=5, loc="lower right")
     if sz:
         d = pd.concat([pd.read_csv(f) for f in sz])
         d = d.groupby(["method", "frac", "rep"]).coverage.mean().groupby(["method", "frac"]).agg(["mean", "std"]).reset_index()
         for m in ["SCP", "ASTM-R", "CV+", "G-W-A", "GC-D", "ORACLE"]:
             e = d[d.method == m]
-            axs[1].errorbar(e.frac, e["mean"], yerr=e["std"], marker="o", ms=3, color=color(m), lw=1.4, label=METHOD_LABEL[m])
-        axs[1].axhline(0.9, color=INK2, ls="--", lw=0.8); axs[1].set_xscale("log")
-        axs[1].set_xlabel("Fraction of training fruit used"); axs[1].set_title("(b) Training-set size (mango, LOSO)")
-        axs[1].legend(fontsize=5, loc="lower right")
+            axs[1].errorbar(e.frac, e["mean"], yerr=e["std"], marker="o", ms=3, color=color(m), lw=1.4, capsize=0, label=METHOD_LABEL[m])
+        axs[1].axhline(0.9, color=INK2, ls=":", lw=0.8)
+        axs[1].set_xticks([0.1, 0.25, 0.5]); axs[1].set_xticklabels(["10 %", "25 %", "50 %"])
+        axs[1].set_xlabel("Training fruit used"); axs[1].set_title("(b) Training-set size")
+        axs[1].legend(fontsize=5, loc="center right")
     if pt:
         d = pd.concat([pd.read_csv(f) for f in pt])
-        d = d.groupby(["perturbation", "level", "method"]).agg(coverage=("coverage", "mean"), width=("width_mean", "mean")).reset_index()
-        labels = [f"{p}={l:g}" for p, l in d[["perturbation", "level"]].drop_duplicates().values]
-        xs = np.arange(len(labels))
-        for m in ["SCP", "ASTM-R", "WCP", "G-W-A", "GC-D"]:
-            e = d[d.method == m]
-            axs[2].plot(xs, e.coverage.values, marker="o", ms=3, color=color(m), lw=1.2, label=METHOD_LABEL[m])
-        axs[2].set_xticks(xs); axs[2].set_xticklabels(labels, rotation=60, fontsize=5.5)
-        axs[2].axhline(0.9, color=INK2, ls="--", lw=0.8); axs[2].set_title("(c) Test-time spectral perturbation")
-        axs[2].legend(fontsize=5, loc="lower left")
+        d = d.groupby(["perturbation", "level", "method"]).agg(coverage=("coverage", "mean")).reset_index()
+        order = [("none", 0.0), ("gain", 0.02), ("gain", 0.05), ("offset_slope", 0.5), ("offset_slope", 2.0),
+                 ("wl_shift", 0.5), ("wl_shift", 1.0), ("wl_shift", 2.0), ("noise", 0.01), ("noise", 0.03), ("noise", 0.1)]
+        lab = {"none": "none", "gain": "gain ×", "offset_slope": "tilt", "wl_shift": "λ shift nm", "noise": "noise"}
+        order = [o for o in order if ((d.perturbation == o[0]) & np.isclose(d.level, o[1])).any()]
+        xs = np.arange(len(order))
+        off = np.linspace(-0.25, 0.25, 4)
+        for j, m in enumerate(["SCP", "ASTM-R", "G-W-A", "GC-D"]):
+            v = [d[(d.perturbation == p) & np.isclose(d.level, l) & (d.method == m)].coverage.mean() for p, l in order]
+            axs[2].plot(xs + off[j], v, "o", ms=3.5, color=color(m), label=METHOD_LABEL[m])
+        for b in [0.5, 2.5, 4.5, 7.5]:
+            axs[2].axvline(b, color=GRID, lw=0.8)
+        axs[2].set_xticks(xs)
+        axs[2].set_xticklabels([("none" if p == "none" else f"{lab[p]} {1 + l if p == 'gain' else l:g}") for p, l in order],
+                               rotation=60, fontsize=5.5, ha="right")
+        axs[2].axhline(0.9, color=INK2, ls=":", lw=0.8); axs[2].set_title("(c) Test-time perturbation (mango)")
+        axs[2].legend(fontsize=5, loc="lower left"); axs[2].grid(axis="x", visible=False)
     fig.tight_layout(); save(fig, FIG, "fig6_robustness")
 
 
@@ -268,7 +284,8 @@ def fig_decision():
         axs[1].plot(e.limit, e.yield_of_compliant, marker="o", ms=3, color=color(m))
     axs[0].axhline(0.05, color=INK2, ls="--", lw=0.8)
     axs[0].set_xlabel("Specification limit L (% DM)"); axs[0].set_ylabel("False acceptances / accepted")
-    axs[0].set_title("(a) Wrongly accepted 'DM ≥ L' decisions"); axs[0].legend(fontsize=5)
+    axs[0].set_title("(a) Wrongly accepted 'DM ≥ L' decisions")
+    axs[1].legend(*axs[0].get_legend_handles_labels(), fontsize=5, loc="upper right")
     axs[1].set_xlabel("Specification limit L (% DM)"); axs[1].set_ylabel("Accepted / truly compliant")
     axs[1].set_title("(b) Yield of compliant fruit")
     fig.tight_layout(); save(fig, FIG, "fig9_decisions")

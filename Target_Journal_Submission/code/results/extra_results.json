@@ -1,0 +1,1588 @@
+{
+ "iteration1": null,
+ "robustness": {
+  "groups": [
+   {
+    "task": "mango_instrument",
+    "method": "CV+",
+    "K": 3,
+    "coverage": 0.6363954472321834,
+    "coverage_sd": 0.08535366446004641,
+    "width": 4.016176815462626,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "CV+",
+    "K": 5,
+    "coverage": 0.6746332296733423,
+    "coverage_sd": 0.030939126322909984,
+    "width": 4.2379336201715585,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "CV+",
+    "K": 10,
+    "coverage": 0.727499211753306,
+    "coverage_sd": 0.05156650989581641,
+    "width": 3.9662985290133403,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "CV+",
+    "K": 20,
+    "coverage": 0.7552269391457064,
+    "coverage_sd": 0.019174645433327357,
+    "width": 3.790664214728608,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "G-W-A",
+    "K": 3,
+    "coverage": 0.7857258643695914,
+    "coverage_sd": 0.07806821635435722,
+    "width": 5.578929112083369,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "G-W-A",
+    "K": 5,
+    "coverage": 0.7995655962788882,
+    "coverage_sd": 0.007298583176079751,
+    "width": 5.51952080988617,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "G-W-A",
+    "K": 10,
+    "coverage": 0.8678765768383263,
+    "coverage_sd": 0.045459143873045234,
+    "width": 5.433065824061487,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "G-W-A",
+    "K": 20,
+    "coverage": 0.8663052303231429,
+    "coverage_sd": 0.013114525365500824,
+    "width": 4.994469867191917,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D",
+    "K": 3,
+    "coverage": 0.7574516308238787,
+    "coverage_sd": 0.067588653042039,
+    "width": 5.473739945319196,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D",
+    "K": 5,
+    "coverage": 0.7819827167742558,
+    "coverage_sd": 0.01947350924680263,
+    "width": 5.627479945142046,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D",
+    "K": 10,
+    "coverage": 0.8612598190444883,
+    "coverage_sd": 0.030373124994429495,
+    "width": 5.326668468653787,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "GC-D",
+    "K": 20,
+    "coverage": 0.8650052553279101,
+    "coverage_sd": 0.011276970923419265,
+    "width": 4.853946920884494,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HCP-D",
+    "K": 3,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HCP-D",
+    "K": 5,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HCP-D",
+    "K": 10,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HCP-D",
+    "K": 20,
+    "coverage": 0.9718333306578605,
+    "coverage_sd": 0.02167150043518703,
+    "width": 17.62155566281506,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HJ+",
+    "K": 3,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HJ+",
+    "K": 5,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HJ+",
+    "K": 10,
+    "coverage": 0.9871764486612649,
+    "coverage_sd": 0.005498716986782167,
+    "width": 10.153093696047748,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "HJ+",
+    "K": 20,
+    "coverage": 0.9417869561250068,
+    "coverage_sd": 0.0034522002240612946,
+    "width": 6.141784648783052,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "ORACLE",
+    "K": 3,
+    "coverage": 0.8991572529822545,
+    "coverage_sd": 0.000593455333099271,
+    "width": 7.511811356931356,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "ORACLE",
+    "K": 5,
+    "coverage": 0.8998408165152836,
+    "coverage_sd": 0.0005538775237989621,
+    "width": 8.31036532448568,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "ORACLE",
+    "K": 10,
+    "coverage": 0.9001567370422148,
+    "coverage_sd": 2.9759953456927605e-05,
+    "width": 5.4052018514266065,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "ORACLE",
+    "K": 20,
+    "coverage": 0.9001577077925553,
+    "coverage_sd": 0.0007787550777849453,
+    "width": 5.062354297382151,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "SCP",
+    "K": 3,
+    "coverage": 0.6270204215073375,
+    "coverage_sd": 0.08525086555158125,
+    "width": 3.9812073191878317,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "SCP",
+    "K": 5,
+    "coverage": 0.6719771721324609,
+    "coverage_sd": 0.03567510101875508,
+    "width": 4.227432657791436,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "SCP",
+    "K": 10,
+    "coverage": 0.7251765241914024,
+    "coverage_sd": 0.04915161743667347,
+    "width": 3.9679827586573535,
+    "finite": 1.0
+   },
+   {
+    "task": "mango_instrument",
+    "method": "SCP",
+    "K": 20,
+    "coverage": 0.7540738401351973,
+    "coverage_sd": 0.021748075690691114,
+    "width": 3.778775232888462,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "CV+",
+    "K": 3,
+    "coverage": 0.8052829396187099,
+    "coverage_sd": 0.012745398922947192,
+    "width": 1182.5912263478892,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "CV+",
+    "K": 5,
+    "coverage": 0.8335842094238125,
+    "coverage_sd": 0.011475906012838282,
+    "width": 75.37287127775335,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "CV+",
+    "K": 10,
+    "coverage": 0.8682395492397891,
+    "coverage_sd": 0.013086174536036053,
+    "width": 366.4064178791485,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "CV+",
+    "K": 20,
+    "coverage": 0.8770523114768936,
+    "coverage_sd": 0.002292113155041569,
+    "width": 6.111537543424098,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "G-W-A",
+    "K": 3,
+    "coverage": 0.8768473457993111,
+    "coverage_sd": 0.015663338716421775,
+    "width": 452.9726224617463,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "G-W-A",
+    "K": 5,
+    "coverage": 0.8872040932245197,
+    "coverage_sd": 0.009122456492147827,
+    "width": 18.925928128220328,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "G-W-A",
+    "K": 10,
+    "coverage": 0.9000510344337039,
+    "coverage_sd": 0.010223098042043525,
+    "width": 15.037179162548567,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "G-W-A",
+    "K": 20,
+    "coverage": 0.8983797966604965,
+    "coverage_sd": 0.0031718980109486363,
+    "width": 6.638045200436431,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D",
+    "K": 3,
+    "coverage": 0.8635235711526787,
+    "coverage_sd": 0.01217094405698833,
+    "width": 7681.946754791884,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D",
+    "K": 5,
+    "coverage": 0.8763227058931634,
+    "coverage_sd": 0.006793139634096538,
+    "width": 60.5694797479508,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D",
+    "K": 10,
+    "coverage": 0.9017475055545674,
+    "coverage_sd": 0.007865926936804891,
+    "width": 45.105030056485056,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "GC-D",
+    "K": 20,
+    "coverage": 0.8983974026627036,
+    "coverage_sd": 0.002438280783910089,
+    "width": 7.4526132170171655,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HCP-D",
+    "K": 3,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HCP-D",
+    "K": 5,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HCP-D",
+    "K": 10,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HCP-D",
+    "K": 20,
+    "coverage": 0.9903528463054724,
+    "coverage_sd": 0.002030534106150398,
+    "width": 122810248632.97217,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HJ+",
+    "K": 3,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HJ+",
+    "K": 5,
+    "coverage": 1.0,
+    "coverage_sd": 0.0,
+    "width": Infinity,
+    "finite": 0.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HJ+",
+    "K": 10,
+    "coverage": 0.9892810562882993,
+    "coverage_sd": 0.0014518851682833716,
+    "width": 8892.885154478025,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "HJ+",
+    "K": 20,
+    "coverage": 0.9447874681160539,
+    "coverage_sd": 0.0011316235758950402,
+    "width": 8.502392029486685,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "ORACLE",
+    "K": 3,
+    "coverage": 0.9019612702092813,
+    "coverage_sd": 0.0010796022982608577,
+    "width": 529.6116852607639,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "ORACLE",
+    "K": 5,
+    "coverage": 0.9012224461118157,
+    "coverage_sd": 0.0010193616344225062,
+    "width": 20.59386647651222,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "ORACLE",
+    "K": 10,
+    "coverage": 0.9020570630649685,
+    "coverage_sd": 0.0009215465011696416,
+    "width": 17.83409349682152,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "ORACLE",
+    "K": 20,
+    "coverage": 0.9014621549979779,
+    "coverage_sd": 0.00021910828361857562,
+    "width": 7.274348706876247,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "SCP",
+    "K": 3,
+    "coverage": 0.8030410975051093,
+    "coverage_sd": 0.009686971557619602,
+    "width": 14.950487427954235,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "SCP",
+    "K": 5,
+    "coverage": 0.833390762729692,
+    "coverage_sd": 0.01165572793924335,
+    "width": 13.325639194857374,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "SCP",
+    "K": 10,
+    "coverage": 0.8685336234308867,
+    "coverage_sd": 0.012696110977533094,
+    "width": 15.604660732800383,
+    "finite": 1.0
+   },
+   {
+    "task": "ossl_lucas_block",
+    "method": "SCP",
+    "K": 20,
+    "coverage": 0.8760193269332136,
+    "coverage_sd": 0.002407055046051761,
+    "width": 6.081498180240281,
+    "finite": 1.0
+   }
+  ],
+  "size": [
+   {
+    "method": "ASTM-R",
+    "frac": 0.1,
+    "coverage": 0.8326439134718937,
+    "coverage_sd": 0.007769634550342482,
+    "interval_score": 6.480424390584058
+   },
+   {
+    "method": "ASTM-R",
+    "frac": 0.25,
+    "coverage": 0.8333700456486621,
+    "coverage_sd": 0.012495729703308228,
+    "interval_score": 6.465997011058415
+   },
+   {
+    "method": "ASTM-R",
+    "frac": 0.5,
+    "coverage": 0.8386422323600673,
+    "coverage_sd": 0.00655289473725236,
+    "interval_score": 6.355599369201523
+   },
+   {
+    "method": "CV+",
+    "frac": 0.1,
+    "coverage": 0.8277489567285331,
+    "coverage_sd": 0.007886960902408594,
+    "interval_score": 6.48415393723005
+   },
+   {
+    "method": "CV+",
+    "frac": 0.25,
+    "coverage": 0.8280181156693939,
+    "coverage_sd": 0.012024979169815235,
+    "interval_score": 6.489644016645102
+   },
+   {
+    "method": "CV+",
+    "frac": 0.5,
+    "coverage": 0.8321764847826826,
+    "coverage_sd": 0.007665772285067659,
+    "interval_score": 6.388422501507985
+   },
+   {
+    "method": "G-W-A",
+    "frac": 0.1,
+    "coverage": 0.9008711152347675,
+    "coverage_sd": 0.0053296064366699656,
+    "interval_score": 6.261774675684921
+   },
+   {
+    "method": "G-W-A",
+    "frac": 0.25,
+    "coverage": 0.897088716891529,
+    "coverage_sd": 0.007397409813854297,
+    "interval_score": 6.228780482489236
+   },
+   {
+    "method": "G-W-A",
+    "frac": 0.5,
+    "coverage": 0.9018838791723932,
+    "coverage_sd": 0.002303006557818742,
+    "interval_score": 6.157761333584484
+   },
+   {
+    "method": "GC-D",
+    "frac": 0.1,
+    "coverage": 0.8956810829036778,
+    "coverage_sd": 0.002902836330864807,
+    "interval_score": 6.0147555977451335
+   },
+   {
+    "method": "GC-D",
+    "frac": 0.25,
+    "coverage": 0.8919845254184114,
+    "coverage_sd": 0.008808517839748922,
+    "interval_score": 5.958482395390258
+   },
+   {
+    "method": "GC-D",
+    "frac": 0.5,
+    "coverage": 0.897565515025439,
+    "coverage_sd": 0.0026095875938051344,
+    "interval_score": 5.901267397354495
+   },
+   {
+    "method": "ORACLE",
+    "frac": 0.1,
+    "coverage": 0.8980829101487986,
+    "coverage_sd": 0.0018953254622555583,
+    "interval_score": 5.96293423226589
+   },
+   {
+    "method": "ORACLE",
+    "frac": 0.25,
+    "coverage": 0.8975929761744652,
+    "coverage_sd": 0.0016927633149814375,
+    "interval_score": 5.953261437766709
+   },
+   {
+    "method": "ORACLE",
+    "frac": 0.5,
+    "coverage": 0.8976803133518224,
+    "coverage_sd": 0.0017331251468789173,
+    "interval_score": 5.893360614990673
+   },
+   {
+    "method": "SCP",
+    "frac": 0.1,
+    "coverage": 0.8293346129435379,
+    "coverage_sd": 0.0038361572452122014,
+    "interval_score": 6.49366294634148
+   },
+   {
+    "method": "SCP",
+    "frac": 0.25,
+    "coverage": 0.8247463763422874,
+    "coverage_sd": 0.013767771966428213,
+    "interval_score": 6.589400302710922
+   },
+   {
+    "method": "SCP",
+    "frac": 0.5,
+    "coverage": 0.832357903928845,
+    "coverage_sd": 0.0044639642849903715,
+    "interval_score": 6.4354972584096535
+   }
+  ],
+  "perturb": [
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "ASTM-R",
+    "coverage": 0.8303694666918743,
+    "width": 3.721420798285902,
+    "interval_score": 6.4809039566934805,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "CV+",
+    "coverage": 0.8218140522771432,
+    "width": 3.656882819415184,
+    "interval_score": 6.516857816426783,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "G-W-A",
+    "coverage": 0.894903696343168,
+    "width": 4.507357141542411,
+    "interval_score": 6.219618469117347,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "GC-D",
+    "coverage": 0.8953270834315663,
+    "width": 4.5766054448339535,
+    "interval_score": 5.948845399673382,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "ORACLE",
+    "coverage": 0.8976948205201934,
+    "width": 4.512613635196199,
+    "interval_score": 5.9487074556231505,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "SCP",
+    "coverage": 0.8193410706094862,
+    "width": 3.6017169741657713,
+    "interval_score": 6.494211657995323,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.02,
+    "method": "WCP",
+    "coverage": 0.853503741484735,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.391220252287247
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "ASTM-R",
+    "coverage": 0.8216004305179004,
+    "width": 3.7214595922002407,
+    "interval_score": 6.669802824962564,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "CV+",
+    "coverage": 0.8149452298928148,
+    "width": 3.6572801123870327,
+    "interval_score": 6.711634661175114,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "G-W-A",
+    "coverage": 0.888031490549389,
+    "width": 4.507357141542411,
+    "interval_score": 6.344640681617844,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "GC-D",
+    "coverage": 0.8955432158480897,
+    "width": 4.678889594551072,
+    "interval_score": 6.054249382421214,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "ORACLE",
+    "coverage": 0.898861298914641,
+    "width": 4.601316584041546,
+    "interval_score": 6.0522621061226145,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "SCP",
+    "coverage": 0.8118651183026051,
+    "width": 3.6017169741657717,
+    "interval_score": 6.691975011160232,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "gain",
+    "level": 0.05,
+    "method": "WCP",
+    "coverage": 0.837850682871234,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.415854989369284
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "ASTM-R",
+    "coverage": 0.41332325303690115,
+    "width": 3.7222577490981807,
+    "interval_score": 30.150149683524905,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "CV+",
+    "coverage": 0.4093121593937331,
+    "width": 3.671087193084865,
+    "interval_score": 30.2656105825565,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "G-W-A",
+    "coverage": 0.4886422306446458,
+    "width": 4.507357141542411,
+    "interval_score": 26.58711216987196,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "GC-D",
+    "coverage": 0.7031034476241494,
+    "width": 7.219696069169233,
+    "interval_score": 17.06340498907256,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "ORACLE",
+    "coverage": 0.9002544332763146,
+    "width": 11.577570373809532,
+    "interval_score": 14.511522564383151,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "SCP",
+    "coverage": 0.39820515099938014,
+    "width": 3.6017169741657717,
+    "interval_score": 30.972616194639155,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.01,
+    "method": "WCP",
+    "coverage": 0.9355145784035025,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 3.496375653244654
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "ASTM-R",
+    "coverage": 0.1566030670687141,
+    "width": 3.7291016316420844,
+    "interval_score": 123.92163536004416,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "CV+",
+    "coverage": 0.1585465389081471,
+    "width": 3.7764052309037046,
+    "interval_score": 123.08070040710159,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "G-W-A",
+    "coverage": 0.1878996914326935,
+    "width": 4.507357141542412,
+    "interval_score": 118.23696218188375,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "GC-D",
+    "coverage": 0.4627106710473365,
+    "width": 12.50302821099868,
+    "interval_score": 70.39816096339148,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "ORACLE",
+    "coverage": 0.9000476351594501,
+    "width": 32.0355189540263,
+    "interval_score": 40.14813089751649,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "SCP",
+    "coverage": 0.1503461108135305,
+    "width": 3.6017169741657717,
+    "interval_score": 125.94169847283433,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.03,
+    "method": "WCP",
+    "coverage": 0.9999745080044866,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 9.694766378407309
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "ASTM-R",
+    "coverage": 0.04965269834828744,
+    "width": 3.8049978320300197,
+    "interval_score": 476.5050196370747,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "CV+",
+    "coverage": 0.05932172058397727,
+    "width": 4.660975424026658,
+    "interval_score": 467.86157043379893,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "G-W-A",
+    "coverage": 0.05864702946343325,
+    "width": 4.507357141542412,
+    "interval_score": 470.57626476321,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "GC-D",
+    "coverage": 0.286867707427054,
+    "width": 25.43650498970981,
+    "interval_score": 317.3684876058713,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "ORACLE",
+    "coverage": 0.9000053312437164,
+    "width": 105.50697405485094,
+    "interval_score": 132.36061620313774,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "SCP",
+    "coverage": 0.046275769670172204,
+    "width": 3.6017169741657717,
+    "interval_score": 481.98863370175656,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "noise",
+    "level": 0.1,
+    "method": "WCP",
+    "coverage": 1.0,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 31.992383055249995
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "ASTM-R",
+    "coverage": 0.8332001287477937,
+    "width": 3.721399490838192,
+    "interval_score": 6.384482858645191,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "CV+",
+    "coverage": 0.8260296230252677,
+    "width": 3.6566789197926943,
+    "interval_score": 6.417681742877893,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.156810352338721,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "GC-D",
+    "coverage": 0.8954201979152782,
+    "width": 4.518645751184226,
+    "interval_score": 5.899531336900444,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "ORACLE",
+    "coverage": 0.8984373310477103,
+    "width": 4.464864472963427,
+    "interval_score": 5.8930289859665175,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241265,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "none",
+    "level": 0.0,
+    "method": "WCP",
+    "coverage": 0.8637689615031225,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.3789054280529194
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "ASTM-R",
+    "coverage": 0.8332001287477937,
+    "width": 3.721399490838192,
+    "interval_score": 6.38448285864529,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "CV+",
+    "coverage": 0.8260296230252677,
+    "width": 3.6566789197926934,
+    "interval_score": 6.417681742877984,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.1568103523388205,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "GC-D",
+    "coverage": 0.8954201979152782,
+    "width": 4.518645751184222,
+    "interval_score": 5.899531336900551,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "ORACLE",
+    "coverage": 0.8984373310477103,
+    "width": 4.464864472963427,
+    "interval_score": 5.893028985966617,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241362,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 0.5,
+    "method": "WCP",
+    "coverage": 0.8637689615031225,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.3789054280529291
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "ASTM-R",
+    "coverage": 0.8332001287477937,
+    "width": 3.721399490838199,
+    "interval_score": 6.384482858812397,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "CV+",
+    "coverage": 0.8260296230252677,
+    "width": 3.6566789197914793,
+    "interval_score": 6.417681743065119,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.1568103523388205,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "GC-D",
+    "coverage": 0.8954201979152782,
+    "width": 4.518645751184353,
+    "interval_score": 5.899531336900681,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "ORACLE",
+    "coverage": 0.8984373310477103,
+    "width": 4.464864472963427,
+    "interval_score": 5.893028985966617,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483409853,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "offset_slope",
+    "level": 2.0,
+    "method": "WCP",
+    "coverage": 0.8637689615031225,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.3789054280652098
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "ASTM-R",
+    "coverage": 0.8265024040060107,
+    "width": 3.7214309352596286,
+    "interval_score": 6.501830789746436,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "CV+",
+    "coverage": 0.8190740953626535,
+    "width": 3.656962331217869,
+    "interval_score": 6.537447409824246,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "G-W-A",
+    "coverage": 0.8938874188888606,
+    "width": 4.507357141542411,
+    "interval_score": 6.23839824734936,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "GC-D",
+    "coverage": 0.8976050641009806,
+    "width": 4.60505424375916,
+    "interval_score": 5.998726394901981,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "ORACLE",
+    "coverage": 0.8986328838903922,
+    "width": 4.5270452113696305,
+    "interval_score": 5.909106140581566,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "SCP",
+    "coverage": 0.8156368473012933,
+    "width": 3.6017169741657717,
+    "interval_score": 6.5081149587166305,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 0.5,
+    "method": "WCP",
+    "coverage": 0.9241587631348669,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.3927434428165746
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "ASTM-R",
+    "coverage": 0.8137339181277744,
+    "width": 3.721547318323934,
+    "interval_score": 6.767812503149598,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "CV+",
+    "coverage": 0.8065590452797042,
+    "width": 3.6577202318661937,
+    "interval_score": 6.808797715913512,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "G-W-A",
+    "coverage": 0.8836175973364906,
+    "width": 4.507357141542411,
+    "interval_score": 6.423170844410799,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "GC-D",
+    "coverage": 0.9109766624777347,
+    "width": 4.9634009784828,
+    "interval_score": 6.183689370088793,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "ORACLE",
+    "coverage": 0.8984175490249003,
+    "width": 4.651472009924283,
+    "interval_score": 6.007963514006379,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "SCP",
+    "coverage": 0.8027360605753613,
+    "width": 3.6017169741657717,
+    "interval_score": 6.774379313811319,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 1.0,
+    "method": "WCP",
+    "coverage": 0.9742221911338502,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.4312272320748105
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "ASTM-R",
+    "coverage": 0.7683250606215418,
+    "width": 3.7220348539540633,
+    "interval_score": 7.793391635778361,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "CV+",
+    "coverage": 0.7600041560512162,
+    "width": 3.6605593347518104,
+    "interval_score": 7.855148642884702,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "G-W-A",
+    "coverage": 0.8457555379791085,
+    "width": 4.507357141542411,
+    "interval_score": 7.161557809571394,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "GC-D",
+    "coverage": 0.9383940936469009,
+    "width": 6.01961227696665,
+    "interval_score": 6.976672194603823,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "ORACLE",
+    "coverage": 0.8996204920623866,
+    "width": 5.050732397303897,
+    "interval_score": 6.448783008803663,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "SCP",
+    "coverage": 0.7547988489266821,
+    "width": 3.6017169741657717,
+    "interval_score": 7.81902137142212,
+    "rmse": 1.5725195198659434
+   },
+   {
+    "perturbation": "wl_shift",
+    "level": 2.0,
+    "method": "WCP",
+    "coverage": 0.9516416790208225,
+    "width": Infinity,
+    "interval_score": Infinity,
+    "rmse": 1.5725195198659434
+   }
+  ],
+  "sensitivity": [
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=-4",
+    "method": "G-W-A",
+    "coverage": 0.8996051124025024,
+    "width": 4.83151025719107,
+    "interval_score": 6.29727107883658,
+    "A": 10.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=-4",
+    "method": "GC-D",
+    "coverage": 0.8939458778690905,
+    "width": 4.836406378564327,
+    "interval_score": 6.249356742665964,
+    "A": 10.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=-4",
+    "method": "R-U-D",
+    "coverage": 0.8522381236805192,
+    "width": 4.203284688637013,
+    "interval_score": 6.309483885885536,
+    "A": 10.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=-4",
+    "method": "SCP",
+    "coverage": 0.8367923584838962,
+    "width": 4.050950815981314,
+    "interval_score": 6.483993710203555,
+    "A": 10.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=4",
+    "method": "G-W-A",
+    "coverage": 0.8938984572544312,
+    "width": 4.531599634382392,
+    "interval_score": 6.313286841327773,
+    "A": 18.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=4",
+    "method": "GC-D",
+    "coverage": 0.8835461156793153,
+    "width": 4.497620926533448,
+    "interval_score": 6.080588567059272,
+    "A": 18.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=4",
+    "method": "R-U-D",
+    "coverage": 0.8252110743325266,
+    "width": 3.717271397169683,
+    "interval_score": 6.406150051963216,
+    "A": 18.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "A_offset=4",
+    "method": "SCP",
+    "coverage": 0.8058079707715693,
+    "width": 3.5152805598566657,
+    "interval_score": 6.718738594266369,
+    "A": 18.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=Q",
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.156810352338721,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=Q",
+    "method": "GC-D",
+    "coverage": 0.8981587105320468,
+    "width": 4.561218560540789,
+    "interval_score": 6.003038787793564,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=Q",
+    "method": "R-U-D",
+    "coverage": 0.839625414521583,
+    "width": 3.7894871334462907,
+    "interval_score": 6.194455936407538,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=Q",
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241265,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=T2",
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.156810352338721,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=T2",
+    "method": "GC-D",
+    "coverage": 0.8943845324150325,
+    "width": 4.512265388443648,
+    "interval_score": 5.9388068540851915,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=T2",
+    "method": "R-U-D",
+    "coverage": 0.8294432617331299,
+    "width": 3.7059199714920896,
+    "interval_score": 6.240812833483671,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "diag_mode=T2",
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241265,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.02",
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.156810352338721,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.02",
+    "method": "GC-D",
+    "coverage": 0.8954201979152782,
+    "width": 4.518645751184226,
+    "interval_score": 5.899531336900444,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.02",
+    "method": "R-U-D",
+    "coverage": 0.8392900038015068,
+    "width": 3.7868350691425534,
+    "interval_score": 6.129048311080744,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.02",
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241265,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.3",
+    "method": "G-W-A",
+    "coverage": 0.898824644168198,
+    "width": 4.507357141542411,
+    "interval_score": 6.156810352338721,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.3",
+    "method": "GC-D",
+    "coverage": 0.8954201979152782,
+    "width": 4.518645751184226,
+    "interval_score": 5.899531336900444,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.3",
+    "method": "R-U-D",
+    "coverage": 0.8392900038015068,
+    "width": 3.7868350691425534,
+    "interval_score": 6.129048311080744,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "floor_frac=0.3",
+    "method": "SCP",
+    "coverage": 0.8231390177625684,
+    "width": 3.6017169741657717,
+    "interval_score": 6.394559483241265,
+    "A": 14.857142857142858
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "preprocessing=SNV+SG1",
+    "method": "G-W-A",
+    "coverage": 0.898241732537125,
+    "width": 4.892676865370039,
+    "interval_score": 6.548533990406824,
+    "A": 19.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "preprocessing=SNV+SG1",
+    "method": "GC-D",
+    "coverage": 0.893302479818123,
+    "width": 4.899084345178176,
+    "interval_score": 6.50056760953398,
+    "A": 19.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "preprocessing=SNV+SG1",
+    "method": "R-U-D",
+    "coverage": 0.8326223900475337,
+    "width": 4.072860731709333,
+    "interval_score": 6.709924454299702,
+    "A": 19.285714285714285
+   },
+   {
+    "task": "mango_season_loso",
+    "variant": "preprocessing=SNV+SG1",
+    "method": "SCP",
+    "coverage": 0.8228838962534392,
+    "width": 3.9614393065452185,
+    "interval_score": 6.837944557914902,
+    "A": 19.285714285714285
+   }
+  ]
+ }
+}

@@ -1,0 +1,341 @@
+2026-10-04 01:29:06,110   [mango_instrument] fold inst14002: n_tr=6082 n_te=3364 A=7 K=3 setup=0.3s
+2026-10-04 01:29:06,896   [mango_instrument] fold inst15006: n_tr=1426 n_te=15040 A=10 K=3 setup=0.1s
+2026-10-04 01:29:07,864   [mango_instrument] fold inst15013: n_tr=2226 n_te=768 A=9 K=3 setup=0.1s
+2026-10-04 01:29:08,204   [mango_instrument] fold inst15014: n_tr=4630 n_te=8219 A=17 K=3 setup=0.1s
+2026-10-04 01:29:09,312   [mango_instrument] fold inst15015: n_tr=2824 n_te=2987 A=5 K=3 setup=0.1s
+2026-10-04 01:29:09,957   [mango_instrument] fold inst15016: n_tr=6167 n_te=7584 A=14 K=3 setup=0.2s
+2026-10-04 01:29:11,087   [mango_instrument] fold inst15023: n_tr=5194 n_te=5835 A=1 K=3 setup=0.2s
+2026-10-04 01:29:12,027   [mango_instrument] fold inst15025: n_tr=5902 n_te=800 A=13 K=3 setup=0.3s
+2026-10-04 01:29:12,921   [mango_instrument] fold inst15027: n_tr=6020 n_te=2100 A=10 K=3 setup=0.3s
+2026-10-04 01:29:13,973   [mango_instrument] fold inst15029: n_tr=10692 n_te=4480 A=17 K=3 setup=0.4s
+2026-10-04 01:29:15,248   [mango_instrument] fold inst15038: n_tr=2710 n_te=3634 A=11 K=3 setup=0.1s
+2026-10-04 01:29:15,698   [mango_instrument] fold inst16032: n_tr=3602 n_te=828 A=9 K=3 setup=0.1s
+2026-10-04 01:29:16,152   [mango_instrument] fold inst16033: n_tr=4268 n_te=1504 A=13 K=3 setup=0.1s
+2026-10-04 01:29:16,709   [mango_instrument] fold inst16041: n_tr=4527 n_te=4672 A=9 K=3 setup=0.1s
+2026-10-04 01:29:17,879   [mango_instrument] fold inst16048: n_tr=14727 n_te=2466 A=10 K=3 setup=0.6s
+2026-10-04 01:29:19,406   [mango_instrument] fold inst17033: n_tr=3580 n_te=3816 A=11 K=3 setup=0.2s
+2026-10-04 01:29:20,208   [mango_instrument] fold inst17040: n_tr=8544 n_te=872 A=11 K=3 setup=0.3s
+2026-10-04 01:29:21,007   [mango_instrument] fold inst17052: n_tr=5510 n_te=2244 A=7 K=3 setup=0.2s
+2026-10-04 01:29:21,560   [mango_instrument] fold inst17057: n_tr=4232 n_te=2570 A=11 K=3 setup=0.1s
+2026-10-04 01:29:22,294   [mango_instrument] fold inst18007: n_tr=5160 n_te=1946 A=10 K=3 setup=0.2s
+2026-10-04 01:29:22,969   [mango_instrument] fold inst18029: n_tr=9171 n_te=2022 A=7 K=3 setup=0.2s
+2026-10-04 01:29:24,263   [mango_instrument] fold inst18030: n_tr=11260 n_te=702 A=13 K=3 setup=0.4s
+2026-10-04 01:29:25,063   [mango_instrument] fold inst18044: n_tr=1078 n_te=1066 A=8 K=3 setup=0.0s
+2026-10-04 01:29:25,459   [mango_instrument] fold inst30004: n_tr=12272 n_te=2864 A=19 K=3 setup=0.3s
+2026-10-04 01:29:28,337   [mango_instrument] fold inst14002: n_tr=8818 n_te=3364 A=11 K=3 setup=0.4s
+2026-10-04 01:29:29,361   [mango_instrument] fold inst15006: n_tr=1702 n_te=15040 A=3 K=3 setup=0.1s
+2026-10-04 01:29:30,240   [mango_instrument] fold inst15013: n_tr=8266 n_te=768 A=5 K=3 setup=0.2s
+2026-10-04 01:29:31,428   [mango_instrument] fold inst15014: n_tr=11647 n_te=8219 A=14 K=3 setup=0.4s
+2026-10-04 01:29:33,217   [mango_instrument] fold inst15015: n_tr=3598 n_te=2987 A=10 K=3 setup=0.1s
+2026-10-04 01:29:33,822   [mango_instrument] fold inst15016: n_tr=1642 n_te=7584 A=12 K=3 setup=0.1s
+2026-10-04 01:29:34,678   [mango_instrument] fold inst15023: n_tr=8868 n_te=5835 A=13 K=3 setup=0.2s
+2026-10-04 01:29:35,984   [mango_instrument] fold inst15025: n_tr=9536 n_te=800 A=7 K=3 setup=0.2s
+2026-10-04 01:29:37,283   [mango_instrument] fold inst15027: n_tr=13429 n_te=2100 A=6 K=3 setup=0.4s
+2026-10-04 01:29:38,433   [mango_instrument] fold inst15029: n_tr=4192 n_te=4480 A=2 K=3 setup=0.1s
+2026-10-04 01:29:39,051   [mango_instrument] fold inst15038: n_tr=1100 n_te=3634 A=8 K=3 setup=0.1s
+2026-10-04 01:29:39,581   [mango_instrument] fold inst16032: n_tr=3880 n_te=828 A=7 K=3 setup=0.1s
+2026-10-04 01:29:40,046   [mango_instrument] fold inst16033: n_tr=5975 n_te=1504 A=12 K=3 setup=0.2s
+2026-10-04 01:29:40,876   [mango_instrument] fold inst16041: n_tr=4244 n_te=4672 A=13 K=3 setup=0.2s
+2026-10-04 01:29:42,037   [mango_instrument] fold inst16048: n_tr=12835 n_te=2466 A=13 K=3 setup=0.6s
+/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py:22: RuntimeWarning: Mean of empty slice
+  self.x_mean = X.mean(0)
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py:23: RuntimeWarning: Mean of empty slice
+  self.y_mean = y.mean()
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+2026-10-04 01:29:42,849     !! HCP-D alpha=0.1 failed: negative dimensions are not allowed
+Traceback (most recent call last):
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/evaluation/engine.py", line 60, in run_task
+    lo, hi = METHODS[meth](ctx, a)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/conformal/methods.py", line 405, in <lambda>
+    "HCP-D": lambda c, a: m_hcp_split(c, a, "D"),
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/conformal/methods.py", line 363, in m_hcp_split
+    cf = CrossFit(ctx.Xtr[prop], ctx.ytr[prop], folds, ctx.A)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/training/crossfit.py", line 84, in __init__
+    m = PLS1(A_max).fit(X[tr], y[tr])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py", line 26, in fit
+    W = np.zeros((p, A)); P = np.zeros((p, A)); q = np.zeros(A); T = np.zeros((n, A))
+        ^^^^^^^^^^^^^^^^
+ValueError: negative dimensions are not allowed
+2026-10-04 01:29:43,004   [mango_instrument] fold inst17033: n_tr=5582 n_te=3816 A=13 K=3 setup=0.1s
+2026-10-04 01:29:43,954   [mango_instrument] fold inst17040: n_tr=6354 n_te=872 A=11 K=3 setup=0.2s
+2026-10-04 01:29:44,580   [mango_instrument] fold inst17052: n_tr=1542 n_te=2244 A=5 K=3 setup=0.1s
+2026-10-04 01:29:44,900   [mango_instrument] fold inst17057: n_tr=2784 n_te=2570 A=10 K=3 setup=0.1s
+2026-10-04 01:29:45,529   [mango_instrument] fold inst18007: n_tr=6431 n_te=1946 A=20 K=3 setup=0.2s
+2026-10-04 01:29:46,609   [mango_instrument] fold inst18029: n_tr=15982 n_te=2022 A=5 K=3 setup=0.5s
+2026-10-04 01:29:48,226   [mango_instrument] fold inst18030: n_tr=4302 n_te=702 A=1 K=3 setup=0.2s
+2026-10-04 01:29:48,580   [mango_instrument] fold inst18044: n_tr=3038 n_te=1066 A=9 K=3 setup=0.1s
+2026-10-04 01:29:49,085   [mango_instrument] fold inst30004: n_tr=9064 n_te=2864 A=1 K=3 setup=0.2s
+2026-10-04 01:29:50,933   [mango_instrument] fold inst14002: n_tr=3072 n_te=3364 A=6 K=3 setup=0.1s
+2026-10-04 01:29:51,531   [mango_instrument] fold inst15006: n_tr=1467 n_te=15040 A=5 K=3 setup=0.1s
+2026-10-04 01:29:52,551   [mango_instrument] fold inst15013: n_tr=5942 n_te=768 A=7 K=3 setup=0.2s
+2026-10-04 01:29:53,292   [mango_instrument] fold inst15014: n_tr=6221 n_te=8219 A=7 K=3 setup=0.2s
+2026-10-04 01:29:54,802   [mango_instrument] fold inst15015: n_tr=8047 n_te=2987 A=4 K=3 setup=0.3s
+2026-10-04 01:29:55,780   [mango_instrument] fold inst15016: n_tr=5172 n_te=7584 A=20 K=3 setup=0.1s
+2026-10-04 01:29:56,688   [mango_instrument] fold inst15023: n_tr=1330 n_te=5835 A=19 K=3 setup=0.0s
+2026-10-04 01:29:57,313   [mango_instrument] fold inst15025: n_tr=3568 n_te=800 A=16 K=3 setup=0.2s
+2026-10-04 01:29:57,817   [mango_instrument] fold inst15027: n_tr=6095 n_te=2100 A=13 K=3 setup=0.2s
+2026-10-04 01:29:58,479   [mango_instrument] fold inst15029: n_tr=5893 n_te=4480 A=12 K=3 setup=0.2s
+2026-10-04 01:29:59,196   [mango_instrument] fold inst15038: n_tr=3558 n_te=3634 A=1 K=3 setup=0.1s
+2026-10-04 01:30:00,320   [mango_instrument] fold inst16032: n_tr=21222 n_te=828 A=18 K=3 setup=0.7s
+2026-10-04 01:30:01,882   [mango_instrument] fold inst16033: n_tr=3662 n_te=1504 A=2 K=3 setup=0.1s
+2026-10-04 01:30:02,467   [mango_instrument] fold inst16041: n_tr=3842 n_te=4672 A=14 K=3 setup=0.1s
+2026-10-04 01:30:03,162   [mango_instrument] fold inst16048: n_tr=4662 n_te=2466 A=17 K=3 setup=0.1s
+2026-10-04 01:30:03,692   [mango_instrument] fold inst17033: n_tr=1968 n_te=3816 A=8 K=3 setup=0.0s
+2026-10-04 01:30:04,316   [mango_instrument] fold inst17040: n_tr=8620 n_te=872 A=1 K=3 setup=0.4s
+2026-10-04 01:30:05,318   [mango_instrument] fold inst17052: n_tr=9694 n_te=2244 A=9 K=3 setup=0.4s
+2026-10-04 01:30:06,157   [mango_instrument] fold inst17057: n_tr=7197 n_te=2570 A=1 K=3 setup=0.2s
+2026-10-04 01:30:06,951   [mango_instrument] fold inst18007: n_tr=3873 n_te=1946 A=9 K=3 setup=0.2s
+2026-10-04 01:30:07,737   [mango_instrument] fold inst18029: n_tr=7446 n_te=2022 A=20 K=3 setup=0.2s
+2026-10-04 01:30:08,631   [mango_instrument] fold inst18030: n_tr=5416 n_te=702 A=2 K=3 setup=0.2s
+2026-10-04 01:30:09,192   [mango_instrument] fold inst18044: n_tr=5648 n_te=1066 A=10 K=3 setup=0.1s
+2026-10-04 01:30:09,797   [mango_instrument] fold inst30004: n_tr=2411 n_te=2864 A=2 K=3 setup=0.1s
+2026-10-04 01:30:11,777   [mango_instrument] fold inst14002: n_tr=9946 n_te=3364 A=2 K=5 setup=0.5s
+2026-10-04 01:30:12,768   [mango_instrument] fold inst15006: n_tr=5142 n_te=15040 A=7 K=5 setup=0.2s
+2026-10-04 01:30:14,181   [mango_instrument] fold inst15013: n_tr=6013 n_te=768 A=15 K=5 setup=0.3s
+2026-10-04 01:30:14,972   [mango_instrument] fold inst15014: n_tr=4684 n_te=8219 A=10 K=5 setup=0.3s
+2026-10-04 01:30:16,059   [mango_instrument] fold inst15015: n_tr=9537 n_te=2987 A=1 K=5 setup=0.4s
+2026-10-04 01:30:17,181   [mango_instrument] fold inst15016: n_tr=7283 n_te=7584 A=14 K=5 setup=0.3s
+2026-10-04 01:30:18,616   [mango_instrument] fold inst15023: n_tr=7600 n_te=5835 A=4 K=5 setup=0.4s
+2026-10-04 01:30:19,971   [mango_instrument] fold inst15025: n_tr=11058 n_te=800 A=7 K=5 setup=0.4s
+2026-10-04 01:30:21,902   [mango_instrument] fold inst15027: n_tr=20148 n_te=2100 A=8 K=5 setup=1.2s
+2026-10-04 01:30:24,026   [mango_instrument] fold inst15029: n_tr=8842 n_te=4480 A=3 K=5 setup=0.3s
+2026-10-04 01:30:24,940   [mango_instrument] fold inst15038: n_tr=2316 n_te=3634 A=3 K=5 setup=0.1s
+2026-10-04 01:30:25,768   [mango_instrument] fold inst16032: n_tr=7076 n_te=828 A=12 K=5 setup=0.5s
+2026-10-04 01:30:27,771   [mango_instrument] fold inst16033: n_tr=28456 n_te=1504 A=8 K=5 setup=1.5s
+2026-10-04 01:30:31,599   [mango_instrument] fold inst16041: n_tr=23701 n_te=4672 A=16 K=5 setup=1.2s
+2026-10-04 01:30:35,025   [mango_instrument] fold inst16048: n_tr=21214 n_te=2466 A=7 K=5 setup=0.9s
+2026-10-04 01:30:37,393   [mango_instrument] fold inst17033: n_tr=7851 n_te=3816 A=13 K=5 setup=0.4s
+2026-10-04 01:30:38,871   [mango_instrument] fold inst17040: n_tr=13803 n_te=872 A=1 K=5 setup=0.6s
+2026-10-04 01:30:40,381   [mango_instrument] fold inst17052: n_tr=14062 n_te=2244 A=10 K=5 setup=0.6s
+2026-10-04 01:30:42,467   [mango_instrument] fold inst17057: n_tr=17875 n_te=2570 A=13 K=5 setup=0.9s
+2026-10-04 01:30:45,210   [mango_instrument] fold inst18007: n_tr=21144 n_te=1946 A=2 K=5 setup=1.3s
+2026-10-04 01:30:47,674   [mango_instrument] fold inst18029: n_tr=21848 n_te=2022 A=16 K=5 setup=1.1s
+2026-10-04 01:30:50,169   [mango_instrument] fold inst18030: n_tr=5942 n_te=702 A=1 K=5 setup=0.4s
+2026-10-04 01:30:51,767   [mango_instrument] fold inst18044: n_tr=21499 n_te=1066 A=17 K=5 setup=1.1s
+2026-10-04 01:30:53,696   [mango_instrument] fold inst30004: n_tr=8454 n_te=2864 A=8 K=5 setup=0.4s
+2026-10-04 01:30:55,984   [mango_instrument] fold inst14002: n_tr=3252 n_te=3364 A=12 K=5 setup=0.2s
+2026-10-04 01:30:56,978   [mango_instrument] fold inst15006: n_tr=8794 n_te=15040 A=7 K=5 setup=0.6s
+2026-10-04 01:30:59,499   [mango_instrument] fold inst15013: n_tr=11199 n_te=768 A=3 K=5 setup=0.5s
+2026-10-04 01:31:00,867   [mango_instrument] fold inst15014: n_tr=10387 n_te=8219 A=16 K=5 setup=0.6s
+2026-10-04 01:31:03,209   [mango_instrument] fold inst15015: n_tr=12618 n_te=2987 A=20 K=5 setup=0.8s
+2026-10-04 01:31:05,062   [mango_instrument] fold inst15016: n_tr=8160 n_te=7584 A=17 K=5 setup=0.6s
+2026-10-04 01:31:06,906   [mango_instrument] fold inst15023: n_tr=9386 n_te=5835 A=11 K=5 setup=0.5s
+2026-10-04 01:31:09,117   [mango_instrument] fold inst15025: n_tr=13334 n_te=800 A=15 K=5 setup=0.9s
+2026-10-04 01:31:10,658   [mango_instrument] fold inst15027: n_tr=4866 n_te=2100 A=3 K=5 setup=0.4s
+2026-10-04 01:31:12,066   [mango_instrument] fold inst15029: n_tr=15134 n_te=4480 A=9 K=5 setup=1.0s
+2026-10-04 01:31:14,074   [mango_instrument] fold inst15038: n_tr=9334 n_te=3634 A=17 K=5 setup=0.5s
+2026-10-04 01:31:16,756   [mango_instrument] fold inst16032: n_tr=20196 n_te=828 A=14 K=5 setup=1.6s
+2026-10-04 01:31:20,555   [mango_instrument] fold inst16033: n_tr=21190 n_te=1504 A=9 K=5 setup=1.2s
+2026-10-04 01:31:22,925   [mango_instrument] fold inst16041: n_tr=6306 n_te=4672 A=1 K=5 setup=0.4s
+2026-10-04 01:31:24,757   [mango_instrument] fold inst16048: n_tr=18783 n_te=2466 A=17 K=5 setup=1.2s
+2026-10-04 01:31:28,223   [mango_instrument] fold inst17033: n_tr=17467 n_te=3816 A=1 K=5 setup=1.2s
+2026-10-04 01:31:30,182   [mango_instrument] fold inst17040: n_tr=6631 n_te=872 A=11 K=5 setup=0.4s
+2026-10-04 01:31:31,397   [mango_instrument] fold inst17052: n_tr=10956 n_te=2244 A=13 K=5 setup=0.5s
+2026-10-04 01:31:33,798   [mango_instrument] fold inst17057: n_tr=18286 n_te=2570 A=18 K=5 setup=1.3s
+2026-10-04 01:31:36,128   [mango_instrument] fold inst18007: n_tr=5784 n_te=1946 A=8 K=5 setup=0.3s
+2026-10-04 01:31:36,986   [mango_instrument] fold inst18029: n_tr=9157 n_te=2022 A=12 K=5 setup=0.4s
+2026-10-04 01:31:38,836   [mango_instrument] fold inst18030: n_tr=14137 n_te=702 A=9 K=5 setup=0.9s
+2026-10-04 01:31:40,635   [mango_instrument] fold inst18044: n_tr=6868 n_te=1066 A=7 K=5 setup=0.4s
+2026-10-04 01:31:41,801   [mango_instrument] fold inst30004: n_tr=7060 n_te=2864 A=8 K=5 setup=0.5s
+2026-10-04 01:31:44,218   [mango_instrument] fold inst14002: n_tr=8934 n_te=3364 A=15 K=5 setup=0.6s
+2026-10-04 01:31:45,435   [mango_instrument] fold inst15006: n_tr=6708 n_te=15040 A=12 K=5 setup=0.4s
+2026-10-04 01:31:47,503   [mango_instrument] fold inst15013: n_tr=8666 n_te=768 A=17 K=5 setup=0.4s
+2026-10-04 01:31:49,188   [mango_instrument] fold inst15014: n_tr=15400 n_te=8219 A=14 K=5 setup=1.0s
+2026-10-04 01:31:51,808   [mango_instrument] fold inst15015: n_tr=7236 n_te=2987 A=2 K=5 setup=0.4s
+2026-10-04 01:31:52,637   [mango_instrument] fold inst15016: n_tr=5754 n_te=7584 A=15 K=5 setup=0.3s
+2026-10-04 01:31:54,513   [mango_instrument] fold inst15023: n_tr=10804 n_te=5835 A=4 K=5 setup=0.7s
+2026-10-04 01:31:56,431   [mango_instrument] fold inst15025: n_tr=13903 n_te=800 A=19 K=5 setup=0.7s
+2026-10-04 01:31:58,142   [mango_instrument] fold inst15027: n_tr=12475 n_te=2100 A=17 K=5 setup=0.6s
+2026-10-04 01:32:00,106   [mango_instrument] fold inst15029: n_tr=11872 n_te=4480 A=17 K=5 setup=0.6s
+2026-10-04 01:32:01,644   [mango_instrument] fold inst15038: n_tr=4076 n_te=3634 A=12 K=5 setup=0.3s
+2026-10-04 01:32:03,010   [mango_instrument] fold inst16032: n_tr=13077 n_te=828 A=10 K=5 setup=0.8s
+2026-10-04 01:32:05,994   [mango_instrument] fold inst16033: n_tr=28110 n_te=1504 A=8 K=5 setup=1.9s
+2026-10-04 01:32:09,712   [mango_instrument] fold inst16041: n_tr=11189 n_te=4672 A=16 K=5 setup=0.5s
+2026-10-04 01:32:11,082   [mango_instrument] fold inst16048: n_tr=2302 n_te=2466 A=9 K=5 setup=0.1s
+2026-10-04 01:32:11,880   [mango_instrument] fold inst17033: n_tr=5928 n_te=3816 A=13 K=5 setup=0.4s
+2026-10-04 01:32:13,054   [mango_instrument] fold inst17040: n_tr=8790 n_te=872 A=1 K=5 setup=0.4s
+2026-10-04 01:32:14,560   [mango_instrument] fold inst17052: n_tr=14158 n_te=2244 A=13 K=5 setup=0.8s
+2026-10-04 01:32:16,173   [mango_instrument] fold inst17057: n_tr=7648 n_te=2570 A=13 K=5 setup=0.4s
+2026-10-04 01:32:17,835   [mango_instrument] fold inst18007: n_tr=12633 n_te=1946 A=20 K=5 setup=0.7s
+2026-10-04 01:32:19,619   [mango_instrument] fold inst18029: n_tr=11020 n_te=2022 A=7 K=5 setup=0.5s
+2026-10-04 01:32:21,305   [mango_instrument] fold inst18030: n_tr=7828 n_te=702 A=2 K=5 setup=0.5s
+2026-10-04 01:32:22,650   [mango_instrument] fold inst18044: n_tr=14598 n_te=1066 A=10 K=5 setup=0.7s
+2026-10-04 01:32:24,476   [mango_instrument] fold inst30004: n_tr=10712 n_te=2864 A=7 K=5 setup=0.5s
+2026-10-04 01:32:30,562   [mango_instrument] fold inst14002: n_tr=25898 n_te=3364 A=17 K=10 setup=3.5s
+2026-10-04 01:32:34,640   [mango_instrument] fold inst15006: n_tr=8694 n_te=15040 A=17 K=10 setup=0.9s
+2026-10-04 01:32:40,116   [mango_instrument] fold inst15013: n_tr=20444 n_te=768 A=16 K=10 setup=2.7s
+2026-10-04 01:32:43,392   [mango_instrument] fold inst15014: n_tr=10420 n_te=8219 A=20 K=10 setup=1.1s
+2026-10-04 01:32:47,992   [mango_instrument] fold inst15015: n_tr=18294 n_te=2987 A=7 K=10 setup=2.4s
+2026-10-04 01:32:52,036   [mango_instrument] fold inst15016: n_tr=16527 n_te=7584 A=3 K=10 setup=1.8s
+/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py:22: RuntimeWarning: Mean of empty slice
+  self.x_mean = X.mean(0)
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py:23: RuntimeWarning: Mean of empty slice
+  self.y_mean = y.mean()
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+2026-10-04 01:32:53,992     !! HCP-D alpha=0.1 failed: negative dimensions are not allowed
+Traceback (most recent call last):
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/evaluation/engine.py", line 60, in run_task
+    lo, hi = METHODS[meth](ctx, a)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/conformal/methods.py", line 405, in <lambda>
+    "HCP-D": lambda c, a: m_hcp_split(c, a, "D"),
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/conformal/methods.py", line 363, in m_hcp_split
+    cf = CrossFit(ctx.Xtr[prop], ctx.ytr[prop], folds, ctx.A)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/training/crossfit.py", line 84, in __init__
+    m = PLS1(A_max).fit(X[tr], y[tr])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c/Target_Journal_Submission/code/src/models/pls.py", line 26, in fit
+    W = np.zeros((p, A)); P = np.zeros((p, A)); q = np.zeros(A); T = np.zeros((n, A))
+        ^^^^^^^^^^^^^^^^
+ValueError: negative dimensions are not allowed
+2026-10-04 01:32:55,686   [mango_instrument] fold inst15023: n_tr=14750 n_te=5835 A=3 K=10 setup=1.6s
+2026-10-04 01:33:02,589   [mango_instrument] fold inst15025: n_tr=35905 n_te=800 A=19 K=10 setup=5.2s
+2026-10-04 01:33:07,871   [mango_instrument] fold inst15027: n_tr=12103 n_te=2100 A=19 K=10 setup=1.5s
+2026-10-04 01:33:11,190   [mango_instrument] fold inst15029: n_tr=14985 n_te=4480 A=18 K=10 setup=1.9s
+2026-10-04 01:33:15,128   [mango_instrument] fold inst15038: n_tr=13425 n_te=3634 A=7 K=10 setup=1.7s
+2026-10-04 01:33:21,594   [mango_instrument] fold inst16032: n_tr=36581 n_te=828 A=16 K=10 setup=5.2s
+2026-10-04 01:33:28,549   [mango_instrument] fold inst16033: n_tr=24106 n_te=1504 A=15 K=10 setup=3.2s
+2026-10-04 01:33:33,576   [mango_instrument] fold inst16041: n_tr=24846 n_te=4672 A=18 K=10 setup=3.1s
+2026-10-04 01:33:40,255   [mango_instrument] fold inst16048: n_tr=29240 n_te=2466 A=10 K=10 setup=3.9s
+2026-10-04 01:33:46,641   [mango_instrument] fold inst17033: n_tr=23965 n_te=3816 A=19 K=10 setup=3.0s
+2026-10-04 01:33:51,927   [mango_instrument] fold inst17040: n_tr=19346 n_te=872 A=18 K=10 setup=2.3s
+2026-10-04 01:33:59,348   [mango_instrument] fold inst17052: n_tr=34608 n_te=2244 A=8 K=10 setup=5.3s
+2026-10-04 01:34:04,692   [mango_instrument] fold inst17057: n_tr=20356 n_te=2570 A=8 K=10 setup=1.9s
+2026-10-04 01:34:08,789   [mango_instrument] fold inst18007: n_tr=19423 n_te=1946 A=7 K=10 setup=2.1s
+2026-10-04 01:34:14,666   [mango_instrument] fold inst18029: n_tr=27779 n_te=2022 A=20 K=10 setup=3.8s
+2026-10-04 01:34:22,688   [mango_instrument] fold inst18030: n_tr=32912 n_te=702 A=1 K=10 setup=4.6s
+2026-10-04 01:34:29,013   [mango_instrument] fold inst18044: n_tr=23584 n_te=1066 A=17 K=10 setup=3.4s
+2026-10-04 01:34:35,639   [mango_instrument] fold inst30004: n_tr=27628 n_te=2864 A=16 K=10 setup=4.3s
+2026-10-04 01:34:45,946   [mango_instrument] fold inst14002: n_tr=40641 n_te=3364 A=18 K=10 setup=4.8s
+2026-10-04 01:34:51,785   [mango_instrument] fold inst15006: n_tr=12795 n_te=15040 A=2 K=10 setup=1.0s
+2026-10-04 01:34:57,002   [mango_instrument] fold inst15013: n_tr=21921 n_te=768 A=18 K=10 setup=2.8s
+2026-10-04 01:35:00,515   [mango_instrument] fold inst15014: n_tr=13263 n_te=8219 A=7 K=10 setup=1.4s
+2026-10-04 01:35:04,378   [mango_instrument] fold inst15015: n_tr=17410 n_te=2987 A=12 K=10 setup=2.0s
+2026-10-04 01:35:07,868   [mango_instrument] fold inst15016: n_tr=16455 n_te=7584 A=20 K=10 setup=1.7s
+2026-10-04 01:35:11,998   [mango_instrument] fold inst15023: n_tr=14316 n_te=5835 A=7 K=10 setup=1.5s
+2026-10-04 01:35:16,378   [mango_instrument] fold inst15025: n_tr=21550 n_te=800 A=18 K=10 setup=2.4s
+2026-10-04 01:35:19,835   [mango_instrument] fold inst15027: n_tr=13702 n_te=2100 A=16 K=10 setup=1.5s
+2026-10-04 01:35:23,180   [mango_instrument] fold inst15029: n_tr=20596 n_te=4480 A=6 K=10 setup=2.1s
+2026-10-04 01:35:28,935   [mango_instrument] fold inst15038: n_tr=23637 n_te=3634 A=1 K=10 setup=3.3s
+2026-10-04 01:35:34,108   [mango_instrument] fold inst16032: n_tr=22874 n_te=828 A=16 K=10 setup=2.7s
+2026-10-04 01:35:42,865   [mango_instrument] fold inst16033: n_tr=43229 n_te=1504 A=16 K=10 setup=6.8s
+2026-10-04 01:35:49,776   [mango_instrument] fold inst16041: n_tr=21212 n_te=4672 A=18 K=10 setup=2.3s
+2026-10-04 01:35:53,796   [mango_instrument] fold inst16048: n_tr=10196 n_te=2466 A=19 K=10 setup=1.0s
+2026-10-04 01:35:56,652   [mango_instrument] fold inst17033: n_tr=14866 n_te=3816 A=12 K=10 setup=1.7s
+2026-10-04 01:36:01,420   [mango_instrument] fold inst17040: n_tr=21781 n_te=872 A=17 K=10 setup=2.9s
+2026-10-04 01:36:06,780   [mango_instrument] fold inst17052: n_tr=22839 n_te=2244 A=14 K=10 setup=3.2s
+2026-10-04 01:36:13,198   [mango_instrument] fold inst17057: n_tr=29550 n_te=2570 A=13 K=10 setup=4.0s
+2026-10-04 01:36:18,570   [mango_instrument] fold inst18007: n_tr=20280 n_te=1946 A=19 K=10 setup=2.2s
+2026-10-04 01:36:23,467   [mango_instrument] fold inst18029: n_tr=20676 n_te=2022 A=20 K=10 setup=2.5s
+2026-10-04 01:36:28,358   [mango_instrument] fold inst18030: n_tr=21083 n_te=702 A=8 K=10 setup=2.7s
+2026-10-04 01:36:34,943   [mango_instrument] fold inst18044: n_tr=33804 n_te=1066 A=18 K=10 setup=4.9s
+2026-10-04 01:36:41,642   [mango_instrument] fold inst30004: n_tr=24202 n_te=2864 A=14 K=10 setup=2.8s
+2026-10-04 01:36:47,882   [mango_instrument] fold inst14002: n_tr=17572 n_te=3364 A=15 K=10 setup=2.0s
+2026-10-04 01:36:50,494   [mango_instrument] fold inst15006: n_tr=6414 n_te=15040 A=19 K=10 setup=0.7s
+2026-10-04 01:36:55,088   [mango_instrument] fold inst15013: n_tr=14227 n_te=768 A=17 K=10 setup=1.7s
+2026-10-04 01:36:58,292   [mango_instrument] fold inst15014: n_tr=17597 n_te=8219 A=8 K=10 setup=1.9s
+2026-10-04 01:37:02,095   [mango_instrument] fold inst15015: n_tr=11890 n_te=2987 A=15 K=10 setup=1.2s
+2026-10-04 01:37:06,347   [mango_instrument] fold inst15016: n_tr=23804 n_te=7584 A=3 K=10 setup=3.0s
+2026-10-04 01:37:12,221   [mango_instrument] fold inst15023: n_tr=19846 n_te=5835 A=13 K=10 setup=2.6s
+2026-10-04 01:37:18,465   [mango_instrument] fold inst15025: n_tr=24825 n_te=800 A=16 K=10 setup=3.5s
+2026-10-04 01:37:23,283   [mango_instrument] fold inst15027: n_tr=16380 n_te=2100 A=8 K=10 setup=2.2s
+2026-10-04 01:37:28,387   [mango_instrument] fold inst15029: n_tr=24828 n_te=4480 A=18 K=10 setup=3.4s
+2026-10-04 01:37:36,094   [mango_instrument] fold inst15038: n_tr=36360 n_te=3634 A=19 K=10 setup=5.0s
+2026-10-04 01:37:44,012   [mango_instrument] fold inst16032: n_tr=24835 n_te=828 A=19 K=10 setup=3.4s
+2026-10-04 01:37:49,570   [mango_instrument] fold inst16033: n_tr=22265 n_te=1504 A=8 K=10 setup=3.3s
+2026-10-04 01:37:53,540   [mango_instrument] fold inst16041: n_tr=15581 n_te=4672 A=1 K=10 setup=1.7s
+2026-10-04 01:37:57,718   [mango_instrument] fold inst16048: n_tr=26301 n_te=2466 A=17 K=10 setup=2.9s
+2026-10-04 01:38:04,846   [mango_instrument] fold inst17033: n_tr=31821 n_te=3816 A=9 K=10 setup=4.5s
+2026-10-04 01:38:12,123   [mango_instrument] fold inst17040: n_tr=28393 n_te=872 A=16 K=10 setup=3.8s
+2026-10-04 01:38:17,779   [mango_instrument] fold inst17052: n_tr=19901 n_te=2244 A=10 K=10 setup=3.0s
+2026-10-04 01:38:21,102   [mango_instrument] fold inst17057: n_tr=14722 n_te=2570 A=18 K=10 setup=1.4s
+2026-10-04 01:38:27,440   [mango_instrument] fold inst18007: n_tr=29756 n_te=1946 A=19 K=10 setup=4.4s
+2026-10-04 01:38:36,116   [mango_instrument] fold inst18029: n_tr=38516 n_te=2022 A=20 K=10 setup=5.1s
+2026-10-04 01:38:43,836   [mango_instrument] fold inst18030: n_tr=23117 n_te=702 A=2 K=10 setup=3.2s
+2026-10-04 01:38:48,291   [mango_instrument] fold inst18044: n_tr=20907 n_te=1066 A=15 K=10 setup=2.6s
+2026-10-04 01:38:51,488   [mango_instrument] fold inst30004: n_tr=15358 n_te=2864 A=8 K=10 setup=1.5s
+2026-10-04 01:39:10,730   [mango_instrument] fold inst14002: n_tr=49495 n_te=3364 A=3 K=20 setup=16.1s
+2026-10-04 01:39:20,303   [mango_instrument] fold inst15006: n_tr=18592 n_te=15040 A=15 K=20 setup=3.9s
+2026-10-04 01:39:44,876   [mango_instrument] fold inst15013: n_tr=54717 n_te=768 A=13 K=20 setup=18.6s
+2026-10-04 01:40:01,011   [mango_instrument] fold inst15014: n_tr=32234 n_te=8219 A=16 K=20 setup=10.4s
+2026-10-04 01:40:18,181   [mango_instrument] fold inst15015: n_tr=39741 n_te=2987 A=17 K=20 setup=11.8s
+2026-10-04 01:40:28,890   [mango_instrument] fold inst15016: n_tr=23788 n_te=7584 A=20 K=20 setup=5.8s
+2026-10-04 01:40:44,665   [mango_instrument] fold inst15023: n_tr=36306 n_te=5835 A=13 K=20 setup=10.8s
+2026-10-04 01:41:09,211   [mango_instrument] fold inst15025: n_tr=55479 n_te=800 A=3 K=20 setup=19.3s
+2026-10-04 01:41:31,314   [mango_instrument] fold inst15027: n_tr=47898 n_te=2100 A=17 K=20 setup=15.8s
+2026-10-04 01:41:51,926   [mango_instrument] fold inst15029: n_tr=50588 n_te=4480 A=14 K=20 setup=15.7s
+2026-10-04 01:42:16,144   [mango_instrument] fold inst15038: n_tr=53765 n_te=3634 A=16 K=20 setup=17.6s
+2026-10-04 01:42:44,075   [mango_instrument] fold inst16032: n_tr=55028 n_te=828 A=16 K=20 setup=19.0s
+2026-10-04 01:43:08,184   [mango_instrument] fold inst16033: n_tr=59019 n_te=1504 A=12 K=20 setup=18.4s
+2026-10-04 01:43:27,717   [mango_instrument] fold inst16041: n_tr=39995 n_te=4672 A=19 K=20 setup=12.4s
+2026-10-04 01:43:45,050   [mango_instrument] fold inst16048: n_tr=39798 n_te=2466 A=3 K=20 setup=12.0s
+2026-10-04 01:44:00,956   [mango_instrument] fold inst17033: n_tr=39251 n_te=3816 A=14 K=20 setup=10.9s
+2026-10-04 01:44:19,372   [mango_instrument] fold inst17040: n_tr=47827 n_te=872 A=16 K=20 setup=13.8s
+2026-10-04 01:44:40,354   [mango_instrument] fold inst17052: n_tr=47484 n_te=2244 A=12 K=20 setup=15.7s
+2026-10-04 01:44:56,431   [mango_instrument] fold inst17057: n_tr=38413 n_te=2570 A=13 K=20 setup=10.9s
+2026-10-04 01:45:23,511   [mango_instrument] fold inst18007: n_tr=64802 n_te=1946 A=16 K=20 setup=22.2s
+2026-10-04 01:45:47,270   [mango_instrument] fold inst18029: n_tr=45678 n_te=2022 A=9 K=20 setup=14.8s
+2026-10-04 01:46:07,613   [mango_instrument] fold inst18030: n_tr=52421 n_te=702 A=13 K=20 setup=15.5s
+2026-10-04 01:46:30,989   [mango_instrument] fold inst18044: n_tr=51146 n_te=1066 A=12 K=20 setup=18.2s
+2026-10-04 01:46:52,951   [mango_instrument] fold inst30004: n_tr=52955 n_te=2864 A=17 K=20 setup=16.9s
+2026-10-04 01:47:09,209   [mango_instrument] fold inst14002: n_tr=50621 n_te=3364 A=10 K=20 setup=10.6s
+2026-10-04 01:47:14,912   [mango_instrument] fold inst15006: n_tr=13617 n_te=15040 A=19 K=20 setup=2.0s
+2026-10-04 01:47:26,179   [mango_instrument] fold inst15013: n_tr=39818 n_te=768 A=19 K=20 setup=8.1s
+2026-10-04 01:47:36,980   [mango_instrument] fold inst15014: n_tr=38212 n_te=8219 A=15 K=20 setup=7.7s
+2026-10-04 01:47:50,831   [mango_instrument] fold inst15015: n_tr=47897 n_te=2987 A=11 K=20 setup=9.9s
+2026-10-04 01:48:01,698   [mango_instrument] fold inst15016: n_tr=36836 n_te=7584 A=14 K=20 setup=7.2s
+2026-10-04 01:48:11,371   [mango_instrument] fold inst15023: n_tr=30004 n_te=5835 A=20 K=20 setup=5.8s
+2026-10-04 01:48:25,865   [mango_instrument] fold inst15025: n_tr=49868 n_te=800 A=8 K=20 setup=11.5s
+2026-10-04 01:48:40,236   [mango_instrument] fold inst15027: n_tr=50266 n_te=2100 A=13 K=20 setup=11.2s
+2026-10-04 01:48:52,568   [mango_instrument] fold inst15029: n_tr=43510 n_te=4480 A=14 K=20 setup=8.8s
+2026-10-04 01:49:07,082   [mango_instrument] fold inst15038: n_tr=50239 n_te=3634 A=12 K=20 setup=11.1s
+2026-10-04 01:49:23,151   [mango_instrument] fold inst16032: n_tr=54503 n_te=828 A=12 K=20 setup=12.2s
+2026-10-04 01:49:35,772   [mango_instrument] fold inst16033: n_tr=43538 n_te=1504 A=18 K=20 setup=8.6s
+2026-10-04 01:49:49,369   [mango_instrument] fold inst16041: n_tr=46663 n_te=4672 A=8 K=20 setup=10.0s
+2026-10-04 01:50:01,672   [mango_instrument] fold inst16048: n_tr=42442 n_te=2466 A=20 K=20 setup=8.6s
+2026-10-04 01:50:15,099   [mango_instrument] fold inst17033: n_tr=48134 n_te=3816 A=20 K=20 setup=10.3s
+2026-10-04 01:50:30,567   [mango_instrument] fold inst17040: n_tr=51248 n_te=872 A=14 K=20 setup=11.7s
+2026-10-04 01:50:46,550   [mango_instrument] fold inst17052: n_tr=56441 n_te=2244 A=12 K=20 setup=12.2s
+2026-10-04 01:51:02,671   [mango_instrument] fold inst17057: n_tr=53158 n_te=2570 A=18 K=20 setup=11.7s
+2026-10-04 01:51:15,918   [mango_instrument] fold inst18007: n_tr=43599 n_te=1946 A=12 K=20 setup=9.2s
+2026-10-04 01:51:30,102   [mango_instrument] fold inst18029: n_tr=53104 n_te=2022 A=19 K=20 setup=11.0s
+2026-10-04 01:51:47,784   [mango_instrument] fold inst18030: n_tr=62906 n_te=702 A=9 K=20 setup=13.6s
+2026-10-04 01:51:58,290   [mango_instrument] fold inst18044: n_tr=32550 n_te=1066 A=13 K=20 setup=6.1s
+2026-10-04 01:52:08,907   [mango_instrument] fold inst30004: n_tr=39449 n_te=2864 A=20 K=20 setup=8.1s
+2026-10-04 01:52:21,493   [mango_instrument] fold inst14002: n_tr=41643 n_te=3364 A=13 K=20 setup=8.1s
+2026-10-04 01:52:27,843   [mango_instrument] fold inst15006: n_tr=21175 n_te=15040 A=20 K=20 setup=3.1s
+2026-10-04 01:52:41,313   [mango_instrument] fold inst15013: n_tr=48711 n_te=768 A=13 K=20 setup=9.4s
+2026-10-04 01:52:49,140   [mango_instrument] fold inst15014: n_tr=25117 n_te=8219 A=16 K=20 setup=4.5s
+2026-10-04 01:52:59,591   [mango_instrument] fold inst15015: n_tr=41071 n_te=2987 A=17 K=20 setup=7.8s
+2026-10-04 01:53:09,613   [mango_instrument] fold inst15016: n_tr=35957 n_te=7584 A=20 K=20 setup=6.6s
+2026-10-04 01:53:20,897   [mango_instrument] fold inst15023: n_tr=38848 n_te=5835 A=10 K=20 setup=7.5s
+2026-10-04 01:53:37,898   [mango_instrument] fold inst15025: n_tr=58737 n_te=800 A=8 K=20 setup=13.5s
+2026-10-04 01:53:55,432   [mango_instrument] fold inst15027: n_tr=57562 n_te=2100 A=14 K=20 setup=12.9s
+2026-10-04 01:54:10,724   [mango_instrument] fold inst15029: n_tr=49896 n_te=4480 A=17 K=20 setup=10.6s
+2026-10-04 01:54:24,993   [mango_instrument] fold inst15038: n_tr=46076 n_te=3634 A=19 K=20 setup=10.1s
+2026-10-04 01:54:38,433   [mango_instrument] fold inst16032: n_tr=45372 n_te=828 A=17 K=20 setup=9.6s
+2026-10-04 01:54:53,701   [mango_instrument] fold inst16033: n_tr=55543 n_te=1504 A=11 K=20 setup=12.0s
+2026-10-04 01:55:04,380   [mango_instrument] fold inst16041: n_tr=32669 n_te=4672 A=9 K=20 setup=6.3s
+2026-10-04 01:55:15,366   [mango_instrument] fold inst16048: n_tr=39944 n_te=2466 A=9 K=20 setup=8.2s
+2026-10-04 01:55:26,621   [mango_instrument] fold inst17033: n_tr=40804 n_te=3816 A=14 K=20 setup=8.1s
+2026-10-04 01:55:44,723   [mango_instrument] fold inst17040: n_tr=60312 n_te=872 A=13 K=20 setup=14.5s
+2026-10-04 01:56:03,098   [mango_instrument] fold inst17052: n_tr=50522 n_te=2244 A=9 K=20 setup=13.5s
+2026-10-04 01:56:21,714   [mango_instrument] fold inst17057: n_tr=39837 n_te=2570 A=14 K=20 setup=12.5s
+2026-10-04 01:56:35,914   [mango_instrument] fold inst18007: n_tr=31650 n_te=1946 A=9 K=20 setup=9.3s
+2026-10-04 01:56:54,241   [mango_instrument] fold inst18029: n_tr=45217 n_te=2022 A=18 K=20 setup=14.7s
+2026-10-04 01:57:11,797   [mango_instrument] fold inst18030: n_tr=35411 n_te=702 A=18 K=20 setup=11.7s
+2026-10-04 01:57:36,092   [mango_instrument] fold inst18044: n_tr=57801 n_te=1066 A=12 K=20 setup=20.6s
+2026-10-04 01:57:58,710   [mango_instrument] fold inst30004: n_tr=46566 n_te=2864 A=17 K=20 setup=15.1s
+2026-10-04 01:58:04,872 done

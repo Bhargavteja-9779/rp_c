@@ -1,0 +1,3 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+campaign2009,21782,18393,25,30,19.11,18.216,0.871
+campaign2015,18393,21782,25,28,14.06,13.429,0.596
