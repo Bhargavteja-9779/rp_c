@@ -6,7 +6,8 @@ from src.statistics.tests import holm, wilcoxon_paired
 from src.utils import RESULTS
 
 
-def pg_mean(df, keys=("task", "method", "fold", "group")):
+def pg_mean(df, keys=("task", "method", "group")):
+    # group-level averaging over seeds (fold omitted: mango_population folds differ between seeds)
     return df.groupby(list(keys), as_index=False).agg(coverage=("coverage", "mean"), width=("width_mean", "mean"),
                                                       interval_score=("interval_score", "mean"), n=("n", "first"))
 
@@ -29,8 +30,8 @@ def iteration():
     summ.to_csv(os.path.join(RESULTS, "iteration1_summary.csv"), index=False)
     rows = []
     for t, d in pg.groupby("task"):
-        P = d.pivot_table(index=["fold", "group"], columns="method", values="interval_score")
-        C = d.pivot_table(index=["fold", "group"], columns="method", values="coverage")
+        P = d.pivot_table(index="group", columns="method", values="interval_score")
+        C = d.pivot_table(index="group", columns="method", values="coverage")
         for a, b in [("GC-D2", "GC-D"), ("GC-CQR", "CQR"), ("GC-CQR", "GC-D")]:
             if a in P and b in P:
                 r = wilcoxon_paired(P[a].values, P[b].values)
@@ -90,7 +91,24 @@ def robustness():
     return out
 
 
+def wcp_clip():
+    fs = glob.glob(os.path.join(RESULTS, "wcp_clip", "groups_*.csv"))
+    if not fs:
+        return None
+    d = pd.concat([pd.read_csv(f) for f in fs])
+    pg = d.groupby(["task", "method", "fold", "group"], as_index=False).agg(coverage=("coverage", "mean"),
+                                                                           width=("width_mean", "mean"),
+                                                                           interval_score=("interval_score", "mean"),
+                                                                           finite=("finite_frac", "mean"))
+    s = pg.groupby(["task", "method"], as_index=False).agg(coverage=("coverage", "mean"), width_median=("width", "median"),
+                                                            interval_score=("interval_score", "mean"),
+                                                            finite_frac=("finite", "mean"), n_groups=("coverage", "size"))
+    s["n_seeds"] = d.seed.nunique()
+    s.to_csv(os.path.join(RESULTS, "wcp_clip_summary.csv"), index=False)
+    return s.to_dict("records")
+
+
 if __name__ == "__main__":
-    res = {"iteration1": iteration(), "robustness": robustness()}
+    res = {"iteration1": iteration(), "robustness": robustness(), "wcp_clip": wcp_clip()}
     json.dump(res, open(os.path.join(RESULTS, "extra_results.json"), "w"), indent=1, default=float)
     print("written extra_results.json:", {k: (list(v) if isinstance(v, dict) else bool(v)) for k, v in res.items()})

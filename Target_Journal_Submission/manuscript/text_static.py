@@ -64,25 +64,25 @@ def theory(C):
               "belonging to one of K groups gᵢ ∈ {1, …, K} (harvest seasons, instruments, populations or regions) "
               "and to a physical unit uᵢ (fruit, soil sample, tablet). Several spectra may share a unit. A model is "
               "deployed on spectra of a new group K + 1. For a miscoverage level α we seek an interval C(x) with"),
-        ("eq", "P{ Y_new ∈ C(X_new) } ≥ 1 − α,   (X_new, Y_new) drawn from the new group", "1"),
+        ("eq", "P{ Y_{new} ∈ C(X_{new}) } ≥ 1 − α,   (X_{new}, Y_{new}) drawn from the new group", "1"),
         ("p", "Random-split conformal prediction attains (1) when calibration and test points are exchangeable "
               f"{C('lei2018')}. Here we instead assume hierarchical exchangeability {C('lee2026')}: the groups are "
               "exchangeable with one another (a new season is a priori like past seasons) and spectra are "
               "exchangeable within a group, while spectra of the same group may share a common effect (for example a "
               "seasonal bias)."),
         ("h2", "2.2. PLS model and spectral diagnostics"),
-        ("p", f"The point predictor is PLS1 regression {C('wold2001')} with A latent variables, ŷ(x) = ȳ + (x − x̄)ᵀ R_A q_A, "
-              "where R_A = W_A (P_Aᵀ W_A)⁻¹ maps a mean-centred spectrum to its scores t = R_Aᵀ(x − x̄). Two "
+        ("p", f"The point predictor is PLS1 regression {C('wold2001')} with A latent variables, ŷ(x) = ȳ + (x − x̄)ᵀ R_{A} q_{A}, "
+              "where R_{A} = W_{A} (P_{A}ᵀ W_{A})⁻¹ maps a mean-centred spectrum to its scores t = R_{A}ᵀ(x − x̄). Two "
               f"diagnostics describe how a spectrum relates to the calibration space {C('jackson1979')}:"),
-        ("eq", "T²(x) = Σₐ tₐ² / sₐ²,     Q(x) = ‖(x − x̄) − P_A t‖²", "2"),
+        ("eq", "T²(x) = Σₐ tₐ² / sₐ²,     Q(x) = ‖(x − x̄) − P_{A} t‖²", "2"),
         ("p", "where sₐ² is the variance of the a-th training score. T² measures extrapolation within the model "
               "subspace and Q measures spectral variation the model has not seen. The leverage used in classical "
               "intervals is h(x) = 1/n + Σₐ tₐ²/(tₐᵀtₐ), a rescaled version of T²."),
         ("h2", "2.3. Group-conformal calibration with diagnostic scaling (GC-D)"),
         ("p", "Step 1 (out-of-group residuals). The calibration groups are partitioned into folds (one group per "
-              "fold when K is small). For each fold k, a PLS model μ̂₋ₖ is fitted on the remaining groups after "
+              "fold when K is small). For each fold k, a PLS model μ̂_{−k} is fitted on the remaining groups after "
               "removing every unit that also occurs in fold k, so that no physical sample contributes to the model "
-              "that predicts it. The out-of-group residual of spectrum i in fold k(i) is rᵢ = yᵢ − μ̂₋ₖ₍ᵢ₎(xᵢ), with "
+              "that predicts it. The out-of-group residual of spectrum i in fold k(i) is rᵢ = yᵢ − μ̂_{−k(i)}(xᵢ), with "
               "diagnostics T²ᵢ and Qᵢ computed by the same model. The number of latent variables A is chosen by "
               "minimising the group-balanced root mean squared error of these residuals, so the step costs nothing "
               "beyond the group-wise cross-validation that is usual practice."),
@@ -94,7 +94,7 @@ def theory(C):
               "generalises the √(1 + h) factor of classical intervals by letting the data decide how strongly "
               "extrapolation (T²) and unmodelled spectral variation (Q) inflate the error."),
         ("p", "Step 3 (group-balanced quantile). With conformity scores sᵢ = |rᵢ|/σ(xᵢ) and weights "
-              "wᵢ = 1/(K·N_{gᵢ}), where N_g is the number of spectra in group g, every group contributes the same total "
+              "wᵢ = 1/(K·N_{gᵢ}), where N_{g} is the number of spectra in group g, every group contributes the same total "
               "mass regardless of its size. The calibrated multiplier is"),
         ("eq", "q̂ = inf{ t : Σᵢ wᵢ 1(sᵢ ≤ t) ≥ 1 − α }", "4"),
         ("p", "Step 4 (interval). The final PLS model, fitted on all calibration spectra, gives for a new spectrum"),
@@ -105,7 +105,7 @@ def theory(C):
               f"valid as K grows {C('dunn2023')}. Finite-sample guarantees under hierarchical exchangeability are "
               f"available for two variants that we also evaluate {C('lee2026')}: hierarchical split conformal "
               "prediction (HCP), in which half of the groups fit the model and σ and the other K₁ groups calibrate "
-              "with weights 1/((K₁ + 1)N_g) and a point mass 1/(K₁ + 1) at +∞, has coverage ≥ 1 − α; the hierarchical "
+              "with weights 1/((K₁ + 1)N_{g}) and a point mass 1/(K₁ + 1) at +∞, has coverage ≥ 1 − α; the hierarchical "
               f"jackknife+ (HJ+), the leave-one-group-out analogue of the jackknife+ {C('barber2021')}, has coverage "
               "≥ 1 − 2α. The point mass at +∞ implies that a finite interval at level 1 − α requires K₁ + 1 > 1/α, "
               "i.e. at least 10 calibration groups at α = 0.10 for HCP. With six past harvest seasons a "
@@ -176,7 +176,7 @@ def experimental(C, N):
         ("h2", "3.4. Evaluation and statistics"),
         ("p", "Primary end-points (fixed in advance) at α = 0.10 were the group-averaged empirical coverage on held-out "
               f"groups and the mean interval (Winkler) score {C('gneiting2007')}"),
-        ("eq", "IS_α(l, u; y) = (u − l) + (2/α)(l − y)·1(y < l) + (2/α)(y − u)·1(y > u)", "6"),
+        ("eq", "IS_{α}(l, u; y) = (u − l) + (2/α)(l − y)·1(y < l) + (2/α)(y − u)·1(y > u)", "6"),
         ("p", "a proper score that rewards narrow intervals and penalises misses in proportion to their size. "
               "Secondary end-points were mean width, worst-group coverage, the share of groups with coverage below "
               "0.85, and results at α = 0.05 and 0.20. Three hypotheses were pre-specified: H1, random-split SCP "

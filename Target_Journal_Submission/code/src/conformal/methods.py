@@ -36,11 +36,15 @@ class FoldContext:
         t0 = time.time()
         # ---- group-wise cross-fit (calibration groups = deployment-level groups in training)
         gmode = cfg.get("group_mode", "group")
-        self.gfolds = make_folds(self.gtr, self.utr, gmode, n_folds=cfg.get("group_folds"),
-                                 n_unit_folds=cfg.get("n_unit_folds", 5), seed=seed)
-        self.gcf = CrossFit(Xtr, ytr, self.gfolds, self.A_max)
         self.gw = group_balanced_weights(self.gtr)
-        A, self.rmsecv_curve_g = self.gcf.choose_A(weights=self.gw)
+        if cfg.get("skip_gcv") and A_fixed is not None:
+            # fast path for methods that do not use out-of-group residuals (A taken from the main run)
+            self.gfolds, self.gcf, self.rmsecv_curve_g, A = None, None, None, A_fixed
+        else:
+            self.gfolds = make_folds(self.gtr, self.utr, gmode, n_folds=cfg.get("group_folds"),
+                                     n_unit_folds=cfg.get("n_unit_folds", 5), seed=seed)
+            self.gcf = CrossFit(Xtr, ytr, self.gfolds, self.A_max)
+            A, self.rmsecv_curve_g = self.gcf.choose_A(weights=self.gw)
         self.A = A if A_fixed is None else A_fixed
         if cfg.get('A_offset'):
             self.A = int(np.clip(self.A + cfg['A_offset'], 1, self.A_max))
@@ -154,7 +158,7 @@ def m_cvplus(ctx, alpha):
     return jackknife_plus_interval(mu, np.ones_like(mu), r, cf.fold_id, w, alpha, inf_mass=1.0)
 
 
-def m_wcp(ctx, alpha, max_n=20000):
+def m_wcp(ctx, alpha, max_n=20000, clip=None):
     """Weighted split CP under covariate shift (Tibshirani et al. 2019). The density ratio
     p_test(x)/p_cal(x) is estimated with a logistic classifier (calibration vs. unlabelled test
     spectra of the deployment group) on [standardised PLS scores, log Q]. Uses unlabelled test
@@ -180,6 +184,9 @@ def m_wcp(ctx, alpha, max_n=20000):
             out[g] = (te, np.exp(clf.decision_function(Fc)) * prior, np.exp(clf.decision_function(Ft[te])) * prior)
         return out
     for g, (te, w_cal, w_te) in _memo(ctx, "wcp_weights", _weights).items():
+        if clip is not None:  # stabilised variant: normalise to mean calibration weight 1, cap at `clip`
+            sc = w_cal.mean()
+            w_cal = np.minimum(w_cal / sc, clip); w_te = np.minimum(w_te / sc, clip)
         o = np.argsort(s_cal); s_sorted = s_cal[o]; cw = np.cumsum(w_cal[o])
         tot = cw[-1] + w_te
         k = np.searchsorted(cw, (1 - alpha) * tot - 1e-12, side="left")
@@ -467,4 +474,5 @@ def m_gc_cqr(ctx, alpha):
     return ctx.__dict__[key]
 
 
-METHODS.update({"GC-D2": m_gc_d2, "GC-CQR": m_gc_cqr})
+METHODS.update({"GC-D2": m_gc_d2, "GC-CQR": m_gc_cqr,
+                "WCP-clip": lambda c, a: m_wcp(c, a, clip=20.0)})  # reviewer-requested stabilised WCP baseline

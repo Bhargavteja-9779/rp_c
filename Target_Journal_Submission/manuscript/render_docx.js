@@ -50,7 +50,7 @@ function equation(text, num) {
   return new Paragraph({
     tabStops: [{ type: TabStopType.CENTER, position: TEXT_W / 2 }, { type: TabStopType.RIGHT, position: TEXT_W }],
     children: [new TextRun({ text: "\t", font: FONT, size: SZ }),
-      new TextRun({ text, font: "Cambria Math", size: SZ, italics: false }),
+      ...runs(text, { font: "Cambria Math" }),
       new TextRun({ text: `\t(${num})`, font: FONT, size: SZ })],
     spacing: { line: LINE, before: 60, after: 60 },
   });

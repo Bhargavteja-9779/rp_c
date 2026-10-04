@@ -27,7 +27,7 @@
    "corn_protein": 0.709,
    "corn_starch": 0.685,
    "mango_instrument": 0.8788,
-   "mango_population": 0.8991,
+   "mango_population": 0.8994,
    "mango_season_forward": 0.8772,
    "mango_season_loso": 0.8954,
    "ossl_lucas_block": 0.8982
@@ -68,9 +68,9 @@
     "p_holm": 1.0
    },
    "mango_population": {
-    "median_diff": -0.0538,
-    "r_rb": -0.296,
-    "p_holm": 1.2063287269230599e-12
+    "median_diff": -0.0449,
+    "r_rb": -0.636,
+    "p_holm": 0.923828125
    },
    "mango_season_forward": {
     "median_diff": -0.1775,
@@ -89,7 +89,7 @@
    }
   },
   "n_tasks_lower": 5,
-  "n_tasks_significant_lower": 2,
+  "n_tasks_significant_lower": 1,
   "n_tasks": 9
  }
 }

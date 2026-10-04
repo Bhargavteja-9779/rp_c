@@ -231,17 +231,20 @@ def fig_robust():
 
 
 # ------------------------------------------------------------------ Fig 7: efficiency
-def fig_efficiency(s):
-    s = s[(s.alpha == 0.1) & (s.task == "mango_season_loso")]
-    if s.empty:
+def fig_efficiency(s=None):
+    f = os.path.join(RESULTS, "timing_summary.csv")
+    if not os.path.exists(f):
         return
-    fi = pd.read_csv(os.path.join(RESULTS, "main", "folds_mango_season_loso_seed0.csv"))
-    shared = fi.t_group_cv.mean() + fi.t_final_fit.mean()
-    s = s.sort_values("time_s")
-    fig, ax = plt.subplots(figsize=(3.5, 3.2))
-    ax.barh([METHOD_LABEL.get(m, m) for m in s.method], s.time_s + 1e-4, color=[color(m) for m in s.method], height=0.6)
-    ax.set_xscale("log"); ax.set_xlabel("Method-specific time per held-out season (s)")
-    ax.set_title(f"Shared cost (group CV + final PLS): {shared:.1f} s per season", fontsize=7)
+    t = pd.read_csv(f).sort_values("method_s")
+    shared = t.shared_setup_s.mean()
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.4), sharey=True)
+    labels = [METHOD_LABEL.get(m, m) for m in t.method]
+    axs[0].barh(labels, t.method_s + 1e-4, color=[color(m) for m in t.method], height=0.6)
+    axs[0].set_xscale("log"); axs[0].set_xlabel("Method-specific time per held-out season (s)")
+    axs[0].axvline(shared, color=INK2, ls="--", lw=0.8)
+    axs[0].text(shared, len(t) - 0.4, f" shared group CV + PLS: {shared:.1f} s", fontsize=6, color=INK2, va="top")
+    axs[1].barh(labels, t.peak_MiB, color=[color(m) for m in t.method], height=0.6)
+    axs[1].set_xlabel("Peak additional memory (MiB)")
     fig.tight_layout(); save(fig, FIG, "fig7_efficiency")
 
 

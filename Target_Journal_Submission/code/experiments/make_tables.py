@@ -80,7 +80,8 @@ def main():
     tab = []
     for t in TASKS + GEN:
         r = {"Scenario": SHORT[t]}
-        for m in ["SCP", "ASTM-R", "CV+", "CQR", "WCP", "G-W-A"]:
+        r["Units"] = str(c[c.task == t].n_units.iloc[0]) if (c.task == t).any() else "–"
+        for m in ["SCP", "ASTM-R", "ASTM-G", "CV+", "CQR", "WCP", "G-W-A"]:
             v = c[(c.task == t) & (c.comparator == m)]
             if len(v):
                 v = v.iloc[0]
@@ -90,9 +91,12 @@ def main():
         tab.append(r)
     write(pd.DataFrame(tab), "table_statistics", "GC-D vs comparators: rank-biserial effect on interval score (Holm p)")
     # ---- timing
-    tab = a[a.task == "mango_season_loso"][["method", "time_s"]].sort_values("time_s")
-    tab["time_s"] = tab.time_s.map(lambda v: fmt(v, 3))
-    write(tab, "table_timing_mango_loso", "Method-specific computing time per held-out season (s)")
+    tf = os.path.join(RESULTS, "timing_summary.csv")
+    if os.path.exists(tf):
+        tab = pd.read_csv(tf)
+        for col in ["method_s", "method_s_sd", "peak_MiB", "ms_per_test_spectrum", "shared_setup_s"]:
+            tab[col] = tab[col].map(lambda v: fmt(v, 3))
+        write(tab, "table_timing_mango_loso", "Computing cost per held-out season (mango LOSO; isolated measurement)")
     # ---- extra tables
     for f, name, cap in [("iteration1_summary.csv", "table_iteration1", "Post-hoc iteration 1"),
                          ("iteration1_comparisons.csv", "table_iteration1_tests", "Post-hoc iteration 1: paired tests"),
@@ -100,7 +104,8 @@ def main():
                          ("robustness_size_summary.csv", "table_robust_size", "Robustness: training-set size"),
                          ("robustness_perturb_summary.csv", "table_robust_perturb", "Robustness: spectral perturbation"),
                          ("sensitivity_summary.csv", "table_sensitivity", "Sensitivity analysis"),
-                         ("cnn_summary.csv", "table_cnn", "1D-CNN base model (mango, new season)")]:
+                         ("cnn_summary.csv", "table_cnn", "1D-CNN base model (mango, new season)"),
+                         ("wcp_clip_summary.csv", "table_wcp_clip", "Weighted CP with and without clipped density ratios")]:
         p = os.path.join(RESULTS, f)
         if os.path.exists(p):
             d = pd.read_csv(p)

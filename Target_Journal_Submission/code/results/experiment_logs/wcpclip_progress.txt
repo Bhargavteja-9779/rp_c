@@ -1,0 +1,2 @@
+finished rc=0 :: python experiments/run_wcp_clip.py mango_season_loso 0 > results/experiment_logs/stdout_wcpclip_mango_season_loso_0.txt 2>&1
+finished rc=0 :: python experiments/run_wcp_clip.py mango_season_forward 0 > results/experiment_logs/stdout_wcpclip_mango_season_forward_0.txt 2>&1

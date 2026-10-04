@@ -44,7 +44,12 @@ def load_raw(sub="main"):
 
 
 def per_group(df):
-    """Average over seeds -> one row per (task, method, alpha, fold, group)."""
+    """Average over seeds -> one row per (task, method, alpha, group). If the group→fold assignment differs
+    between seeds (mango_population: the grouped 10-fold partition is redrawn for every seed), the group is
+    averaged over its folds; the reported 'fold' is then the seed-0 fold."""
+    df = df.copy()
+    f0 = df[df.seed == df.seed.min()].drop_duplicates(["task", "group"]).set_index(["task", "group"]).fold
+    df["fold"] = [f0.get((t, g_), f) for t, g_, f in zip(df.task, df.group, df.fold)]
     g = df.groupby(["task", "method", "alpha", "fold", "group"], as_index=False)
     out = g.agg(n=("n", "first"), coverage=("coverage", "mean"), coverage_seed_sd=("coverage", "std"),
                 width=("width_mean", "mean"), interval_score=("interval_score", "mean"),
@@ -72,11 +77,31 @@ def summarize(pg, df):
     return pd.DataFrame(rows)
 
 
-def compare(pg, alpha=0.1):
+def analysis_units(d):
+    """Unit of analysis for paired tests: the held-out group when every outer fold holds out one group;
+    otherwise the outer fold (groups held out together share one model and are not independent), with
+    group metrics averaged within the fold."""
+    multi = d.groupby("fold").group.nunique().max() > 1
+    if not multi:
+        return d.assign(unit=d.fold + "|" + d.group.astype(str)), "held-out group"
+    agg = d.groupby(["fold", "method"], as_index=False).agg(interval_score=("interval_score", "mean"),
+                                                            coverage=("coverage", "mean"))
+    return agg.assign(unit=agg.fold), "outer fold"
+
+
+def compare(pg, alpha=0.1, raw=None):
     out = []
-    for task, d in pg[pg.alpha == alpha].groupby("task"):
-        piv_is = d.pivot_table(index=["fold", "group"], columns="method", values="interval_score")
-        piv_cov = d.pivot_table(index=["fold", "group"], columns="method", values="coverage")
+    for task, d0 in pg[pg.alpha == alpha].groupby("task"):
+        if task == "mango_population" and raw is not None:
+            # folds differ between seeds: conservative unit = the 10 outer folds of the seed-0 partition
+            r0 = raw[(raw.task == task) & (raw.alpha == alpha) & (raw.seed == raw.seed.min())]
+            d = r0.groupby(["fold", "method"], as_index=False).agg(interval_score=("interval_score", "mean"),
+                                                                   coverage=("coverage", "mean")).assign(unit=lambda x: x.fold)
+            unit_name = "outer fold (seed-0 partition)"
+        else:
+            d, unit_name = analysis_units(d0)
+        piv_is = d.pivot_table(index="unit", columns="method", values="interval_score")
+        piv_cov = d.pivot_table(index="unit", columns="method", values="coverage")
         if PROPOSED not in piv_is:
             continue
         others = [m for m in piv_is.columns if m not in (PROPOSED, "ORACLE", "GC-D2", "GC-CQR")]
@@ -84,14 +109,19 @@ def compare(pg, alpha=0.1):
         for m in others:
             r1 = wilcoxon_paired(piv_is[PROPOSED].values, piv_is[m].values)
             r2 = wilcoxon_paired(np.abs(piv_cov[PROPOSED].values - (1 - alpha)), np.abs(piv_cov[m].values - (1 - alpha)))
-            res.append(dict(task=task, comparator=m, n_groups=r1["n_pairs"],
+            res.append(dict(task=task, comparator=m, unit=unit_name, n_units=r1["n_pairs"],
                             IS_median_diff=r1["median_diff"], IS_r_rb=r1["r_rb"], IS_p=r1["p"],
                             covgap_median_diff=r2["median_diff"], covgap_r_rb=r2["r_rb"], covgap_p=r2["p"]))
         r = pd.DataFrame(res)
         r["IS_p_holm"] = holm(r.IS_p.values)
         r["covgap_p_holm"] = holm(r.covgap_p.values)
         out.append(r)
-    return pd.concat(out, ignore_index=True)
+    out = pd.concat(out, ignore_index=True)
+    # additional, more conservative family: Holm across all task x comparator tests of the main tasks
+    mm = out.task.isin(MAIN_TASKS)
+    out["IS_p_holm_all_main"] = np.nan
+    out.loc[mm, "IS_p_holm_all_main"] = holm(out.loc[mm, "IS_p"].values)
+    return out
 
 
 def hypotheses(summ, comp, folds_info):
@@ -123,7 +153,7 @@ def main():
     pg.to_csv(os.path.join(RESULTS, "per_group_results.csv"), index=False)
     summ = summarize(pg, df)
     summ.to_csv(os.path.join(RESULTS, "summary_results.csv"), index=False)
-    comp = compare(pg)
+    comp = compare(pg, raw=df)
     comp.to_csv(os.path.join(RESULTS, "comparisons_alpha0.1.csv"), index=False)
     finfo = {}
     for f in glob.glob(os.path.join(RESULTS, "main", "folds_*_seed0.csv")):
@@ -135,7 +165,7 @@ def main():
                    for m, d in dt.groupby("method")} for t, dt in summ.groupby("task")}
     json.dump(dict(metrics=metrics, min_calibration_groups=finfo), open(os.path.join(RESULTS, "metrics.json"), "w"), indent=1)
     json.dump(dict(comparisons=comp.to_dict("records"), hypotheses=hyp,
-                   test="two-sided Wilcoxon signed-rank (exact if <=25 non-zero pairs), unit = held-out group, "
+                   test="two-sided Wilcoxon signed-rank (exact if <=25 non-zero pairs), unit = held-out group (or outer fold when a fold holds out several groups: mango_population, ossl_lucas_campaign), "
                         "per-group values averaged over seeds; Holm correction across comparators within task; "
                         "effect size = matched-pairs rank-biserial correlation (negative = GC-D lower)"),
               open(os.path.join(RESULTS, "statistics.json"), "w"), indent=1, default=float)

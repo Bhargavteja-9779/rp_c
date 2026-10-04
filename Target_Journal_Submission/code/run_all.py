@@ -66,10 +66,12 @@ def main():
                  f"{py} experiments/run_robustness.py --exp sensitivity --task ossl_lucas_block",
                  f"{py} experiments/run_robustness.py --exp sens_popfolds"]
         cmds += [f"{py} experiments/run_cnn.py --seed {s}" for s in (0, 1, 2)]
+        cmds += [f"{py} experiments/run_wcp_clip.py {t} {s}" for s in seeds for t in MAIN_TASKS]
     else:
         cmds += [f"{py} experiments/run_robustness.py --exp perturb --quick",
                  f"{py} experiments/run_cnn.py --seed 0 --quick"]
     parallel(cmds, env, a.workers)
+    sh(f"{py} experiments/run_timing.py", env)   # isolated timing on an idle machine (E6)
     sh(f"{py} experiments/aggregate.py", env)
     sh(f"{py} experiments/aggregate_extra.py", env)
     sh(f"{py} experiments/analysis_points.py", env)
