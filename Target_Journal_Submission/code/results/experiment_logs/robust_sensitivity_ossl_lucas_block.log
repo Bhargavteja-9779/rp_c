@@ -84,3 +84,6 @@
 2026-10-04 04:49:36,351   [ossl_lucas_block] fold block12: n_tr=38862 n_te=1313 A=25 K=29 setup=34.4s
 2026-10-04 04:50:16,379   [ossl_lucas_block] fold block13: n_tr=39178 n_te=997 A=25 K=29 setup=34.1s
 2026-10-04 04:50:53,922   [ossl_lucas_block] fold block14: n_tr=38563 n_te=1612 A=25 K=29 setup=32.1s
+2026-10-04 04:51:32,568   [ossl_lucas_block] fold block15: n_tr=38055 n_te=2120 A=25 K=29 setup=33.1s
+2026-10-04 04:52:11,216   [ossl_lucas_block] fold block16: n_tr=38849 n_te=1326 A=25 K=29 setup=33.0s
+2026-10-04 04:52:50,790   [ossl_lucas_block] fold block17: n_tr=39640 n_te=535 A=25 K=29 setup=34.0s
