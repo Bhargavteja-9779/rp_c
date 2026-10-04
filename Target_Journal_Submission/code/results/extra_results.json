@@ -1582,6 +1582,42 @@
     "width": 3.9614393065452185,
     "interval_score": 6.837944557914902,
     "A": 19.285714285714285
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=-4",
+    "method": "G-W-A",
+    "coverage": 0.9000030787850851,
+    "width": 6.544715885878578,
+    "interval_score": 12.882568357956778,
+    "A": 20.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=-4",
+    "method": "GC-D",
+    "coverage": 0.8983052859689934,
+    "width": 7.272477923785506,
+    "interval_score": 12.24587393653976,
+    "A": 20.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=-4",
+    "method": "R-U-D",
+    "coverage": 0.8914726984597121,
+    "width": 7.075612973597169,
+    "interval_score": 12.307094005910647,
+    "A": 20.9
+   },
+   {
+    "task": "ossl_lucas_block",
+    "variant": "A_offset=-4",
+    "method": "SCP",
+    "coverage": 0.8863152829748804,
+    "width": 6.163057096372913,
+    "interval_score": 13.088351143227364,
+    "A": 20.9
    }
   ]
  },
@@ -1589,162 +1625,162 @@
   {
    "task": "corn_moisture",
    "method": "WCP",
-   "coverage": 0.9633333333333333,
+   "coverage": 0.9643333333333334,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.5733333333333334,
+   "finite_frac": 0.535,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_moisture",
    "method": "WCP-clip",
-   "coverage": 0.9633333333333333,
+   "coverage": 0.9643333333333334,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.5733333333333334,
+   "finite_frac": 0.535,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_oil",
    "method": "WCP",
-   "coverage": 0.95,
+   "coverage": 0.9450000000000001,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.49,
+   "finite_frac": 0.5016666666666667,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_oil",
    "method": "WCP-clip",
-   "coverage": 0.95,
+   "coverage": 0.9450000000000001,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.49,
+   "finite_frac": 0.5016666666666667,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_protein",
    "method": "WCP",
-   "coverage": 0.9933333333333334,
+   "coverage": 0.9890000000000001,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.28,
+   "finite_frac": 0.24333333333333332,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_protein",
    "method": "WCP-clip",
-   "coverage": 0.9933333333333334,
+   "coverage": 0.9890000000000001,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.28,
+   "finite_frac": 0.24266666666666667,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_starch",
    "method": "WCP",
-   "coverage": 0.9233333333333333,
+   "coverage": 0.9356666666666666,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.5816666666666667,
+   "finite_frac": 0.5386666666666666,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "corn_starch",
    "method": "WCP-clip",
-   "coverage": 0.9233333333333333,
+   "coverage": 0.9356666666666666,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.5816666666666667,
+   "finite_frac": 0.5386666666666666,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_instrument",
    "method": "WCP",
-   "coverage": 0.9258672046320359,
+   "coverage": 0.9045864923737481,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.8019169982224351,
+   "finite_frac": 0.8046839984170298,
    "n_groups": 24,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_instrument",
    "method": "WCP-clip",
-   "coverage": 0.8553729291090534,
-   "width_median": 4.019134326374428,
-   "interval_score": 7.005350263627996,
-   "finite_frac": 1.0,
+   "coverage": 0.8513541651631359,
+   "width_median": 4.106470210417446,
+   "interval_score": Infinity,
+   "finite_frac": 0.9902626470395758,
    "n_groups": 24,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_population",
    "method": "WCP",
-   "coverage": 0.9107932470252756,
+   "coverage": 0.9068805758538797,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.8977432167387239,
+   "finite_frac": 0.8947423621259658,
    "n_groups": 199,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_population",
    "method": "WCP-clip",
-   "coverage": 0.8964361063501062,
-   "width_median": 3.564912779955661,
-   "interval_score": 4.8187269470518155,
-   "finite_frac": 1.0,
+   "coverage": 0.8987340694133569,
+   "width_median": 3.595188882799385,
+   "interval_score": Infinity,
+   "finite_frac": 0.9998415386109291,
    "n_groups": 199,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_season_forward",
    "method": "WCP",
-   "coverage": 0.8807894221695293,
-   "width_median": 11.055966399083337,
+   "coverage": 0.8749727834113621,
+   "width_median": 10.294110853281138,
    "interval_score": Infinity,
-   "finite_frac": 0.9992809768796876,
+   "finite_frac": 0.9993538120260332,
    "n_groups": 5,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_season_forward",
    "method": "WCP-clip",
-   "coverage": 0.8260820694352897,
-   "width_median": 3.4771990421562498,
-   "interval_score": 7.806434276354963,
+   "coverage": 0.8215451816898357,
+   "width_median": 3.6642596963212974,
+   "interval_score": 7.305914454373211,
    "finite_frac": 1.0,
    "n_groups": 5,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_season_loso",
    "method": "WCP",
-   "coverage": 0.8792169728716196,
-   "width_median": 3.9048943456803666,
+   "coverage": 0.8804109141791162,
+   "width_median": 3.885627426247239,
    "interval_score": Infinity,
-   "finite_frac": 0.9997343510639239,
+   "finite_frac": 0.9998140457447467,
    "n_groups": 7,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "mango_season_loso",
    "method": "WCP-clip",
-   "coverage": 0.8523454329217502,
-   "width_median": 3.8595116769990985,
-   "interval_score": 6.2446524349032035,
+   "coverage": 0.8548387975623642,
+   "width_median": 3.9464283767172033,
+   "interval_score": 6.258152077016098,
    "finite_frac": 1.0,
    "n_groups": 7,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_kssl_to_lucas",
@@ -1754,77 +1790,77 @@
    "interval_score": Infinity,
    "finite_frac": 0.0,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_kssl_to_lucas",
    "method": "WCP-clip",
-   "coverage": 0.0969803868468191,
-   "width_median": 30.153062840997126,
-   "interval_score": 120.01625991974836,
+   "coverage": 0.10552771719772396,
+   "width_median": 31.198218184080716,
+   "interval_score": 119.84833587224703,
    "finite_frac": 1.0,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_lucas_block",
    "method": "WCP",
-   "coverage": 0.8905246933474416,
-   "width_median": 15.772883130950259,
+   "coverage": 0.9170316425245262,
+   "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.9781391300824792,
+   "finite_frac": 0.9796638301580948,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_lucas_block",
    "method": "WCP-clip",
-   "coverage": 0.9220312225983399,
-   "width_median": 4.847935762354718,
+   "coverage": 0.9208364154223317,
+   "width_median": 4.829721376277455,
    "interval_score": Infinity,
-   "finite_frac": 0.9998484848484849,
+   "finite_frac": 0.9998098240469208,
    "n_groups": 30,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_lucas_campaign",
    "method": "WCP",
-   "coverage": 0.725521806286736,
+   "coverage": 0.8030182016813034,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.8424464575782669,
+   "finite_frac": 0.7896167345823695,
    "n_groups": 58,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "ossl_lucas_campaign",
    "method": "WCP-clip",
-   "coverage": 0.9010788585213448,
+   "coverage": 0.9046344354445413,
    "width_median": Infinity,
    "interval_score": Infinity,
-   "finite_frac": 0.8857282907462415,
+   "finite_frac": 0.8870156618997359,
    "n_groups": 58,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "tablets",
    "method": "WCP",
-   "coverage": 0.9891304347826086,
+   "coverage": 0.9617391304347825,
    "width_median": Infinity,
    "interval_score": Infinity,
    "finite_frac": 0.5,
    "n_groups": 2,
-   "n_seeds": 2
+   "n_seeds": 5
   },
   {
    "task": "tablets",
    "method": "WCP-clip",
-   "coverage": 0.9891304347826086,
+   "coverage": 0.9617391304347825,
    "width_median": Infinity,
    "interval_score": Infinity,
    "finite_frac": 0.5,
    "n_groups": 2,
-   "n_seeds": 2
+   "n_seeds": 5
   }
  ],
  "cultivar": null

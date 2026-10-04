@@ -1,0 +1,2 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+mp6_rep9,120,20,3,2,0.0,0.0,0.004

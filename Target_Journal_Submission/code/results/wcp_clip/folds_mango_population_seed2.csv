@@ -1,0 +1,2 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+popfold9,76187,9214,18,180,1.09,0.007,1.029

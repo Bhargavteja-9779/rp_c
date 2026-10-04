@@ -1,0 +1,2 @@
+fold,n_train,n_test,A,n_calib_groups,setup_s,t_group_cv,t_final_fit
+KSSL_to_LUCAS,19747,40175,21,84,1.12,0.01,1.071

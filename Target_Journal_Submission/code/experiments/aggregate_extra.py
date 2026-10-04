@@ -96,7 +96,7 @@ def wcp_clip():
     if not fs:
         return None
     d = pd.concat([pd.read_csv(f) for f in fs])
-    pg = d.groupby(["task", "method", "fold", "group"], as_index=False).agg(coverage=("coverage", "mean"),
+    pg = d.groupby(["task", "method", "group"], as_index=False).agg(coverage=("coverage", "mean"),
                                                                            width=("width_mean", "mean"),
                                                                            interval_score=("interval_score", "mean"),
                                                                            finite=("finite_frac", "mean"))
