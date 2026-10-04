@@ -14,5 +14,5 @@ other tasks.
 scores out-of-group with group-balanced weights ("GC-CQR") keeps CQR's adaptivity while restoring coverage under
 group shift where random-split CQR under-covers (mango instrument).
 
-**Experiment:** methods GC-D2 and GC-CQR added; rerun on all main tasks, α = 0.1, seeds 0–4, compared with GC-D,
+**Experiment:** methods GC-D2 and GC-CQR added; rerun on all main tasks, α = 0.1, seeds 0–2 (reduced from 0–4 for computing time; post-hoc analysis), compared with GC-D,
 CQR, SCP under the same statistics. Results reported whether positive or negative.
