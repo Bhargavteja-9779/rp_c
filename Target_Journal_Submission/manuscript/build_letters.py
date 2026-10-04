@@ -48,8 +48,8 @@ def cover_letter(path):
         "We believe the work fits the scope of Talanta because it addresses a core analytical question — how to state the "
         "uncertainty of a multivariate calibration result reliably when the method is applied in practice — and evaluates "
         "it on real analytical data with the consequences for analytical decisions. The experimental protocol and "
-        "hypotheses were fixed before the held-out evaluation, all data are public, and the complete code regenerates every "
-        "number, table and figure.",
+        "hypotheses were fixed before the held-out evaluation (additional and post-hoc analyses are labelled as such), all data "
+        "are public, and the complete code regenerates every number, table and figure.",
         "This manuscript is original, has not been published previously, and is not under consideration for publication "
         "elsewhere. All authors have approved the submission and declare no competing interests. No human or animal "
         "subjects were involved. The use of AI-assisted tools is declared in the manuscript.",
