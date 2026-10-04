@@ -1,7 +1,0 @@
-2026-10-04 04:37:38,587   [mango_season_loso] fold season2015: n_tr=70201 n_te=15200 A=17 K=6 setup=1.7s
-2026-10-04 04:37:40,589   [mango_season_loso] fold season2016: n_tr=70091 n_te=15310 A=12 K=6 setup=1.1s
-2026-10-04 04:37:42,278   [mango_season_loso] fold season2017: n_tr=58089 n_te=27312 A=15 K=6 setup=0.8s
-2026-10-04 04:37:44,137   [mango_season_loso] fold season2018: n_tr=69268 n_te=16133 A=16 K=6 setup=1.0s
-2026-10-04 04:37:46,294   [mango_season_loso] fold season2019: n_tr=79797 n_te=5604 A=12 K=6 setup=1.3s
-2026-10-04 04:37:48,627   [mango_season_loso] fold season2020: n_tr=80949 n_te=4452 A=13 K=6 setup=1.3s
-2026-10-04 04:37:50,911   [mango_season_loso] fold season2021: n_tr=84011 n_te=1390 A=19 K=6 setup=1.3s

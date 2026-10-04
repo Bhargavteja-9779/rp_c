@@ -1,3 +1,0 @@
-2026-10-03 23:50:19,311   [ossl_lucas_campaign] fold campaign2009: n_tr=21782 n_te=18393 A=25 K=30 setup=18.9s
-2026-10-03 23:52:44,340   [ossl_lucas_campaign] fold campaign2015: n_tr=18393 n_te=21782 A=25 K=28 setup=14.3s
-2026-10-03 23:55:32,002 done ossl_lucas_campaign seed 2 in 331.6s

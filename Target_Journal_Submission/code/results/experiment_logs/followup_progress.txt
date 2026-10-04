@@ -1,5 +1,0 @@
-finished rc=0 :: python experiments/run_robustness.py --exp size > results/experiment_logs/stdout_rob_size.txt 2>&1
-finished rc=0 :: python experiments/run_robustness.py --exp perturb > results/experiment_logs/stdout_rob_perturb.txt 2>&1
-finished rc=0 :: python experiments/run_robustness.py --exp groups --task mango_instrument > results/experiment_logs/stdout_rob_groups_mango.txt 2>&1
-finished rc=0 :: python experiments/run_robustness.py --exp sensitivity --task mango_season_loso > results/experiment_logs/stdout_sens_mango.txt 2>&1
-finished rc=0 :: python experiments/run_robustness.py --exp groups --task ossl_lucas_block > results/experiment_logs/stdout_rob_groups_ossl.txt 2>&1
