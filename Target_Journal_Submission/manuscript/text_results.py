@@ -498,7 +498,8 @@ def results_part2(C, N, s, c, h, ex, g):
                 f"above the nominal level as their guarantees require, but at a higher interval score than GC-D "
                 f"({g('mango_instrument','HJ+','interval_score'):.2f} and {g('mango_instrument','HCP-D','interval_score'):.2f} vs "
                 f"{g('mango_instrument','GC-D','interval_score'):.2f} for instruments). HCP-D pays for its exactness by "
-                "fitting the model on half of the groups.")]
+                "fitting the model on half of the groups. Being unbounded with few groups, the guaranteed variants are no alternative "
+                "in exactly the settings — few seasons or instruments — in which GC-D is most needed.")]
     if rg is not None:
         def rgv(t, m, K, col="coverage"):
             d = rg[(rg.task == t) & (rg.method == m) & (rg.K == K)]

@@ -802,7 +802,7 @@
   },
   {
    "type": "p",
-   "text": "The variants with finite-sample guarantees behaved as theory predicts. With at most six training seasons or two corn instruments, HJ+, HCP and GC-D+ returned unbounded intervals (Tables 2–3), because the point mass 1/(K + 1) at +∞ exceeds α. With 27–30 instruments or 29 soil regions they were finite and covered 0.925 (HJ+) and 0.932 (HCP-D) for new instruments and 0.931 and 0.964 for new regions, above the nominal level as their guarantees require, but at a higher interval score than GC-D (6.30 and 14.80 vs 6.21 for instruments). HCP-D pays for its exactness by fitting the model on half of the groups."
+   "text": "The variants with finite-sample guarantees behaved as theory predicts. With at most six training seasons or two corn instruments, HJ+, HCP and GC-D+ returned unbounded intervals (Tables 2–3), because the point mass 1/(K + 1) at +∞ exceeds α. With 27–30 instruments or 29 soil regions they were finite and covered 0.925 (HJ+) and 0.932 (HCP-D) for new instruments and 0.931 and 0.964 for new regions, above the nominal level as their guarantees require, but at a higher interval score than GC-D (6.30 and 14.80 vs 6.21 for instruments). HCP-D pays for its exactness by fitting the model on half of the groups. Being unbounded with few groups, the guaranteed variants are no alternative in exactly the settings — few seasons or instruments — in which GC-D is most needed."
   },
   {
    "type": "p",

@@ -84,6 +84,9 @@ experiments/run_cnn.py          E4b (1D-CNN base model)
 experiments/run_wcp_clip.py     reviewer-requested baseline: WCP with clipped density ratios
 experiments/run_cultivar.py     leave-one-cultivar-out test
 experiments/run_timing.py       E6 isolated computing cost per method
+experiments/run_revision.py     revision 1: scale-model form, unequal groups, bias correction, rejection rule, WCP variants
+experiments/run_simulation.py   revision 1: synthetic study of single-deployment coverage vs K, α, group balance
+experiments/revision_analyses.py revision 1: analyses of existing and new results (results/revision/)
 experiments/aggregate.py        metrics.json, statistics.json, hypotheses.json, summary CSVs
 experiments/aggregate_extra.py  iteration / robustness / sensitivity / CNN summaries
 experiments/analysis_points.py  E8 error analysis, E9 decision analysis

@@ -19,10 +19,18 @@ def toks(t):
     return t.split()
 
 
+CIT = re.compile(r"\[[\d,–\s]+\]")
+
+
+def norm(tok):
+    """Citation numbers change when references are added; renumbering alone is not a change of content."""
+    return CIT.sub("[#]", tok)
+
+
 def mark(new, old):
     """Word-level diff: wrap inserted/replaced runs of words of `new` (relative to `old`) in ⟦ ⟧."""
     a, b = toks(old), toks(new)
-    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+    sm = difflib.SequenceMatcher(None, [norm(x) for x in a], [norm(x) for x in b], autojunk=False)
     out = []
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         seg = b[j1:j2]
@@ -51,7 +59,7 @@ def full(t):
 
 
 def mark_text(t, pool, thr=0.45):
-    if t in pool:
+    if t in pool or norm(t) in {norm(p) for p in pool}:
         return t
     old, r = best(t, pool)
     return mark(t, old) if old is not None and r >= thr else full(t)
