@@ -12,3 +12,4 @@ Target_Journal_Submission/code/tables_quick/
 *.parquet
 Target_Journal_Submission/manuscript/_render/
 Target_Journal_Submission/code/results/*/partial/
+Target_Journal_Submission/code/results/revision/tmp/
