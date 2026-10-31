@@ -42,6 +42,8 @@ REFS = {
  "barber2021": "R.F. Barber, E.J. Candès, A. Ramdas, R.J. Tibshirani, Predictive inference with the jackknife+, Ann. Stat. 49 (2021) 486–507. https://doi.org/10.1214/20-AOS1965",
  "papadopoulos2011": "H. Papadopoulos, V. Vovk, A. Gammerman, Regression conformal prediction with nearest neighbours, J. Artif. Intell. Res. 40 (2011) 815–840. https://doi.org/10.1613/jair.3198",
  "romano2019": "Y. Romano, E. Patterson, E. Candès, Conformalized quantile regression, in: Adv. Neural Inf. Process. Syst. 32 (NeurIPS 2019). arXiv:1905.03222",
+ "rubin1981": "D.B. Rubin, The Bayesian bootstrap, Ann. Stat. 9 (1981) 130–134. https://doi.org/10.1214/aos/1176345338",
+ "gourieroux1984": "C. Gourieroux, A. Monfort, A. Trognon, Pseudo maximum likelihood methods: theory, Econometrica 52 (1984) 681–700. https://doi.org/10.2307/1913471",
  "jackson1979": "J.E. Jackson, G.S. Mudholkar, Control procedures for residuals associated with principal component analysis, Technometrics 21 (1979) 341–349. https://doi.org/10.1080/00401706.1979.10489779",
  "savitzky1964": "A. Savitzky, M.J.E. Golay, Smoothing and differentiation of data by simplified least squares procedures, Anal. Chem. 36 (1964) 1627–1639. https://doi.org/10.1021/ac60214a047",
  "barnes1989": "R.J. Barnes, M.S. Dhanoa, S.J. Lister, Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra, Appl. Spectrosc. 43 (1989) 772–777. https://doi.org/10.1366/0003702894202201",

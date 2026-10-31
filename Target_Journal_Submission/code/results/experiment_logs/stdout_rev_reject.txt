@@ -1,0 +1,8 @@
+2026-10-31 06:02:05,041 reject: fold season2015 done
+2026-10-31 06:02:25,695 reject: fold season2016 done
+2026-10-31 06:02:43,795 reject: fold season2017 done
+2026-10-31 06:03:05,243 reject: fold season2018 done
+2026-10-31 06:03:29,329 reject: fold season2019 done
+2026-10-31 06:03:50,399 reject: fold season2020 done
+2026-10-31 06:04:12,828 reject: fold season2021 done
+2026-10-31 06:04:13,097 done

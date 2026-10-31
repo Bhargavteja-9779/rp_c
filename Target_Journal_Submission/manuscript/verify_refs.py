@@ -16,6 +16,7 @@ DOIS = {
  "fernandez2003": "10.1016/s0169-7439(02)00139-9", "romera2010": "10.1016/j.chemolab.2010.06.007",
  "fannjiang2022": "10.1073/pnas.2204569119", "yang2024": "10.1093/jrsssb/qkae009",
  "mikulasek2023": "10.1002/cem.3477", "sun2020": "10.1016/j.postharvbio.2019.111117",
+ "rubin1981": "10.1214/aos/1176345338", "gourieroux1984": "10.2307/1913471",
  "pedregosa2011": None,
 }
 ARXIV = {"tibshirani2019": "1904.06019", "romano2019": "1905.03222", "gibbs2021": "2106.00170",

@@ -134,6 +134,10 @@ def fig_groups():
         ax.axhline(0.9, color=INK2, ls="--", lw=0.8)
         ax.set_xticks(range(3)); ax.set_xticklabels(["Classical", "Split CP", "GC-D"], rotation=30)
         ax.set_title(f"{TASK_SHORT[t]}\n({len(v)} groups)")
+        if t == "mango_population":   # the lot that every method misses (green 'Kensington Pride', 2020)
+            e = pg[(pg.task == t) & (pg.method == "GC-D")].sort_values("coverage").iloc[0]
+            ax.annotate(f"pop. {e.group}\n(green KP 2020,\nbias {e.bias:+.1f} % DM)", xy=(2, e.coverage), xytext=(0.15, 0.22),
+                        fontsize=5.3, color=INK2, arrowprops=dict(arrowstyle="-", color=INK2, lw=0.6))
     axs[0].set_ylabel("Coverage in held-out group")
     fig.tight_layout(); save(fig, FIG, "fig4_per_group_coverage")
 
@@ -163,6 +167,13 @@ def fig_ablation(s):
         ax.set_xticks(range(len(cells))); ax.set_xticklabels(cells, rotation=30); ax.grid(False); ax.set_title(t)
         ax.set_yticks(range(len(tasks))); ax.set_yticklabels([TASK_SHORT[x] for x in tasks])
     axs[1].set_yticklabels([])
+    from matplotlib.patches import Rectangle
+    j = cells.index("GC-D")
+    for ax in axs:
+        ax.add_patch(Rectangle((j - 0.5, -0.5), 1, len(tasks), fill=False, ec=INK, lw=1.4, clip_on=False))
+        lab = [c if c != "GC-D" else "GC-D\n(= G-W-D)" for c in cells]
+        ax.set_xticklabels(lab, rotation=30)
+        ax.get_xticklabels()[j].set_fontweight("bold")
     fig.text(0.5, -0.02, "R/G: random vs out-of-group calibration folds · U/W: uniform vs group-balanced weights · "
              "A/D: absolute vs diagnostic-normalised score", ha="center", fontsize=6.3, color=INK2)
     fig.tight_layout(); save(fig, FIG, "fig5_ablation")
@@ -177,7 +188,7 @@ def fig_robust():
     pt = sorted(glob.glob(os.path.join(rd, "perturb_*.csv")))
     if not (g or sz or pt):
         return
-    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.9))
+    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.9), gridspec_kw=dict(width_ratios=[1, 1, 1.45]))
     if g:
         d = pd.concat([pd.read_csv(f) for f in g])
         d = d.groupby(["task", "method", "K", "rep"]).agg(coverage=("coverage", "mean"), fin=("finite_frac", "min")).reset_index()
@@ -222,9 +233,15 @@ def fig_robust():
             axs[2].plot(xs + off[j], v, "o", ms=3.5, color=color(m), label=METHOD_LABEL[m])
         for b in [0.5, 2.5, 4.5, 7.5]:
             axs[2].axvline(b, color=GRID, lw=0.8)
+        tick = {"none": lambda l: "–", "gain": lambda l: f"+{100 * l:g}%", "offset_slope": lambda l: f"{l:g}",
+                "wl_shift": lambda l: f"{l:g}", "noise": lambda l: f"{100 * l:g}%"}
         axs[2].set_xticks(xs)
-        axs[2].set_xticklabels([("none" if p == "none" else f"{lab[p]} {1 + l if p == 'gain' else l:g}") for p, l in order],
-                               rotation=60, fontsize=5.5, ha="right")
+        axs[2].set_xticklabels([tick[p](l) for p, l in order], fontsize=5.2)
+        grp = {"none": "none", "gain": "gain", "offset_slope": "tilt", "wl_shift": "λ shift (nm)", "noise": "noise"}
+        for p in dict.fromkeys(p for p, _ in order):
+            xx = [i for i, (q, _) in enumerate(order) if q == p]
+            axs[2].text(np.mean(xx), -0.13, grp[p], transform=axs[2].get_xaxis_transform(), ha="center", va="top",
+                        fontsize=6, color=INK)
         axs[2].axhline(0.9, color=INK2, ls=":", lw=0.8); axs[2].set_title("(c) Test-time perturbation (mango)")
         axs[2].legend(fontsize=5, loc="lower left"); axs[2].grid(axis="x", visible=False)
     fig.tight_layout(); save(fig, FIG, "fig6_robustness")
@@ -250,48 +267,137 @@ def fig_efficiency(s=None):
 
 # ------------------------------------------------------------------ Fig 8: error analysis
 def fig_error():
-    f = os.path.join(RESULTS, "error_analysis", "conditional_coverage_mango_season_loso.csv")
-    g = os.path.join(RESULTS, "error_analysis", "group_bias_mango_instrument.csv")
+    """Fig. 7 (revised): where diagnostic scaling matters and what a few reference samples of the new group buy."""
+    rv = os.path.join(RESULTS, "revision")
+    f = os.path.join(rv, "conditional_coverage.csv")
     if not os.path.exists(f):
         return
-    cc = pd.read_csv(f)
-    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.4))
-    for ax, by, title in [(axs[0], "Q-ratio decile", "(a) by spectral residual Q (decile)"),
-                          (axs[1], "reference decile", "(b) by reference DM (decile)")]:
-        for m in ["SCP", "ASTM-R", "G-W-A", "GC-D"]:
-            e = cc[(cc.by == by) & (cc.method == m)]
-            ax.plot(np.arange(1, len(e) + 1), e.coverage, marker="o", ms=3, color=color(m), lw=1.4, label=METHOD_LABEL[m])
-        ax.axhline(0.9, color=INK2, ls="--", lw=0.8); ax.set_xlabel("Decile"); ax.set_title(title)
-    axs[0].set_ylabel("Coverage (mango, new season)"); axs[0].legend(fontsize=5)
-    if os.path.exists(g):
-        gb = pd.read_csv(g)
-        for m in ["SCP", "GC-D"]:
-            e = gb[gb.method == m]
-            axs[2].scatter(np.abs(e.bias), e.coverage, s=12, color=color(m), label=METHOD_LABEL[m], lw=0)
-        axs[2].axhline(0.9, color=INK2, ls="--", lw=0.8)
-        axs[2].set_xlabel("|Mean prediction bias| in held-out instrument (% DM)")
-        axs[2].set_title("(c) Instrument-level bias vs coverage"); axs[2].legend(fontsize=5)
+    cc = pd.read_csv(f); cc = cc[cc.by == "Qr"]
+    fig, axs = plt.subplots(2, 2, figsize=(7.2, 5.0))
+    ax = axs[0, 0]
+    for m in ["SCP", "G-W-A", "GC-D"]:
+        e = cc[(cc.task == "mango_season_loso") & (cc.method == m)].sort_values("decile")
+        ax.plot(e.decile, e.coverage, marker="o", ms=3, color=color(m), lw=1.4, label=METHOD_LABEL[m])
+    ax.axhline(0.9, color=INK2, ls="--", lw=0.8); ax.set_xlabel("Decile of Q/Q̃ (test spectra)")
+    ax.set_ylabel("Coverage"); ax.set_title("(a) Mango, new season: by spectral residual Q"); ax.legend(fontsize=5.5)
+    ax = axs[0, 1]
+    tasks = ["mango_season_loso", "mango_season_forward", "mango_instrument", "ossl_lucas_block", "ossl_kssl_to_lucas"]
+    for k, m in enumerate(["SCP", "G-W-A", "GC-D"]):
+        v = [cc[(cc.task == t) & (cc.method == m) & (cc.decile == 10)].coverage.iloc[0] for t in tasks]
+        ax.plot(v, np.arange(len(tasks)) + (k - 1) * 0.18, "o", ms=4, color=color(m), label=METHOD_LABEL[m])
+    ax.axvline(0.9, color=INK2, ls="--", lw=0.8); ax.set_yticks(range(len(tasks)))
+    ax.set_yticklabels([TASK_SHORT[t] for t in tasks]); ax.invert_yaxis()
+    ax.set_xlabel("Coverage in the highest Q decile"); ax.set_title("(b) Most atypical 10 % of test spectra")
+    bf = os.path.join(rv, "bias_correction_per_group.csv")
+    if os.path.exists(bf):
+        bg = pd.read_csv(bf)
+        ax = axs[1, 0]
+        raw = pd.read_csv(os.path.join(rv, "bias_correction_mango_instrument.csv"))
+        tb = raw.groupby("group").bias_true.first().abs()
+        e0 = bg[(bg.task == "mango_instrument") & (bg.k == 3) & (bg.variant == "GC-D (no correction)")].set_index("group")
+        e1 = bg[(bg.task == "mango_instrument") & (bg.k == 3) & (bg.variant == "GC-D-BC (shifted and recalibrated)")].set_index("group")
+        x = tb.loc[e0.index]
+        for gname in e0.index:
+            ax.annotate("", xy=(x[gname], e1.coverage[gname]), xytext=(x[gname], e0.coverage[gname]),
+                        arrowprops=dict(arrowstyle="-|>", color=INK2, alpha=0.55, lw=0.7, mutation_scale=6))
+        ax.scatter(x, e0.coverage, s=12, color=color("GC-D"), lw=0, label="GC-D", zorder=3)
+        ax.scatter(x, e1.coverage.loc[e0.index], s=12, color="#184f95", marker="D", lw=0, label="GC-D-BC, 3 reference fruit", zorder=3)
+        ax.axhline(0.9, color=INK2, ls="--", lw=0.8)
+        ax.set_xlabel("|Mean prediction bias| of the held-out instrument (% DM)"); ax.set_ylabel("Coverage")
+        ax.set_title("(c) New instruments: bias and bias correction"); ax.legend(fontsize=5.5, loc="lower left")
+        ax = axs[1, 1]
+        sm = bg.groupby(["task", "variant", "k"]).coverage.agg(["mean", lambda v: v.quantile(0.1)]).reset_index()
+        sm.columns = ["task", "variant", "k", "mean", "q10"]
+        sty = {"GC-D (no correction)": (color("GC-D"), "-"), "GC-D, centre shifted": ("#86b6ef", "-"),
+               "GC-D-BC (shifted and recalibrated)": ("#184f95", "-")}
+        for t, mk in [("mango_instrument", "o"), ("mango_season_loso", "s"), ("mango_population", "^")]:
+            for v, (c_, ls) in sty.items():
+                e = sm[(sm.task == t) & (sm.variant == v)].sort_values("k")
+                if len(e):
+                    ax.plot(e.k, e["mean"], marker=mk, ms=3.5, color=c_, lw=1.3, ls=ls)
+        from matplotlib.lines import Line2D
+        hs = [Line2D([], [], color=c_, lw=1.2) for c_, _ in sty.values()]
+        hs += [Line2D([], [], color=INK2, marker=mk, ls="", ms=3) for mk in "os^"]
+        ax.legend(hs, ["no correction", "centre shifted", "shifted + recalibrated (GC-D-BC)", "new instrument", "new season",
+                       "new population"], fontsize=5, ncol=2, loc="lower right")
+        ax.axhline(0.9, color=INK2, ls="--", lw=0.8); ax.set_xscale("log")
+        from matplotlib.ticker import FixedLocator, NullFormatter
+        ax.xaxis.set_major_locator(FixedLocator([1, 2, 3, 5, 10])); ax.xaxis.set_minor_formatter(NullFormatter())
+        ax.set_xticklabels(["1", "2", "3", "5", "10"])
+        ax.set_xlabel("Labelled reference units of the new group (k)"); ax.set_ylabel("Group-averaged coverage")
+        ax.set_title("(d) Bias correction with k reference samples")
     fig.tight_layout(); save(fig, FIG, "fig8_error_analysis")
 
 
 # ------------------------------------------------------------------ Fig 9: decision analysis
 def fig_decision():
-    f = os.path.join(RESULTS, "decision", "spec_limit_decisions_mango_loso.csv")
+    """Fig. 8 (revised): decisions over a grid of specification limits, mango dry matter and soil organic carbon."""
+    f = os.path.join(RESULTS, "revision", "decisions_grid.csv")
     if not os.path.exists(f):
         return
-    d = pd.read_csv(f); d = d[d.subset == "all"]
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.4))
-    for m in ["SCP", "ASTM-R", "CV+", "G-W-A", "GC-D", "ORACLE"]:
-        e = d[d.method == m]
-        axs[0].plot(e.limit, e.false_accept_among_accepted, marker="o", ms=3, color=color(m), label=METHOD_LABEL[m])
-        axs[1].plot(e.limit, e.yield_of_compliant, marker="o", ms=3, color=color(m))
-    axs[0].axhline(0.05, color=INK2, ls="--", lw=0.8)
-    axs[0].set_xlabel("Specification limit L (% DM)"); axs[0].set_ylabel("False acceptances / accepted")
-    axs[0].set_title("(a) Wrongly accepted 'DM ≥ L' decisions")
-    axs[1].legend(*axs[0].get_legend_handles_labels(), fontsize=5, loc="upper right")
-    axs[1].set_xlabel("Specification limit L (% DM)"); axs[1].set_ylabel("Accepted / truly compliant")
-    axs[1].set_title("(b) Yield of compliant fruit")
-    fig.tight_layout(); save(fig, FIG, "fig9_decisions")
+    d = pd.read_csv(f)
+    fig, axs = plt.subplots(2, 2, figsize=(7.2, 4.8))
+    for row, (t, unit) in enumerate([("mango_season_loso", "% DM"), ("ossl_lucas_block", "% OC")]):
+        e0 = d[d.task == t]
+        for m in ["SCP", "ASTM-R", "ASTM-G", "CQR", "GC-D", "ORACLE"]:
+            e = e0[e0.method == m]
+            axs[row, 0].plot(e.L, np.maximum(e.false_acceptance, 0.003), marker="o", ms=2.5, color=color(m), lw=1.2, label=METHOD_LABEL[m])
+            axs[row, 1].plot(e.L, e.yield_compliant, marker="o", ms=2.5, color=color(m), lw=1.2)
+        pr = e0[e0.method == "GC-D"]
+        axs[row, 0].plot(pr.L, pr.point_rule_false_acceptance, color=INK2, ls="--", lw=1.0, label="point prediction ŷ ≥ L")
+        axs[row, 1].plot(pr.L, pr.point_rule_yield, color=INK2, ls="--", lw=1.0)
+        axs[row, 0].axhline(0.05, color=INK2, ls=":", lw=0.8)
+        axs[row, 0].set_yscale("log"); axs[row, 0].set_ylabel("False acceptances / accepted")
+        axs[row, 1].set_ylabel("Accepted / truly compliant")
+        for c_ in (0, 1):
+            axs[row, c_].set_xlabel(f"Specification limit L ({unit})")
+        name = "Mango, new season ('DM ≥ L')" if row == 0 else "Soil, new region ('OC ≥ L')"
+        axs[row, 0].set_title(f"({'ac'[row]}) {name}: false acceptance")
+        axs[row, 1].set_title(f"({'bd'[row]}) {name}: yield")
+        if t.startswith("ossl"):
+            for c_ in (0, 1):
+                axs[row, c_].set_xscale("log")
+                from matplotlib.ticker import FixedLocator, NullFormatter
+                axs[row, c_].xaxis.set_major_locator(FixedLocator([1, 1.5, 2, 3, 5, 8]))
+                axs[row, c_].xaxis.set_minor_formatter(NullFormatter())
+                axs[row, c_].set_xticklabels(["1", "1.5", "2", "3", "5", "8"])
+    h_, l_ = axs[0, 0].get_legend_handles_labels()
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    fig.legend(h_, l_, loc="lower center", ncol=4, fontsize=6, frameon=False)
+    save(fig, FIG, "fig9_decisions")
+
+
+# ------------------------------------------------------------------ Fig S3: finite-K simulation
+def fig_simulation():
+    f = os.path.join(RESULTS, "revision", "simulation_finiteK.csv")
+    if not os.path.exists(f):
+        return
+    d = pd.read_csv(f); d = d[(d.tau == 1.0) & (d.balance == "balanced")]
+    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.5))
+    cols = {0.05: SLOTS[0], 0.10: SLOTS[2], 0.20: SLOTS[4]}
+    for a_, c_ in cols.items():
+        for m, ls in [("GC-A", "-"), ("SCP", "--"), ("GC-A+", ":")]:
+            e = d[(d.alpha == a_) & (d.method == m)].sort_values("K")
+            axs[0].plot(e.K, e.mean_coverage - (1 - a_), ls=ls, marker="o", ms=2.5, color=c_, lw=1.2)
+            if m == "GC-A":
+                axs[1].plot(e.K, e.sd_coverage, marker="o", ms=2.5, color=c_, lw=1.2, label=f"α = {a_:.2f}")
+                axs[2].plot(e.K, e.share_below_nominal_minus_005, marker="o", ms=2.5, color=c_, lw=1.2)
+            if m == "SCP":
+                axs[2].plot(e.K, e.share_below_nominal_minus_005, marker="o", ms=2.5, color=c_, lw=1.0, ls="--")
+    for ax in axs:
+        ax.set_xscale("log"); ax.set_xlabel("Calibration groups K")
+        from matplotlib.ticker import FixedLocator, NullFormatter
+        ax.xaxis.set_major_locator(FixedLocator([3, 5, 10, 20, 50])); ax.xaxis.set_minor_formatter(NullFormatter())
+        ax.set_xticklabels(["3", "5", "10", "20", "50"])
+    axs[0].axhline(0, color=INK2, lw=0.8); axs[0].set_ylabel("Mean coverage − nominal")
+    axs[0].set_title("(a) Average over deployments")
+    from matplotlib.lines import Line2D
+    axs[0].legend([Line2D([], [], color=INK2, ls=ls) for ls in ["-", "--", ":"]],
+                  ["out-of-group (GC-A)", "random split (SCP)", "GC-A + point mass"], fontsize=5)
+    axs[1].set_ylabel("SD of single-deployment coverage"); axs[1].set_title("(b) Spread over deployments")
+    axs[1].legend(fontsize=5); axs[1].set_ylim(0, None)
+    axs[2].set_ylabel("Share of deployments < nominal − 0.05"); axs[2].set_title("(c) Poorly covered new groups")
+    fig.tight_layout(); save(fig, FIG, "fig11_simulation")
 
 
 # ------------------------------------------------------------------ Fig 10: effect sizes
@@ -328,5 +434,5 @@ if __name__ == "__main__":
     s = summ()
     if s is not None:
         fig_main(s); fig_ablation(s); fig_efficiency(s)
-    fig_groups(); fig_robust(); fig_error(); fig_decision(); fig_effects()
+    fig_groups(); fig_robust(); fig_error(); fig_decision(); fig_effects(); fig_simulation()
     print("figures written to", FIG)

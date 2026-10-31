@@ -1,0 +1,13 @@
+task,held_out_groups,spectra,units,units_per_group_median,units_per_group_min,units_per_group_max,units_in_more_than_one_group,share_units_shared,calibration_groups_min,calibration_groups_max
+mango_season_loso,7,85401,10560,1152.0,562,2894,0,0.0,6,6
+mango_season_forward,5,54891,7711,1073.0,562,2894,0,0.0,2,6
+mango_instrument,24,82383,10508,1213.5,353,6392,6992,0.6653977921583555,27,30
+mango_population,199,85401,10560,40.0,10,414,0,0.0,179,180
+ossl_lucas_block,30,40175,40175,1361.0,76,2650,0,0.0,29,29
+corn_moisture,27,219,73,5.0,2,20,73,1.0,2,2
+corn_oil,27,219,73,5.0,2,20,73,1.0,2,2
+corn_protein,27,219,73,5.0,2,20,73,1.0,2,2
+corn_starch,27,219,73,5.0,2,20,73,1.0,2,2
+ossl_lucas_campaign,58,40175,40175,730.0,60,1543,0,0.0,28,30
+ossl_kssl_to_lucas,30,40175,40175,1361.0,76,2650,0,0.0,84,84
+tablets,2,920,460,460.0,460,460,460,1.0,195,195

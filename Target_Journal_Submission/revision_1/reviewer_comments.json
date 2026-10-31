@@ -1,0 +1,128 @@
+{
+ "R1": {
+  "summary": "This manuscript addresses a timely and practically important problem in NIR multivariate calibration: prediction intervals calibrated under random or exchangeable sampling substantially under-cover when deployed on new seasons, instruments, populations or regions. The proposed GC-D method combines out-of-group conformity scores, group-balanced weights, and PLS T²/Q diagnostic scaling. The study is strong in scale and design, using 146,873 public spectra, 12 deployment-shift scenarios, unit-level leakage control, pre-registered hypotheses, factorial ablation and extensive supplementary analyses. However, the novelty is mainly combinatorial and applied rather than fundamental: group-conformal prediction and T²/Q diagnostics are established components, and the manuscript itself shows that a simple classical interval based on group-wise RMSECV captures much of the coverage benefit, while diagnostic scaling adds limited and often non-significant gains. No new chemical materials, sample preparation procedures or target analytes are introduced; the analytes are conventional and the data are public. The manuscript is commendably honest about failures (corn, KSSL→LUCAS transfer, tablets and small-group settings) and about the need for approximately ten or more groups for formal guarantees. Nevertheless, the practical positioning of GC-D relative to simpler alternatives, the incremental value of diagnostic scaling, and guidance for limited-group deployments require clearer articulation and stronger statistical support. I therefore recommend Major Revision, after which the work could become a useful contribution to Talanta.",
+  "comments": [
+   {
+    "n": 1,
+    "text": "The introduction correctly notes that group-level conformal prediction theory (Dunn et al., 2023; Lee et al., 2026) exists but has not been examined for NIR multivariate calibration. The authors should more clearly articulate: what is the essential distinction between this work and those statistical contributions? Is it the problem setting (NIRspecific group structures vs. general hierarchical data), or the technical adaptation challenges (PLS models vs. generic regression models)?"
+   },
+   {
+    "n": 2,
+    "text": "Section 4.9 provides an excellent statement of what is borrowed and what is new, but it appears at the end of the Discussion. Consider moving part of this content to the Introduction so readers understand the positioning before reading the method."
+   },
+   {
+    "n": 3,
+    "text": "When discussing conformal prediction in chemometrics, provide a more detailed discussion of existing work on normalized conformal prediction in spectroscopy. Specifically: what are the similarities and differences between the normalized nonconformity score of Papadopoulos et al. (2011) and the σ(x) scaling used here?"
+   },
+   {
+    "n": 4,
+    "text": "The manuscript includes WCP as a comparator, but WCP returned unbounded intervals in several scenarios (coverage 1.000 with infinite interval score). The Methods should elaborate on the root cause of WCP's failure (density ratio concentrating more than α weight on test points when calibration and test groups are well-separated), and the Discussion should clarify whether this reflects a methodological limitation or an implementation limitation of the density ratio estimator."
+   },
+   {
+    "n": 5,
+    "text": "Among the three components of GC-D, out-of-group calibration was shown to be the dominant contributor to coverage improvement (Section 4.3, 0.795→0.861), while diagnostic scaling showed limited and mostly non-significant incremental benefit. The authors should more candidly discuss: if out-of-group calibration alone can be achieved via the simpler ASTM-G approach (group-wise RMSECV), in which specific scenarios is the diagnostic scaling component irreplaceable? The argument that \"diagnostic scaling protects coverage under spectral drift\" (Section 4.5) is compelling but requires systematic quantification: in which scenarios does out-of-group calibration without diagnostic scaling (G-W-A) fail while GC-D succeeds?"
+   },
+   {
+    "n": 6,
+    "text": "The post-hoc variants in Section 4.10 (GC-D2 and GC-CQR) show intriguing results: GC-CQR achieved the best interval score on new soil regions (7.77 vs. 11.90 for GC-D). The authors acknowledge these variants were designed after seeing the soil results and require independent confirmation. Consider more prominently emphasizing in the Conclusions that the \"out-of-group calibration principle\" transfers to other conformity scores (e.g., CQR)—this may be a more generalizable contribution than GC-D itself."
+   },
+   {
+    "n": 7,
+    "text": "The rationale for the grouping strategy requires further justification. In the M-instr. scenario, 24 instruments are used as groups, but is there repeated measurement of the same physical samples across instruments? Section 3.2 mentions \"7100 mango fruit were scanned on more than one instrument,\" with leakage control via physical unit exclusion. Consider adding a supplementary table specifying, for each scenario: number of groups, number of physical units per group, and number of physical units shared across groups (if any)."
+   },
+   {
+    "n": 8,
+    "text": "The group-balanced weights (w_i = 1/(K·N_g)) should matter more when group sizes are unequal, but the experimental data show limited impact in scenarios with relatively uniform group sizes (mango seasons, instruments; 0.861→0.878). Consider designing a synthetic or semi-synthetic experiment with highly unbalanced group sizes to more fully test the practical utility of group-balanced weights."
+   },
+   {
+    "n": 9,
+    "text": "The Poisson quasi-likelihood GLM for the σ(x) scaling model is statistically reasonable (robust to skewed absolute residuals), but the manuscript does not state whether other link functions (e.g., log-link Gaussian or Gamma) were tested for sensitivity. Consider adding a sensitivity analysis on the choice of link function to the Supplementary Material."
+   },
+   {
+    "n": 10,
+    "text": "Pre-registered hypothesis H3 states that \"diagnostic normalisation lowers the interval score relative to absolute scores,\" but the results provide only partial support (5/9 scenarios, 1 significant). The Methods should more precisely define the testing conditions for H3: is directional consistency across all scenarios sufficient, or is statistical significance in the majority of scenarios required?"
+   },
+   {
+    "n": 11,
+    "text": "In the \"new population\" (M-pop.) scenario, GC-D outperformed SCP but not significantly (0.899 vs. 0.889). Section 4.1 suggests this may be because population effects are \"absorbed\" by season and instrument effects already represented in training. This explanation lacks direct empirical support. Consider adding an analysis: in the training data, are population effects indeed subsumed by season/instrument effects in the PLS latent variable space?"
+   },
+   {
+    "n": 12,
+    "text": "Regarding computational cost, Table S9 shows GC-D's method_s of 0.120 s, far below GPR (15.613 s) and BAG (14.980 s), but above ASTM-G (0.002 s). The Discussion should more clearly note that GC-D's computational cost primarily arises from the multiple PLS fits in group-wise cross-validation—which are typically already performed in chemometric practice (for selecting A). Thus, GC-D's \"additional\" computational cost is effectively near zero."
+   },
+   {
+    "n": 13,
+    "text": "Figure 4 (scatter plot of coverage per held-out group) shows that for the new population scenario, coverage clusters around 0.88–0.92 for most methods, but there is a distinct low-coverage group (near 0). Section 4.6 mentions \"population 114500\" as the worst group but does not explain its peculiarity (2020 Kensington Pride fruit with mean DM far below the dataset average). Consider annotating this outlier group in Figure 4 and discussing in more detail: under such circumstances, even GC-D fails to achieve coverage—what supplementary measures are needed (e.g., a small number of labelled samples from the new group)?"
+   },
+   {
+    "n": 14,
+    "text": "In the paired comparisons in Table 4, GC-D has a lower interval score than SCP in 7 of 9 main scenarios, but only the soil new region scenario is significant after Holm correction. For scenarios with n=5 (M-forward) and n=7 (M-season), even large effect sizes cannot reach significance (minimum p-values of 0.0625 and 0.0156, respectively). The statistical section should explicitly acknowledge this limitation and discuss: in practical scenarios with few groups, how should GC-D's advantage over SCP be assessed? Could Bayesian methods or confidence intervals of effect sizes be considered as supplementary evidence?"
+   },
+   {
+    "n": 15,
+    "text": "The discussion of the corn dataset in Section 4.6 is commendably honest: with only two training instruments, no method reaches nominal coverage. However, the manuscript does not address a critical practical question: in real applications where a corn model is calibrated on only one instrument, what should the analyst do? Should they report \"no valid prediction interval available\" rather than a severely under-covering interval? Consider adding practical recommendations for such extreme scenarios to the Conclusions."
+   },
+   {
+    "n": 16,
+    "text": "Section 4.6 discusses the consequences for specification-limit decisions (Table S11, Figure 8), showing that GC-D's false acceptance rate at L=16 is 0.021 vs. SCP's 0.041, but \"yield of compliant fruit\" drops from 0.434 to 0.342. This is an important trade-off, but the manuscript does not discuss how to choose this trade-off point in practical decision-making. Consider adding a discussion: in what decision contexts (e.g., highvalue crops, safety-critical applications) is a lower false acceptance rate worth sacrificing compliant yield?"
+   },
+   {
+    "n": 17,
+    "text": "Section 4.7 on \"worst-group\" analysis shows that GC-D's worst coverage in the new instrument scenario is only 0.447 (Table S4a). This is a concern: even if GC-D's average coverage is near nominal, some instruments remain severely under-covered. The manuscript attributes this to instrument bias but does not discuss whether simple bias correction (using a few reference samples from the new instrument) could improve it. Consider adding an analysis: under the condition of 2–5 reference samples from the new instrument, how does GC-D's coverage change after bias correction?"
+   },
+   {
+    "n": 18,
+    "text": "The simulated drift experiments in Section 4.5 (Figure 6c) show that a 2 nm wavelength shift reduces SCP coverage to 0.755 while GC-D covers 0.938; 1% white noise reduces SCP to 0.398 and GC-D to 0.703. However, GC-D's coverage of 0.703 under white noise remains far below the nominal 0.90. The manuscript notes that such spectra should be \"rejected\" rather than reported with intervals, but does not discuss the implementation of a rejection rule. Consider adding: how to design a practical rejection rule based on the Q diagnostic? What are its false positive and false negative rates?"
+   },
+   {
+    "n": 19,
+    "text": "The Conclusions recommend that \"calibration campaigns should span as many seasons or instruments as possible—about ten or more for formal group-level guarantees.\" However, the practical feasibility of this recommendation deserves discussion: in many NIR applications (e.g., a single harvest season crop, a singleinstrument laboratory), obtaining 10+ groups is unrealistic. Consider adding to the Discussion: under conditions of limited groups, is GC-D's \"partial benefit\" relative to SCP still worth adopting? How should its positioning of \"benefit without guarantee\" be communicated to practitioners?"
+   },
+   {
+    "n": 20,
+    "text": "The manuscript states that all code is in run_all.py, reproducing every number, table, and figure. For the final version, consider including a persistent identifier (e.g., Zenodo DOI) for the code repository in the Data Availability statement to enhance the credibility of reproducibility."
+   },
+   {
+    "n": 21,
+    "text": "In Table S9 (computational cost), GC-D's peak_MiB is 83.338 MB while ORACLE is only 0.747 MB. This large difference deserves explanation: why is ORACLE's memory footprint so low? Is it because it does not require fitting multiple PLS models? Consider annotating the table to explain the sources of memory differences across methods."
+   },
+   {
+    "n": 22,
+    "text": "Tables S3a and S3b provide coverage results at nominal levels 0.95 and 0.80, but the main text primarily discusses 0.90. Consider briefly mentioning in the main text: is GC- D's advantage over SCP consistent across different nominal levels? If consistent, this strengthens the robustness of the conclusions; if not, the reasons should be discussed."
+   },
+   {
+    "n": 23,
+    "text": "Regarding manuscript length and structure: The main text is approximately 20 pages (including figures and tables), which is on the long side for a Talanta Research Paper. Consider moving some content (e.g., detailed sensitivity analyses, per-scenario discussions) to the Supplementary Material in revision, keeping the main text focused on core arguments and primary results."
+   },
+   {
+    "n": 24,
+    "text": "Regarding figure readability: Figure 5 (factorial ablation) uses an intuitive color coding (red = under-coverage), but consider adding a \"GC-D\" column to clearly indicate the reference baseline. In Figure 6(c), the x-axis labels for test-time perturbations are too dense—consider simplifying or using clearer labels."
+   }
+  ]
+ },
+ "R4": {
+  "summary": "The manuscript addresses a genuinely important and under-examined problem in chemometrics—namely, that NIR prediction intervals calibrated under random exchangeability assumptions systematically under-cover when models are deployed on new seasons, instruments or regions—and the proposed group-conformal calibration with PLS diagnostics (GC-D) is conceptually sound, clearly presented and evaluated on a commendably large and diverse collection of public data (146,873 spectra across four data sets and twelve deployment-shift scenarios), with a pre-registered analysis protocol, honest reporting of negative and null results, and full reproducibility; nevertheless, several substantive issues require clarification or revision before the work can be considered for publication.",
+  "comments": [
+   {
+    "n": 1,
+    "text": "although the authors are candid that GC-D's coverage is asymptotic in the number of groups and empirically verified rather than guaranteed, the manuscript would benefit from a more systematic characterisation of the finite-sample behaviour of the groupaveraged coverage estimator as a function of K, since the reported variability across heldout groups for the six-season mango case (Fig. 4) suggests that practitioners with few calibration groups may face substantial group-to-group dispersion even when the average coverage appears nominal; a simulation study or a more explicit variance decomposition (between-group versus within-group) would help users judge the reliability of a single deployment, and the recommendation of \"about ten or more groups\" should be qualified by the observation that this threshold is specific to α = 0.10 and to the group-size distribution of the present data."
+   },
+   {
+    "n": 2,
+    "text": "the corn results deserve more careful framing: with only two training instruments, no method reached nominal coverage, and the authors correctly attribute this to an uncorrected instrument shift that makes the PLS model weakly informative (RMSEP 0.61–2.45 times the reference SD), but the manuscript should state more explicitly that in such regimes interval calibration is fundamentally limited by the point predictor's validity, and that the apparent \"failure\" of GC-D is not a defect of the calibration principle but a signal that model transfer or bias correction must precede uncertainty quantification; the same applies to the KSSL→LUCAS stress test, where GC-D reached only 0.604 and HCP-D 0.712 with analytically useless widths, and the paper would be strengthened by a decision-theoretic discussion of when an interval should be reported as \"uninformative\" rather than merely wide."
+   },
+   {
+    "n": 3,
+    "text": "the diagnostic scale model in Eq. (3), fitted by a log-link Poisson quasi-likelihood GLM on absolute residuals with log(1+T²) and log(Q/Q̂ ) as covariates and a floor at 10% of the median σ, is a reasonable engineering choice but is presented without sufficient justification or sensitivity analysis: the choice of the Poisson quasi-likelihood versus, for example, a gamma GLM or a log-normal model for |r| should be motivated, the additive constant in log(1+T²) and the median normalisation of Q should be shown to be innocuous (the Supplementary Table S5 sensitivity analysis varies the σ floor and the number of LVs but not the functional form of the scale model), and the interaction between T² and Q—which the additive log-linear model ignores—could matter for spectra that are simultaneously high-leverage and poorly reconstructed, a point the authors acknowledge only implicitly in the discussion of spectral drift."
+   },
+   {
+    "n": 4,
+    "text": "the comparison with weighted conformal prediction (WCP) is somewhat asymmetric: WCP returns unbounded intervals in every scenario because the estimated density ratios place more than α of the weight on the test point, and the clipped variant (WCP-clip) achieves coverage 0.851–0.855 at the cost of 0–1% unbounded intervals, yet the manuscript does not report WCP-clip's interval scores in the main tables or discuss whether its unboundedness is an artefact of the logistic density-ratio estimator rather than an intrinsic property of covariate-shift conformal methods; a fairer comparison would either include WCP-clip in Table 3 or explicitly argue why unbounded intervals are unacceptable in the NIR decision context, and the same concern applies to the comparison with HJ+ and HCP-D, which are unbounded for small K and therefore not directly comparable to GC-D in the scenarios where GC-D is most needed."
+   },
+   {
+    "n": 5,
+    "text": "the specification-limit decision analysis (Fig. 8) is a valuable addition but is limited to mango new-season data and two thresholds (L = 16 and 17% DM); the false-acceptance rates (0.021–0.024 for GC-D versus 0.039–0.057 for SCP and classical intervals) are encouraging, but the analysis would be considerably more convincing if extended to at least one other data set (e.g. soil organic carbon, where the level-dependent heteroscedasticity documented in Section 4.10 makes symmetric intervals questionable) and to a range of L values, and if the yield loss (0.342 versus 0.434 accepted compliant fruit at L = 16%) were discussed in terms of its practical and economic implications rather than merely reported; moreover, the claim that GC-D \"reduced false acceptances in specification-limit decisions\" should be tempered by the observation that the oracle itself accepted only 0.375 of compliant fruit, so that even a perfectly calibrated interval entails a substantial yield penalty relative to a point-prediction rule."
+   }
+  ]
+ }
+}

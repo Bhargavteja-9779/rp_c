@@ -5,6 +5,8 @@ Blocks are tuples consumed by build_manuscript.py:
 Citations are inserted with C("key", ...) so that numbering follows first appearance.
 """
 import os
+import pandas as pd
+RESDIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "code", "results", "revision")
 FIGDIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "code", "figures")
 
 
@@ -45,16 +47,32 @@ def introduction(C, N):
               "calibration, and it is not known how large the coverage loss of current practice is in real NIR "
               "deployments, nor whether the remedy is practical with the limited number of seasons or instruments "
               "typically available."),
-        ("p", "This work addresses that gap with three contributions. (i) We quantify, on four public data sets "
+        ("p", "What distinguishes this work from the statistical literature on hierarchical conformal prediction is not the "
+              "coverage theory, which we borrow, but its adaptation to multivariate calibration, where three features of NIR "
+              "practice matter. First, groups and physical samples are crossed: the same fruit or corn sample is scanned on "
+              "several instruments, so the calibration must be unit-disjoint as well as group-disjoint. Second, the PLS model's "
+              f"own diagnostics, Hotelling T² and the Q residual {C('jackson1979')}, describe how far a new spectrum lies from the "
+              "calibration space and can drive the interval width without an additional difficulty model. Third, out-of-group "
+              "residuals are a by-product of the group-wise cross-validation that chemometricians already run, but the number of "
+              "groups is small (often fewer than ten seasons or instruments) — exactly where finite-sample guarantees break down."),
+        ("p", "We state at the outset what is borrowed. Group-wise validation is established practice for estimating the error "
+              f"under shift {C('anderson2020', 'roberts2017')}; conformal prediction for new groups and its theory are due to Dunn "
+              f"et al. and Lee et al. {C('dunn2023', 'lee2026')}; normalised conformity scores date back to Papadopoulos et al. "
+              f"{C('papadopoulos2011')}, who scaled residuals by the mean error of the k nearest training points, recently applied "
+              f"to mid-infrared spectra {C('jovic2025')}. Our scale σ(x) differs in being a three-parameter function of T² and Q, "
+              "which extrapolates to spectra unlike any training spectrum, and in being fitted to out-of-group residuals, so that "
+              "it learns how the error grows for a group the model has not seen; a k-nearest-neighbour normalised predictor is "
+              "included as a baseline."),
+        ("p", "This work makes four contributions. (i) We quantify, on four public data sets "
               f"comprising {N['n_spectra_total']} spectra and {N['n_shift_tasks']} deployment-shift scenarios, how much "
               "classical PLS intervals, random-split conformal methods and model-based uncertainty estimates "
               "miscover when a calibration meets a new season, instrument, population or region. (ii) We propose a "
-              "group-conformal calibration for PLS models (GC-D) that computes conformity scores out-of-group with "
-              "group-balanced weights and scales them by the classical chemometric diagnostics Hotelling T² and Q "
-              "residual, so that interval width grows for spectra that extrapolate. (iii) We test every component "
-              "in a factorial ablation, examine when distribution-free group-level guarantees are attainable, and "
-              "evaluate the consequences for specification-limit decisions. The experimental protocol, hypotheses "
-              "and primary end-points were fixed before the held-out evaluation."),
+              "group-conformal calibration for PLS models (GC-D) with unit-disjoint out-of-group conformity scores, "
+              "group-balanced weights and a T²/Q scale. (iii) We identify in a factorial ablation where each component is "
+              "needed, when distribution-free group-level guarantees are attainable and how reliable a single deployment is, "
+              "and evaluate specification-limit decisions. (iv) We derive rules for the cases in which no interval method can "
+              "help. The protocol, hypotheses and primary end-points were fixed before the held-out evaluation; later analyses "
+              "are identified as such."),
     ]
 
 
@@ -79,7 +97,8 @@ def theory(C):
         ("eq", "T²(x) = Σₐ tₐ² / sₐ²,     Q(x) = ‖(x − x̄) − P_{A} t‖²", "2"),
         ("p", "where sₐ² is the variance of the a-th training score. T² measures extrapolation within the model "
               "subspace and Q measures spectral variation the model has not seen. The leverage used in classical "
-              "intervals is h(x) = 1/n + Σₐ tₐ²/(tₐᵀtₐ), a rescaled version of T²."),
+              "intervals is h(x) = 1/n + Σₐ tₐ²/(𝐭ₐᵀ𝐭ₐ), where 𝐭ₐ is the vector of training scores of component a, i.e. a rescaled "
+              "version of T²."),
         ("h2", "2.3. Group-conformal calibration with diagnostic scaling (GC-D)"),
         ("p", "Step 1 (out-of-group residuals). The calibration groups are partitioned into folds (one group per "
               "fold when K is small). For each fold k, a PLS model μ̂_{−k} is fitted on the remaining groups after "
@@ -91,10 +110,14 @@ def theory(C):
         ("p", "Step 2 (diagnostic scale). The expected absolute residual is modelled as"),
         ("eq", "log σ(x) = β₀ + β₁ log(1 + T²(x)) + β₂ log(Q(x)/Q̃)", "3"),
         ("p", "with Q̃ the median training Q of the final model. β is estimated by a log-link generalised linear "
-              "model with Poisson quasi-likelihood on (|rᵢ|, T²ᵢ, Qᵢ), which is robust to the skewness of absolute "
-              "residuals; σ is bounded below by 10 % of its median to avoid division by near-zero scales. Eq. (3) "
-              "generalises the √(1 + h) factor of classical intervals by letting the data decide how strongly "
-              "extrapolation (T²) and unmodelled spectral variation (Q) inflate the error."),
+              "model with Poisson quasi-likelihood on (|rᵢ|, T²ᵢ, Qᵢ); σ is bounded below by 10 % of its median to avoid "
+              "division by near-zero scales. Under a log link the quasi-likelihood estimates the mean of |r| consistently whatever "
+              f"the distribution of the absolute residuals {C('gourieroux1984')}, and, unlike least squares on log|r|, it is not "
+              "dominated by residuals close to zero. The constant 1 keeps log(1 + T²) finite for spectra at the centre of the score "
+              "space, and dividing Q by Q̃ only shifts β₀. Eq. (3) generalises the √(1 + h) factor of classical intervals by "
+              "letting the data decide how strongly extrapolation (T²) and unmodelled spectral variation (Q) inflate the error; "
+              "σ only ranks spectra by expected difficulty, and q̂ below is calibrated on the out-of-group scores whatever its "
+              "form (alternative families, transforms and an interaction are compared in Section 4.5)."),
         ("p", "Step 3 (group-balanced quantile). With conformity scores sᵢ = |rᵢ|/σ(xᵢ) and weights "
               "wᵢ = 1/(K·N_{gᵢ}), where N_{g} is the number of spectra in group g, every group contributes the same total "
               "mass regardless of its size. The calibrated multiplier is"),
@@ -116,10 +139,13 @@ def theory(C):
               "with weights 1/((K₁ + 1)N_{g}) and a point mass 1/(K₁ + 1) at +∞, has coverage ≥ 1 − α; the hierarchical "
               f"jackknife+ (HJ+), the leave-one-group-out analogue of the jackknife+ {C('barber2021')}, has coverage "
               "≥ 1 − 2α. The point mass at +∞ implies that a finite interval at level 1 − α requires K₁ + 1 > 1/α, "
-              "i.e. at least 10 calibration groups at α = 0.10 for HCP. With six past harvest seasons a "
+              "i.e. at least 10 calibration groups at α = 0.10, but 20 at α = 0.05 and 5 at α = 0.20; the threshold "
+              "depends on the nominal level, not on the data. With six past harvest seasons a "
               "distribution-free season-level guarantee is therefore impossible at 90 % coverage; the cross-fitted "
               "GC-D trades this guarantee for usability, and its coverage must be assessed empirically, which is "
-              "what Section 4 does."),
+              "what Section 4 does. All these statements concern coverage averaged over new groups: even an exact method "
+              "covers some new groups less and others more than 1 − α, because each group carries its own effect. How "
+              "widely single deployments scatter around the nominal level is examined in Section 4.4."),
     ]
 
 
@@ -165,6 +191,7 @@ def experimental(C, N):
               f"and first derivative (window 11) for soil; SNV {C('barnes1989')} followed by first derivative (window 15) "
               "for corn and tablets. Soil OC was modelled as log(1 + OC) and interval end-points were "
               "back-transformed, which preserves coverage exactly."),
+        ("p", units_sentence()),
         ("h2", "3.3. Interval methods compared"),
         ("p", "All PLS-based methods share the same preprocessing, the same number of latent variables (selected by "
               "group-wise cross-validation in the training data) and the same final model, so differences arise from "
@@ -180,7 +207,10 @@ def experimental(C, N):
               f"{C('papadopoulos2011')}; (g) CV+ with random unit-grouped folds {C('barber2021', 'lin2022')}; and "
               f"(h) weighted split CP under covariate shift {C('tibshirani2019')}, with the density ratio estimated by "
               "logistic regression between calibration spectra and the unlabelled spectra of the deployment group (WCP; "
-              "this method uses test spectra transductively). The proposed GC-D was compared with the guaranteed "
+              "this method uses test spectra transductively). WCP places the weight w(x)/(Σᵢ wᵢ + w(x)) of the test "
+              "spectrum at +∞, so its interval is unbounded when this share exceeds α, as happens when calibration and "
+              "deployment spectra are well separated; a variant with ratios normalised to mean 1 and capped at 20 (WCP-clip) "
+              "is also reported. The proposed GC-D was compared with the guaranteed "
               "variants HCP and HJ+ (Section 2.4), with GC-D plus the finite-sample point mass at +∞ (GC-D+), and with "
               "an oracle that calibrates split CP on labelled spectra of the test group itself (2-fold within the "
               "group; not available in practice, reported as a reference for the attainable width)."),
@@ -196,17 +226,42 @@ def experimental(C, N):
               "0.85, and results at α = 0.05 and 0.20. Three hypotheses were pre-specified: H1, random-split SCP "
               "covers less than 0.85 on at least one shift task; H2, GC-D covers between 0.87 and 0.95 on every task "
               "with ≥ 10 training groups; H3, diagnostic normalisation lowers the interval score relative to "
-              "absolute scores (GC-D vs G-W-A). The unit of analysis for method comparisons is the held-out group or, where an "
+              "absolute scores (GC-D vs G-W-A). H3, unlike H1 and H2, was stated without a decision rule; we call it supported "
+              "when GC-D has the lower interval score in most main scenarios with Holm-significant differences in most, partly "
+              "supported when only the first condition holds (rule formulated during revision). The unit of analysis for method comparisons is the held-out group or, where an "
               "outer fold holds out several groups that share one model (populations, campaigns), the outer fold; "
               f"per-group values were averaged over five pre-specified seeds (0–4) and compared with two-sided Wilcoxon "
               f"signed-rank tests {C('wilcoxon1945')} with Holm correction across comparators within each task "
               f"{C('holm1979')}. Effect sizes are matched-pairs rank-biserial correlations {C('kerby2014')}; 95 % "
               "confidence intervals of group-averaged coverage are percentile bootstraps over groups, and within-task "
-              "pooled coverage intervals use a cluster bootstrap over physical units."),
-        ("h2", "3.5. Software and reproducibility"),
+              "pooled coverage intervals use a cluster bootstrap over physical units. Because Wilcoxon tests on five to seven "
+              "seasons cannot reach significance after correction, interval-score differences are also given as mean "
+              "differences with 95 % bootstrap intervals and as posterior probabilities under the Bayesian bootstrap "
+              f"{C('rubin1981')}."),
+        ("h2", "3.5. Analyses added during revision"),
+        ("p", "In response to peer review, and after the main results were known, we added analyses of the form of the scale "
+              "model, of strongly unequal group sizes, of bias correction with k labelled units of the new group (GC-D-BC, in "
+              "which the correction is mimicked in every calibration group before σ and q̂ are fitted), of a Q-based rejection "
+              "rule and an 'uninformative interval' flag, of decisions over a grid of specification limits, of density-ratio "
+              "variants of WCP, and a synthetic simulation of single-deployment coverage. They did not change the methods or "
+              "settings of the main study; protocols are given in Supplementary Sections S16–S28."),
+        ("h2", "3.6. Software and reproducibility"),
         ("p", f"All code is in Python (NumPy, SciPy, scikit-learn {C('pedregosa2011')}, LightGBM {C('ke2017')}, "
               f"PyTorch {C('paszke2019')}). PLS1 was implemented with NIPALS and checked against scikit-learn to 10⁻¹⁴. "
               "A single command (python run_all.py --mode full) downloads the data, runs every experiment and "
               "regenerates all tables, figures and the statistics files from which every number in this paper is "
               "read; all computations ran on a 4-core CPU without a GPU."),
     ]
+
+
+def units_sentence():
+    """Groups, physical units and units shared across groups (reviewer request; Supplementary Table S16)."""
+    f = os.path.join(RESDIR, "units_per_group.csv")
+    if not os.path.exists(f):
+        return "Supplementary Table S16 lists the number of groups and physical units per scenario."
+    u = pd.read_csv(f).set_index("task")
+    mi = u.loc["mango_instrument"]
+    return (f"Units are shared between groups only where groups are instruments (of the {int(mi.units):,} fruit measured on the "
+            f"{int(mi.held_out_groups)} held-out instruments, {int(mi.units_in_more_than_one_group):,} were measured on more than one "
+            "of them; every corn and tablet sample was measured on every instrument); seasons, populations and soil regions share none "
+            "(Supplementary Table S16 lists groups, units per group and shared units for every scenario).")

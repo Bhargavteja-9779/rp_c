@@ -56,7 +56,12 @@ tabnums = [int(re.match(r"Table (\d+)", t["caption"]).group(1)) for t in tabs]
 check("table numbers consecutive", tabnums == list(range(1, len(tabnums) + 1)), tabnums)
 check("every cited table exists", all(int(c) in tabnums for c in re.findall(r"Table (\d+)", text)))
 sup = sorted(set(re.findall(r"Supplementary Table (S\d+)", text)))
-check("supplementary tables cited within S1-S15", all(1 <= int(x[1:]) <= 15 for x in sup), sup)
+check("supplementary tables cited within S1-S28", all(1 <= int(x[1:]) <= 28 for x in sup), sup)
+supf = sorted(set(re.findall(r"Fig\. (S\d+)", text)))
+check("supplementary figures cited within S1-S3", all(1 <= int(x[1:]) <= 3 for x in supf), supf)
+alltext = text + " " + content["meta"]["authors"] + " " + " ".join(content["meta"]["affiliations"]) + " " + content["meta"]["corresponding"]
+check("no bracketed placeholders ([Author ...], [To be ...], [repository ...])",
+      not re.search(r"\[(Author|To be|repository|Funding|Authors|name|Department|Corresponding)", alltext), "")
 check("no nan in text", not re.search(r"\bnan\b", text))
 refs = content["references"]
 cites = sorted(set(int(n) for grp in re.findall(r"\[([\d,–]+)\]", text) for part in grp.split(",")

@@ -1,0 +1,497 @@
+== units_per_group
+                    task  held_out_groups  spectra  units  units_per_group_median  units_per_group_min  units_per_group_max  units_in_more_than_one_group  share_units_shared  calibration_groups_min  calibration_groups_max
+0      mango_season_loso                7    85401  10560                  1152.0                  562                 2894                             0               0.000                       6                       6
+1   mango_season_forward                5    54891   7711                  1073.0                  562                 2894                             0               0.000                       2                       6
+2       mango_instrument               24    82383  10508                  1213.5                  353                 6392                          6992               0.665                      27                      30
+3       mango_population              199    85401  10560                    40.0                   10                  414                             0               0.000                     179                     180
+4       ossl_lucas_block               30    40175  40175                  1361.0                   76                 2650                             0               0.000                      29                      29
+5          corn_moisture               27      219     73                     5.0                    2                   20                            73               1.000                       2                       2
+6               corn_oil               27      219     73                     5.0                    2                   20                            73               1.000                       2                       2
+7           corn_protein               27      219     73                     5.0                    2                   20                            73               1.000                       2                       2
+8            corn_starch               27      219     73                     5.0                    2                   20                            73               1.000                       2                       2
+9    ossl_lucas_campaign               58    40175  40175                   730.0                   60                 1543                             0               0.000                      28                      30
+10    ossl_kssl_to_lucas               30    40175  40175                  1361.0                   76                 2650                             0               0.000                      84                      84
+11               tablets                2      920    460                   460.0                  460                  460                           460               1.000                     195                     195
+== population_absorption
+n_populations 199
+n_parameters_season_instrument 37
+sd_pop_mean_residual_population_scenario 0.8045634031295776
+sd_pop_mean_residual_loso_scenario 0.8892091512680054
+r2_season_of_pop_residual_means_loso 0.15466523170471191
+r2_season_of_pop_residual_means_population 0.1388682723045349
+r2_pop_mean_scores_by_season 0.08816468306104275
+r2_pop_mean_scores_by_season_and_instruments 0.4006494174656714
+worst_population 114500
+worst_population_bias -3.232854127883911
+/home/user/rp_c/Target_Journal_Submission/code/experiments/revision_analyses.py:130: DtypeWarning: Columns (2: group) have mixed types. Specify dtype option on import or set low_memory=False.
+  pg = pd.read_csv(os.path.join(R, "per_group_results.csv")); raw = pd.read_csv(os.path.join(R, "raw_results.csv"))
+== effect_size_intervals
+                    task comparator  n_units  mean_diff  ci_lo  ci_hi  rel_mean_diff  share_units_gcd_lower  post_prob_gcd_lower
+0      mango_season_loso        SCP        7     -0.534 -1.397  0.143         -0.050                  0.571                0.957
+1      mango_season_loso     ASTM-R        7     -0.485 -1.291  0.119         -0.047                  0.571                0.960
+2      mango_season_loso     ASTM-G        7     -0.285 -0.876  0.227         -0.033                  0.571                0.878
+3      mango_season_loso      G-W-A        7     -0.257 -0.881  0.216         -0.027                  0.571                0.858
+4      mango_season_loso        CV+        7     -0.524 -1.299  0.128         -0.051                  0.714                0.964
+5      mango_season_loso        CQR        7     -0.522 -1.026 -0.098         -0.068                  0.714                0.998
+6   mango_season_forward        SCP        5     -1.066 -2.457  0.255         -0.094                  0.600                0.970
+7   mango_season_forward     ASTM-R        5     -1.034 -2.427  0.245         -0.091                  0.600                0.973
+8   mango_season_forward     ASTM-G        5     -0.585 -1.493  0.286         -0.062                  0.600                0.917
+9   mango_season_forward      G-W-A        5     -0.683 -1.662  0.288         -0.070                  0.600                0.937
+10  mango_season_forward        CV+        5     -1.072 -2.564  0.196         -0.096                  0.800                0.975
+11  mango_season_forward        CQR        5     -1.349 -1.572 -1.173         -0.180                  1.000                1.000
+12      mango_instrument        SCP       24     -0.740 -1.505 -0.150         -0.047                  0.667                1.000
+13      mango_instrument     ASTM-R       24     -0.667 -1.395 -0.092         -0.040                  0.583                1.000
+14      mango_instrument     ASTM-G       24     -0.268 -0.644  0.022         -0.027                  0.708                0.978
+15      mango_instrument      G-W-A       24     -0.265 -0.655  0.046         -0.022                  0.625                0.971
+16      mango_instrument        CV+       24     -0.676 -1.400 -0.114         -0.042                  0.625                1.000
+17      mango_instrument        CQR       24     -0.865 -1.659 -0.057         -0.084                  0.792                0.986
+18      mango_population        SCP       10     -0.057 -0.102 -0.008         -0.011                  0.900                0.986
+19      mango_population     ASTM-R       10     -0.037 -0.073  0.002         -0.007                  0.700                0.967
+20      mango_population     ASTM-G       10     -0.040 -0.083  0.005         -0.009                  0.700                0.963
+21      mango_population      G-W-A       10     -0.040 -0.077  0.003         -0.008                  0.700                0.976
+22      mango_population        CV+       10     -0.043 -0.082 -0.000         -0.008                  0.900                0.971
+23      mango_population        CQR       10     -0.329 -0.555 -0.097         -0.060                  0.700                0.997
+24      ossl_lucas_block        SCP       30     -0.801 -1.619 -0.222         -0.032                  0.800                1.000
+25      ossl_lucas_block     ASTM-R       30     -0.732 -1.502 -0.171         -0.028                  0.767                1.000
+26      ossl_lucas_block     ASTM-G       30     -0.486 -1.110 -0.024         -0.023                  0.700                0.998
+27      ossl_lucas_block      G-W-A       30     -0.595 -1.307 -0.093         -0.025                  0.767                1.000
+28      ossl_lucas_block        CV+       30     -0.805 -1.638 -0.229         -0.030                  0.800                1.000
+29      ossl_lucas_block        CQR       30      3.844  2.079  5.935          0.350                  0.000                0.000
+30         corn_moisture        SCP       30      0.118 -0.333  0.522          0.164                  0.333                0.264
+31         corn_moisture     ASTM-R       30     -0.115 -0.550  0.290          0.161                  0.433                0.692
+32         corn_moisture     ASTM-G       30     -0.007 -0.413  0.372          0.166                  0.433                0.502
+33         corn_moisture      G-W-A       30     -0.273 -0.788  0.180          0.156                  0.400                0.867
+34         corn_moisture        CV+       30     -0.021 -0.485  0.394          0.173                  0.367                0.514
+35         corn_moisture        CQR       30      3.199  1.669  4.841          2.307                  0.267                0.000
+36              corn_oil        SCP       30     -0.099 -0.251  0.015         -0.028                  0.533                0.970
+37              corn_oil     ASTM-R       30     -0.012 -0.088  0.059          0.028                  0.500                0.598
+38              corn_oil     ASTM-G       30      0.039 -0.020  0.100          0.060                  0.400                0.084
+39              corn_oil      G-W-A       30      0.009 -0.061  0.078          0.047                  0.500                0.384
+40              corn_oil        CV+       30      0.029 -0.037  0.091          0.054                  0.433                0.172
+41              corn_oil        CQR       30      0.172  0.072  0.298          0.256                  0.267                0.000
+42          corn_protein        SCP       30     -0.457 -1.067  0.152          0.063                  0.467                0.929
+43          corn_protein     ASTM-R       30      0.116 -0.246  0.493          0.198                  0.367                0.278
+44          corn_protein     ASTM-G       30      0.195 -0.111  0.532          0.178                  0.300                0.102
+45          corn_protein      G-W-A       30     -0.011 -0.428  0.386          0.133                  0.367                0.525
+46          corn_protein        CV+       30      0.034 -0.380  0.451          0.174                  0.400                0.435
+47          corn_protein        CQR       30      0.621  0.313  0.982          0.401                  0.233                0.000
+48           corn_starch        SCP       30     -1.134 -2.202 -0.181          0.015                  0.533                0.996
+49           corn_starch     ASTM-R       30     -0.284 -1.157  0.480          0.110                  0.300                0.739
+50           corn_starch     ASTM-G       30      0.159 -0.623  0.850          0.121                  0.233                0.298
+51           corn_starch      G-W-A       30     -0.333 -1.282  0.440          0.089                  0.300                0.778
+52           corn_starch        CV+       30     -0.245 -0.962  0.391          0.106                  0.300                0.747
+53           corn_starch        CQR       30      2.744  1.395  4.233          0.877                  0.133                0.000
+== decisions
+                  task  method     L  share_compliant  false_acceptance  yield_compliant  p_accept_noncompliant  p_reject_compliant  point_rule_false_acceptance  point_rule_yield
+0    mango_season_loso  ASTM-G  12.0            0.957             0.005            0.770                  0.003               0.220                        0.033             0.990
+1    mango_season_loso  ASTM-G  12.5            0.926             0.006            0.705                  0.004               0.273                        0.052             0.979
+2    mango_season_loso  ASTM-G  13.0            0.883             0.008            0.638                  0.005               0.319                        0.071             0.965
+3    mango_season_loso  ASTM-G  13.5            0.822             0.011            0.580                  0.005               0.345                        0.096             0.949
+4    mango_season_loso  ASTM-G  14.0            0.756             0.013            0.524                  0.005               0.360                        0.116             0.929
+5    mango_season_loso  ASTM-G  14.5            0.683             0.013            0.475                  0.004               0.358                        0.132             0.911
+6    mango_season_loso  ASTM-G  15.0            0.610             0.015            0.428                  0.004               0.349                        0.135             0.897
+7    mango_season_loso  ASTM-G  15.5            0.545             0.020            0.372                  0.004               0.342                        0.131             0.866
+8    mango_season_loso  ASTM-G  16.0            0.470             0.030            0.322                  0.005               0.319                        0.145             0.831
+9    mango_season_loso  ASTM-G  16.5            0.399             0.037            0.272                  0.004               0.290                        0.160             0.796
+10   mango_season_loso  ASTM-G  17.0            0.329             0.043            0.229                  0.003               0.253                        0.178             0.770
+11   mango_season_loso  ASTM-G  17.5            0.264             0.051            0.192                  0.003               0.214                        0.204             0.741
+12   mango_season_loso  ASTM-G  18.0            0.208             0.071            0.156                  0.002               0.176                        0.242             0.690
+13   mango_season_loso  ASTM-G  18.5            0.150             0.102            0.135                  0.002               0.130                        0.299             0.658
+14   mango_season_loso  ASTM-G  19.0            0.106             0.098            0.113                  0.001               0.094                        0.355             0.605
+15   mango_season_loso  ASTM-R  12.0            0.957             0.007            0.840                  0.005               0.154                        0.033             0.990
+16   mango_season_loso  ASTM-R  12.5            0.926             0.010            0.783                  0.007               0.201                        0.052             0.979
+17   mango_season_loso  ASTM-R  13.0            0.883             0.013            0.726                  0.008               0.242                        0.071             0.965
+18   mango_season_loso  ASTM-R  13.5            0.822             0.018            0.670                  0.010               0.271                        0.096             0.949
+19   mango_season_loso  ASTM-R  14.0            0.756             0.022            0.616                  0.011               0.291                        0.116             0.929
+20   mango_season_loso  ASTM-R  14.5            0.683             0.024            0.565                  0.009               0.297                        0.132             0.911
+21   mango_season_loso  ASTM-R  15.0            0.610             0.022            0.520                  0.007               0.293                        0.135             0.897
+22   mango_season_loso  ASTM-R  15.5            0.545             0.025            0.467                  0.007               0.290                        0.131             0.866
+23   mango_season_loso  ASTM-R  16.0            0.470             0.039            0.416                  0.008               0.275                        0.145             0.831
+24   mango_season_loso  ASTM-R  16.5            0.399             0.047            0.366                  0.007               0.253                        0.160             0.796
+25   mango_season_loso  ASTM-R  17.0            0.329             0.056            0.318                  0.006               0.224                        0.178             0.770
+26   mango_season_loso  ASTM-R  17.5            0.264             0.072            0.271                  0.006               0.192                        0.204             0.741
+27   mango_season_loso  ASTM-R  18.0            0.208             0.097            0.227                  0.005               0.161                        0.242             0.690
+28   mango_season_loso  ASTM-R  18.5            0.150             0.128            0.201                  0.004               0.120                        0.299             0.658
+29   mango_season_loso  ASTM-R  19.0            0.106             0.143            0.178                  0.003               0.087                        0.355             0.605
+..                 ...     ...   ...              ...               ...              ...                    ...                 ...                          ...               ...
+96    ossl_lucas_block  ASTM-R   1.0            0.852             0.016            0.533                  0.008               0.398                        0.104             0.958
+97    ossl_lucas_block  ASTM-R   1.5            0.663             0.022            0.443                  0.007               0.369                        0.178             0.917
+98    ossl_lucas_block  ASTM-R   2.0            0.516             0.029            0.395                  0.006               0.312                        0.214             0.872
+99    ossl_lucas_block  ASTM-R   3.0            0.342             0.027            0.340                  0.003               0.225                        0.208             0.785
+100   ossl_lucas_block  ASTM-R   5.0            0.186             0.022            0.333                  0.001               0.124                        0.158             0.678
+101   ossl_lucas_block  ASTM-R   8.0            0.107             0.007            0.407                  0.000               0.063                        0.092             0.631
+102   ossl_lucas_block     CQR   1.0            0.852             0.015            0.616                  0.008               0.327                        0.104             0.958
+103   ossl_lucas_block     CQR   1.5            0.663             0.012            0.388                  0.003               0.406                        0.178             0.917
+104   ossl_lucas_block     CQR   2.0            0.516             0.010            0.287                  0.002               0.368                        0.214             0.872
+105   ossl_lucas_block     CQR   3.0            0.342             0.008            0.214                  0.001               0.269                        0.208             0.785
+106   ossl_lucas_block     CQR   5.0            0.186             0.006            0.248                  0.000               0.140                        0.158             0.678
+107   ossl_lucas_block     CQR   8.0            0.107             0.003            0.316                  0.000               0.073                        0.092             0.631
+108   ossl_lucas_block    GC-D   1.0            0.852             0.016            0.543                  0.008               0.389                        0.104             0.958
+109   ossl_lucas_block    GC-D   1.5            0.663             0.023            0.449                  0.007               0.365                        0.178             0.917
+110   ossl_lucas_block    GC-D   2.0            0.516             0.030            0.395                  0.006               0.312                        0.214             0.872
+111   ossl_lucas_block    GC-D   3.0            0.342             0.025            0.331                  0.003               0.229                        0.208             0.785
+112   ossl_lucas_block    GC-D   5.0            0.186             0.016            0.322                  0.001               0.126                        0.158             0.678
+113   ossl_lucas_block    GC-D   8.0            0.107             0.003            0.390                  0.000               0.065                        0.092             0.631
+114   ossl_lucas_block  ORACLE   1.0            0.852             0.015            0.545                  0.007               0.388                        0.104             0.958
+115   ossl_lucas_block  ORACLE   1.5            0.663             0.021            0.442                  0.006               0.370                        0.178             0.917
+116   ossl_lucas_block  ORACLE   2.0            0.516             0.025            0.381                  0.005               0.319                        0.214             0.872
+117   ossl_lucas_block  ORACLE   3.0            0.342             0.022            0.320                  0.002               0.232                        0.208             0.785
+118   ossl_lucas_block  ORACLE   5.0            0.186             0.020            0.311                  0.001               0.128                        0.158             0.678
+119   ossl_lucas_block  ORACLE   8.0            0.107             0.007            0.382                  0.000               0.066                        0.092             0.631
+120   ossl_lucas_block     SCP   1.0            0.852             0.017            0.546                  0.008               0.387                        0.104             0.958
+121   ossl_lucas_block     SCP   1.5            0.663             0.024            0.453                  0.007               0.363                        0.178             0.917
+122   ossl_lucas_block     SCP   2.0            0.516             0.031            0.404                  0.007               0.307                        0.214             0.872
+123   ossl_lucas_block     SCP   3.0            0.342             0.029            0.349                  0.004               0.223                        0.208             0.785
+124   ossl_lucas_block     SCP   5.0            0.186             0.022            0.339                  0.001               0.123                        0.158             0.678
+125   ossl_lucas_block     SCP   8.0            0.107             0.008            0.412                  0.000               0.063                        0.092             0.631
+== conditional_coverage
+                   task  by  decile method  coverage    width     n
+0     mango_season_loso  Qr       1  G-W-A     0.982    4.629  8540
+1     mango_season_loso  Qr       2  G-W-A     0.960    4.595  8540
+2     mango_season_loso  Qr       3  G-W-A     0.947    4.574  8541
+3     mango_season_loso  Qr       4  G-W-A     0.939    4.563  8539
+4     mango_season_loso  Qr       5  G-W-A     0.934    4.556  8540
+5     mango_season_loso  Qr       6  G-W-A     0.921    4.548  8541
+6     mango_season_loso  Qr       7  G-W-A     0.924    4.550  8540
+7     mango_season_loso  Qr       8  G-W-A     0.937    4.556  8539
+8     mango_season_loso  Qr       9  G-W-A     0.933    4.578  8540
+9     mango_season_loso  Qr      10  G-W-A     0.780    4.584  8541
+10    mango_season_loso  Qr       1   GC-D     0.946    3.752  8540
+11    mango_season_loso  Qr       2   GC-D     0.925    4.003  8540
+12    mango_season_loso  Qr       3   GC-D     0.921    4.138  8541
+13    mango_season_loso  Qr       4   GC-D     0.919    4.259  8539
+14    mango_season_loso  Qr       5   GC-D     0.920    4.381  8540
+15    mango_season_loso  Qr       6   GC-D     0.917    4.510  8541
+16    mango_season_loso  Qr       7   GC-D     0.929    4.660  8540
+17    mango_season_loso  Qr       8   GC-D     0.948    4.834  8539
+18    mango_season_loso  Qr       9   GC-D     0.959    5.077  8540
+19    mango_season_loso  Qr      10   GC-D     0.888    6.104  8541
+20    mango_season_loso  Qr       1    SCP     0.947    3.729  8540
+21    mango_season_loso  Qr       2    SCP     0.904    3.665  8540
+22    mango_season_loso  Qr       3    SCP     0.891    3.635  8541
+23    mango_season_loso  Qr       4    SCP     0.880    3.618  8539
+24    mango_season_loso  Qr       5    SCP     0.861    3.603  8540
+25    mango_season_loso  Qr       6    SCP     0.844    3.592  8541
+26    mango_season_loso  Qr       7    SCP     0.852    3.594  8540
+27    mango_season_loso  Qr       8    SCP     0.859    3.602  8539
+28    mango_season_loso  Qr       9    SCP     0.857    3.632  8540
+29    mango_season_loso  Qr      10    SCP     0.694    3.618  8541
+..                  ...  ..     ...    ...       ...      ...   ...
+270  ossl_kssl_to_lucas  T2       1  G-W-A     0.163   28.563  4018
+271  ossl_kssl_to_lucas  T2       2  G-W-A     0.097   29.436  4017
+272  ossl_kssl_to_lucas  T2       3  G-W-A     0.079   28.895  4018
+273  ossl_kssl_to_lucas  T2       4  G-W-A     0.062   28.596  4017
+274  ossl_kssl_to_lucas  T2       5  G-W-A     0.050   26.981  4017
+275  ossl_kssl_to_lucas  T2       6  G-W-A     0.046   28.368  4018
+276  ossl_kssl_to_lucas  T2       7  G-W-A     0.036   28.775  4017
+277  ossl_kssl_to_lucas  T2       8  G-W-A     0.029   29.463  4018
+278  ossl_kssl_to_lucas  T2       9  G-W-A     0.029   35.900  4017
+279  ossl_kssl_to_lucas  T2      10  G-W-A     0.019   58.250  4018
+280  ossl_kssl_to_lucas  T2       1   GC-D     0.533   58.817  4018
+281  ossl_kssl_to_lucas  T2       2   GC-D     0.544   65.842  4017
+282  ossl_kssl_to_lucas  T2       3   GC-D     0.541   67.472  4018
+283  ossl_kssl_to_lucas  T2       4   GC-D     0.518   68.791  4017
+284  ossl_kssl_to_lucas  T2       5   GC-D     0.543   66.852  4017
+285  ossl_kssl_to_lucas  T2       6   GC-D     0.558   72.038  4018
+286  ossl_kssl_to_lucas  T2       7   GC-D     0.592   75.043  4017
+287  ossl_kssl_to_lucas  T2       8   GC-D     0.628   79.340  4018
+288  ossl_kssl_to_lucas  T2       9   GC-D     0.659  100.101  4017
+289  ossl_kssl_to_lucas  T2      10   GC-D     0.654  179.509  4018
+290  ossl_kssl_to_lucas  T2       1    SCP     0.114   25.738  4018
+291  ossl_kssl_to_lucas  T2       2    SCP     0.064   26.453  4017
+292  ossl_kssl_to_lucas  T2       3    SCP     0.050   25.913  4018
+293  ossl_kssl_to_lucas  T2       4    SCP     0.035   25.581  4017
+294  ossl_kssl_to_lucas  T2       5    SCP     0.030   24.090  4017
+295  ossl_kssl_to_lucas  T2       6    SCP     0.028   25.291  4018
+296  ossl_kssl_to_lucas  T2       7    SCP     0.023   25.594  4017
+297  ossl_kssl_to_lucas  T2       8    SCP     0.016   26.156  4018
+298  ossl_kssl_to_lucas  T2       9    SCP     0.019   31.783  4017
+299  ossl_kssl_to_lucas  T2      10    SCP     0.012   51.318  4018
+== alpha_consistency
+method                  task  alpha  ASTM-G  ASTM-R  G-W-A   GC-D    SCP  nominal  gcd_minus_scp
+0              corn_moisture   0.05   0.653   0.649  0.644  0.569  0.663     0.95         -0.094
+1              corn_moisture   0.10   0.623   0.619  0.608  0.527  0.618     0.90         -0.092
+2              corn_moisture   0.20   0.587   0.583  0.571  0.458  0.558     0.80         -0.100
+3                   corn_oil   0.05   0.933   0.883  0.916  0.834  0.888     0.95         -0.053
+4                   corn_oil   0.10   0.884   0.826  0.874  0.761  0.805     0.90         -0.044
+5                   corn_oil   0.20   0.783   0.727  0.760  0.641  0.724     0.80         -0.083
+6               corn_protein   0.05   0.812   0.773  0.761  0.777  0.732     0.95          0.044
+7               corn_protein   0.10   0.737   0.675  0.690  0.709  0.651     0.90          0.058
+8               corn_protein   0.20   0.621   0.556  0.603  0.621  0.576     0.80          0.045
+9                corn_starch   0.05   0.707   0.661  0.682  0.742  0.708     0.95          0.034
+10               corn_starch   0.10   0.645   0.608  0.632  0.685  0.613     0.90          0.072
+11               corn_starch   0.20   0.568   0.518  0.558  0.602  0.522     0.80          0.080
+12          mango_instrument   0.05   0.933   0.871  0.933  0.934  0.873     0.95          0.061
+13          mango_instrument   0.10   0.884   0.803  0.878  0.879  0.794     0.90          0.085
+14          mango_instrument   0.20   0.789   0.688  0.772  0.776  0.667     0.80          0.108
+15          mango_population   0.05   0.946   0.939  0.949  0.949  0.941     0.95          0.008
+16          mango_population   0.10   0.906   0.894  0.900  0.899  0.889     0.90          0.010
+17          mango_population   0.20   0.819   0.803  0.800  0.799  0.785     0.80          0.014
+18      mango_season_forward   0.05   0.929   0.860  0.928  0.933  0.865     0.95          0.069
+19      mango_season_forward   0.10   0.884   0.788  0.869  0.877  0.783     0.90          0.094
+20      mango_season_forward   0.20   0.790   0.674  0.760  0.770  0.661     0.80          0.109
+21         mango_season_loso   0.05   0.945   0.893  0.948  0.947  0.896     0.95          0.051
+22         mango_season_loso   0.10   0.906   0.833  0.899  0.895  0.826     0.90          0.069
+23         mango_season_loso   0.20   0.821   0.732  0.801  0.797  0.714     0.80          0.083
+24          ossl_lucas_block   0.05   0.943   0.932  0.949  0.949  0.940     0.95          0.009
+25          ossl_lucas_block   0.10   0.905   0.890  0.899  0.898  0.884     0.90          0.015
+26          ossl_lucas_block   0.20   0.827   0.807  0.798  0.798  0.778     0.80          0.020
+== coverage_dispersion
+                   task method  n_groups  mean_coverage  sd_group_coverage  expected_sampling_sd  between_group_share  q10_group_coverage  share_groups_below_085
+0     mango_season_loso   GC-D         7          0.895              0.066                 0.010                0.978               0.819                   0.286
+1     mango_season_loso    SCP         7          0.823              0.086                 0.012                0.982               0.739                   0.714
+2  mango_season_forward   GC-D         5          0.877              0.080                 0.011                0.982               0.796                   0.400
+3  mango_season_forward    SCP         5          0.778              0.086                 0.013                0.977               0.706                   0.800
+4      mango_instrument   GC-D        24          0.879              0.128                 0.011                0.993               0.791                   0.292
+5      mango_instrument    SCP        24          0.795              0.167                 0.013                0.994               0.630                   0.542
+6      mango_population   GC-D       199          0.899              0.150                 0.039                0.931               0.732                   0.191
+7      mango_population    SCP       199          0.885              0.153                 0.042                0.924               0.729                   0.251
+8      ossl_lucas_block   GC-D        30          0.898              0.064                 0.011                0.971               0.796                   0.267
+9      ossl_lucas_block    SCP        30          0.883              0.063                 0.012                0.962               0.792                   0.267
+== uninformative_rule
+                    task                     rule  share_flagged  coverage_all  coverage_retained  coverage_flagged  rmse_retained  rmse_flagged
+0      mango_season_loso  width ≥ reference range          0.009         0.927              0.929             0.747          1.260         3.419
+1      mango_season_loso        Q/Q̃ > 99 % limit          0.027         0.927              0.931             0.804          1.240         2.595
+2      mango_season_loso                   either          0.034         0.927              0.931             0.813          1.218         2.680
+3   mango_season_forward  width ≥ reference range          0.010         0.920              0.922             0.692          1.306         4.590
+4   mango_season_forward        Q/Q̃ > 99 % limit          0.050         0.920              0.928             0.774          1.267         2.703
+5   mango_season_forward                   either          0.056         0.920              0.929             0.771          1.210         3.018
+6       mango_instrument  width ≥ reference range          0.011         0.911              0.910             0.991          1.363         2.158
+7       mango_instrument        Q/Q̃ > 99 % limit          0.012         0.911              0.910             0.974          1.367         1.846
+8       mango_instrument                   either          0.020         0.911              0.909             0.982          1.359         1.963
+9       mango_population  width ≥ reference range          0.000         0.896              0.896             0.000          1.152         8.872
+10      mango_population        Q/Q̃ > 99 % limit          0.009         0.896              0.896             0.909          1.146         1.746
+11      mango_population                   either          0.009         0.896              0.896             0.909          1.146         1.746
+12      ossl_lucas_block  width ≥ reference range          0.048         0.898              0.901             0.842          2.293        25.615
+13      ossl_lucas_block        Q/Q̃ > 99 % limit          0.010         0.898              0.898             0.894          5.539        25.391
+14      ossl_lucas_block                   either          0.056         0.898              0.900             0.854          2.298        23.810
+15         corn_moisture  width ≥ reference range          0.118         0.522              0.484             0.803          0.613         0.508
+16         corn_moisture        Q/Q̃ > 99 % limit          0.290         0.522              0.711             0.057          0.401         0.924
+17         corn_moisture                   either          0.385         0.522              0.672             0.281          0.411         0.818
+18              corn_oil  width ≥ reference range          0.168         0.770              0.752             0.861          0.144         0.248
+19              corn_oil        Q/Q̃ > 99 % limit          0.308         0.770              0.735             0.849          0.177         0.140
+20              corn_oil                   either          0.422         0.770              0.715             0.846          0.151         0.185
+21          corn_protein  width ≥ reference range          0.210         0.710              0.635             0.992          0.402         0.346
+22          corn_protein        Q/Q̃ > 99 % limit          0.305         0.710              0.739             0.645          0.362         0.451
+23          corn_protein                   either          0.483         0.710              0.652             0.772          0.377         0.405
+24           corn_starch  width ≥ reference range          0.452         0.692              0.502             0.923          1.059         0.875
+25           corn_starch        Q/Q̃ > 99 % limit          0.273         0.692              0.842             0.293          0.840         1.281
+26           corn_starch                   either          0.650         0.692              0.724             0.674          0.916         1.013
+27   ossl_lucas_campaign  width ≥ reference range          0.044         0.895              0.898             0.840          2.638        20.281
+28   ossl_lucas_campaign        Q/Q̃ > 99 % limit          0.013         0.895              0.896             0.828          4.700        15.193
+29   ossl_lucas_campaign                   either          0.055         0.895              0.898             0.838          2.644        18.221
+30    ossl_kssl_to_lucas  width ≥ reference range          0.484         0.577              0.681             0.467          6.940        45.731
+31    ossl_kssl_to_lucas        Q/Q̃ > 99 % limit          0.028         0.577              0.573             0.731         30.020        75.651
+32    ossl_kssl_to_lucas                   either          0.498         0.577              0.674             0.480          6.991        45.116
+33               tablets  width ≥ reference range          0.000         0.899              0.899               NaN          4.902           NaN
+34               tablets        Q/Q̃ > 99 % limit          0.501         0.899              0.932             0.866          4.308         5.430
+35               tablets                   either          0.501         0.899              0.932             0.866          4.308         5.430
+== rejection_rule
+    perturbation  level        rule  rejected  coverage_all  coverage_retained  scp_coverage_all  rmse_retained  rmse_all
+0           gain  0.050     rej_Q95     0.084         0.928              0.934             0.851          1.216     1.327
+1           gain  0.050     rej_Q99     0.032         0.928              0.932             0.851          1.257     1.327
+2           gain  0.050  rej_Q99_T2     0.040         0.928              0.933             0.851          1.235     1.327
+3          noise  0.003     rej_Q95     0.238         0.894              0.897             0.757          1.503     1.607
+4          noise  0.003     rej_Q99     0.052         0.894              0.898             0.757          1.550     1.607
+5          noise  0.003  rej_Q99_T2     0.059         0.894              0.899             0.757          1.532     1.607
+6          noise  0.010     rej_Q95     0.965         0.704              0.765             0.412          2.639     3.431
+7          noise  0.010     rej_Q99     0.706         0.704              0.741             0.412          3.036     3.431
+8          noise  0.010  rej_Q99_T2     0.715         0.704              0.749             0.412          2.932     3.431
+9          noise  0.030     rej_Q95     1.000         0.448                NaN             0.153            NaN     9.625
+10         noise  0.030     rej_Q99     1.000         0.448              0.667             0.153          4.982     9.625
+11         noise  0.030  rej_Q99_T2     1.000         0.448              0.500             0.153          5.156     9.625
+12          none  0.000     rej_Q95     0.069         0.927              0.933             0.859          1.195     1.295
+13          none  0.000     rej_Q99     0.027         0.927              0.931             0.859          1.240     1.295
+14          none  0.000  rej_Q99_T2     0.035         0.927              0.932             0.859          1.215     1.295
+15  offset_slope  2.000     rej_Q95     0.069         0.927              0.933             0.859          1.195     1.295
+16  offset_slope  2.000     rej_Q99     0.027         0.927              0.931             0.859          1.240     1.295
+17  offset_slope  2.000  rej_Q99_T2     0.035         0.927              0.932             0.859          1.215     1.295
+18      wl_shift  0.500     rej_Q95     0.086         0.929              0.932             0.853          1.224     1.305
+19      wl_shift  0.500     rej_Q99     0.028         0.929              0.931             0.853          1.264     1.305
+20      wl_shift  0.500  rej_Q99_T2     0.036         0.929              0.933             0.853          1.233     1.305
+21      wl_shift  1.000     rej_Q95     0.146         0.940              0.940             0.841          1.276     1.337
+22      wl_shift  1.000     rej_Q99     0.041         0.940              0.941             0.841          1.302     1.337
+23      wl_shift  1.000  rej_Q99_T2     0.050         0.940              0.943             0.841          1.274     1.337
+24      wl_shift  2.000     rej_Q95     0.500         0.959              0.953             0.799          1.459     1.460
+25      wl_shift  2.000     rej_Q99     0.177         0.959              0.958             0.799          1.452     1.460
+26      wl_shift  2.000  rej_Q99_T2     0.184         0.959              0.959             0.799          1.435     1.460
+== revision_experiments
+scale_form                     task                             variant  coverage  interval_score  width  n_groups
+0       mango_instrument                           Gamma GLM     0.879           6.214  4.532        24
+1       mango_instrument              Gaussian GLM, log link     0.878           6.227  4.563        24
+2       mango_instrument              Q not normalised by Q̃     0.879           6.211  4.542        24
+3       mango_instrument                              Q only     0.871           6.326  4.497        24
+4       mango_instrument                             T² only     0.883           6.220  4.551        24
+5       mango_instrument  default (Poisson, log(1+T²), Q/Q̃)     0.879           6.211  4.542        24
+6       mango_instrument              group-weighted GLM fit     0.883           6.217  4.616        24
+7       mango_instrument         log T² instead of log(1+T²)     0.878           6.215  4.540        24
+8       mango_instrument           log-normal (LS on log|r|)     0.878           6.211  4.517        24
+9       mango_instrument               with T²×Q interaction     0.880           6.131  4.546        24
+10  mango_season_forward                           Gamma GLM     0.874           6.250  4.488         5
+11  mango_season_forward              Gaussian GLM, log link     0.883           6.127  4.643         5
+12  mango_season_forward              Q not normalised by Q̃     0.877           6.143  4.527         5
+13  mango_season_forward                              Q only     0.882           6.256  4.611         5
+14  mango_season_forward                             T² only     0.864           6.343  4.386         5
+15  mango_season_forward  default (Poisson, log(1+T²), Q/Q̃)     0.877           6.143  4.526         5
+16  mango_season_forward              group-weighted GLM fit     0.877           6.145  4.533         5
+17  mango_season_forward         log T² instead of log(1+T²)     0.877           6.148  4.528         5
+18  mango_season_forward           log-normal (LS on log|r|)     0.874           6.266  4.503         5
+19  mango_season_forward               with T²×Q interaction     0.874           6.176  4.492         5
+20     mango_season_loso                           Gamma GLM     0.896           5.904  4.508         7
+21     mango_season_loso              Gaussian GLM, log link     0.895           5.923  4.557         7
+22     mango_season_loso              Q not normalised by Q̃     0.895           5.899  4.519         7
+23     mango_season_loso                              Q only     0.898           6.003  4.561         7
+24     mango_season_loso                             T² only     0.894           5.939  4.512         7
+25     mango_season_loso  default (Poisson, log(1+T²), Q/Q̃)     0.895           5.900  4.519         7
+26     mango_season_loso              group-weighted GLM fit     0.894           6.012  4.515         7
+27     mango_season_loso         log T² instead of log(1+T²)     0.895           5.907  4.518         7
+28     mango_season_loso           log-normal (LS on log|r|)     0.895           5.906  4.499         7
+29     mango_season_loso               with T²×Q interaction     0.900           5.809  4.542         7
+30      ossl_lucas_block                           Gamma GLM     0.898          11.913  7.082        30
+31      ossl_lucas_block              Gaussian GLM, log link     0.899          11.893  7.193        30
+32      ossl_lucas_block              Q not normalised by Q̃     0.898          11.900  7.142        30
+33      ossl_lucas_block                              Q only     0.898          11.979  6.951        30
+34      ossl_lucas_block                             T² only     0.899          11.902  7.139        30
+35      ossl_lucas_block  default (Poisson, log(1+T²), Q/Q̃)     0.898          11.900  7.142        30
+36      ossl_lucas_block              group-weighted GLM fit     0.898          11.902  7.198        30
+37      ossl_lucas_block         log T² instead of log(1+T²)     0.898          11.902  7.133        30
+38      ossl_lucas_block           log-normal (LS on log|r|)     0.897          11.936  7.032        30
+39      ossl_lucas_block               with T²×Q interaction     0.898          11.932  7.145        30
+bias                  task                             variant   k  coverage  coverage_q10  worst_group  interval_score  width  n_groups
+0    mango_instrument                GC-D (no correction)   1     0.879         0.791        0.356           6.211  4.542        24
+1    mango_instrument                GC-D (no correction)   2     0.879         0.791        0.357           6.211  4.542        24
+2    mango_instrument                GC-D (no correction)   3     0.879         0.791        0.356           6.212  4.542        24
+3    mango_instrument                GC-D (no correction)   5     0.879         0.792        0.356           6.209  4.542        24
+4    mango_instrument                GC-D (no correction)  10     0.879         0.791        0.356           6.211  4.542        24
+5    mango_instrument                GC-D, centre shifted   1     0.847         0.744        0.671           7.505  4.542        24
+6    mango_instrument                GC-D, centre shifted   2     0.893         0.783        0.724           6.129  4.542        24
+7    mango_instrument                GC-D, centre shifted   3     0.908         0.814        0.755           5.804  4.542        24
+8    mango_instrument                GC-D, centre shifted   5     0.917         0.841        0.745           5.650  4.542        24
+9    mango_instrument                GC-D, centre shifted  10     0.936         0.880        0.772           5.353  4.542        24
+10   mango_instrument  GC-D-BC (shifted and recalibrated)   1     0.882         0.814        0.681           7.457  5.032        24
+11   mango_instrument  GC-D-BC (shifted and recalibrated)   2     0.886         0.797        0.724           6.195  4.409        24
+12   mango_instrument  GC-D-BC (shifted and recalibrated)   3     0.882         0.777        0.729           5.898  4.179        24
+13   mango_instrument  GC-D-BC (shifted and recalibrated)   5     0.877         0.778        0.689           5.672  3.938        24
+14   mango_instrument  GC-D-BC (shifted and recalibrated)  10     0.883         0.796        0.690           5.273  3.740        24
+15   mango_population                GC-D (no correction)   1     0.899         0.732        0.012           4.916  3.681       199
+16   mango_population                GC-D (no correction)   2     0.899         0.731        0.012           4.917  3.681       199
+17   mango_population                GC-D (no correction)   3     0.899         0.733        0.014           4.917  3.681       199
+18   mango_population                GC-D (no correction)   5     0.899         0.736        0.013           4.910  3.681       199
+19   mango_population                GC-D (no correction)  10     0.898         0.733        0.009           4.924  3.683       198
+20   mango_population                GC-D, centre shifted   1     0.920         0.824        0.657           4.671  3.681       199
+21   mango_population                GC-D, centre shifted   2     0.946         0.875        0.682           4.248  3.681       199
+22   mango_population                GC-D, centre shifted   3     0.955         0.886        0.684           4.142  3.681       199
+23   mango_population                GC-D, centre shifted   5     0.961         0.908        0.719           4.060  3.681       199
+24   mango_population                GC-D, centre shifted  10     0.966         0.913        0.726           4.019  3.683       198
+25   mango_population  GC-D-BC (shifted and recalibrated)   1     0.900         0.790        0.618           4.646  3.417       199
+26   mango_population  GC-D-BC (shifted and recalibrated)   2     0.900         0.799        0.585           4.093  3.058       199
+27   mango_population  GC-D-BC (shifted and recalibrated)   3     0.901         0.796        0.552           3.911  2.924       199
+28   mango_population  GC-D-BC (shifted and recalibrated)   5     0.899         0.798        0.565           3.751  2.802       199
+29   mango_population  GC-D-BC (shifted and recalibrated)  10     0.900         0.796        0.544           3.649  2.725       198
+30  mango_season_loso                GC-D (no correction)   1     0.895         0.819        0.798           5.899  4.519         7
+31  mango_season_loso                GC-D (no correction)   2     0.895         0.819        0.798           5.899  4.519         7
+32  mango_season_loso                GC-D (no correction)   3     0.895         0.819        0.798           5.901  4.519         7
+33  mango_season_loso                GC-D (no correction)   5     0.895         0.819        0.798           5.899  4.519         7
+34  mango_season_loso                GC-D (no correction)  10     0.895         0.819        0.798           5.901  4.519         7
+35  mango_season_loso                GC-D, centre shifted   1     0.795         0.688        0.639           8.397  4.519         7
+36  mango_season_loso                GC-D, centre shifted   2     0.838         0.753        0.702           7.128  4.519         7
+37  mango_season_loso                GC-D, centre shifted   3     0.866         0.785        0.727           6.456  4.519         7
+38  mango_season_loso                GC-D, centre shifted   5     0.873         0.806        0.747           6.355  4.519         7
+39  mango_season_loso                GC-D, centre shifted  10     0.894         0.829        0.800           5.899  4.519         7
+40  mango_season_loso  GC-D-BC (shifted and recalibrated)   1     0.872         0.795        0.759           8.143  5.757         7
+41  mango_season_loso  GC-D-BC (shifted and recalibrated)   2     0.885         0.808        0.778           6.990  5.191         7
+42  mango_season_loso  GC-D-BC (shifted and recalibrated)   3     0.898         0.819        0.776           6.509  5.026         7
+43  mango_season_loso  GC-D-BC (shifted and recalibrated)   5     0.885         0.819        0.765           6.373  4.733         7
+44  mango_season_loso  GC-D-BC (shifted and recalibrated)  10     0.893         0.823        0.807           5.945  4.530         7
+unbalanced                  task  method  coverage  interval_score  interval_score_median     width  width_median  largest_share  max_min_ratio  n_train
+0    mango_instrument   G-U-A     0.831           7.312                  5.631     4.373         4.317          0.422        374.688   4294.5
+1    mango_instrument   G-U-D     0.843           6.917                  5.852     4.501         4.335          0.422        374.688   4294.5
+2    mango_instrument   G-W-A     0.854           7.111                  5.637     4.659         4.694          0.422        374.688   4294.5
+3    mango_instrument    GC-D     0.866           6.742                  5.716     4.770         4.622          0.422        374.688   4294.5
+4    mango_instrument  ORACLE     0.900           5.910                  5.499     4.774         4.267          0.422        374.688   4294.5
+5    mango_instrument     SCP     0.740           8.103                  5.791     3.486         3.480          0.422        374.688   4294.5
+6   mango_season_loso   G-U-A     0.871           6.571                  6.129     4.377         4.404          0.590         45.238  21700.0
+7   mango_season_loso   G-U-D     0.854           6.471                  6.317     4.261         4.258          0.590         45.238  21700.0
+8   mango_season_loso   G-W-A     0.887           6.522                  6.155     4.615         4.545          0.590         45.238  21700.0
+9   mango_season_loso    GC-D     0.876           6.458                  6.224     4.571         4.491          0.590         45.238  21700.0
+10  mango_season_loso  ORACLE     0.899           6.223                  6.039     4.749         4.729          0.590         45.238  21700.0
+11  mango_season_loso     SCP     0.799           6.951                  6.555     3.617         3.540          0.590         45.238  21700.0
+12   ossl_lucas_block   G-U-A     0.886         145.062                  7.008    20.584         4.525          0.471        291.300   3130.0
+13   ossl_lucas_block   G-U-D     0.888        1046.222                  6.958  1038.296         4.860          0.471        291.300   3130.0
+14   ossl_lucas_block   G-W-A     0.896         143.052                  6.936    21.339         4.700          0.471        291.300   3130.0
+15   ossl_lucas_block    GC-D     0.897         921.806                  7.122   913.821         4.914          0.471        291.300   3130.0
+16   ossl_lucas_block  ORACLE     0.901         137.856                  7.233    23.354         4.373          0.471        291.300   3130.0
+17   ossl_lucas_block     SCP     0.848          66.698                  7.154     9.671         3.998          0.471        291.300   3130.0
+wcp                     task                                              estimator    cap  coverage  finite_frac  interval_score  ess_frac  test_mass_gt_alpha  clf_auc
+0       mango_instrument             logistic, C = 0.01 (strong regularisation)   10.0     0.820        1.000           6.679     0.125               0.000    0.988
+1       mango_instrument             logistic, C = 0.01 (strong regularisation)  100.0     0.858        1.000           6.772     0.040               0.000    0.988
+2       mango_instrument             logistic, C = 0.01 (strong regularisation)   20.0     0.831        1.000           6.678     0.089               0.000    0.988
+3       mango_instrument             logistic, C = 0.01 (strong regularisation)    5.0     0.808        1.000           6.764     0.175               0.000    0.988
+4       mango_instrument             logistic, C = 0.01 (strong regularisation)   50.0     0.848        1.000           6.770     0.056               0.000    0.988
+5       mango_instrument             logistic, C = 0.01 (strong regularisation)   none     0.893        0.927             inf     0.017               0.073    0.988
+6       mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)   10.0     0.848        1.000           7.023     0.036               0.000    0.991
+7       mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)  100.0     0.872        0.945             inf     0.011               0.055    0.991
+8       mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)   20.0     0.855        1.000           7.005     0.025               0.000    0.991
+9       mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)    5.0     0.841        1.000           7.063     0.050               0.000    0.991
+10      mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)   50.0     0.866        0.967             inf     0.015               0.033    0.991
+11      mango_instrument  logistic, C = 1, all scores + log Q (as in main runs)   none     0.926        0.802             inf     0.002               0.198    0.991
+12      mango_instrument                   logistic, C = 1, first 3 scores only   10.0     0.792        1.000           6.981     0.441               0.000    0.767
+13      mango_instrument                   logistic, C = 1, first 3 scores only  100.0     0.794        1.000           6.972     0.438               0.000    0.767
+14      mango_instrument                   logistic, C = 1, first 3 scores only   20.0     0.792        1.000           6.978     0.438               0.000    0.767
+15      mango_instrument                   logistic, C = 1, first 3 scores only    5.0     0.791        1.000           6.972     0.484               0.000    0.767
+16      mango_instrument                   logistic, C = 1, first 3 scores only   50.0     0.794        1.000           6.972     0.438               0.000    0.767
+17      mango_instrument                   logistic, C = 1, first 3 scores only   none     0.800        1.000           7.081     0.438               0.000    0.767
+18  mango_season_forward             logistic, C = 0.01 (strong regularisation)   10.0     0.824        1.000           7.151     0.275               0.000    0.838
+19  mango_season_forward             logistic, C = 0.01 (strong regularisation)  100.0     0.866        1.000           8.348     0.155               0.000    0.838
+20  mango_season_forward             logistic, C = 0.01 (strong regularisation)   20.0     0.838        1.000           8.585     0.199               0.000    0.838
+21  mango_season_forward             logistic, C = 0.01 (strong regularisation)    5.0     0.809        1.000           7.107     0.371               0.000    0.838
+22  mango_season_forward             logistic, C = 0.01 (strong regularisation)   50.0     0.848        1.000           8.478     0.165               0.000    0.838
+23  mango_season_forward             logistic, C = 0.01 (strong regularisation)   none     0.890        1.000             inf     0.016               0.000    0.838
+24  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)   10.0     0.833        1.000             inf     0.255               0.000    0.838
+25  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)  100.0     0.867        1.000           8.353     0.132               0.000    0.838
+26  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)   20.0     0.839        1.000           8.582     0.180               0.000    0.838
+27  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)    5.0     0.827        1.000             inf     0.345               0.000    0.838
+28  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)   50.0     0.848        1.000           8.478     0.139               0.000    0.838
+29  mango_season_forward  logistic, C = 1, all scores + log Q (as in main runs)   none     0.895        0.999             inf     0.013               0.001    0.838
+30  mango_season_forward                   logistic, C = 1, first 3 scores only   10.0     0.766        1.000           7.394     0.538               0.000    0.699
+31  mango_season_forward                   logistic, C = 1, first 3 scores only  100.0     0.766        1.000           7.395     0.537               0.000    0.699
+32  mango_season_forward                   logistic, C = 1, first 3 scores only   20.0     0.766        1.000           7.395     0.537               0.000    0.699
+33  mango_season_forward                   logistic, C = 1, first 3 scores only    5.0     0.767        1.000           7.389     0.569               0.000    0.699
+34  mango_season_forward                   logistic, C = 1, first 3 scores only   50.0     0.766        1.000           7.395     0.537               0.000    0.699
+35  mango_season_forward                   logistic, C = 1, first 3 scores only   none     0.766        1.000           7.395     0.537               0.000    0.699
+36     mango_season_loso             logistic, C = 0.01 (strong regularisation)   10.0     0.840        1.000           6.270     0.320               0.000    0.823
+37     mango_season_loso             logistic, C = 0.01 (strong regularisation)  100.0     0.849        1.000           6.201     0.168               0.000    0.823
+38     mango_season_loso             logistic, C = 0.01 (strong regularisation)   20.0     0.847        1.000           6.230     0.252               0.000    0.823
+39     mango_season_loso             logistic, C = 0.01 (strong regularisation)    5.0     0.832        1.000           6.300     0.396               0.000    0.823
+40     mango_season_loso             logistic, C = 0.01 (strong regularisation)   50.0     0.848        1.000           6.211     0.198               0.000    0.823
+41     mango_season_loso             logistic, C = 0.01 (strong regularisation)   none     0.859        1.000             inf     0.105               0.000    0.823
+42     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)   10.0     0.841        1.000           6.267     0.274               0.000    0.825
+43     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)  100.0     0.850        1.000           6.197     0.144               0.000    0.825
+44     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)   20.0     0.847        1.000           6.227     0.221               0.000    0.825
+45     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)    5.0     0.833        1.000           6.294     0.353               0.000    0.825
+46     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)   50.0     0.850        1.000           6.204     0.169               0.000    0.825
+47     mango_season_loso  logistic, C = 1, all scores + log Q (as in main runs)   none     0.864        1.000             inf     0.091               0.000    0.825
+48     mango_season_loso                   logistic, C = 1, first 3 scores only   10.0     0.817        1.000           6.455     0.535               0.000    0.707
+49     mango_season_loso                   logistic, C = 1, first 3 scores only  100.0     0.817        1.000           6.455     0.532               0.000    0.707
+50     mango_season_loso                   logistic, C = 1, first 3 scores only   20.0     0.817        1.000           6.455     0.532               0.000    0.707
+51     mango_season_loso                   logistic, C = 1, first 3 scores only    5.0     0.817        1.000           6.454     0.565               0.000    0.707
+52     mango_season_loso                   logistic, C = 1, first 3 scores only   50.0     0.817        1.000           6.455     0.532               0.000    0.707
+53     mango_season_loso                   logistic, C = 1, first 3 scores only   none     0.817        1.000           6.455     0.532               0.000    0.707
+54      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)   10.0     0.914        1.000             inf     0.183               0.000    0.909
+55      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)  100.0     0.929        1.000             inf     0.060               0.000    0.909
+56      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)   20.0     0.919        1.000             inf     0.128               0.000    0.909
+57      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)    5.0     0.907        1.000             inf     0.260               0.000    0.909
+58      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)   50.0     0.924        1.000             inf     0.081               0.000    0.909
+59      ossl_lucas_block             logistic, C = 0.01 (strong regularisation)   none     0.902        0.996             inf     0.006               0.004    0.909
+60      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)   10.0     0.919        1.000             inf     0.101               0.000    0.914
+61      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)  100.0     0.923        0.999             inf     0.022               0.001    0.914
+62      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)   20.0     0.922        1.000             inf     0.068               0.000    0.914
+63      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)    5.0     0.913        1.000             inf     0.146               0.000    0.914
+64      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)   50.0     0.926        1.000             inf     0.037               0.000    0.914
+65      ossl_lucas_block  logistic, C = 1, all scores + log Q (as in main runs)   none     0.891        0.978             inf     0.002               0.022    0.914
+66      ossl_lucas_block                   logistic, C = 1, first 3 scores only   10.0     0.896        1.000          11.980     0.528               0.000    0.733
+67      ossl_lucas_block                   logistic, C = 1, first 3 scores only  100.0     0.904        1.000          11.940     0.478               0.000    0.733
+68      ossl_lucas_block                   logistic, C = 1, first 3 scores only   20.0     0.900        1.000          11.957     0.498               0.000    0.733
+69      ossl_lucas_block                   logistic, C = 1, first 3 scores only    5.0     0.893        1.000          12.013     0.575               0.000    0.733
+70      ossl_lucas_block                   logistic, C = 1, first 3 scores only   50.0     0.902        1.000          11.945     0.478               0.000    0.733
+71      ossl_lucas_block                   logistic, C = 1, first 3 scores only   none     0.906        1.000          11.941     0.478               0.000    0.733

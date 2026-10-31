@@ -1,0 +1,12 @@
+{
+ "n_populations": 199,
+ "n_parameters_season_instrument": 37,
+ "sd_pop_mean_residual_population_scenario": 0.8045634031295776,
+ "sd_pop_mean_residual_loso_scenario": 0.8892091512680054,
+ "r2_season_of_pop_residual_means_loso": 0.15466523170471191,
+ "r2_season_of_pop_residual_means_population": 0.1388682723045349,
+ "r2_pop_mean_scores_by_season": 0.08816468306104275,
+ "r2_pop_mean_scores_by_season_and_instruments": 0.4006494174656714,
+ "worst_population": "114500",
+ "worst_population_bias": -3.232854127883911
+}

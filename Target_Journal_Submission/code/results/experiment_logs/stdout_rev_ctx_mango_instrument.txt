@@ -1,0 +1,25 @@
+2026-10-31 05:55:33,021 [mango_instrument] fold inst14002 A=14
+2026-10-31 05:55:53,722 [mango_instrument] fold inst15006 A=16
+2026-10-31 05:56:54,382 [mango_instrument] fold inst15013 A=12
+2026-10-31 05:57:30,277 [mango_instrument] fold inst15014 A=15
+2026-10-31 05:58:40,888 [mango_instrument] fold inst15015 A=14
+2026-10-31 05:59:20,476 [mango_instrument] fold inst15016 A=12
+2026-10-31 05:59:59,061 [mango_instrument] fold inst15023 A=13
+2026-10-31 06:00:52,645 [mango_instrument] fold inst15025 A=12
+2026-10-31 06:01:50,531 [mango_instrument] fold inst15027 A=13
+2026-10-31 06:02:30,301 [mango_instrument] fold inst15029 A=12
+2026-10-31 06:03:11,254 [mango_instrument] fold inst15038 A=14
+2026-10-31 06:03:59,108 [mango_instrument] fold inst16032 A=12
+2026-10-31 06:04:44,856 [mango_instrument] fold inst16033 A=13
+2026-10-31 06:05:20,792 [mango_instrument] fold inst16041 A=13
+2026-10-31 06:06:04,432 [mango_instrument] fold inst16048 A=19
+2026-10-31 06:06:45,073 [mango_instrument] fold inst17033 A=12
+2026-10-31 06:07:31,933 [mango_instrument] fold inst17040 A=12
+2026-10-31 06:08:15,863 [mango_instrument] fold inst17052 A=12
+2026-10-31 06:08:59,414 [mango_instrument] fold inst17057 A=19
+2026-10-31 06:09:44,920 [mango_instrument] fold inst18007 A=12
+2026-10-31 06:10:29,653 [mango_instrument] fold inst18029 A=13
+2026-10-31 06:11:17,084 [mango_instrument] fold inst18030 A=13
+2026-10-31 06:12:06,019 [mango_instrument] fold inst18044 A=13
+2026-10-31 06:12:49,019 [mango_instrument] fold inst30004 A=14
+2026-10-31 06:12:57,402 done

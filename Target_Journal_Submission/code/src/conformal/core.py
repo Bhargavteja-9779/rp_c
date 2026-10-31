@@ -34,29 +34,50 @@ def split_conformal_quantile(scores, alpha):
 # ---------------------------------------------------------------------------------------------
 def diag_features(T2, Q, q_ref, mode="both"):
     """z = [log(1 + T²), log(Q / Q_ref)] — Q_ref is the median training Q of the same model.
-    ``mode`` ∈ {"both", "T2", "Q"} (sensitivity analysis)."""
-    z1 = np.log1p(np.maximum(T2, 0))
-    z2 = np.log(np.maximum(Q, 1e-300) / q_ref)
-    if mode == "T2":
+    ``mode`` ∈ {"both", "T2", "Q"} (sensitivity analysis), or a configuration dict with the keys
+    ``diag_mode``, ``t2_transform`` ("log1p" | "log"), ``q_norm`` ("median" | "none") and
+    ``diag_interaction`` (adds the product term); the defaults reproduce the published model."""
+    opts = mode if isinstance(mode, dict) else {"diag_mode": mode}
+    dm = opts.get("diag_mode", "both")
+    z1 = np.log(np.maximum(T2, 1e-6)) if opts.get("t2_transform", "log1p") == "log" else np.log1p(np.maximum(T2, 0))
+    ref = 1.0 if opts.get("q_norm", "median") == "none" else q_ref
+    z2 = np.log(np.maximum(Q, 1e-300) / ref)
+    if dm == "T2":
         return z1[:, None]
-    if mode == "Q":
+    if dm == "Q":
         return z2[:, None]
+    if opts.get("diag_interaction"):
+        return np.c_[z1, z2, z1 * z2]
     return np.c_[z1, z2]
 
 
 class DiagnosticScale:
     """σ(x) = exp(β₀ + β₁ log(1+T²) + β₂ log(Q/Q_ref)), fitted as a log-link GLM (Poisson
     quasi-likelihood) of |residual| on the PLS diagnostics of out-of-sample predictions.
-    A floor of ``floor_frac`` × median fitted σ prevents division by near-zero scales."""
+    A floor of ``floor_frac`` × median fitted σ prevents division by near-zero scales.
+    ``family`` (sensitivity analysis): "poisson" (default), "gamma", "gaussian" (log link) or
+    "lognormal" (least squares on log|r|; the constant smearing factor cancels in the conformal quantile)."""
 
-    def __init__(self, floor_frac=0.1):
-        self.floor_frac = floor_frac
+    def __init__(self, floor_frac=0.1, family="poisson"):
+        self.floor_frac, self.family = floor_frac, family
 
     def fit(self, Z, abs_res, sample_weight=None):
+        from sklearn.linear_model import GammaRegressor, TweedieRegressor, LinearRegression
         ok = np.isfinite(Z).all(1) & np.isfinite(abs_res)
         self.scale_ = np.mean(abs_res[ok])
-        self.glm = PoissonRegressor(alpha=0.0, max_iter=300)
-        self.glm.fit(Z[ok], abs_res[ok] / self.scale_, sample_weight=None if sample_weight is None else sample_weight[ok])
+        sw = None if sample_weight is None else sample_weight[ok]
+        yy = abs_res[ok] / self.scale_
+        if self.family == "poisson":
+            self.glm = PoissonRegressor(alpha=0.0, max_iter=300).fit(Z[ok], yy, sample_weight=sw)
+        elif self.family == "gamma":   # Gamma needs y > 0: residuals of exactly zero are moved to a tiny positive value
+            self.glm = GammaRegressor(alpha=0.0, max_iter=300).fit(Z[ok], np.maximum(yy, 1e-6), sample_weight=sw)
+        elif self.family == "gaussian":
+            self.glm = TweedieRegressor(power=0, link="log", alpha=0.0, max_iter=300).fit(Z[ok], yy, sample_weight=sw)
+        elif self.family == "lognormal":
+            lr = LinearRegression().fit(Z[ok], np.log(np.maximum(yy, 1e-6)), sample_weight=sw)
+            self.glm = type("LogLin", (), {"predict": staticmethod(lambda Zn: np.exp(lr.predict(Zn)))})()
+        else:
+            raise ValueError(self.family)
         self.floor_ = self.floor_frac * np.median(self._raw(Z[ok]))
         return self
 

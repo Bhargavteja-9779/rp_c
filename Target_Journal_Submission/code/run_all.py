@@ -72,10 +72,26 @@ def main():
         cmds += [f"{py} experiments/run_robustness.py --exp perturb --quick",
                  f"{py} experiments/run_cnn.py --seed 0 --quick"]
     parallel(cmds, env, a.workers)
+    # analyses added during revision 1 (reviewer requests; see ../revision_1/)
+    rq = " --quick" if a.mode == "quick" else ""
+    ctx_tasks = ["mango_season_loso", "mango_instrument"] if a.mode == "quick" else \
+        ["mango_instrument", "ossl_lucas_block", "mango_population", "mango_season_loso", "mango_season_forward", "ossl_lucas_campaign",
+         "ossl_kssl_to_lucas", "corn_moisture", "corn_oil", "corn_protein", "corn_starch", "tablets"]
+    cmds = [f"{py} experiments/run_revision.py --exp ctxpass --task {t}{rq}" for t in ctx_tasks]
+    cmds += [f"{py} experiments/run_revision.py --exp reject{rq}"]
+    cmds += [f"{py} experiments/run_revision.py --exp unbalanced --task {t}{rq}" for t in
+             (["mango_instrument"] if a.mode == "quick" else ["mango_instrument", "ossl_lucas_block", "mango_season_loso"])]
+    cmds += [f"{py} experiments/run_revision.py --exp wcp --task {t}{rq}" for t in
+             (["mango_season_loso"] if a.mode == "quick" else ["mango_season_loso", "mango_season_forward", "mango_instrument", "ossl_lucas_block"])]
+    cmds += [f"{py} experiments/run_simulation.py"]
+    if a.mode == "quick":
+        env["SIM_R"] = "50"
+    parallel(cmds, env, a.workers)
     sh(f"{py} experiments/run_timing.py{quick}", env)   # isolated timing on an idle machine (E6)
     sh(f"{py} experiments/aggregate.py", env)
     sh(f"{py} experiments/aggregate_extra.py", env)
     sh(f"{py} experiments/analysis_points.py", env)
+    sh(f"{py} experiments/revision_analyses.py", env)
     sh(f"{py} experiments/make_figures.py", env)
     sh(f"{py} experiments/make_tables.py", env)
     sh(f"{py} experiments/make_graphical_abstract.py", env)

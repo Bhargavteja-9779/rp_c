@@ -96,8 +96,9 @@ class FoldContext:
     def _scale_model(self, cf):
         r, T2, Q = self._oof(cf)
         ok = cf.covered
-        Z = diag_features(T2[ok], Q[ok], self.Qref, self.cfg.get('diag_mode', 'both'))
-        sm = DiagnosticScale(self.cfg.get('floor_frac', 0.1)).fit(Z, np.abs(r[ok]))
+        Z = diag_features(T2[ok], Q[ok], self.Qref, self.cfg)
+        sw = group_balanced_weights(self.gtr[ok]) if self.cfg.get("scale_weights") == "group" else None
+        sm = DiagnosticScale(self.cfg.get('floor_frac', 0.1), self.cfg.get("scale_family", "poisson")).fit(Z, np.abs(r[ok]), sw)
         return sm, r, T2, Q
 
 
@@ -311,8 +312,8 @@ def m_crossfit_family(ctx, alpha, folds="G", weights="W", score="D", finite_corr
         if key not in ctx.__dict__:
             ctx.__dict__[key] = ctx._scale_model(cf)
         sm, _, T2, Q = ctx.__dict__[key]
-        sig_cal = sm.predict(diag_features(T2[ok], Q[ok], ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
-        sig_te = sm.predict(diag_features(ctx.T2te, ctx.Qte, ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
+        sig_cal = sm.predict(diag_features(T2[ok], Q[ok], ctx.Qref, ctx.cfg))
+        sig_te = sm.predict(diag_features(ctx.T2te, ctx.Qte, ctx.Qref, ctx.cfg))
     else:
         sig_cal = np.ones(ok.sum()); sig_te = np.ones(len(ctx.yte))
     s = np.abs(r[ok]) / sig_cal
@@ -337,8 +338,8 @@ def m_gc_jplus(ctx, alpha, score="A"):
         if key not in ctx.__dict__:
             ctx.__dict__[key] = ctx._scale_model(cf)
         sm, _, T2, Q = ctx.__dict__[key]
-        sig_cal = sm.predict(diag_features(T2, Q, ctx.Qref, ctx.cfg.get('diag_mode', 'both')))
-        sig = np.stack([sm.predict(diag_features(T2f[k], Qf[k], ctx.Qref, ctx.cfg.get('diag_mode', 'both'))) for k in range(len(cf.models))])
+        sig_cal = sm.predict(diag_features(T2, Q, ctx.Qref, ctx.cfg))
+        sig = np.stack([sm.predict(diag_features(T2f[k], Qf[k], ctx.Qref, ctx.cfg)) for k in range(len(cf.models))])
     else:
         sig_cal = np.ones(len(r)); sig = np.ones_like(mu)
     sc = np.where(ok, r / sig_cal, np.nan)
@@ -371,9 +372,9 @@ def m_hcp_split(ctx, alpha, score="D"):
         r = ctx.ytr[prop] - cf.oof_at(ctx.A)
         T2, Q = cf.oof_diagnostics(ctx.A)
         okk = cf.covered
-        sm = DiagnosticScale(ctx.cfg.get('floor_frac', 0.1)).fit(diag_features(T2[okk], Q[okk], Qref, ctx.cfg.get('diag_mode', 'both')), np.abs(r[okk]))
-        sig_cal = sm.predict(diag_features(dcal["T2"], dcal["Q"], Qref, ctx.cfg.get('diag_mode', 'both')))
-        sig_te = sm.predict(diag_features(dte["T2"], dte["Q"], Qref, ctx.cfg.get('diag_mode', 'both')))
+        sm = DiagnosticScale(ctx.cfg.get('floor_frac', 0.1), ctx.cfg.get("scale_family", "poisson")).fit(diag_features(T2[okk], Q[okk], Qref, ctx.cfg), np.abs(r[okk]))
+        sig_cal = sm.predict(diag_features(dcal["T2"], dcal["Q"], Qref, ctx.cfg))
+        sig_te = sm.predict(diag_features(dte["T2"], dte["Q"], Qref, ctx.cfg))
     else:
         sig_cal = np.ones(cal.sum()); sig_te = np.ones(len(ctx.yte))
     s = np.abs(ctx.ytr[cal] - m.predict(ctx.Xtr[cal])) / sig_cal

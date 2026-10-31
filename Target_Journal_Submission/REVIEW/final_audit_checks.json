@@ -99,7 +99,7 @@
   {
    "check": "table numbers consecutive",
    "ok": true,
-   "detail": "[1, 2, 3, 4]"
+   "detail": "[1, 2, 3]"
   },
   {
    "check": "every cited table exists",
@@ -107,9 +107,19 @@
    "detail": ""
   },
   {
-   "check": "supplementary tables cited within S1-S15",
+   "check": "supplementary tables cited within S1-S28",
    "ok": true,
-   "detail": "['S15', 'S2', 'S5', 'S6', 'S7', 'S8']"
+   "detail": "['S14', 'S15', 'S16', 'S17', 'S18', 'S19', 'S2', 'S20', 'S21', 'S22', 'S23', 'S24', 'S25', 'S27', 'S28', 'S3', 'S5', 'S6', 'S7', 'S9']"
+  },
+  {
+   "check": "supplementary figures cited within S1-S3",
+   "ok": true,
+   "detail": "['S1', 'S3']"
+  },
+  {
+   "check": "no bracketed placeholders ([Author ...], [To be ...], [repository ...])",
+   "ok": true,
+   "detail": ""
   },
   {
    "check": "no nan in text",
@@ -119,7 +129,7 @@
   {
    "check": "every citation number has a reference",
    "ok": true,
-   "detail": "(54, 54)"
+   "detail": "(56, 56)"
   },
   {
    "check": "every reference is cited",

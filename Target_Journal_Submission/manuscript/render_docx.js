@@ -16,8 +16,22 @@ const LINE = flags.includes("--single") ? 276 : 480; // double spacing for revie
 const PAGE_W = 11906, PAGE_H = 16838, MARGIN = 1440; // A4, 1-inch margins
 const TEXT_W = PAGE_W - 2 * MARGIN;
 
-// inline markup: **bold**, *italic*, ^{sup}, _{sub}
+// inline markup: **bold**, *italic*, ^{sup}, _{sub}; ⟦highlighted⟧ (changes in a revised manuscript)
 function runs(text, base = {}) {
+  if (text.includes("\u27E6")) {
+    const out = [];
+    const parts = text.split(/(\u27E6[^\u27E7]*\u27E7)/);
+    for (const part of parts) {
+      if (!part) continue;
+      if (part.startsWith("\u27E6")) out.push(...runsPlain(part.slice(1, -1), { ...base, highlight: "yellow" }));
+      else out.push(...runsPlain(part, base));
+    }
+    return out;
+  }
+  return runsPlain(text, base);
+}
+
+function runsPlain(text, base = {}) {
   const out = [];
   const re = /(\*\*[^*]+\*\*|\*[^*]+\*|\^\{[^}]+\}|_\{[^}]+\})/g;
   let last = 0, m;
@@ -42,7 +56,7 @@ const P = (text, opts = {}) => new Paragraph({
 
 const H = (text, level) => new Paragraph({
   heading: level === 1 ? HeadingLevel.HEADING_1 : level === 2 ? HeadingLevel.HEADING_2 : HeadingLevel.HEADING_3,
-  children: [new TextRun({ text, font: FONT, size: SZ, bold: level < 3, italics: level === 3, color: "000000" })],
+  children: runs(text, { bold: level < 3, italics: level === 3, color: "000000" }),
   spacing: { line: LINE, before: 240, after: 120 }, keepNext: true,
 });
 
