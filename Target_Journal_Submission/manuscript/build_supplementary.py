@@ -244,8 +244,13 @@ def build(out):
        "coverages and the share of groups below 0.85 (seed 0).")
     content = dict(meta=dict(title="Supplementary Material — Group-conformal calibration of near-infrared prediction intervals for new "
                                    "seasons, instruments and regions using PLS diagnostics",
-                             authors="[Authors]", affiliations=[], corresponding="", abstract=["Supplementary tables S1–S28 and figures S1–S3. "
-                             "All values are generated from the result files of the accompanying code (run_all.py)."], keywords=["Supplementary material"]),
+                             authors="P N Bhargav Teja^{a}, Divya Meena S^{a,*}",
+                             affiliations=["^{a} School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu, India"],
+                             corresponding="* Corresponding author: Divya Meena S, divyameena.s@vit.ac.in",
+                             abstract_heading="Contents",
+                             abstract=["Supplementary Tables S1–S28 and Figures S1–S3, cited in the article. Sections S1–S15 accompany the main "
+                                       "analyses; Sections S16–S28 and Fig. S3 report the analyses added during revision. All values are generated "
+                                       "from the result files of the accompanying code (run_all.py)."], keywords=[]),
                    blocks=blocks, references=[])
     js = out.replace(".docx", "_content.json")
     json.dump(content, open(js, "w"), indent=1, ensure_ascii=False)

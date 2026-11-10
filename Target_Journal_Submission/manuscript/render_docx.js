@@ -121,9 +121,9 @@ children.push(P(M.corresponding, { align: AlignmentType.LEFT, before: 240, run: 
 if (M.word_count) children.push(P(M.word_count, { align: AlignmentType.LEFT, run: { size: 20 } }));
 children.push(new Paragraph({ children: [new PageBreak()] }));
 // ---------- abstract, keywords
-children.push(H("Abstract", 1));
+children.push(H(M.abstract_heading || "Abstract", 1));
 for (const para of M.abstract) children.push(P(para));
-children.push(P(`**Keywords:** ${M.keywords.join("; ")}`, { before: 120 }));
+if (M.keywords && M.keywords.length) children.push(P(`**Keywords:** ${M.keywords.join("; ")}`, { before: 120 }));
 children.push(new Paragraph({ children: [new PageBreak()] }));
 // ---------- body
 for (const b of C.blocks) {

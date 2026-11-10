@@ -1,0 +1,25 @@
+Subject: TAL 130941 – supplementary material (Tables S16–S28, Fig. S3)
+
+Dear Production team,
+
+Thank you for your message regarding TAL 130941.
+
+The supplementary file uploaded with the revision was, by mistake, the version of the original
+submission (Tables S1–S15, Figs. S1–S2). Please find attached the complete Supplementary Material
+that accompanies the accepted manuscript:
+
+  TAL130941_Supplementary_Material.pdf  (Supplementary Tables S1–S28, Figures S1–S3; 50 pages)
+  TAL130941_Supplementary_Material.docx (editable version of the same file)
+
+It contains every item cited in the article, including Supplementary Tables S16–S28,
+Supplementary Section S26 and Supplementary Fig. S3. Please replace the previously supplied
+supplementary file with this one.
+
+In addition, the captions of Figures 4, 5 and 6 in the manuscript file contain the words
+"(revised figure)", which were left over from the version with tracked changes. Please delete
+these words from the three captions (e.g. "Fig. 4. (revised figure) Coverage in each held-out
+group …" should read "Fig. 4. Coverage in each held-out group …").
+
+Kind regards,
+Divya Meena S
+(on behalf of all authors)
